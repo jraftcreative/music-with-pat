@@ -291,71 +291,83 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   <!-- Contact Section -->
   <section id="contact" class="py-16 md:py-24 px-6 md:px-12">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="text-primary-600 font-medium mb-2">🌿 Get in Touch</p>
+      <p class="text-primary-600 font-medium mb-2">🌿 Book a Consultation</p>
       <h2 class="text-3xl md:text-4xl font-serif font-semibold text-base-900 mb-4">
-        Start Growing Together
+        Start Learning Today
       </h2>
       <p class="text-base-600 text-lg mb-8">
-        Book a trial lesson and plant the seeds of musical joy.
+        Schedule a consultation with Patricia to align your learning goals and kick start your learning journey!
       </p>
       
       <div class="bg-white rounded-2xl p-8 border border-base-200">
         <form class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label for="parent-name" class="block text-sm font-medium text-base-700 mb-2 text-left">Parent's Name</label>
-              <input 
-                type="text" 
-                id="parent-name" 
-                name="parent-name"
-                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label for="child-name" class="block text-sm font-medium text-base-700 mb-2 text-left">Child's Name</label>
-              <input 
-                type="text" 
-                id="child-name" 
-                name="child-name"
-                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
-                placeholder="Child's name"
-              />
-            </div>
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-base-700 mb-2 text-left">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+              placeholder="Your name"
+            />
           </div>
           
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label for="email" class="block text-sm font-medium text-base-700 mb-2 text-left">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email"
-                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div>
-              <label for="child-age" class="block text-sm font-medium text-base-700 mb-2 text-left">Child's Age</label>
-              <select 
-                id="child-age" 
-                name="child-age"
-                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all bg-white"
-              >
-                <option value="">Select age</option>
-                <option value="4">4 years old</option>
-                <option value="5">5 years old</option>
-                <option value="6">6 years old</option>
-                <option value="7">7 years old</option>
-                <option value="8">8 years old</option>
-                <option value="9">9 years old</option>
-                <option value="10">10 years old</option>
-                <option value="11">11 years old</option>
-                <option value="12">12 years old</option>
-              </select>
-            </div>
+          <!-- Phone Number -->
+          <div>
+            <label for="phone" class="block text-sm font-medium text-base-700 mb-2 text-left">Phone Number</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+              placeholder="+65 9123 4567"
+            />
           </div>
           
+          <!-- Consultation Date Calendar -->
+          <div>
+            <label class="block text-sm font-medium text-base-700 mb-2 text-left">Select Consultation Date</label>
+            <div id="calendar" class="bg-primary-50 rounded-xl p-4">
+              <!-- Calendar Header -->
+              <div class="flex items-center justify-between mb-4">
+                <button type="button" id="prev-month" class="p-2 hover:bg-primary-100 rounded-lg transition-colors">
+                  <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <span id="calendar-month" class="font-medium text-base-800"></span>
+                <button type="button" id="next-month" class="p-2 hover:bg-primary-100 rounded-lg transition-colors">
+                  <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              <!-- Day Headers -->
+              <div class="grid grid-cols-7 gap-1 mb-2">
+                <div class="text-center text-xs font-medium text-base-500 py-2">Sun</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Mon</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Tue</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Wed</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Thu</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Fri</div>
+                <div class="text-center text-xs font-medium text-base-500 py-2">Sat</div>
+              </div>
+              <!-- Calendar Days -->
+              <div id="calendar-days" class="grid grid-cols-7 gap-1">
+                <!-- Days will be populated by JavaScript -->
+              </div>
+              <!-- Selected Date Display -->
+              <div id="selected-date-display" class="mt-4 text-sm text-primary-700 font-medium hidden">
+                Selected: <span id="selected-date-text"></span>
+              </div>
+            </div>
+            <input type="hidden" id="consultation-date" name="consultation-date" />
+          </div>
+          
+          <!-- Message (Optional) -->
           <div>
             <label for="message" class="block text-sm font-medium text-base-700 mb-2 text-left">Message (Optional)</label>
             <textarea 
@@ -363,7 +375,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               name="message"
               rows="3"
               class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
-              placeholder="Tell me a little about your child and their interest in music..."
+              placeholder="Tell us about your learning goals or any questions you have..."
             ></textarea>
           </div>
           
@@ -371,7 +383,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             type="submit"
             class="w-full py-4 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition-colors"
           >
-            Send Message 🌱
+            Book Consultation 🌱
           </button>
         </form>
       </div>
@@ -439,5 +451,98 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         showSlide(currentSlide);
       });
     });
+    
+    // Calendar
+    let currentDate = new Date();
+    let selectedDate: Date | null = null;
+    
+    const calendarDays = document.getElementById('calendar-days');
+    const calendarMonth = document.getElementById('calendar-month');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const consultationDateInput = document.getElementById('consultation-date') as HTMLInputElement;
+    const selectedDateDisplay = document.getElementById('selected-date-display');
+    const selectedDateText = document.getElementById('selected-date-text');
+    
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    function renderCalendar() {
+      if (!calendarDays || !calendarMonth) return;
+      
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+      
+      calendarMonth.textContent = `${monthNames[month]} ${year}`;
+      
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      let html = '';
+      
+      // Empty cells for days before the first day of the month
+      for (let i = 0; i < firstDay; i++) {
+        html += '<div></div>';
+      }
+      
+      // Days of the month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const isPast = date < today;
+        const isSelected = selectedDate && date.getTime() === selectedDate.getTime();
+        const isToday = date.getTime() === today.getTime();
+        
+        let classes = 'py-2 text-center text-sm rounded-lg transition-colors cursor-pointer ';
+        
+        if (isPast) {
+          classes += 'text-base-300 cursor-not-allowed';
+        } else if (isSelected) {
+          classes += 'bg-primary-600 text-white font-medium';
+        } else if (isToday) {
+          classes += 'bg-primary-100 text-primary-700 hover:bg-primary-200';
+        } else {
+          classes += 'text-base-700 hover:bg-primary-100';
+        }
+        
+        html += `<button type="button" class="${classes}" data-date="${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}" ${isPast ? 'disabled' : ''}>${day}</button>`;
+      }
+      
+      calendarDays.innerHTML = html;
+      
+      // Add click handlers to date buttons
+      calendarDays.querySelectorAll('button:not([disabled])').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const dateStr = btn.getAttribute('data-date');
+          if (dateStr) {
+            selectedDate = new Date(dateStr + 'T00:00:00');
+            consultationDateInput.value = dateStr;
+            if (selectedDateDisplay && selectedDateText) {
+              selectedDateDisplay.classList.remove('hidden');
+              selectedDateText.textContent = selectedDate.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              });
+            }
+            renderCalendar();
+          }
+        });
+      });
+    }
+    
+    prevMonthBtn?.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar();
+    });
+    
+    nextMonthBtn?.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar();
+    });
+    
+    renderCalendar();
   </script>
 </BaseLayout>
