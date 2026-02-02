@@ -38,50 +38,50 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </header>
 
   <!-- Hero Section -->
-  <section class="py-16 md:py-24 px-6 md:px-12">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <section class="py-8 md:py-12 lg:py-16 px-6 md:px-12 min-h-[calc(100vh-100px)] flex items-center">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <!-- Left: Text Content -->
         <div class="text-left">
-          <p class="text-primary-600 font-medium mb-4">🌿 Nurturing Young Talent</p>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-base-900 leading-tight mb-6">
+          <p class="text-primary-600 font-medium mb-3">🌿 Nurturing Young Talent</p>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-base-900 leading-tight mb-4">
             Where Music<br />
             <span class="text-primary-600">Grows</span><br />
             Naturally
           </h1>
-          <p class="text-lg md:text-xl text-base-600 mb-8">
+          <p class="text-base md:text-lg text-base-600 mb-6">
             Pat's warm, nurturing approach helps children discover the joy of piano 
             at their own pace—like a seed growing into a beautiful melody.
           </p>
           
           <!-- Stats -->
-          <div class="flex flex-wrap gap-6 mb-8">
+          <div class="flex flex-wrap gap-4 mb-6">
             <div class="flex items-center gap-2 text-base-700">
-              <span class="text-2xl">🎹</span>
-              <span class="font-medium">Ages 4-12</span>
+              <span class="text-xl">🎹</span>
+              <span class="font-medium text-sm">Ages 4-12</span>
             </div>
             <div class="flex items-center gap-2 text-base-700">
-              <span class="text-2xl">🌿</span>
-              <span class="font-medium">10+ Years</span>
+              <span class="text-xl">🌿</span>
+              <span class="font-medium text-sm">10+ Years</span>
             </div>
             <div class="flex items-center gap-2 text-base-700">
-              <span class="text-2xl">🌱</span>
-              <span class="font-medium">100+ Students</span>
+              <span class="text-xl">🌱</span>
+              <span class="font-medium text-sm">100+ Students</span>
             </div>
           </div>
           
           <!-- Testimonial -->
-          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary-100">
-            <p class="text-base-600 italic mb-3">
+          <div class="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-primary-100">
+            <p class="text-base-600 italic text-sm mb-2">
               "Pat has such a gentle way with children. My daughter looks forward to her lessons every week!"
             </p>
-            <p class="text-base-500 text-sm">— A Happy Parent</p>
+            <p class="text-base-500 text-xs">— A Happy Parent</p>
           </div>
         </div>
         
         <!-- Right: Image Slideshow -->
         <div class="relative">
-          <div id="slideshow" class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-primary-50">
+          <div id="slideshow" class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-primary-50">
             <!-- Slide 1 -->
             <div class="slide absolute inset-0 opacity-100 transition-opacity duration-500">
               <img 
@@ -90,18 +90,20 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                 class="w-full h-full object-cover"
               />
             </div>
-            <!-- Add more slides here by uploading images to GitHub -->
-            <!-- Example:
+            <!-- Slide 2 -->
             <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
-              <img src="/music-with-pat/slide2.jpg" alt="Students learning" class="w-full h-full object-cover" />
+              <img 
+                src="/music-with-pat/Pat%20Pro%20Shot%20Grand.jpg" 
+                alt="Pat at the grand piano"
+                class="w-full h-full object-cover"
+              />
             </div>
-            -->
           </div>
           
-          <!-- Slideshow dots (for when you have multiple images) -->
+          <!-- Slideshow dots -->
           <div id="slideshow-dots" class="flex justify-center gap-2 mt-4">
             <button class="dot w-2 h-2 rounded-full bg-primary-600" data-slide="0"></button>
-            <!-- More dots will be added when you add more images -->
+            <button class="dot w-2 h-2 rounded-full bg-primary-200" data-slide="1"></button>
           </div>
           
           <!-- Decorative elements -->
