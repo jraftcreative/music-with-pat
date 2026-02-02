@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+  <!-- Header -->
+  <header class="py-6 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-semibold text-base-800">
+        🎹 Music with Pat
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-base-600 hover:text-primary-600 transition-colors">About</a>
+        <a href="#philosophy" class="text-base-600 hover:text-primary-600 transition-colors">Philosophy</a>
+        <a href="#faq" class="text-base-600 hover:text-primary-600 transition-colors">FAQ</a>
+        <a href="#contact" class="px-5 py-2.5 bg-primary-500 text-white rounded-full hover:bg-primary-600 transition-colors">
+          Contact
+        </a>
+      </nav>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-base-600">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-b border-base-200">
+      <div class="flex flex-col gap-4 max-w-5xl mx-auto">
+        <a href="#about" class="text-base-600 hover:text-primary-600">About</a>
+        <a href="#philosophy" class="text-base-600 hover:text-primary-600">Philosophy</a>
+        <a href="#faq" class="text-base-600 hover:text-primary-600">FAQ</a>
+        <a href="#contact" class="px-5 py-2.5 bg-primary-500 text-white rounded-full hover:bg-primary-600 text-center">
+          Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-primary-500 font-medium mb-4">Piano Lessons for Children</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-base-900 leading-tight mb-6">
+        Where Little<br />
+        <span class="text-primary-500">Musicians</span><br />
+        Blossom
+      </h1>
+      <p class="text-lg md:text-xl text-base-600 max-w-2xl mx-auto mb-10">
+        Pat creates a gentle, encouraging environment where children 
+        discover the magic of piano at their own beautiful pace.
+      </p>
+      
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
+        <div class="flex items-center gap-2 text-base-700">
+          <span class="text-2xl">🎹</span>
+          <span class="font-medium">Ages 4-12</span>
+        </div>
+        <div class="flex items-center gap-2 text-base-700">
+          <span class="text-2xl">✨</span>
+          <span class="font-medium">10+ Years</span>
+        </div>
+        <div class="flex items-center gap-2 text-base-700">
+          <span class="text-2xl">💕</span>
+          <span class="font-medium">100+ Students</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial -->
+      <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-xl mx-auto border border-primary-100">
+        <p class="text-base-600 italic mb-3">
+          "Pat has such a gentle way with children. My daughter looks forward to her lessons every week!"
+        </p>
+        <p class="text-base-500 text-sm">— A Happy Parent</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-primary-500 font-medium mb-2">About</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold text-base-900 mb-6">
+            Meet Pat
+          </h2>
+          <p class="text-base-600 text-lg leading-relaxed mb-4">
+            With a gentle heart and over ten years of teaching experience, Pat creates 
+            a nurturing space where little musicians can truly blossom.
+          </p>
+          <p class="text-base-600 text-lg leading-relaxed mb-8">
+            Her patient, encouraging approach helps every child feel confident and excited 
+            about their musical journey. Home-based lessons mean your child learns in a 
+            comfortable, relaxed environment.
+          </p>
+          
+          <!-- Credentials -->
+          <div class="flex flex-wrap gap-4">
+            <span class="px-4 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium">
+              ✨ ABRSM Certified
+            </span>
+            <span class="px-4 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium">
+              💕 10+ Years Teaching
+            </span>
+            <span class="px-4 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium">
+              🌸 Home-Based Lessons
+            </span>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="aspect-[4/5] bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center">
+            <span class="text-8xl">🎹</span>
+          </div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-300 rounded-full opacity-50"></div>
+          <div class="absolute -top-4 -left-4 w-16 h-16 bg-primary-200 rounded-full opacity-50"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-primary-500 font-medium mb-2">Philosophy</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold text-base-900">
+          Nurturing Young Hearts
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-base-200 hover:border-primary-200 transition-colors">
+          <span class="text-4xl mb-4 block">🌸</span>
+          <h3 class="text-xl font-semibold text-base-900 mb-3">Gentle Beginnings</h3>
+          <p class="text-base-600">
+            We start with soft encouragement, building confidence through small, 
+            achievable steps. Every child blooms at their own pace.
+          </p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-base-200 hover:border-primary-200 transition-colors">
+          <span class="text-4xl mb-4 block">💕</span>
+          <h3 class="text-xl font-semibold text-base-900 mb-3">Patient Growth</h3>
+          <p class="text-base-600">
+            Like tending a garden, we give each student the time and attention 
+            they need to develop strong roots in music.
+          </p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-base-200 hover:border-primary-200 transition-colors">
+          <span class="text-4xl mb-4 block">✨</span>
+          <h3 class="text-xl font-semibold text-base-900 mb-3">Joyful Expression</h3>
+          <p class="text-base-600">
+            Music is a language of the heart. We encourage creativity and 
+            emotional expression through every piece learned.
+          </p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-base-200 hover:border-primary-200 transition-colors">
+          <span class="text-4xl mb-4 block">🏆</span>
+          <h3 class="text-xl font-semibold text-base-900 mb-3">Beautiful Results</h3>
+          <p class="text-base-600">
+            Thoughtful ABRSM preparation that feels supportive, not stressful. 
+            We celebrate every achievement along the way.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 md:py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-primary-500 font-medium mb-2">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Common Questions
+        </h2>
+        <p class="text-base-600">Everything you need to know about lessons.</p>
+      </div>
+      
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <details class="group bg-warm-50 rounded-xl">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-medium text-base-900">What ages do you teach?</span>
+            <span class="text-primary-500 group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-base-600">
+            I specialize in teaching children ages 4-12. This is a wonderful window when musical 
+            foundations are most naturally absorbed through play and exploration.
+          </div>
+        </details>
+        
+        <!-- FAQ Item 2 -->
+        <details class="group bg-warm-50 rounded-xl">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-medium text-base-900">How long are the lessons?</span>
+            <span class="text-primary-500 group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-base-600">
+            Lessons are 30 minutes for beginners (ages 4-6) and 45 minutes for intermediate 
+            students (ages 7+). This duration keeps young learners engaged without fatigue.
+          </div>
+        </details>
+        
+        <!-- FAQ Item 3 -->
+        <details class="group bg-warm-50 rounded-xl">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-medium text-base-900">Do you follow a specific curriculum?</span>
+            <span class="text-primary-500 group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-base-600">
+            Yes! I prepare students for ABRSM examinations, but always with joy as the priority. 
+            Exams are optional milestones, not the main goal.
+          </div>
+        </details>
+        
+        <!-- FAQ Item 4 -->
+        <details class="group bg-warm-50 rounded-xl">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-medium text-base-900">What if my child has never touched a piano?</span>
+            <span class="text-primary-500 group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-base-600">
+            Perfect! Complete beginners are my specialty. We start with games, songs, and exploration 
+            before formal notation. Your child will fall in love with music first.
+          </div>
+        </details>
+        
+        <!-- FAQ Item 5 -->
+        <details class="group bg-warm-50 rounded-xl">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-medium text-base-900">Where are lessons held?</span>
+            <span class="text-primary-500 group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-base-600">
+            Lessons are held at my home studio, providing a comfortable and focused learning 
+            environment. I'm conveniently located and happy to discuss if the location works for your family.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 px-6 md:px-12">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-semibold text-base-900 mb-4">
+        Let's Begin 💕
+      </h2>
+      <p class="text-base-600 text-lg mb-8">
+        Book a gentle introduction to piano. No pressure, just possibilities.
+      </p>
+      
+      <div class="bg-white rounded-2xl p-8 border border-base-200">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="parent-name" class="block text-sm font-medium text-base-700 mb-2 text-left">Parent's Name</label>
+              <input 
+                type="text" 
+                id="parent-name" 
+                name="parent-name"
+                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="child-name" class="block text-sm font-medium text-base-700 mb-2 text-left">Child's Name</label>
+              <input 
+                type="text" 
+                id="child-name" 
+                name="child-name"
+                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="Child's name"
+              />
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-base-700 mb-2 text-left">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <label for="child-age" class="block text-sm font-medium text-base-700 mb-2 text-left">Child's Age</label>
+              <select 
+                id="child-age" 
+                name="child-age"
+                class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all bg-white"
+              >
+                <option value="">Select age</option>
+                <option value="4">4 years old</option>
+                <option value="5">5 years old</option>
+                <option value="6">6 years old</option>
+                <option value="7">7 years old</option>
+                <option value="8">8 years old</option>
+                <option value="9">9 years old</option>
+                <option value="10">10 years old</option>
+                <option value="11">11 years old</option>
+                <option value="12">12 years old</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-base-700 mb-2 text-left">Message (Optional)</label>
+            <textarea 
+              id="message" 
+              name="message"
+              rows="3"
+              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
+              placeholder="Tell me a little about your child and their interest in music..."
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit"
+            class="w-full py-4 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors"
+          >
+            Send Message 🎹
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 md:px-12 border-t border-base-200">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-base-500 text-sm">
+        © 2024 Music with Pat. Made with 💕
+      </p>
+      <div class="flex items-center gap-6">
+        <a href="#about" class="text-base-500 hover:text-primary-500 text-sm">About</a>
+        <a href="#philosophy" class="text-base-500 hover:text-primary-500 text-sm">Philosophy</a>
+        <a href="#faq" class="text-base-500 hover:text-primary-500 text-sm">FAQ</a>
+        <a href="#contact" class="text-base-500 hover:text-primary-500 text-sm">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+    
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  </script>
+</BaseLayout>
