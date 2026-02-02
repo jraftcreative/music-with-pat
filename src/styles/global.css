@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
-/* Music with Pat - Soft, Nurturing Theme */
+/* Music with Pat - Earthy Terra Theme */
 @theme {
-  /* Warm, soft color palette */
-  --color-primary-50: #fdf2f8;
-  --color-primary-100: #fce7f3;
-  --color-primary-200: #fbcfe8;
-  --color-primary-300: #f9a8d4;
-  --color-primary-400: #f472b6;
-  --color-primary-500: #ec4899;
-  --color-primary-600: #db2777;
-  --color-primary-700: #be185d;
-  --color-primary-800: #9d174d;
-  --color-primary-900: #831843;
+  /* Earthy green palette */
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
   
-  /* Warm neutrals */
-  --color-warm-50: #fefdfb;
-  --color-warm-100: #fdf9f3;
+  /* Warm terracotta/earth tones */
+  --color-warm-50: #fefcfb;
+  --color-warm-100: #fdf8f3;
   --color-warm-200: #f5ebe0;
   --color-warm-300: #e8d5c4;
-  --color-warm-400: #d4a987;
-  --color-warm-500: #b8860b;
-  --color-warm-600: #92400e;
-  --color-warm-700: #78350f;
-  --color-warm-800: #451a03;
-  --color-warm-900: #1c0a00;
+  --color-warm-400: #c9a77c;
+  --color-warm-500: #a67c52;
+  --color-warm-600: #8b5a2b;
+  --color-warm-700: #6b4423;
+  --color-warm-800: #4a2c17;
+  --color-warm-900: #2d1a0e;
   
-  /* Soft grays with warm undertone */
+  /* Soft neutrals with warm undertone */
   --color-base-50: #fafaf9;
   --color-base-100: #f5f5f4;
   --color-base-200: #e7e5e4;
