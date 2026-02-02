@@ -39,40 +39,75 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
   <!-- Hero Section -->
   <section class="py-16 md:py-24 px-6 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-primary-600 font-medium mb-4">🌿 Nurturing Young Talent</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-base-900 leading-tight mb-6">
-        Where Music<br />
-        <span class="text-primary-600">Grows</span><br />
-        Naturally
-      </h1>
-      <p class="text-lg md:text-xl text-base-600 max-w-2xl mx-auto mb-10">
-        Pat's warm, nurturing approach helps children discover the joy of piano 
-        at their own pace—like a seed growing into a beautiful melody.
-      </p>
-      
-      <!-- Stats -->
-      <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
-        <div class="flex items-center gap-2 text-base-700">
-          <span class="text-2xl">🎹</span>
-          <span class="font-medium">Ages 4-12</span>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Text Content -->
+        <div class="text-left">
+          <p class="text-primary-600 font-medium mb-4">🌿 Nurturing Young Talent</p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-base-900 leading-tight mb-6">
+            Where Music<br />
+            <span class="text-primary-600">Grows</span><br />
+            Naturally
+          </h1>
+          <p class="text-lg md:text-xl text-base-600 mb-8">
+            Pat's warm, nurturing approach helps children discover the joy of piano 
+            at their own pace—like a seed growing into a beautiful melody.
+          </p>
+          
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-6 mb-8">
+            <div class="flex items-center gap-2 text-base-700">
+              <span class="text-2xl">🎹</span>
+              <span class="font-medium">Ages 4-12</span>
+            </div>
+            <div class="flex items-center gap-2 text-base-700">
+              <span class="text-2xl">🌿</span>
+              <span class="font-medium">10+ Years</span>
+            </div>
+            <div class="flex items-center gap-2 text-base-700">
+              <span class="text-2xl">🌱</span>
+              <span class="font-medium">100+ Students</span>
+            </div>
+          </div>
+          
+          <!-- Testimonial -->
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-primary-100">
+            <p class="text-base-600 italic mb-3">
+              "Pat has such a gentle way with children. My daughter looks forward to her lessons every week!"
+            </p>
+            <p class="text-base-500 text-sm">— A Happy Parent</p>
+          </div>
         </div>
-        <div class="flex items-center gap-2 text-base-700">
-          <span class="text-2xl">🌿</span>
-          <span class="font-medium">10+ Years</span>
+        
+        <!-- Right: Image Slideshow -->
+        <div class="relative">
+          <div id="slideshow" class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-primary-50">
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-500">
+              <img 
+                src="/music-with-pat/Patricia%20Pro%20shot%201.jpeg" 
+                alt="Piano lessons with Pat"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Add more slides here by uploading images to GitHub -->
+            <!-- Example:
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+              <img src="/music-with-pat/slide2.jpg" alt="Students learning" class="w-full h-full object-cover" />
+            </div>
+            -->
+          </div>
+          
+          <!-- Slideshow dots (for when you have multiple images) -->
+          <div id="slideshow-dots" class="flex justify-center gap-2 mt-4">
+            <button class="dot w-2 h-2 rounded-full bg-primary-600" data-slide="0"></button>
+            <!-- More dots will be added when you add more images -->
+          </div>
+          
+          <!-- Decorative elements -->
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-300 rounded-full opacity-40 -z-10"></div>
+          <div class="absolute -top-4 -left-4 w-16 h-16 bg-primary-200 rounded-full opacity-40 -z-10"></div>
         </div>
-        <div class="flex items-center gap-2 text-base-700">
-          <span class="text-2xl">🌱</span>
-          <span class="font-medium">100+ Students</span>
-        </div>
-      </div>
-      
-      <!-- Testimonial -->
-      <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-xl mx-auto border border-primary-100">
-        <p class="text-base-600 italic mb-3">
-          "Pat has such a gentle way with children. My daughter looks forward to her lessons every week!"
-        </p>
-        <p class="text-base-500 text-sm">— A Happy Parent</p>
       </div>
     </div>
   </section>
@@ -356,8 +391,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     </div>
   </footer>
 
-  <!-- Mobile Menu Script -->
+  <!-- Scripts -->
   <script>
+    // Mobile Menu
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -365,10 +401,40 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       mobileMenu?.classList.toggle('hidden');
     });
     
-    // Close menu when clicking a link
     mobileMenu?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
+      });
+    });
+    
+    // Slideshow
+    const slides = document.querySelectorAll('#slideshow .slide');
+    const dots = document.querySelectorAll('#slideshow-dots .dot');
+    let currentSlide = 0;
+    
+    function showSlide(index: number) {
+      slides.forEach((slide, i) => {
+        (slide as HTMLElement).style.opacity = i === index ? '1' : '0';
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-primary-600', i === index);
+        dot.classList.toggle('bg-primary-200', i !== index);
+      });
+    }
+    
+    // Auto-advance slideshow (if more than 1 slide)
+    if (slides.length > 1) {
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 4000);
+    }
+    
+    // Click dots to navigate
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
       });
     });
   </script>
