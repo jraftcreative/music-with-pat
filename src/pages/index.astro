@@ -83,19 +83,19 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         <div class="relative">
           <div id="slideshow" class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-primary-50">
             <!-- Slide 1 -->
-            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-500">
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-500 flex items-center justify-center">
               <img 
                 src="/music-with-pat/Patricia%20Pro%20shot%201.jpeg" 
                 alt="Piano lessons with Pat"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
               />
             </div>
             <!-- Slide 2 -->
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500 flex items-center justify-center">
               <img 
                 src="/music-with-pat/Pat%20Pro%20Shot%20Grand.jpg" 
                 alt="Pat at the grand piano"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
               />
             </div>
           </div>
