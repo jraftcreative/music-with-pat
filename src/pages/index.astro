@@ -731,9 +731,13 @@ import BottomNav from '../components/BottomNav.astro'
     
     renderCalendar();
     
-    // Form submission to WhatsApp
+    // Form submission to Google Sheet
+    const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    
     const consultationForm = document.getElementById('consultation-form');
-    consultationForm?.addEventListener('submit', (e) => {
+    const submitBtn = consultationForm?.querySelector('button[type="submit"]') as HTMLButtonElement;
+    
+    consultationForm?.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const name = (document.getElementById('name') as HTMLInputElement).value;
@@ -741,7 +745,7 @@ import BottomNav from '../components/BottomNav.astro'
       const date = (document.getElementById('consultation-date') as HTMLInputElement).value;
       const message = (document.getElementById('message') as HTMLTextAreaElement).value;
       
-      // Format the date nicely
+      // Format the date nicely for display
       let dateText = 'Not selected';
       if (date) {
         const dateObj = new Date(date + 'T00:00:00');
@@ -753,19 +757,50 @@ import BottomNav from '../components/BottomNav.astro'
         });
       }
       
-      // Build WhatsApp message
-      let waMessage = `Hi Pat! 🎹\n\n`;
-      waMessage += `I'd like to book a consultation.\n\n`;
-      waMessage += `📝 Name: ${name}\n`;
-      waMessage += `📱 Phone: ${phone}\n`;
-      waMessage += `📅 Preferred Date: ${dateText}`;
-      if (message) {
-        waMessage += `\n\n💬 Message: ${message}`;
-      }
+      // Show loading state
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... 💕';
+      submitBtn.disabled = true;
       
-      // Open WhatsApp
-      const waUrl = `https://wa.me/6583898853?text=${encodeURIComponent(waMessage)}`;
-      window.open(waUrl, '_blank');
+      try {
+        // Submit to Google Apps Script
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            consultationDate: dateText,
+            message
+          })
+        });
+        
+        // Show success message
+        consultationForm.innerHTML = `
+          <div class="text-center py-8">
+            <span class="text-5xl mb-4 block">🎉</span>
+            <h3 class="text-xl font-semibold text-base-900 mb-2">Thank You!</h3>
+            <p class="text-base-600 mb-4">Your consultation request has been received. Pat will reach out to you soon!</p>
+            <p class="text-base-500 text-sm">You can also WhatsApp us at +65 8389 8853</p>
+          </div>
+        `;
+        
+      } catch (error) {
+        // On error, fall back to WhatsApp
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        
+        let waMessage = \`Hi Pat! 🎹\\n\\nI'd like to book a consultation.\\n\\n📝 Name: \${name}\\n📱 Phone: \${phone}\\n📅 Preferred Date: \${dateText}\`;
+        if (message) {
+          waMessage += \`\\n\\n💬 Message: \${message}\`;
+        }
+        
+        const waUrl = \`https://wa.me/6583898853?text=\${encodeURIComponent(waMessage)}\`;
+        window.open(waUrl, '_blank');
+      }
     });
   </script>
 </BaseLayout>
