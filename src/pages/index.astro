@@ -162,8 +162,100 @@ import BottomNav from '../components/BottomNav.astro'
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-12 md:py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <p class="text-primary-600 font-medium mb-2">💕 Parent Testimonials</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+          What Parents Say
+        </h2>
+      </div>
+      
+      <div class="relative">
+        <!-- Testimonial Cards -->
+        <div id="testimonial-slideshow" class="relative overflow-hidden">
+          <div class="testimonial-slide opacity-100 transition-opacity duration-500">
+            <div class="bg-primary-50 rounded-2xl p-6 md:p-8 text-center">
+              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+              <p class="text-base-700 text-lg md:text-xl italic mb-6">
+                "Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months."
+              </p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">SL</div>
+                <div class="text-left">
+                  <p class="font-medium text-base-900">Sarah L.</p>
+                  <p class="text-sm text-base-500">Mother of Emily, Age 7</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide opacity-0 absolute inset-0 transition-opacity duration-500">
+            <div class="bg-primary-50 rounded-2xl p-6 md:p-8 text-center">
+              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+              <p class="text-base-700 text-lg md:text-xl italic mb-6">
+                "We tried other teachers before, but Pat's nurturing approach finally got my son excited about piano. He now practices without being asked!"
+              </p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">MT</div>
+                <div class="text-left">
+                  <p class="font-medium text-base-900">Michelle T.</p>
+                  <p class="text-sm text-base-500">Mother of Ryan, Age 9</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide opacity-0 absolute inset-0 transition-opacity duration-500">
+            <div class="bg-primary-50 rounded-2xl p-6 md:p-8 text-center">
+              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+              <p class="text-base-700 text-lg md:text-xl italic mb-6">
+                "Pat prepared my daughter for her ABRSM Grade 3 exam and she passed with distinction! Highly recommend for anyone looking for quality piano lessons."
+              </p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">JC</div>
+                <div class="text-left">
+                  <p class="font-medium text-base-900">Jennifer C.</p>
+                  <p class="text-sm text-base-500">Mother of Sophie, Age 11</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button 
+          id="testimonial-prev"
+          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-white rounded-full p-2 shadow-lg hover:bg-primary-50 transition-colors z-10"
+          aria-label="Previous testimonial"
+        >
+          <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button 
+          id="testimonial-next"
+          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-white rounded-full p-2 shadow-lg hover:bg-primary-50 transition-colors z-10"
+          aria-label="Next testimonial"
+        >
+          <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Dots -->
+      <div id="testimonial-dots" class="flex justify-center gap-2 mt-6">
+        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-600" data-slide="0"></button>
+        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-200" data-slide="1"></button>
+        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-200" data-slide="2"></button>
+      </div>
+    </div>
+  </section>
+
   <!-- Philosophy Section -->
-  <section id="philosophy" class="py-12 md:py-24 px-6 md:px-12 bg-white">
+  <section id="philosophy" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-primary-600 font-medium mb-2">💕 Teaching Philosophy</p>
@@ -202,7 +294,7 @@ import BottomNav from '../components/BottomNav.astro'
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-12 md:py-24 px-6 md:px-12 pb-28 md:pb-24 bg-primary-50">
+  <section id="contact" class="py-12 md:py-24 px-6 md:px-12 pb-28 md:pb-24 bg-white">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-primary-600 font-medium mb-2">🌸 Get Started</p>
       <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
@@ -297,7 +389,7 @@ import BottomNav from '../components/BottomNav.astro'
   </section>
 
   <!-- Referral Section -->
-  <section id="referral" class="py-12 md:py-24 px-6 md:px-12 bg-white">
+  <section id="referral" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
     <div class="max-w-4xl mx-auto text-center">
       <span class="text-4xl mb-3 block">🎁</span>
       <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
@@ -343,7 +435,7 @@ import BottomNav from '../components/BottomNav.astro'
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+  <section id="faq" class="py-12 md:py-24 px-6 md:px-12 bg-white">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-primary-600 font-medium mb-2">FAQ</p>
@@ -353,7 +445,7 @@ import BottomNav from '../components/BottomNav.astro'
       </div>
       
       <div class="space-y-3">
-        <details class="group bg-white rounded-xl">
+        <details class="group bg-primary-50 rounded-xl">
           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
             <span class="font-medium text-base-900 text-sm md:text-base pr-4">What ages do you teach?</span>
             <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
@@ -363,7 +455,7 @@ import BottomNav from '../components/BottomNav.astro'
           </div>
         </details>
         
-        <details class="group bg-white rounded-xl">
+        <details class="group bg-primary-50 rounded-xl">
           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
             <span class="font-medium text-base-900 text-sm md:text-base pr-4">How long are lessons?</span>
             <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
@@ -373,7 +465,7 @@ import BottomNav from '../components/BottomNav.astro'
           </div>
         </details>
         
-        <details class="group bg-white rounded-xl">
+        <details class="group bg-primary-50 rounded-xl">
           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
             <span class="font-medium text-base-900 text-sm md:text-base pr-4">Do you follow a curriculum?</span>
             <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
@@ -383,7 +475,7 @@ import BottomNav from '../components/BottomNav.astro'
           </div>
         </details>
         
-        <details class="group bg-white rounded-xl">
+        <details class="group bg-primary-50 rounded-xl">
           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
             <span class="font-medium text-base-900 text-sm md:text-base pr-4">Complete beginners welcome?</span>
             <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
@@ -393,7 +485,7 @@ import BottomNav from '../components/BottomNav.astro'
           </div>
         </details>
         
-        <details class="group bg-white rounded-xl">
+        <details class="group bg-primary-50 rounded-xl">
           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
             <span class="font-medium text-base-900 text-sm md:text-base pr-4">Where are lessons held?</span>
             <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
@@ -476,7 +568,7 @@ import BottomNav from '../components/BottomNav.astro'
       }
     });
 
-    // Slideshow
+    // Hero Slideshow
     const slides = document.querySelectorAll('#slideshow .slide');
     const dots = document.querySelectorAll('#slideshow-dots .dot');
     let currentSlide = 0;
@@ -504,6 +596,49 @@ import BottomNav from '../components/BottomNav.astro'
         showSlide(currentSlide);
       });
     });
+    
+    // Testimonials Slideshow
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    const testimonialPrev = document.getElementById('testimonial-prev');
+    const testimonialNext = document.getElementById('testimonial-next');
+    let currentTestimonial = 0;
+    
+    function showTestimonial(index: number) {
+      testimonialSlides.forEach((slide, i) => {
+        (slide as HTMLElement).style.opacity = i === index ? '1' : '0';
+        (slide as HTMLElement).style.position = i === index ? 'relative' : 'absolute';
+      });
+      testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('bg-primary-600', i === index);
+        dot.classList.toggle('bg-primary-200', i !== index);
+      });
+    }
+    
+    testimonialPrev?.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+      showTestimonial(currentTestimonial);
+    });
+    
+    testimonialNext?.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+      showTestimonial(currentTestimonial);
+    });
+    
+    testimonialDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentTestimonial = i;
+        showTestimonial(currentTestimonial);
+      });
+    });
+    
+    // Auto-advance testimonials every 6 seconds
+    if (testimonialSlides.length > 1) {
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+        showTestimonial(currentTestimonial);
+      }, 6000);
+    }
     
     // Calendar
     let calendarDate = new Date();
