@@ -793,12 +793,12 @@ import BottomNav from '../components/BottomNav.astro'
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
         
-        let waMessage = \`Hi Pat! 🎹\\n\\nI'd like to book a consultation.\\n\\n📝 Name: \${name}\\n📱 Phone: \${phone}\\n📅 Preferred Date: \${dateText}\`;
+        let waMessage = `Hi Pat! 🎹\n\nI'd like to book a consultation.\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n📅 Preferred Date: ${dateText}`;
         if (message) {
-          waMessage += \`\\n\\n💬 Message: \${message}\`;
+          waMessage += `\n\n💬 Message: ${message}`;
         }
         
-        const waUrl = \`https://wa.me/6583898853?text=\${encodeURIComponent(waMessage)}\`;
+        const waUrl = `https://wa.me/6583898853?text=${encodeURIComponent(waMessage)}`;
         window.open(waUrl, '_blank');
       }
     });
