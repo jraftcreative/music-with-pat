@@ -1,0 +1,7 @@
+{
+  "name": "music-with-pat",
+  "compatibility_date": "2025-02-09",
+  "assets": {
+    "directory": "./dist"
+  }
+}
