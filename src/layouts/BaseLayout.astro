@@ -7,9 +7,12 @@ interface Props {
 }
 
 const { 
-  title = 'Music with Pat | Piano Lessons for Children', 
-  description = 'Nurturing piano lessons for children in a gentle, encouraging environment. Home-based piano instruction where little musicians blossom.'
+  title = 'Music with Pat | Piano Lessons for Children in Singapore', 
+  description = 'Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with 10+ years experience. ABRSM preparation available. Book a consultation today!'
 } = Astro.props
+
+const siteUrl = 'https://jraftcreative.github.io/music-with-pat'
+const ogImage = `${siteUrl}/og-image.jpg`
 ---
 
 <!DOCTYPE html>
@@ -19,10 +22,34 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href={siteUrl + '/'} />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="piano lessons singapore, piano teacher singapore, kids piano lessons, children piano lessons singapore, ABRSM piano singapore, home piano lessons singapore, piano lessons for kids" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="SG" />
+    <meta name="geo.placename" content="Singapore" />
+    
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl + '/'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Music with Pat - Piano Lessons for Children in Singapore" />
+    <meta property="og:locale" content="en_SG" />
+    <meta property="og:site_name" content="Music with Pat" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Music with Pat - Piano Lessons for Children in Singapore" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,9 +57,113 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/music-with-pat/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/music-with-pat/favicon.ico" sizes="32x32" />
     
     <title>{title}</title>
+    
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jraftcreative.github.io/music-with-pat/#business",
+      "name": "Music with Pat",
+      "description": "Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with over 10 years of teaching experience.",
+      "url": "https://jraftcreative.github.io/music-with-pat/",
+      "image": "https://jraftcreative.github.io/music-with-pat/og-image.jpg",
+      "telephone": "+65 8389 8853",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Singapore",
+        "addressCountry": "SG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "addressCountry": "SG"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Service Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Lessons",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Piano lessons for children ages 4 and up. ABRSM syllabus preparation available. Home-based studio environment."
+    }
+    </script>
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What ages do you teach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I specialize in teaching children ages 4 and up, when musical foundations are most naturally absorbed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long are piano lessons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "30 minutes for beginners (ages 4-6) and 45 minutes for intermediate students (ages 7+)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you follow a curriculum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! I prepare students for ABRSM examinations, but always with joy as the priority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are complete beginners welcome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We start with games and songs before formal notation. Your child will fall in love with music first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are piano lessons held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At my home studio in Singapore, providing a comfortable and focused learning environment."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-warm-50 text-base-800 min-h-screen antialiased">
     <slot />

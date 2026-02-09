@@ -1,0 +1,5 @@
+# Music with Pat - Piano Lessons Singapore
+User-agent: *
+Allow: /
+
+Sitemap: https://jraftcreative.github.io/music-with-pat/sitemap.xml
