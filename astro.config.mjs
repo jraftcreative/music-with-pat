@@ -4,8 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jraftcreative.github.io',
-  base: '/music-with-pat',
+  site: 'https://musicwithpat.com',
   trailingSlash: 'always',
   vite: {
     plugins: [tailwindcss()]

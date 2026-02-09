@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jraftcreative.github.io/music-with-pat/sitemap.xml
+Sitemap: https://musicwithpat.com/sitemap.xml
