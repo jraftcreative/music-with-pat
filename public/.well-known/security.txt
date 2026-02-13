@@ -1,0 +1,4 @@
+Contact: mailto:ms.patriciateoh@gmail.com
+Expires: 2027-02-13T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.musicwithpat.com/.well-known/security.txt
