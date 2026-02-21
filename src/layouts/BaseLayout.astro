@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Music with Pat | Piano Lessons for Children in Singapore',
-  description = 'Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with 10+ years experience. ABRSM preparation available. Book a consultation today!'
+  title = 'Music with Pat | Piano Lessons for Children in Tengah, Singapore',
+  description = 'Nurturing piano lessons for children ages 4+ in Tengah, Singapore. Home-based studio near Jurong West, Bukit Batok & Choa Chu Kang. 10+ years experience. ABRSM preparation available.'
 } = Astro.props
 
 const siteUrl = 'https://www.musicwithpat.com'
@@ -28,7 +28,9 @@ const ogImage = `${siteUrl}/og-image.jpg`
 
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="SG" />
-    <meta name="geo.placename" content="Singapore" />
+    <meta name="geo.placename" content="Tengah, Singapore" />
+    <meta name="geo.position" content="1.3644;103.7420" />
+    <meta name="ICBM" content="1.3644, 103.7420" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="htmgFONZej3y36vUZivIC5NEXnQWBq-E8Qq0FSvo9Ws" />
     <link rel="alternate" hreflang="en-sg" href={canonicalUrl} />
@@ -80,7 +82,7 @@ const ogImage = `${siteUrl}/og-image.jpg`
       "@type": ["LocalBusiness", "EducationalOrganization"],
       "@id": "https://www.musicwithpat.com/#business",
       "name": "Music with Pat",
-      "description": "Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with over 10 years of teaching experience.",
+      "description": "Nurturing piano lessons for children ages 4+ in Tengah, Singapore. Home-based studio serving Jurong West, Bukit Batok, Choa Chu Kang and surrounding areas.",
       "url": "https://www.musicwithpat.com/",
       "image": "https://www.musicwithpat.com/og-image.jpg",
       "telephone": "+65 8389 8853",
@@ -115,10 +117,28 @@ const ogImage = `${siteUrl}/og-image.jpg`
         "@type": "LocalBusiness",
         "name": "Music with Pat"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Singapore"
-      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Singapore"
+        },
+        {
+          "@type": "Place",
+          "name": "Tengah"
+        },
+        {
+          "@type": "Place",
+          "name": "Jurong West"
+        },
+        {
+          "@type": "Place",
+          "name": "Bukit Batok"
+        },
+        {
+          "@type": "Place",
+          "name": "Choa Chu Kang"
+        }
+      ],
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
