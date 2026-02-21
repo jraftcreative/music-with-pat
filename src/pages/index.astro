@@ -1,62 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
 ---
 
 <BaseLayout>
-  <!-- Header -->
-  <header class="py-4 md:py-6 px-6 md:px-12 relative sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-base-100">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <img 
-          src="/music-with-pat-logo.png" 
-          alt="Music with Pat - Piano Lessons Singapore"
-          class="h-10 md:h-12 w-auto"
-        />
-        <span class="text-base sm:text-lg md:text-xl font-semibold text-base-800">Music With Pat</span>
-      </a>
-      
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-base-600 hover:text-primary-600 transition-colors">About</a>
-        <a href="#philosophy" class="text-base-600 hover:text-primary-600 transition-colors">Philosophy</a>
-        <a href="#testimonials" class="text-base-600 hover:text-primary-600 transition-colors">Testimonials</a>
-        <a href="#referral" class="text-base-600 hover:text-primary-600 transition-colors">Refer</a>
-        <a href="#faq" class="text-base-600 hover:text-primary-600 transition-colors">FAQ</a>
-        <a href="#contact" class="px-5 py-2.5 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors">
-          Book a Consultation
-        </a>
-      </nav>
-      
-      <!-- Mobile: Hamburger menu -->
-      <div class="md:hidden">
-        <button 
-          id="mobile-menu-btn"
-          class="p-2 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
-          aria-label="Open menu"
-        >
-          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile dropdown menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-t border-base-200 shadow-lg z-50">
-      <nav class="flex flex-col p-4 gap-2">
-        <a href="#about" class="mobile-nav-link px-4 py-3 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors">About</a>
-        <a href="#philosophy" class="mobile-nav-link px-4 py-3 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors">Philosophy</a>
-        <a href="#testimonials" class="mobile-nav-link px-4 py-3 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors">Testimonials</a>
-        <a href="#referral" class="mobile-nav-link px-4 py-3 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors">Refer a Friend</a>
-        <a href="#faq" class="mobile-nav-link px-4 py-3 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors">FAQ</a>
-        <a href="#contact" class="mobile-nav-link px-4 py-3 bg-primary-600 text-white text-center rounded-xl hover:bg-primary-700 transition-colors font-medium">Book a Consultation</a>
-      </nav>
-    </div>
-  </header>
+  <Header currentPage="/" />
 
   <!-- Hero Section -->
   <section class="py-6 md:py-12 lg:py-16 px-6 md:px-12 bg-white">
@@ -66,15 +17,15 @@ import BottomNav from '../components/BottomNav.astro'
         <div class="relative lg:order-2">
           <div id="slideshow" class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-primary-50">
             <div class="slide absolute inset-0 opacity-100 transition-opacity duration-500 flex items-center justify-center">
-              <img 
-                src="/pat-piano-teacher-singapore.jpg" 
+              <img
+                src="/pat-piano-teacher-singapore.jpg"
                 alt="Pat - Piano Teacher in Singapore at the grand piano"
                 class="w-full h-full object-contain"
               />
             </div>
             <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500 flex items-center justify-center">
-              <img 
-                src="/patricia-piano-lessons.jpg" 
+              <img
+                src="/patricia-piano-lessons.jpg"
                 alt="Patricia - Children's Piano Lessons Singapore"
                 class="w-full h-full object-contain"
               />
@@ -85,31 +36,31 @@ import BottomNav from '../components/BottomNav.astro'
             <button class="dot w-2 h-2 rounded-full bg-primary-200" data-slide="1"></button>
           </div>
         </div>
-        
+
         <!-- Text Content -->
         <div class="text-left lg:order-1">
-          <p class="text-primary-600 font-medium mb-2 text-sm md:text-base">🌸 Piano Lessons for Children in Singapore</p>
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-base-900 leading-tight mb-3">
-            Where Music <span class="text-primary-600">Grows</span> Naturally
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-base-900 leading-tight mb-2">
+            Piano Lessons for Children in <span class="text-primary-600">Singapore</span>
           </h1>
+          <p class="text-primary-600 font-medium mb-3 text-sm md:text-base">Where Music Grows Naturally</p>
           <p class="text-sm md:text-base text-base-600 mb-4">
-            Patricia's warm, nurturing approach helps children in Singapore discover the joy of piano 
+            Patricia's warm, nurturing approach helps children in Singapore discover the joy of piano
             at their own pace.
           </p>
-          
-          <!-- Stats - stacked on mobile -->
+
+          <!-- Stats -->
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="inline-flex items-center gap-1 bg-primary-50 px-3 py-2 rounded-full text-sm text-primary-700">
-              🎹 Ages 4 & up
+              Ages 4 & up
             </span>
             <span class="inline-flex items-center gap-1 bg-primary-50 px-3 py-2 rounded-full text-sm text-primary-700">
-              🌸 10+ years of teaching experience
+              10+ years of teaching experience
             </span>
             <span class="inline-flex items-center gap-1 bg-primary-50 px-3 py-2 rounded-full text-sm text-primary-700">
-              💕 Loved by children
+              Loved by children
             </span>
           </div>
-          
+
           <!-- Testimonial -->
           <div class="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-primary-100">
             <p class="text-base-600 italic text-sm mb-1">
@@ -122,8 +73,8 @@ import BottomNav from '../components/BottomNav.astro'
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+  <!-- About Summary -->
+  <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="md:order-2">
@@ -135,262 +86,113 @@ import BottomNav from '../components/BottomNav.astro'
           />
         </div>
         <div class="md:order-1">
-          <p class="text-primary-600 font-medium mb-2">🎹 About</p>
+          <p class="text-primary-600 font-medium mb-2">About</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
             Meet Patricia
           </h2>
           <p class="text-base-600 mb-4">
-            Patricia is a Singapore-based piano teacher with over 10 years of experience teaching young children from age four and up. She believes that every child learns differently and grows at their own pace, and her teaching approach is gentle, patient, and encouraging.
-          </p>
-          <p class="text-base-600 mb-4">
-            With a Bachelor's degree in Early Childhood Education with Music Education, Patricia thoughtfully designs lessons that feel safe, enjoyable, and meaningful for young learners. Through fun and creative activities, children are guided to build confidence, develop musical understanding, and gradually cultivate their musical potential.
+            Patricia is a Singapore-based piano teacher with over 10 years of experience teaching young children from age four and up. Her teaching approach is gentle, patient, and encouraging.
           </p>
           <p class="text-base-600 mb-6">
-            She offers ABRSM syllabus preparation where appropriate, and lessons take place in a calm, home-based studio in Singapore where children feel comfortable, supported, and free to grow.
+            With a Bachelor's degree in Early Childhood Education with Music Education, Patricia designs lessons that feel safe, enjoyable, and meaningful for young learners.
           </p>
-          
-          <!-- Credentials - wrap naturally -->
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium">
-              🎓 B.Ed Early Childhood & Music
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-2 bg-white text-primary-700 rounded-full text-sm font-medium">
+              B.Ed Early Childhood & Music
             </span>
-            <span class="px-3 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium">
-              🎹 10+ Years Teaching
+            <span class="px-3 py-2 bg-white text-primary-700 rounded-full text-sm font-medium">
+              10+ Years Teaching
             </span>
           </div>
+
+          <a href="/about/" class="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1">
+            Learn more about Patricia
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy Section -->
-  <section id="philosophy" class="py-12 md:py-24 px-6 md:px-12 bg-white">
+  <!-- Lessons Summary -->
+  <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-8">
-        <p class="text-primary-600 font-medium mb-2">🎹 Teaching Philosophy</p>
+        <p class="text-primary-600 font-medium mb-2">Teaching Philosophy</p>
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
           Your Musical Journey
         </h2>
       </div>
-      
-      <!-- Cards - 2x2 grid on mobile, 4 cols on desktop -->
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <div class="bg-primary-50 rounded-xl p-4 md:p-6 border border-primary-100">
           <span class="text-2xl md:text-3xl mb-2 block">🎵</span>
           <h3 class="text-sm md:text-base font-semibold text-base-900 mb-1">Foundation</h3>
           <p class="text-base-600 text-xs md:text-sm">Understanding key musical elements. Developing solid piano technique.</p>
         </div>
-        
         <div class="bg-primary-50 rounded-xl p-4 md:p-6 border border-primary-100">
           <span class="text-2xl md:text-3xl mb-2 block">📖</span>
           <h3 class="text-sm md:text-base font-semibold text-base-900 mb-1">Development</h3>
           <p class="text-base-600 text-xs md:text-sm">Sight-reading. Aural training. Music theory. Practical piano playing.</p>
         </div>
-        
         <div class="bg-primary-50 rounded-xl p-4 md:p-6 border border-primary-100">
           <span class="text-2xl md:text-3xl mb-2 block">🎼</span>
           <h3 class="text-sm md:text-base font-semibold text-base-900 mb-1">Mastery</h3>
-          <p class="text-base-600 text-xs md:text-sm">Curated repertoire to challenge and inspire. Developing musical expression. Performing confidently.</p>
+          <p class="text-base-600 text-xs md:text-sm">Curated repertoire to challenge and inspire. Developing musical expression.</p>
         </div>
-        
         <div class="bg-primary-50 rounded-xl p-4 md:p-6 border border-primary-100">
           <span class="text-2xl md:text-3xl mb-2 block">🏆</span>
           <h3 class="text-sm md:text-base font-semibold text-base-900 mb-1">Achievement</h3>
-          <p class="text-base-600 text-xs md:text-sm">ABRSM examinations (where appropriate). Studio recitals and performance opportunities.</p>
+          <p class="text-base-600 text-xs md:text-sm">ABRSM examinations. Studio recitals and performance opportunities.</p>
         </div>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="/lessons/" class="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1">
+          Learn more about our lessons
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+  <!-- Testimonials Summary -->
+  <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-8">
-        <p class="text-primary-600 font-medium mb-2">💕 Parent Testimonials</p>
+        <p class="text-primary-600 font-medium mb-2">Parent Testimonials</p>
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
           What Parents Say
         </h2>
       </div>
-      
-      <div class="relative">
-        <!-- Testimonial Cards -->
-        <div id="testimonial-slideshow" class="relative overflow-hidden">
-          <div class="testimonial-slide opacity-100 transition-opacity duration-500">
-            <div class="bg-white rounded-2xl p-6 md:p-8 text-center">
-              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
-              <p class="text-base-700 text-lg md:text-xl italic mb-6">
-                "Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months."
-              </p>
-              <div class="flex items-center justify-center gap-3">
-                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">SL</div>
-                <div class="text-left">
-                  <p class="font-medium text-base-900">Sarah L.</p>
-                  <p class="text-sm text-base-500">Mother of Emily, Age 7</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-slide opacity-0 absolute inset-0 transition-opacity duration-500">
-            <div class="bg-white rounded-2xl p-6 md:p-8 text-center">
-              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
-              <p class="text-base-700 text-lg md:text-xl italic mb-6">
-                "We tried other teachers before, but Pat's nurturing approach finally got my son excited about piano. He now practices without being asked!"
-              </p>
-              <div class="flex items-center justify-center gap-3">
-                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">MT</div>
-                <div class="text-left">
-                  <p class="font-medium text-base-900">Michelle T.</p>
-                  <p class="text-sm text-base-500">Mother of Ryan, Age 9</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-slide opacity-0 absolute inset-0 transition-opacity duration-500">
-            <div class="bg-white rounded-2xl p-6 md:p-8 text-center">
-              <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
-              <p class="text-base-700 text-lg md:text-xl italic mb-6">
-                "Pat prepared my daughter for her ABRSM Grade 3 exam and she passed with distinction! Highly recommend for anyone looking for quality piano lessons."
-              </p>
-              <div class="flex items-center justify-center gap-3">
-                <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">JC</div>
-                <div class="text-left">
-                  <p class="font-medium text-base-900">Jennifer C.</p>
-                  <p class="text-sm text-base-500">Mother of Sophie, Age 11</p>
-                </div>
-              </div>
-            </div>
+
+      <!-- Single featured testimonial -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 text-center max-w-2xl mx-auto">
+        <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+        <p class="text-base-700 text-lg md:text-xl italic mb-6">
+          "Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months."
+        </p>
+        <div class="flex items-center justify-center gap-3">
+          <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-700 font-semibold">SL</div>
+          <div class="text-left">
+            <p class="font-medium text-base-900">Sarah L.</p>
+            <p class="text-sm text-base-500">Mother of Emily, Age 7</p>
           </div>
         </div>
-        
-        <!-- Navigation Arrows -->
-        <button 
-          id="testimonial-prev"
-          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-white rounded-full p-2 shadow-lg hover:bg-primary-50 transition-colors z-10"
-          aria-label="Previous testimonial"
-        >
-          <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button 
-          id="testimonial-next"
-          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-white rounded-full p-2 shadow-lg hover:bg-primary-50 transition-colors z-10"
-          aria-label="Next testimonial"
-        >
-          <svg class="w-5 h-5 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
       </div>
-      
-      <!-- Dots -->
-      <div id="testimonial-dots" class="flex justify-center gap-2 mt-6">
-        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-600" data-slide="0"></button>
-        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-200" data-slide="1"></button>
-        <button class="testimonial-dot w-2 h-2 rounded-full bg-primary-200" data-slide="2"></button>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-12 md:py-24 px-6 md:px-12 pb-28 md:pb-24 bg-white">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-primary-600 font-medium mb-2">🌸 Get Started</p>
-      <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-        Book a Consultation
-      </h2>
-      <p class="text-base-600 mb-6">
-        Schedule a chat with Pat to discuss your child's musical journey!
-      </p>
-      
-      <div class="bg-white rounded-2xl p-6 border border-base-200">
-        <form id="consultation-form" class="space-y-4">
-          <div>
-            <label for="name" class="block text-sm font-medium text-base-700 mb-1 text-left">Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name"
-              required
-              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none"
-              placeholder="Your name"
-            />
-          </div>
-          
-          <div>
-            <label for="phone" class="block text-sm font-medium text-base-700 mb-1 text-left">Phone</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone"
-              required
-              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none"
-              placeholder="+65 9123 4567"
-            />
-          </div>
-          
-          <!-- Calendar -->
-          <div>
-            <label class="block text-sm font-medium text-base-700 mb-1 text-left">Select Consultation Date</label>
-            <div id="calendar" class="bg-primary-50 rounded-xl p-3">
-              <div class="flex items-center justify-between mb-3">
-                <button type="button" id="prev-month" class="p-2 hover:bg-primary-100 rounded-lg">
-                  <svg class="w-4 h-4 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <span id="calendar-month" class="font-medium text-base-800 text-sm"></span>
-                <button type="button" id="next-month" class="p-2 hover:bg-primary-100 rounded-lg">
-                  <svg class="w-4 h-4 text-base-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-              <div class="grid grid-cols-7 gap-1 mb-2">
-                <div class="text-center text-xs font-medium text-base-500 py-1">S</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">M</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">T</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">W</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">T</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">F</div>
-                <div class="text-center text-xs font-medium text-base-500 py-1">S</div>
-              </div>
-              <div id="calendar-days" class="grid grid-cols-7 gap-1"></div>
-              <div id="selected-date-display" class="mt-3 text-sm text-primary-700 font-medium hidden">
-                Selected: <span id="selected-date-text"></span>
-              </div>
-            </div>
-            <input type="hidden" id="consultation-date" name="consultation-date" />
-          </div>
-          
-          <div>
-            <label for="message" class="block text-sm font-medium text-base-700 mb-1 text-left">Message (Optional)</label>
-            <textarea 
-              id="message" 
-              name="message"
-              rows="2"
-              class="w-full px-4 py-3 rounded-xl border border-base-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none resize-none"
-              placeholder="Tell us about your child..."
-            ></textarea>
-          </div>
-          
-          <button 
-            type="submit"
-            class="w-full py-4 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition-colors"
-          >
-            Book Consultation 💕
-          </button>
-        </form>
-        
-        <p class="text-base-500 text-xs mt-4">Or WhatsApp us directly at +65 8389 8853</p>
+      <div class="text-center mt-6">
+        <a href="/testimonials/" class="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1">
+          Read all testimonials
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Referral Section -->
-  <section id="referral" class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+  <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
     <div class="max-w-4xl mx-auto text-center">
       <span class="text-4xl mb-3 block">🎁</span>
       <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
@@ -399,18 +201,18 @@ import BottomNav from '../components/BottomNav.astro'
       <p class="text-base-600 mb-6">
         Share the joy of learning music with Patricia if you like her lessons.
       </p>
-      
+
       <div class="flex flex-col sm:flex-row justify-center gap-3">
-        <a 
-          href="https://wa.me/?text=Check%20out%20Music%20with%20Pat%20for%20piano%20lessons!%20https://musicwithpat.com/"
+        <a
+          href="https://wa.me/?text=Check%20out%20Music%20with%20Pat%20for%20piano%20lessons!%20https://www.musicwithpat.com/"
           target="_blank"
           class="px-6 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 flex items-center justify-center gap-2 font-medium"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Share on WhatsApp
         </a>
-        <button 
-          onclick="navigator.clipboard.writeText('https://musicwithpat.com/'); this.textContent='Copied!'; setTimeout(() => this.innerHTML='<svg class=\'w-5 h-5\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\' /></svg> Copy Link', 2000)"
+        <button
+          id="copy-link-btn"
           class="px-6 py-3 bg-base-800 text-white rounded-xl hover:bg-base-900 flex items-center justify-center gap-2 font-medium"
         >
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
@@ -420,145 +222,29 @@ import BottomNav from '../components/BottomNav.astro'
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="py-12 md:py-24 px-6 md:px-12 bg-white">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-8">
-        <p class="text-primary-600 font-medium mb-2">FAQ</p>
-        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-2">
-          Common Questions
-        </h2>
-      </div>
-      
-      <div class="space-y-3">
-        <details class="group bg-primary-50 rounded-xl">
-          <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-            <span class="font-medium text-base-900 text-sm md:text-base pr-4">What ages do you teach?</span>
-            <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
-          </summary>
-          <div class="px-4 pb-4 text-base-600 text-sm">
-            I specialise in teaching students aged 4 and up, when musical foundation is most naturally absorbed.
-          </div>
-        </details>
-        
-        <details class="group bg-primary-50 rounded-xl">
-          <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-            <span class="font-medium text-base-900 text-sm md:text-base pr-4">How long are your lessons?</span>
-            <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
-          </summary>
-          <div class="px-4 pb-4 text-base-600 text-sm">
-            Lessons are usually 45 mins or 60 mins as both theory and practical will be covered.
-          </div>
-        </details>
-        
-        <details class="group bg-primary-50 rounded-xl">
-          <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-            <span class="font-medium text-base-900 text-sm md:text-base pr-4">Complete beginners welcome?</span>
-            <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
-          </summary>
-          <div class="px-4 pb-4 text-base-600 text-sm">
-            Absolutely! We will learn music through fun activities before notation. Students will fall in love with music first.
-          </div>
-        </details>
-        
-        <details class="group bg-primary-50 rounded-xl">
-          <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-            <span class="font-medium text-base-900 text-sm md:text-base pr-4">Where are lessons conducted?</span>
-            <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
-          </summary>
-          <div class="px-4 pb-4 text-base-600 text-sm">
-            You may attend lessons at my home studio located in the west of Singapore, or I could come to your place should it be equipped with a piano.
-          </div>
-        </details>
-        
-        <details class="group bg-primary-50 rounded-xl">
-          <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-            <span class="font-medium text-base-900 text-sm md:text-base pr-4">Is it necessary to own a piano?</span>
-            <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
-          </summary>
-          <div class="px-4 pb-4 text-base-600 text-sm">
-            Yes, it is highly recommended to have one as practising is required for steady progress.
-          </div>
-        </details>
-      </div>
+  <!-- CTA -->
+  <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+        Ready to Get Started?
+      </h2>
+      <p class="text-base-600 mb-6">Book a free consultation to discuss your child's musical journey.</p>
+      <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+        Book a Consultation
+      </a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-6 px-6 border-t border-base-200 pb-24 md:pb-6 bg-white">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <img 
-          src="/music-with-pat-logo.png" 
-          alt="Music with Pat - Piano Lessons Singapore"
-          class="h-8 w-auto"
-        />
-        <span class="text-base-500 text-sm">© 2026</span>
-      </div>
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#about" class="text-base-500 hover:text-primary-600 text-sm">About</a>
-        <a href="#philosophy" class="text-base-500 hover:text-primary-600 text-sm">Philosophy</a>
-        <a href="#referral" class="text-base-500 hover:text-primary-600 text-sm">Refer</a>
-        <a href="#faq" class="text-base-500 hover:text-primary-600 text-sm">FAQ</a>
-        <a href="#contact" class="text-base-500 hover:text-primary-600 text-sm">Book</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mobile Bottom Navigation -->
+  <Footer />
   <BottomNav />
-
-  <!-- Floating WhatsApp Button -->
-  <a 
-    href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20piano%20lessons."
-    target="_blank"
-    class="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-[100] bg-green-500 hover:bg-green-600 text-white p-3 md:p-4 rounded-full shadow-lg flex items-center"
-    aria-label="Chat on WhatsApp"
-  >
-    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <WhatsAppButton />
 
   <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    
-    function toggleMobileMenu() {
-      mobileMenu?.classList.toggle('hidden');
-      menuIcon?.classList.toggle('hidden');
-      closeIcon?.classList.toggle('hidden');
-    }
-    
-    mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
-    
-    // Close menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-        menuIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-      });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileMenuBtn?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
-        mobileMenu?.classList.add('hidden');
-        menuIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-      }
-    });
-
     // Hero Slideshow
     const slides = document.querySelectorAll('#slideshow .slide');
     const dots = document.querySelectorAll('#slideshow-dots .dot');
     let currentSlide = 0;
-    
+
     function showSlide(index: number) {
       slides.forEach((slide, i) => {
         (slide as HTMLElement).style.opacity = i === index ? '1' : '0';
@@ -568,223 +254,29 @@ import BottomNav from '../components/BottomNav.astro'
         dot.classList.toggle('bg-primary-200', i !== index);
       });
     }
-    
+
     if (slides.length > 1) {
       setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
       }, 4000);
     }
-    
+
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         currentSlide = i;
         showSlide(currentSlide);
       });
     });
-    
-    // Testimonials Slideshow
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const testimonialDots = document.querySelectorAll('.testimonial-dot');
-    const testimonialPrev = document.getElementById('testimonial-prev');
-    const testimonialNext = document.getElementById('testimonial-next');
-    let currentTestimonial = 0;
-    
-    function showTestimonial(index: number) {
-      testimonialSlides.forEach((slide, i) => {
-        (slide as HTMLElement).style.opacity = i === index ? '1' : '0';
-        (slide as HTMLElement).style.position = i === index ? 'relative' : 'absolute';
-      });
-      testimonialDots.forEach((dot, i) => {
-        dot.classList.toggle('bg-primary-600', i === index);
-        dot.classList.toggle('bg-primary-200', i !== index);
-      });
-    }
-    
-    testimonialPrev?.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
-      showTestimonial(currentTestimonial);
-    });
-    
-    testimonialNext?.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
-      showTestimonial(currentTestimonial);
-    });
-    
-    testimonialDots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentTestimonial = i;
-        showTestimonial(currentTestimonial);
-      });
-    });
-    
-    // Auto-advance testimonials every 6 seconds
-    if (testimonialSlides.length > 1) {
-      setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
-        showTestimonial(currentTestimonial);
-      }, 6000);
-    }
-    
-    // Calendar
-    let calendarDate = new Date();
-    let selectedDate: Date | null = null;
-    
-    const calendarDays = document.getElementById('calendar-days');
-    const calendarMonth = document.getElementById('calendar-month');
-    const prevMonthBtn = document.getElementById('prev-month');
-    const nextMonthBtn = document.getElementById('next-month');
-    const consultationDateInput = document.getElementById('consultation-date') as HTMLInputElement;
-    const selectedDateDisplay = document.getElementById('selected-date-display');
-    const selectedDateText = document.getElementById('selected-date-text');
-    
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
-                        'July', 'August', 'September', 'October', 'November', 'December'];
-    
-    function renderCalendar() {
-      if (!calendarDays || !calendarMonth) return;
-      
-      const year = calendarDate.getFullYear();
-      const month = calendarDate.getMonth();
-      
-      calendarMonth.textContent = `${monthNames[month]} ${year}`;
-      
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      
-      let html = '';
-      
-      for (let i = 0; i < firstDay; i++) {
-        html += '<div></div>';
-      }
-      
-      for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, month, day);
-        const isPast = date < today;
-        const isSelected = selectedDate && date.getTime() === selectedDate.getTime();
-        const isToday = date.getTime() === today.getTime();
-        
-        let classes = 'py-2 text-center text-sm rounded-lg transition-colors cursor-pointer ';
-        
-        if (isPast) {
-          classes += 'text-base-300 cursor-not-allowed';
-        } else if (isSelected) {
-          classes += 'bg-primary-600 text-white font-medium';
-        } else if (isToday) {
-          classes += 'bg-primary-100 text-primary-700 hover:bg-primary-200';
-        } else {
-          classes += 'text-base-700 hover:bg-primary-100';
-        }
-        
-        html += `<button type="button" class="${classes}" data-date="${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}" ${isPast ? 'disabled' : ''}>${day}</button>`;
-      }
-      
-      calendarDays.innerHTML = html;
-      
-      calendarDays.querySelectorAll('button:not([disabled])').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const dateStr = btn.getAttribute('data-date');
-          if (dateStr) {
-            selectedDate = new Date(dateStr + 'T00:00:00');
-            consultationDateInput.value = dateStr;
-            if (selectedDateDisplay && selectedDateText) {
-              selectedDateDisplay.classList.remove('hidden');
-              selectedDateText.textContent = selectedDate.toLocaleDateString('en-US', { 
-                weekday: 'short', 
-                month: 'short', 
-                day: 'numeric' 
-              });
-            }
-            renderCalendar();
-          }
-        });
-      });
-    }
-    
-    prevMonthBtn?.addEventListener('click', () => {
-      calendarDate.setMonth(calendarDate.getMonth() - 1);
-      renderCalendar();
-    });
-    
-    nextMonthBtn?.addEventListener('click', () => {
-      calendarDate.setMonth(calendarDate.getMonth() + 1);
-      renderCalendar();
-    });
-    
-    renderCalendar();
-    
-    // Form submission to Google Sheet
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzWQ-DMTjc9O6JiewLz8r7zfxGVDnyNJC2PoG7yH7qme2h11zk_Z9rhT_w3LMtItmUpSg/exec';
-    
-    const consultationForm = document.getElementById('consultation-form');
-    const submitBtn = consultationForm?.querySelector('button[type="submit"]') as HTMLButtonElement;
-    
-    consultationForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const name = (document.getElementById('name') as HTMLInputElement).value;
-      const phone = (document.getElementById('phone') as HTMLInputElement).value;
-      const date = (document.getElementById('consultation-date') as HTMLInputElement).value;
-      const message = (document.getElementById('message') as HTMLTextAreaElement).value;
-      
-      // Format the date nicely for display
-      let dateText = 'Not selected';
-      if (date) {
-        const dateObj = new Date(date + 'T00:00:00');
-        dateText = dateObj.toLocaleDateString('en-US', { 
-          weekday: 'long', 
-          month: 'long', 
-          day: 'numeric',
-          year: 'numeric'
-        });
-      }
-      
-      // Show loading state
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Sending... 💕';
-      submitBtn.disabled = true;
-      
-      try {
-        // Submit to Google Apps Script
-        await fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            phone,
-            consultationDate: dateText,
-            message
-          })
-        });
-        
-        // Show success message
-        consultationForm.innerHTML = `
-          <div class="text-center py-8">
-            <span class="text-5xl mb-4 block">🎉</span>
-            <h3 class="text-xl font-semibold text-base-900 mb-2">Thank You!</h3>
-            <p class="text-base-600 mb-4">Your consultation request has been received. Pat will reach out to you soon!</p>
-            <p class="text-base-500 text-sm">You can also WhatsApp us at +65 8389 8853</p>
-          </div>
-        `;
-        
-      } catch (error) {
-        // On error, fall back to WhatsApp
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-        
-        let waMessage = `Hi Pat! 🎹\n\nI'd like to book a consultation.\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n📅 Preferred Date: ${dateText}`;
-        if (message) {
-          waMessage += `\n\n💬 Message: ${message}`;
-        }
-        
-        const waUrl = `https://wa.me/6583898853?text=${encodeURIComponent(waMessage)}`;
-        window.open(waUrl, '_blank');
-      }
+
+    // Copy link button
+    const copyLinkBtn = document.getElementById('copy-link-btn');
+    copyLinkBtn?.addEventListener('click', () => {
+      navigator.clipboard.writeText('https://www.musicwithpat.com/');
+      copyLinkBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyLinkBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg> Copy Link';
+      }, 2000);
     });
   </script>
 </BaseLayout>

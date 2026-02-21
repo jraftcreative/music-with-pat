@@ -1,0 +1,98 @@
+---
+interface Props {
+  currentPage?: string
+}
+
+const { currentPage = '/' } = Astro.props
+
+const navLinks = [
+  { href: '/about/', label: 'About' },
+  { href: '/lessons/', label: 'Lessons' },
+  { href: '/testimonials/', label: 'Testimonials' },
+  { href: '/faq/', label: 'FAQ' },
+]
+---
+
+<header class="py-4 md:py-6 px-6 md:px-12 relative sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-base-100">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img
+        src="/music-with-pat-logo.png"
+        alt="Music with Pat - Piano Lessons Singapore"
+        class="h-10 md:h-12 w-auto"
+      />
+      <span class="text-base sm:text-lg md:text-xl font-semibold text-base-800">Music With Pat</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`transition-colors ${currentPage === link.href ? 'text-primary-600 font-medium' : 'text-base-600 hover:text-primary-600'}`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact/" class={`px-5 py-2.5 rounded-full transition-colors ${currentPage === '/contact/' ? 'bg-primary-700 text-white' : 'bg-primary-600 text-white hover:bg-primary-700'}`}>
+        Book a Consultation
+      </a>
+    </nav>
+
+    <!-- Mobile: Hamburger menu -->
+    <div class="md:hidden">
+      <button
+        id="mobile-menu-btn"
+        class="p-2 text-base-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+        aria-label="Open menu"
+      >
+        <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-t border-base-200 shadow-lg z-50">
+    <nav class="flex flex-col p-4 gap-2">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`mobile-nav-link px-4 py-3 rounded-xl transition-colors ${currentPage === link.href ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact/" class="mobile-nav-link px-4 py-3 bg-primary-600 text-white text-center rounded-xl hover:bg-primary-700 transition-colors font-medium">
+        Book a Consultation
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  function toggleMobileMenu() {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuBtn?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+</script>

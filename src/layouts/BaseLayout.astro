@@ -6,12 +6,13 @@ interface Props {
   description?: string
 }
 
-const { 
-  title = 'Music with Pat | Piano Lessons for Children in Singapore', 
+const {
+  title = 'Music with Pat | Piano Lessons for Children in Singapore',
   description = 'Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with 10+ years experience. ABRSM preparation available. Book a consultation today!'
 } = Astro.props
 
 const siteUrl = 'https://www.musicwithpat.com'
+const canonicalUrl = siteUrl + Astro.url.pathname
 const ogImage = `${siteUrl}/og-image.jpg`
 ---
 
@@ -21,40 +22,37 @@ const ogImage = `${siteUrl}/og-image.jpg`
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    
+
     <!-- Canonical URL -->
-    <link rel="canonical" href={siteUrl + '/'} />
-    
-    <!-- Keywords -->
-    <meta name="keywords" content="piano lessons singapore, piano teacher singapore, kids piano lessons, children piano lessons singapore, ABRSM piano singapore, home piano lessons singapore, piano lessons for kids" />
-    
+    <link rel="canonical" href={canonicalUrl} />
+
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="SG" />
     <meta name="geo.placename" content="Singapore" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="htmgFONZej3y36vUZivIC5NEXnQWBq-E8Qq0FSvo9Ws" />
-    <link rel="alternate" hreflang="en-sg" href={siteUrl + '/'} />
-    <link rel="alternate" hreflang="x-default" href={siteUrl + '/'} />
-    
+    <link rel="alternate" hreflang="en-sg" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl + '/'} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Music with Pat - Piano Lessons for Children in Singapore" />
     <meta property="og:locale" content="en_SG" />
     <meta property="og:site_name" content="Music with Pat" />
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="Music with Pat - Piano Lessons for Children in Singapore" />
-    
+
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRM5H8W923"></script>
     <script>
@@ -68,18 +66,18 @@ const ogImage = `${siteUrl}/og-image.jpg`
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    
+
     <title>{title}</title>
-    
+
     <!-- LocalBusiness Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "EducationalOrganization"],
       "@id": "https://www.musicwithpat.com/#business",
       "name": "Music with Pat",
       "description": "Nurturing piano lessons for children ages 4+ in Singapore. Home-based piano instruction with over 10 years of teaching experience.",
@@ -88,12 +86,14 @@ const ogImage = `${siteUrl}/og-image.jpg`
       "telephone": "+65 8389 8853",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Singapore",
+        "addressLocality": "Tengah",
+        "addressRegion": "Singapore",
         "addressCountry": "SG"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "addressCountry": "SG"
+        "latitude": 1.3644,
+        "longitude": 103.7420
       },
       "priceRange": "$$",
       "openingHoursSpecification": {
@@ -104,7 +104,7 @@ const ogImage = `${siteUrl}/og-image.jpg`
       }
     }
     </script>
-    
+
     <!-- Service Structured Data -->
     <script type="application/ld+json">
     {
@@ -126,56 +126,8 @@ const ogImage = `${siteUrl}/og-image.jpg`
       "description": "Piano lessons for children ages 4 and up. ABRSM syllabus preparation available. Home-based studio environment."
     }
     </script>
-    
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What ages do you teach?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "I specialise in teaching students aged 4 and up, when musical foundation is most naturally absorbed."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long are your lessons?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Lessons are usually 45 mins or 60 mins as both theory and practical will be covered."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are complete beginners welcome?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely! We will learn music through fun activities before notation. Students will fall in love with music first."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where are lessons conducted?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You may attend lessons at my home studio located in the west of Singapore, or I could come to your place should it be equipped with a piano."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is it necessary to own a piano?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, it is highly recommended to have one as practising is required for steady progress."
-          }
-        }
-      ]
-    }
-    </script>
+
+    <slot name="head" />
   </head>
   <body class="bg-warm-50 text-base-800 min-h-screen antialiased">
     <slot />
