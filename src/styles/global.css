@@ -57,3 +57,41 @@ body {
   background-color: var(--color-primary-200);
   color: var(--color-primary-900);
 }
+
+/* Timeline connector for teaching philosophy */
+.timeline-step {
+  position: relative;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  right: -1.5rem;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-primary-300), var(--color-primary-100));
+}
+
+@media (max-width: 767px) {
+  .timeline-step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* Decorative quote mark */
+.quote-mark {
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-mark::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-primary-200);
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+}
