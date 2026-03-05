@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import BottomNav from '../../components/BottomNav.astro'
+import WhatsAppButton from '../../components/WhatsAppButton.astro'
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<BaseLayout
+  title="Blog - Piano Lessons Tips & Guides | Music with Pat"
+  description="Helpful articles for parents about piano lessons in Singapore. Tips on getting started, ABRSM exams, lesson costs, and choosing the right time to begin."
+>
+  <Header currentPage="/blog/" />
+  <Breadcrumbs items={[{ label: 'Blog' }]} />
+
+  <main>
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-primary-600 font-medium mb-2">Blog</p>
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-3">
+            Piano Lessons Tips and Guides
+          </h1>
+          <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+            Practical advice for parents navigating piano lessons in Singapore.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {posts.map(post => (
+            <a
+              href={`/blog/${post.id}/`}
+              class="group bg-white rounded-xl border border-primary-100 p-6 hover:border-primary-300 hover:shadow-md transition-all"
+            >
+              <time
+                datetime={post.data.pubDate.toISOString()}
+                class="text-primary-500 text-sm font-medium"
+              >
+                {post.data.pubDate.toLocaleDateString('en-SG', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              <h2 class="text-lg md:text-xl font-serif font-semibold text-base-900 mt-2 mb-2 group-hover:text-primary-700 transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="text-base-600 text-sm leading-relaxed">
+                {post.data.description}
+              </p>
+              <span class="inline-block mt-4 text-primary-600 text-sm font-medium group-hover:text-primary-700">
+                Read more &rarr;
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
