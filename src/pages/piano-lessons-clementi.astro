@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How do I get from Clementi to Patricia's studio in Tengah?",
+    answer: "The most direct route is via the AYE (Ayer Rajah Expressway), which takes roughly 15 minutes by car depending on traffic. You can also take the East-West Line from Clementi MRT towards Jurong East, then transfer to a bus heading towards the Tengah area. Many Clementi parents find the drive straightforward and use the time after school for a relaxed trip to the studio."
+  },
+  {
+    question: "Does Patricia offer house visits to Clementi?",
+    answer: "Patricia teaches from her dedicated home studio in Tengah, which provides a quiet, distraction-free setting with a quality instrument. House visits to Clementi may be possible depending on her schedule — please message her on WhatsApp to discuss your family's needs."
+  },
+  {
+    question: "What age can my child start piano lessons?",
+    answer: "Patricia accepts students from age 4 onwards. Her Bachelor's degree in Early Childhood Education with Music gives her specialised training in working with very young learners, so she knows how to keep lessons engaging and developmentally appropriate for children who are just starting out."
+  },
+  {
+    question: "Are ABRSM exams compulsory?",
+    answer: "No — ABRSM exams are completely optional. Some Clementi families like the structured milestones that graded exams provide, while others prefer their child to learn freely without exam pressure. Patricia is happy to support either approach, and she will only recommend entering an exam when your child is genuinely confident and prepared."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Piano Lessons for Children in Clementi | Music with Pat"
+  description="Piano lessons for children near Clementi, Singapore. Patricia's Tengah studio is a short drive via the AYE from Clementi. ABRSM preparation, child-centred teaching for ages 4+."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Lessons",
+      "name": "Piano Lessons for Children in Clementi",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Clementi, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Nurturing piano lessons for children in Clementi, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Clementi' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Clementi</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Piano Lessons for Children in Clementi
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Clementi has long been one of Singapore's most education-focused neighbourhoods — a mature estate where families value learning and enrichment. Patricia's piano studio in Tengah is a short drive along the AYE, giving Clementi children access to thoughtful, one-to-one music education in a calm and welcoming space.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Families from Clementi Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Clementi Parents Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Clementi Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Teaching That Matches Your Child</h3>
+                <p class="text-base-600 text-sm">Clementi families are used to high-quality education, and Patricia delivers exactly that — lessons carefully shaped around each child's temperament, learning style, and musical interests. She pays close attention to what motivates your child and adjusts her approach accordingly.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood and Music Expertise</h3>
+                <p class="text-base-600 text-sm">With a Bachelor of Education in Early Childhood with Music, Patricia brings a rare combination of skills. She understands child development at a deeper level than most piano teachers — knowing when to challenge a child, when to slow down, and how to keep very young learners focused and happy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured ABRSM Pathway</h3>
+                <p class="text-base-600 text-sm">Many Clementi parents appreciate having clear goals for their children's progress. Patricia prepares students thoroughly for ABRSM graded exams — practical pieces, scales, sight-reading, and aural — but she never enters a child before they are genuinely ready and confident.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Quiet Studio, Not a Busy Centre</h3>
+                <p class="text-base-600 text-sm">Unlike music schools where children shuffle between group rooms, Patricia's Tengah home studio is a private, peaceful space built for one-to-one lessons. Your child gets her full attention for the entire session, with no background noise or waiting around.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Clementi -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Clementi
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Patricia's studio in Tengah Garden Town is well connected from Clementi via the Ayer Rajah Expressway. Whether you live near Clementi Central, the blocks around Sunset Way, or the private estates off West Coast Road, the drive is typically around 15 minutes — a comfortable journey that many families fit in right after school at Clementi Primary, Nan Hua Primary, or Pei Tong Primary.
+            </p>
+            <p class="text-base-600 mb-4">
+              For parents who prefer public transport, Clementi MRT on the East-West Line connects to Jurong East, where buses run towards the Tengah area. Bus services along Commonwealth Avenue West and Clementi Avenue also provide routes heading west.
+            </p>
+            <p class="text-base-600">
+              The trip from Clementi is shorter than heading into the city for lessons, and your child arrives at a dedicated studio rather than a crowded music school — a worthwhile trade-off that many families in the area have come to appreciate.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Car (AYE)</span>
+                  <p class="text-base-600 text-sm">Approximately 15 minutes via the Ayer Rajah Expressway heading west. Exit towards Jurong and follow signs to Tengah.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Bus</span>
+                  <p class="text-base-600 text-sm">Several bus services from Clementi Avenue and Commonwealth Avenue West head towards Jurong West and the Tengah area.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By MRT</span>
+                  <p class="text-base-600 text-sm">Clementi MRT (East-West Line) to Jurong East, then a short bus ride or taxi to the Tengah studio. The upcoming Jurong Region Line will make this even easier.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
+            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
+            <p class="text-base-600 text-sm">Finger exercises, scales, and posture work to get hands ready and settle the mind before diving into repertoire.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
+            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
+            <p class="text-base-600 text-sm">Focused time on current pieces — working through difficult passages, building musical expression, and polishing sections for performance.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
+            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
+            <p class="text-base-600 text-sm">Bite-sized music theory, sight-reading practice, and ear training activities woven naturally into the flow of the lesson.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
+            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
+            <p class="text-base-600 text-sm">A brief recap of the session with clear practice targets for the week, so your child knows exactly what to work on at home.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-base-600 mb-4">Younger children enjoy shorter, more varied activities with plenty of movement and play. Older students spend more time on structured repertoire and exam preparation. Every lesson is adapted to your child's age and stage.</p>
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Piano Teacher for Children near Clementi"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has taught piano to young children in Singapore for over a decade, and her approach reflects something that Clementi parents tend to value — substance over flash. She holds a Bachelor of Education in Early Childhood with Music, which means her teaching draws on formal training in child development alongside her musical skills.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her studio in Tengah is a short drive from Clementi, and she already works with several families from the western neighbourhoods. Lessons are unhurried and patient — Patricia takes the time to understand how each child learns, rather than applying a one-size-fits-all method. She communicates regularly with parents so you always know how your child is progressing.
+            </p>
+            <p class="text-base-600 mb-6">
+              Whether your child is touching the keys for the first time or preparing for their next ABRSM grade, Patricia provides a space where they feel safe to try, make mistakes, and grow as a musician at their own pace.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Piano Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's interests, goals, and whether her teaching approach is the right fit for your family.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Clementi%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
