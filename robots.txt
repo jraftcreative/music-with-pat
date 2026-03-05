@@ -1,0 +1,5 @@
+# Music with Pat - Piano Lessons Singapore
+User-agent: *
+Allow: /
+
+Sitemap: https://www.musicwithpat.com/sitemap-index.xml
