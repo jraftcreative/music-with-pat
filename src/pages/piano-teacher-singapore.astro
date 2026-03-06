@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What qualifications should I look for in a piano teacher for my child?",
+    answer: "Look for a teacher who has both musical training and an understanding of child development. A degree in music education is valuable, but even more important is experience working specifically with young children. Ask about their teaching approach, how they handle children who lose motivation, and whether they adapt lessons to each child's pace and personality."
+  },
+  {
+    question: "What's the difference between a pianist and a piano teacher?",
+    answer: "A skilled pianist knows how to play well. A skilled piano teacher knows how to help someone else learn to play well — and those are very different abilities. Teaching young children requires patience, clear communication at a child's level, knowledge of developmental stages, and the ability to make learning feel safe and enjoyable. Many excellent performers struggle with this because performing and teaching draw on different skills."
+  },
+  {
+    question: "At what age should my child start piano lessons?",
+    answer: "Most children are ready for structured piano lessons from around age 4, provided they can sit for 15–20 minutes, follow simple instructions, and show some interest in music. A good teacher will assess your child's readiness during an initial consultation rather than applying a one-size-fits-all age rule."
+  },
+  {
+    question: "How do I know if a piano teacher is right for my child?",
+    answer: "The best indicator is how your child feels after the first few lessons. A good teacher-student fit means your child feels comfortable, looks forward to lessons, and is making steady progress. Pay attention to whether the teacher communicates openly with you about your child's development and adjusts their approach when something isn't working."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Piano Teacher in Singapore for Children | Music with Pat"
+  description="Choosing the right piano teacher in Singapore matters more than choosing a syllabus. Patricia combines a B.Ed in Early Childhood Education with Music and 10+ years of experience teaching children ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Teaching",
+      "name": "Piano Teacher in Singapore for Children",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Qualified piano teacher for children in Singapore. B.Ed in Early Childhood Education with Music, 10+ years experience, child-centred approach, ABRSM preparation."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Piano Teacher Singapore' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Choosing the Right Teacher</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Find the Right Piano Teacher in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The person sitting beside your child at the piano shapes far more than their technique. A great piano teacher builds confidence, nurtures a genuine love for music, and knows how to meet each child where they are. Here's what to look for — and why it matters.
+        </p>
+      </div>
+    </section>
+
+    <!-- What to Look for in a Piano Teacher -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">What Matters Most</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What to Look for in a Piano Teacher
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Relevant Qualifications</h3>
+                <p class="text-base-600 text-sm">A strong piano teacher should have formal training — not just in music performance, but ideally in education as well. Knowing how to play the piano and knowing how to teach a child to play the piano are genuinely different skills. Look for qualifications that reflect both musical competence and an understanding of how children learn.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Experience with Children</h3>
+                <p class="text-base-600 text-sm">Teaching adults and teaching four-year-olds require completely different approaches. A teacher with years of experience working specifically with young children will know how to hold their attention, how to explain concepts simply, and how to handle the emotional ups and downs that come with learning something new. Ask how long they've taught children and what ages they typically work with.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Teaching Philosophy</h3>
+                <p class="text-base-600 text-sm">Every teacher has a philosophy, whether they articulate it or not. Some prioritise exam results above all else. Others focus on nurturing a child's relationship with music first, with exams as an optional milestone along the way. Neither is wrong, but you should choose a teacher whose philosophy aligns with what you want for your child. Ask them what they believe good teaching looks like.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Communication with Parents</h3>
+                <p class="text-base-600 text-sm">A good teacher doesn't just teach your child — they keep you informed. You should know what your child is working on, where they're progressing, and what they can practise at home. Look for a teacher who gives honest, thoughtful feedback after each lesson and is happy to answer your questions between sessions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Education Training Matters -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-primary-600 font-medium mb-2">The Teaching Difference</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Why Education Training Matters
+            </h2>
+            <p class="text-base-600 mb-4">
+              In Singapore, most piano teachers come from a performance background. They've passed their Grade 8 or diploma exams, and they know the instrument inside out. That's important — but it's only half the picture when it comes to teaching children.
+            </p>
+            <p class="text-base-600 mb-4">
+              A teacher with formal training in education — particularly early childhood education — approaches lessons differently. They understand that a five-year-old's attention works in short bursts. They know that children learn through play, repetition, and positive reinforcement rather than criticism. They can read a child's body language and adjust the lesson on the spot when something isn't landing.
+            </p>
+            <p class="text-base-600">
+              This matters because the early years at the piano are formative. A child who has a positive experience with their first teacher is far more likely to continue playing into their teens and beyond. A child who feels pressured, confused, or bored may develop an aversion to practice that's hard to undo. The teacher's ability to connect with your child as a whole person — not just as a student — is what makes or breaks those first years.
+            </p>
+          </div>
+          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Good Musician vs Good Teacher</h3>
+            <div class="space-y-4">
+              <div>
+                <span class="font-medium text-base-900 text-sm">A good musician can...</span>
+                <ul class="mt-2 space-y-2">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Perform pieces at a high standard</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Demonstrate correct technique</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Explain music theory accurately</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span class="font-medium text-base-900 text-sm">A good teacher also...</span>
+                <ul class="mt-2 space-y-2">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Reads a child's mood and adapts the lesson accordingly</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Explains concepts in ways a young child can understand</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Builds confidence through encouragement, not pressure</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Knows when to push forward and when to slow down</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Keeps parents informed and involved in their child's progress</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Piano Teacher for Children in Singapore"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia is a piano teacher based in Tengah, Singapore who has spent over 10 years teaching young children from age four onwards. What makes her different from most piano teachers in Singapore is her educational background — she holds a Bachelor's degree in Early Childhood Education with Music Education, which means she was formally trained in how young children develop, think, and learn.
+            </p>
+            <p class="text-base-600 mb-4">
+              That training shows up in every lesson. She knows that a four-year-old who fidgets isn't being difficult — they need a change of activity. She understands that a child who says "I can't do it" often needs the task broken into smaller steps, not a louder instruction. She adapts naturally to each child's temperament, whether they're shy and cautious or bold and impatient.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her approach is patient, warm, and structured without being rigid. Children follow the ABRSM syllabus when it suits them, but never at the expense of enjoying the process. She communicates openly with parents after each lesson and takes the time to understand each family's goals — whether that's exam preparation, building a lifelong hobby, or simply giving their child a positive experience with music.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Parents Say -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">From Parents</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+          What Parents Say
+        </h2>
+        <p class="text-base-600 mb-4">
+          Parents often tell Patricia that their child's attitude toward piano changed after switching to her. Children who were reluctant to practise start asking to play. Children who were anxious about lessons begin looking forward to them. It's not magic — it's what happens when a teacher genuinely understands how to work with young learners.
+        </p>
+        <p class="text-base-600 mb-6">
+          The most common feedback she receives is about her patience and her ability to connect with children on their level. Parents appreciate that she never rushes, never raises her voice, and always finds a way to make even the tricky parts of learning feel manageable.
+        </p>
+        <a href="/testimonials/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+          Read Parent Testimonials
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Choosing a Piano Teacher — FAQ
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>,
+          <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>, and
+          <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Piano Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's readiness, goals, and what lessons would look like for them.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20a%20piano%20teacher%20for%20my%20child%20in%20Singapore."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

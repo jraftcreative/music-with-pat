@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What makes music lessons for children different from adult lessons?",
+    answer: "Children process information differently from adults — they learn best through sensory exploration, repetition, and activities that feel like play rather than work. A qualified children's music teacher adapts lesson length, pacing, and teaching methods to match each child's developmental stage, rather than using a one-size-fits-all approach."
+  },
+  {
+    question: "What age can my child start music lessons?",
+    answer: "Patricia accepts students from age 4 onwards for piano lessons. At this age, most children have enough fine motor development and attention span for short, structured sessions. During the first consultation, Patricia will assess your child's readiness and recommend a lesson format that suits them."
+  },
+  {
+    question: "Why piano rather than another instrument for young children?",
+    answer: "Piano is one of the most accessible instruments for children because it produces sound immediately — there's no embouchure to develop or bow technique to master before hearing a result. The visual, linear layout of keys also helps children understand musical concepts like pitch direction and intervals in a concrete way. It builds a strong foundation that transfers well to any instrument later on."
+  },
+  {
+    question: "How do I know if my child is ready for structured music lessons?",
+    answer: "Signs of readiness include being able to sit and focus for 15–20 minutes, following simple multi-step instructions, showing interest in music or sounds, and being comfortable in a one-on-one learning environment. If you're unsure, Patricia offers a free consultation where she can meet your child and give you an honest assessment."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Lessons for Children — Piano for Ages 4+ | Music with Pat"
+  description="Age-appropriate music lessons for children in Singapore. Piano-focused teaching by an ECE-trained educator. Play-based learning for ages 4–12 at our Tengah studio."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Children's Music Lessons",
+      "name": "Music Lessons for Children in Singapore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 12
+      },
+      "description": "Music lessons designed specifically for children ages 4–12 in Singapore. Age-appropriate piano teaching by a qualified early childhood educator, with play-based methods and ABRSM preparation."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Lessons for Children' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">For Ages 4–12</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Lessons for Children in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Children don't learn music the way adults do. Their lessons need to be built around how they actually think, move, and engage — with a teacher who understands child development as well as she understands the instrument.
+        </p>
+      </div>
+    </section>
+
+    <!-- How Children Learn Music -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">A Different Approach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            How Children Learn Music
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            A child sitting at a piano is not a small adult. The way children absorb new skills is fundamentally different — they rely on sensory experience, physical movement, and repetition far more than verbal instruction or abstract reasoning. A teaching method designed for grown-ups will miss most of what makes music stick for a young learner.
+          </p>
+          <p>
+            Younger children in particular learn through doing. They need to touch the keys, hear what happens, and try again. They respond to patterns, songs, and activities that feel like exploration rather than study. When a lesson is built around this kind of active discovery, children retain more and stay engaged for longer.
+          </p>
+          <p>
+            Motivation works differently too. Adults can push through a boring exercise because they understand the long-term payoff. Children cannot. If a lesson feels like a chore, they lose interest — and once that happens, getting them back is hard. The most effective children's music lessons are ones where the child looks forward to the next session because the experience itself is rewarding.
+          </p>
+          <p>
+            Emotional readiness matters just as much as technical readiness. A child who feels safe to experiment, make mistakes, and ask questions will progress faster than one who is afraid of getting it wrong. The learning environment — patient, warm, and free of unnecessary pressure — is not a nice extra. It is the foundation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Lessons by Age -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Structured by Stage</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Lessons by Age
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 4–6</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Discovery</h3>
+            <p class="text-base-600 text-sm mb-3">
+              At this stage, the priority is wonder. Lessons are short, varied, and woven with songs, rhythm games, and hands-on keyboard exploration. Children learn to distinguish high from low, loud from soft, and begin connecting sounds to the keys in front of them.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Notation is introduced gently — through colour, shapes, and familiar patterns rather than formal theory. The aim is to let children experience music as something they can create, not just something they listen to.
+            </p>
+            <p class="text-base-600 text-sm">
+              No exams, no stress. Just a carefully guided introduction that builds comfort, coordination, and genuine excitement about making music.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 7–9</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Building Skills</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Children in this range are ready for more structured learning. They begin reading standard notation fluently, developing hand independence, and tackling graded pieces. Many students start ABRSM preparation during this period, working towards Grades 1–3.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Aural skills and sight-reading become regular parts of each session. Students also start thinking about how music sounds — exploring dynamics, articulation, and musical character rather than just playing correct notes.
+            </p>
+            <p class="text-base-600 text-sm">
+              Structure is important now, but so is choice. Letting children have a say in their repertoire keeps them invested and helps them develop their own taste.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 10–12</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Growing Musicianship</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Pre-teens are forming their own musical identity. Lessons become more demanding — longer pieces, more complex rhythms, deeper interpretation. Students working through ABRSM Grades 3–5 develop analytical listening and begin understanding form and harmonic structure.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              This is also when theory knowledge deepens, preparing for the Grade 5 theory requirement that gates higher practical exams. Patricia integrates theory naturally into lessons rather than treating it as a separate, isolated subject.
+            </p>
+            <p class="text-base-600 text-sm">
+              Independence grows at this stage. Students learn to diagnose their own mistakes, manage their own practice, and bring personal expression to their performances — skills that serve them well beyond the piano.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Piano for Children -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Right Instrument</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Piano for Children
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Parents often ask which instrument their child should start with. For most young children, the piano is the strongest choice — and not just because it is popular. There are real, practical reasons why piano works especially well as a first instrument.
+            </p>
+            <p class="text-base-600 mb-4">
+              The most obvious advantage is immediacy. Press a key and a clear, in-tune note sounds. There is no embouchure to form, no bow angle to control, no months of scratchy sound before something musical emerges. This instant feedback loop is critical for young learners who need to hear results to stay motivated.
+            </p>
+            <p class="text-base-600 mb-4">
+              The layout of the keyboard is also uniquely visual. Low notes are on the left, high notes on the right, and the pattern of black and white keys repeats in a logical way. Children can see the relationship between notes, which makes abstract musical concepts — intervals, scales, chords — concrete and tangible from the very start.
+            </p>
+            <p class="text-base-600">
+              Piano also develops both hands simultaneously, training coordination and bilateral brain activity in a way that few other instruments can match. And because pianists read two clefs from the beginning, they build strong music-reading skills that transfer readily to any other instrument later in life.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">What Makes Piano Ideal for Young Learners</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Immediate sound — no months of learning to produce a basic tone</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Visual keyboard layout makes pitch relationships easy to understand</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Both hands develop coordination and fine motor control together</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Reading treble and bass clef builds transferable music literacy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Strong foundation for learning any second instrument later</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia teaching a child at the piano in her Singapore studio"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Your Child's Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Most piano teachers are trained as performers. Patricia is trained as both a musician and an educator — she holds a Bachelor's degree in Early Childhood Education with a specialisation in Music Education. That dual background is why she teaches children differently from most.
+            </p>
+            <p class="text-base-600 mb-4">
+              She understands developmental milestones, how working memory develops in young children, and what kind of instruction a six-year-old can actually absorb in a 30-minute session. Her lesson plans are informed by pedagogy, not just tradition. When a child struggles, she can identify whether the issue is cognitive, physical, motivational, or emotional — and respond accordingly.
+            </p>
+            <p class="text-base-600 mb-6">
+              With over a decade of teaching experience and a home studio in Tengah set up specifically for young learners, Patricia provides children's music lessons that are thoughtful, structured, and genuinely enjoyable. She follows the ABRSM syllabus where appropriate, but never at the expense of a child's love for music.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Teaching</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4–12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>,
+          <a href="/piano-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>,
+          <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>,
+          <a href="/piano-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>, and
+          <a href="/piano-lessons-clementi/" class="text-primary-600 hover:underline">Clementi</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Musical Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss what music lessons would look like for your child.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20lessons%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
