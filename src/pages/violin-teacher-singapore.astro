@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What qualifications should I look for in a violin teacher for my child?",
+    answer: "Look for a teacher with formal music training and, ideally, education qualifications as well. Teaching violin to young children requires knowledge of child development alongside instrument expertise — understanding how to introduce bow hold to a four-year-old is a very different skill from performing a concerto. Ask about their specific experience with young beginners."
+  },
+  {
+    question: "What's the difference between a violinist and a violin teacher?",
+    answer: "A skilled violinist can perform beautifully, but teaching a young child to hold a bow, produce a clean tone, and stay motivated week after week requires entirely different abilities. Good violin teachers for children combine musical knowledge with patience, clear communication at a child's level, and the ability to break complex physical skills into tiny, manageable steps."
+  },
+  {
+    question: "How do I know if a violin teacher is right for my child?",
+    answer: "Watch how the teacher interacts with your child during a trial lesson or consultation. Do they get down to your child's level? Are they patient with the awkward early stages of holding the instrument? Do they celebrate small wins? A good fit means your child feels safe, comfortable, and curious — not pressured or anxious."
+  },
+  {
+    question: "Should my child's violin teacher also teach music theory?",
+    answer: "Yes — music theory is an integral part of violin learning and ABRSM exams. A good teacher weaves theory into practical lessons naturally, teaching note values through the pieces your child plays rather than as a separate, abstract subject. This helps children understand the music they're performing, not just replicate it."
+  },
+  {
+    question: "Can a violin teacher help with my child's posture problems?",
+    answer: "Absolutely. Posture is one of the most critical aspects of violin playing, and a skilled teacher will monitor and correct it continuously. Poor posture can lead to tension, discomfort, and technical limitations later on. Look for a teacher who addresses chin rest position, bow arm height, left hand shape, and overall body alignment from the very beginning."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Teacher in Singapore — Lessons for Children | Music with Pat"
+  description="Looking for a violin teacher in Singapore? Patricia offers patient, child-centred violin lessons for ages 4+. ABRSM preparation, fractional-size violins, studio in Tengah. 10+ years experience."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Teacher in Singapore for Children",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Qualified violin teacher for children in Singapore. B.Ed in Early Childhood Education with Music, 10+ years experience, child-centred approach, ABRSM violin preparation."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Teacher Singapore' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Choosing the Right Teacher</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Teacher for Children in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Your child's first violin teacher shapes everything — their posture, their tone, their confidence, and whether they grow to love or dread practice. The right teacher doesn't just teach notes; they teach a child how to listen, how to hold their body, and how to find joy in the process.
+        </p>
+      </div>
+    </section>
+
+    <!-- What to Look for in a Violin Teacher -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">What Matters Most</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What to Look for in a Violin Teacher
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Education, Not Just Performance</h3>
+                <p class="text-base-600 text-sm">Many violin teachers in Singapore have strong performance backgrounds — they've completed their diplomas and can play beautifully. But teaching a young child requires a different kind of expertise. A teacher with formal training in education understands developmental stages, knows how to simplify complex physical skills, and can read when a child is overwhelmed versus when they're ready for more.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Experience with Young Violinists</h3>
+                <p class="text-base-600 text-sm">Starting violin at age four or five involves unique challenges — tiny hands gripping a bow, maintaining chin rest contact without tension, and developing intonation on an instrument with no frets or keys to guide them. A teacher who has spent years working with this age group will have developed specific strategies for each of these hurdles, making the learning process feel natural rather than frustrating.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient, Encouraging Approach</h3>
+                <p class="text-base-600 text-sm">The early weeks of violin produce sounds that even the most supportive parent finds challenging. A good violin teacher normalises this, celebrates effort over perfection, and keeps the child motivated through the foundational stage. Look for someone who views scratchy open strings not as failure but as the first step toward beautiful tone — and who helps your child see it that way too.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Clear Parent Communication</h3>
+                <p class="text-base-600 text-sm">Violin practice at home involves more parental support than piano — young children need help positioning the instrument, checking bow hold, and even tuning the strings. A good violin teacher keeps parents in the loop, explaining what to watch for during practice, when to gently correct, and when to simply let the child explore.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Education Training Matters for Violin -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-primary-600 font-medium mb-2">The Teaching Difference</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Why Education Training Matters for Violin
+            </h2>
+            <p class="text-base-600 mb-4">
+              Violin is a physically demanding instrument for young children. They must coordinate two arms doing entirely different things — the left hand pressing strings with precision while the right arm draws the bow with controlled weight and speed. Add in the need to balance the instrument under the chin without tension, and you have a complex set of motor skills that no child masters overnight.
+            </p>
+            <p class="text-base-600 mb-4">
+              A teacher trained in education knows how to break this complexity into small, achievable steps. They understand that a five-year-old's fine motor skills are still developing, that frustration tolerance is limited, and that physical discomfort needs to be addressed immediately before it becomes a reason to quit. They design each lesson to build on the last without overwhelming the child.
+            </p>
+            <p class="text-base-600">
+              This matters because the habits formed in a child's first year of violin stay with them. Tension in the bow arm, a collapsed left wrist, or a clamped jaw are incredibly difficult to correct once ingrained. A teacher who understands child development will prevent these issues rather than trying to fix them years later.
+            </p>
+          </div>
+          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Good Violinist vs Good Violin Teacher</h3>
+            <div class="space-y-4">
+              <div>
+                <span class="font-medium text-base-900 text-sm">A good violinist can...</span>
+                <ul class="mt-2 space-y-2">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Perform repertoire with beautiful intonation and tone</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Demonstrate advanced bow strokes and shifting</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-base-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+                    <span class="text-base-600 text-sm">Explain music theory and technique accurately</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span class="font-medium text-base-900 text-sm">A good violin teacher also...</span>
+                <ul class="mt-2 space-y-2">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Spots tension in a child's shoulders or jaw before it causes pain</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Turns bow hold practice into a game a four-year-old enjoys</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Knows when a child needs a break, not a correction</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Measures arm length to recommend the correct fractional violin</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    <span class="text-base-600 text-sm">Guides parents on how to support home practice effectively</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Violin Teacher for Children in Singapore"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia is a violin and piano teacher based in Tengah, Singapore who has spent over 10 years teaching young children from age four onwards. Her Bachelor's degree in Early Childhood Education with Music Education gives her a rare combination — she understands both the instrument and the child holding it.
+            </p>
+            <p class="text-base-600 mb-4">
+              That dual expertise is especially important for violin. When a four-year-old struggles with bow hold, Patricia can tell whether the issue is physical (the bow is too heavy for their hand) or developmental (their fine motor skills need a different approach). She adjusts the lesson in real time, using creative exercises and gentle corrections rather than repetitive drilling.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her violin lessons are structured but never rigid. She follows the ABRSM syllabus where it serves the child, introduces fractional instruments at the correct size, and builds tone production gradually so children develop a warm, confident sound. Parents receive clear feedback after each lesson, including specific guidance for supporting practice at home.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Violin Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Parents Say -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">From Parents</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+          What Parents Say
+        </h2>
+        <p class="text-base-600 mb-4">
+          Parents often share that their child's confidence with the violin grew noticeably after starting with Patricia. The scratchy first weeks that many families dread became manageable because Patricia framed them as progress, not problems. Children who were initially intimidated by holding the instrument began picking it up voluntarily at home.
+        </p>
+        <p class="text-base-600 mb-6">
+          The most common feedback is about her patience — particularly during the foundational stage when posture and bow control require constant, gentle reminders. Parents appreciate that she never rushes past technique to play songs, and that she keeps children engaged even when the work is repetitive.
+        </p>
+        <a href="/testimonials/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+          Read Parent Testimonials
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Choosing a Violin Teacher — FAQ
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>,
+          <a href="/violin-lessons-cashew/" class="text-primary-600 hover:underline">Cashew</a>,
+          <a href="/violin-lessons-hillview/" class="text-primary-600 hover:underline">Hillview</a>, and
+          <a href="/violin-lessons-newton/" class="text-primary-600 hover:underline">Newton</a>.
+          Also available: <a href="/violin-lessons-singapore/" class="text-primary-600 hover:underline">Violin Lessons Singapore</a> |
+          <a href="/piano-lessons-singapore/" class="text-primary-600 hover:underline">Piano Lessons</a> |
+          <a href="/music-lessons-singapore/" class="text-primary-600 hover:underline">Music Lessons</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Book a Violin Consultation
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's readiness, goals, and what violin lessons would look like for them.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20a%20violin%20teacher%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

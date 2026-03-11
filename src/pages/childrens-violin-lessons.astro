@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is my 4-year-old ready for violin lessons?",
+    answer: "Most 4-year-olds can begin violin if they can follow simple instructions and hold still for short periods. Unlike piano, violin requires balancing the instrument under the chin, which takes some physical readiness. Patricia assesses each child individually during a consultation — she'll check arm length for sizing and observe how your child responds to holding a fractional violin."
+  },
+  {
+    question: "How long should a young child practise violin at home?",
+    answer: "For ages 4–6, just 10 minutes a day is enough — the focus should be on bow hold exercises, open string practice, and keeping the violin in the correct position. For ages 7–9, 15–20 minutes works well as they begin working on pieces and scales. Consistency matters far more than duration, and parents should supervise to ensure good posture habits."
+  },
+  {
+    question: "What if my child finds violin too difficult and wants to stop?",
+    answer: "Violin has a steeper initial learning curve than some instruments, and it's normal for children to feel frustrated before they can produce a sound they're proud of. Often the issue is pacing rather than ability — the teacher may need to slow down, change the approach, or mix in more fun activities alongside technique work. A good teacher will identify the root cause before things escalate."
+  },
+  {
+    question: "What size violin does my child need?",
+    answer: "Children typically start on a 1/4 size violin (ages 4–5), move to 1/2 size (ages 6–8), then 3/4 size (ages 9–11), before progressing to a full-size instrument. The correct size depends on arm length rather than age alone. Patricia will measure your child and recommend the right fit — playing on a violin that's too large causes posture problems and discomfort."
+  },
+  {
+    question: "Do I need to help my child tune their violin?",
+    answer: "Yes, young children cannot tune their own violin safely — the strings are under significant tension and can snap if wound too tightly. Patricia will show you how to use fine tuners and a tuning app to keep the instrument in tune between lessons. As children grow older, they'll learn to tune independently."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Children's Violin Lessons in Singapore | Music with Pat"
+  description="Violin lessons designed specifically for children ages 4+. Patient teaching, fractional-size violins, ABRSM preparation, and a nurturing studio environment in Tengah, Singapore."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Children's Violin Lessons in Singapore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 12
+      },
+      "description": "Violin lessons designed specifically for children ages 4–12. Fractional-size instruments, age-appropriate teaching methods, and ABRSM preparation in a nurturing environment."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: "Children's Violin Lessons" }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Designed for Young Learners</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Children's Violin Lessons in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Violin is a uniquely physical instrument that engages a child's whole body — posture, balance, fine motor control, and ear training all at once. Teaching it well to young children requires a very specific kind of patience and expertise.
+        </p>
+      </div>
+    </section>
+
+    <!-- How Children Learn Violin Differently -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Understanding Young Violinists</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            How Children Learn Violin Differently
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            When an adult picks up a violin, they can intellectually understand concepts like "keep your wrist straight" or "transfer the weight from your arm into the bow." A four-year-old cannot. Young children learn violin through imitation, physical demonstration, and carefully guided repetition — their bodies learn before their minds can articulate what's happening.
+          </p>
+          <p>
+            This means early violin lessons look very different from what most parents expect. Instead of playing songs immediately, children spend time learning how to hold the bow with a relaxed hand, how to balance the violin under the chin without gripping, and how to draw the bow across an open string to produce a clear, even tone. These foundational skills are not glamorous, but they determine everything that follows.
+          </p>
+          <p>
+            A skilled children's violin teacher makes this foundational stage feel like play rather than work. Bow hold exercises become games. Posture checks become part of a routine that feels normal, not punishing. Open string exercises are turned into simple rhythmic patterns that sound musical even at the earliest stage.
+          </p>
+          <p>
+            Children also need more encouragement during violin's early stages than they do with piano, where pressing a key immediately produces a pleasant sound. The violin requires effort before it sounds good — and a teacher who celebrates that effort, who normalises the scratchy sounds, and who helps a child hear their own improvement week by week, makes all the difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Age-Appropriate Violin Lessons -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Tailored by Age</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Age-Appropriate Violin Lessons
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 4–6</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">First Steps with the Violin</h3>
+            <p class="text-base-600 text-sm mb-3">
+              At this age, lessons focus on getting comfortable with the instrument — learning to hold the violin and bow correctly, playing open strings with a controlled bow stroke, and beginning to place fingers on the strings for simple notes.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Sessions are kept short and varied. A typical lesson might include a posture check, a bow exercise, playing a few open-string rhythms, and a clapping or singing activity to develop rhythm and pitch awareness. Children use 1/4 or 1/2 size violins fitted to their arm length.
+            </p>
+            <p class="text-base-600 text-sm">
+              No exam pressure at this stage. The goal is building a comfortable, tension-free relationship with the instrument and developing the basic coordination that all future technique builds upon.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 7–9</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Building Technique and Musicality</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Children in this range begin reading standard notation, learning scales in first position, and working through graded pieces. Bow control becomes more refined — learning to vary speed, pressure, and contact point to produce different dynamics and tonal colours.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Intonation training becomes more deliberate as children learn to hear whether their notes are in tune and make micro-adjustments with their fingers. Sight-reading and aural skills are introduced as regular lesson components. ABRSM Grades 1–3 preparation typically begins during this period.
+            </p>
+            <p class="text-base-600 text-sm">
+              Children usually transition from a 1/2 to a 3/4 size violin during these years. Patricia monitors sizing closely — a violin that's grown too small restricts technique and should be upgraded promptly.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Ages 10–12</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Developing as a Violinist</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Pre-teens tackle more demanding repertoire, learn shifting to third position and beyond, and begin developing vibrato — the gentle oscillation of pitch that gives the violin its characteristic warmth and expression.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Students working through ABRSM Grades 3–5+ develop stronger interpretive skills, learning to shape phrases, control dynamics, and bring their own musical personality to performances. Music theory deepens alongside practical work.
+            </p>
+            <p class="text-base-600 text-sm">
+              Many students move to a full-size (4/4) violin around age 11–12. This is also when children begin to take more ownership of their practice, developing the independent musicianship skills that will serve them through advanced levels and beyond.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fractional-Size Violins -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Right Fit</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Fractional-Size Violins Matter
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Unlike piano, where every child sits at the same instrument, violin requires a correctly sized instrument for each individual learner. A violin that's too large forces a child to overextend their arm, strain their neck, and develop compensatory habits that are painful to correct later.
+            </p>
+            <p class="text-base-600 mb-4">
+              Fractional violins — 1/4, 1/2, and 3/4 sizes — are specifically built for growing bodies. The correct size is determined by arm length, not age, since children of the same age can vary significantly in their physical measurements. As your child grows, they'll progress through sizes, typically needing a new instrument every 18–24 months during the early years.
+            </p>
+            <p class="text-base-600">
+              Patricia measures each student at their first lesson and monitors growth throughout the year. She'll let you know when it's time to move up a size, and can recommend reputable violin shops in Singapore where you can purchase or rent the next instrument.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Violin Size Guide</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong>1/4 size</strong> — typically for ages 4–5 (arm length ~35–43 cm)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong>1/2 size</strong> — typically for ages 6–8 (arm length ~43–51 cm)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong>3/4 size</strong> — typically for ages 9–11 (arm length ~51–56 cm)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong>Full size (4/4)</strong> — typically from age 11–12 (arm length 56+ cm)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong>Renting</strong> is often more practical than buying for younger children who outgrow sizes quickly</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Building Practice Habits for Violin -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">For Parents</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Building Violin Practice Habits
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Violin practice at home requires more parental involvement than many parents expect. Young children need help getting the violin out of its case, checking that it's in tune, and positioning it correctly before they can begin. This setup routine is part of building good habits — and it's an opportunity for parents to be involved without directing the practice itself.
+            </p>
+            <p class="text-base-600 mb-4">
+              For beginners, daily practice should be very short — even five minutes of focused bow exercises and open strings is more valuable than 20 minutes of unfocused playing. The goal is to make practice feel like a normal part of the day, not a battle. As children progress and their repertoire grows, practice time naturally extends.
+            </p>
+            <p class="text-base-600">
+              Patricia provides specific practice instructions after each lesson — which exercises to focus on, what to listen for, and how to position the bow or fingers correctly. This helps parents support their child's practice without needing to be musicians themselves.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Tips for Violin Parents</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Help with setup — getting the violin out, tuning, and rosin on the bow</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Keep sessions short and consistent — daily is better than weekly</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Watch for tension in the shoulders, neck, or jaw during practice</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Praise effort and concentration, not just the sound produced</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Follow the teacher's practice notes — they're tailored to your child</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patricia's ECE Background -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/pat-piano-teacher-singapore.webp"
+              alt="Patricia teaching violin to a young child in Singapore"
+              class="rounded-2xl w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Why It Matters</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Patricia's Early Childhood Background
+            </h2>
+            <p class="text-base-600 mb-4">
+              Violin is arguably the most physically demanding instrument to introduce to a young child. The simultaneous coordination of bow arm, left hand fingers, chin contact, and upright posture is a significant ask for a four or five-year-old — and how those first lessons are handled determines whether a child develops healthy technique or struggles with tension for years.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia's Bachelor's degree in Early Childhood Education with Music Education means she approaches these challenges with a deep understanding of child development. She knows that a young child's proprioception — their sense of where their body is in space — is still developing, and that physical instructions need to be demonstrated and guided, not just explained verbally.
+            </p>
+            <p class="text-base-600">
+              In practice, this means she uses gentle physical guidance to shape bow hold, creative imagery to help children understand posture ("imagine you're holding a bird — firm enough it doesn't fly away, gentle enough you don't squish it"), and carefully paced progression that never sacrifices technique for speed. The result is children who develop clean, tension-free playing habits from the start.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits of Violin for Children -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Beyond Music</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Benefits of Violin Lessons for Children
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Ear Training</h3>
+            <p class="text-base-600 text-xs">Develops acute pitch awareness — violinists must listen and adjust constantly</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Coordination</h3>
+            <p class="text-base-600 text-xs">Each arm does something different, building bilateral motor skills</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Patience and Persistence</h3>
+            <p class="text-base-600 text-xs">Violin rewards steady, daily effort — a powerful lesson in delayed gratification</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Emotional Expression</h3>
+            <p class="text-base-600 text-xs">The violin's vocal quality lets children express feelings through music</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Confidence</h3>
+            <p class="text-base-600 text-xs">Mastering a challenging instrument builds deep, lasting self-belief</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Ensemble Ready</h3>
+            <p class="text-base-600 text-xs">Violin opens doors to orchestras, string quartets, and group music-making</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Note -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Location</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Based in Tengah, Serving Families Across Singapore
+        </h2>
+        <p class="text-base-600">
+          Patricia's home studio is located in Tengah Garden Town — easily accessible from <a href="/violin-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, <a href="/violin-lessons-cashew/" class="text-primary-600 hover:underline">Cashew</a>, <a href="/violin-lessons-hillview/" class="text-primary-600 hover:underline">Hillview</a>, <a href="/violin-lessons-newton/" class="text-primary-600 hover:underline">Newton</a>, and surrounding neighbourhoods. House visits are also available for families who prefer lessons at home. Also available: <a href="/violin-lessons-singapore/" class="text-primary-600 hover:underline">Violin Lessons Singapore</a> | <a href="/violin-teacher-singapore/" class="text-primary-600 hover:underline">Violin Teacher Singapore</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's readiness, find the right violin size, and see what lessons look like.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
