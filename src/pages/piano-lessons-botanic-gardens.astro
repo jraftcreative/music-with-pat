@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How do I get to Patricia's studio from Botanic Gardens?",
+    answer: "From the Botanic Gardens area, the drive to the Tengah studio takes roughly 25 minutes via the PIE. By MRT, Botanic Gardens station serves both the Downtown Line and Circle Line — you can take the Downtown Line towards Bukit Panjang and transfer to the Jurong Region Line for Tengah. It is a comfortable journey that many families fold into their weekly routine."
+  },
+  {
+    question: "Does Patricia visit homes in the Tanglin area?",
+    answer: "Yes, house visits are available throughout the Botanic Gardens, Tanglin, and Nassim area. This is a practical option for families who want to avoid the commute, particularly those with very young children. House visit rates differ from studio pricing — contact Patricia for the current schedule."
+  },
+  {
+    question: "What happens during the first lesson?",
+    answer: "The first session is a free, no-commitment consultation. Patricia spends time with your child, getting to know their personality and readiness for structured learning. She'll try some simple activities, chat with you about your expectations, and give you an honest assessment of the best way forward. There's no pressure to sign up on the spot."
+  },
+  {
+    question: "Can my child learn both classical and popular music?",
+    answer: "Patricia focuses primarily on classical technique and repertoire, which builds the strongest foundation for any style of music. As students progress, she is open to incorporating popular pieces alongside their classical work, provided the fundamentals are solid. She'll discuss the right balance for your child's stage of development."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Piano Lessons for Children in Botanic Gardens | Music with Pat"
+  description="Piano lessons for children near Botanic Gardens, Singapore. Child-centred teaching by a qualified early childhood educator with 10+ years experience. Tengah studio, ages 4+."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Lessons",
+      "name": "Piano Lessons for Children in Botanic Gardens",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Botanic Gardens, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Patient, child-centred piano lessons for children near Botanic Gardens, Singapore. ABRSM preparation and a calm studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Botanic Gardens' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Botanic Gardens & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Piano Lessons for Children near Botanic Gardens
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The Botanic Gardens neighbourhood straddles the Tanglin and Bukit Timah corridor, home to Singapore's UNESCO World Heritage Site and some of the city's most established residential areas. Families here value culture, education, and enrichment that goes beyond the surface. Patricia's studio in Tengah offers piano lessons guided by genuine expertise in both music and early childhood development — the kind of thoughtful, individual instruction that parents in this part of Singapore seek out.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Families from Botanic Gardens Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families near Botanic Gardens Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Teaching That Fits Your Child</h3>
+                <p class="text-base-600 text-sm">Patricia takes time to understand each child she teaches — how they learn, what motivates them, and where they need support. Lessons are never templated. She builds an approach around your child's unique strengths and temperament, adjusting week by week as they grow and change.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Expertise</h3>
+                <p class="text-base-600 text-sm">Patricia's qualifications go beyond music. Her Bachelor's degree in Early Childhood Education with Music Education gives her a framework for understanding child development that most piano teachers lack. She recognises when a child is ready for new challenges and when they need consolidation — and she acts on that knowledge thoughtfully.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exams When They Make Sense</h3>
+                <p class="text-base-600 text-sm">Patricia prepares students for ABRSM examinations when the structure serves their growth. She is equally willing to guide children through a broader, non-exam pathway if that better suits their personality and learning style. Her recommendations are always grounded in what she sees in the child, not in any external pressure.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Focused Learning Space</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a calm, personal space designed for focused learning. For families near Botanic Gardens who appreciate environments with character and purpose, the studio offers a welcome contrast to the impersonal feel of chain music schools — quiet, thoughtful, and entirely centred on your child.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Botanic Gardens -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Botanic Gardens
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From the Botanic Gardens area, the drive to Tengah takes around 25 minutes via the PIE. The route heads west and is straightforward for families who are already familiar with Singapore's expressway network. Outside peak hours, the trip is smooth and predictable.
+            </p>
+            <p class="text-base-600 mb-4">
+              Botanic Gardens MRT station is an interchange for both the Downtown Line and Circle Line, giving families multiple rail options. Taking the Downtown Line towards Bukit Panjang allows you to connect to the Jurong Region Line for Tengah. This makes rail travel a realistic option alongside driving.
+            </p>
+            <p class="text-base-600">
+              For families who prefer to skip the journey entirely, Patricia offers house visits throughout the Botanic Gardens, Tanglin, and Nassim neighbourhoods. Home-based lessons provide the same quality instruction in the comfort of your own space.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via the PIE heading west</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line or Circle Line from Botanic Gardens, connecting towards the Jurong Region Line</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services along Bukit Timah Road and Holland Road towards the western corridor</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Botanic Gardens, Tanglin, and Nassim areas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Every lesson is a private, one-to-one session typically lasting 45 to 60 minutes. Younger children begin with shorter sessions that Patricia extends as their focus and engagement naturally develop. She never pushes a child beyond what they are ready for — patience is central to her philosophy.
+          </p>
+          <p>
+            Sessions combine practical playing with sight-reading, ear training, and theory in a way that keeps children interested and challenged. Patricia reads each child's energy and adjusts the flow of activities accordingly. The structure is purposeful but flexible enough to serve each student's needs on a given day.
+          </p>
+          <p>
+            Whether you choose the Tengah studio or arrange house visits in the Botanic Gardens area, Patricia ensures the same standard of teaching. Her preparation and attention remain consistent regardless of where the lesson takes place.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Piano Teacher for Children near Botanic Gardens"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching piano to children for over a decade. Her studio in Tengah draws families from across the western and central parts of Singapore, including the Botanic Gardens, Tanglin, and wider Bukit Timah area. She is known for a teaching approach that balances musical rigour with genuine care for each student.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a dual lens that few piano teachers possess. She sees beyond the notes on the page — understanding how a child's development, emotions, and learning patterns all factor into their musical journey.
+            </p>
+            <p class="text-base-600 mb-6">
+              Patricia's manner with children is warm, attentive, and direct. She sets expectations clearly, celebrates authentic progress, and creates space for children to develop a real relationship with music. From absolute beginners to students preparing for ABRSM grades, she adapts her approach to the individual.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/piano-lessons-tan-kah-kee/" class="text-primary-600 hover:underline">Tan Kah Kee</a>,
+          <a href="/piano-lessons-stevens/" class="text-primary-600 hover:underline">Stevens</a>, and
+          <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Piano Journey
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Botanic%20Gardens."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

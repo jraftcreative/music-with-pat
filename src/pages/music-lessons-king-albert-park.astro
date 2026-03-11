@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What types of music lessons does Patricia offer near King Albert Park?",
+    answer: "Patricia provides one-to-one piano and violin lessons for children aged four and above. Each lesson also covers music theory, ear training, rhythm, and sight-reading as integrated components. The programme is fully personalised — Patricia adjusts the content, pace, and approach based on the individual child."
+  },
+  {
+    question: "How far is Patricia's studio from King Albert Park?",
+    answer: "The drive from King Albert Park to Patricia's Tengah studio is about 18 minutes via Bukit Timah Road heading west. King Albert Park MRT (DT6) on the Downtown Line provides rail connectivity, with transfer options towards the Jurong Region Line. Families in the Blackmore Drive and Jalan Jurong Kechil area find the route straightforward."
+  },
+  {
+    question: "Can Patricia come to our home in King Albert Park for lessons?",
+    answer: "Yes, house visits are available in the King Albert Park area, including the residential streets around Blackmore Drive and the Bukit Timah corridor. This is a convenient option for busy families, and the quality of instruction is identical to what your child would receive at the studio. Contact Patricia for house visit rates."
+  },
+  {
+    question: "How does Patricia handle children who are shy or hesitant about starting music?",
+    answer: "Patricia's training in early childhood education gives her particular skill in working with shy or hesitant children. She takes the first few sessions at a gentle pace, focusing on building rapport and making the child comfortable with the instrument and the learning environment. There's never any pressure to perform — she lets the child's confidence grow naturally."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Lessons for Children in King Albert Park | Music with Pat"
+  description="Music lessons for children near King Albert Park, Singapore. Piano, violin, and musicianship with child-centred teaching by an experienced educator. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Lessons",
+      "name": "Music Lessons for Children in King Albert Park",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "King Albert Park, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Patient, child-centred music lessons for children near King Albert Park, Singapore. Piano, violin, and general musicianship with ABRSM preparation available."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Lessons King Albert Park' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">King Albert Park & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Lessons for Children in King Albert Park
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          King Albert Park is one of Singapore's most sought-after residential enclaves, with tree-lined streets and a strong community feel that draws families who invest in their children's development. Patricia's studio in Tengah offers children from this area piano and violin lessons alongside broader musicianship training, delivered with the patience and expertise that come from formal early childhood education and over a decade of one-on-one teaching.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Families Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from King Albert Park Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Multi-Instrument Expertise</h3>
+                <p class="text-base-600 text-sm">Patricia teaches piano and violin with equal proficiency, and she integrates music theory, ear training, and rhythm work into every session. This gives children a rounded musical education that serves them well regardless of which instrument they ultimately prefer. Families who want their child to explore both instruments before choosing find this flexibility particularly valuable.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Training</h3>
+                <p class="text-base-600 text-sm">A Bachelor's degree in Early Childhood Education with Music Education gives Patricia a depth of understanding that extends far beyond instrumental technique. She knows how four-year-olds differ from seven-year-olds in their capacity for focus, abstraction, and motor coordination, and she calibrates her teaching to match each stage of development.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Flexible Curriculum</h3>
+                <p class="text-base-600 text-sm">ABRSM exam preparation in piano and violin is available for students who benefit from structured milestones. But Patricia understands that exams are a tool, not a requirement. She's equally skilled at developing children who want to grow musically without formal assessment, building their technique, musicality, and confidence through carefully chosen repertoire and creative exercises.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Personal Studio Environment</h3>
+                <p class="text-base-600 text-sm">Families from King Albert Park are accustomed to a high standard of care in their children's education, and Patricia's private studio delivers on that expectation. The Tengah space is quiet, dedicated solely to music lessons, and free from the revolving-door atmosphere of commercial music schools. Your child has Patricia's full, undivided attention throughout every session.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from King Albert Park -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from King Albert Park
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From King Albert Park, the drive to Patricia's Tengah studio takes around 18 minutes. The route follows Bukit Timah Road westward before connecting to the roads leading into Tengah. Even during the after-school traffic window, the journey is manageable for a weekly lesson.
+            </p>
+            <p class="text-base-600 mb-4">
+              King Albert Park MRT station (DT6) provides Downtown Line access, with transfers available towards the Jurong Region Line for rail connectivity to Tengah. Families living around Blackmore Drive, Jalan Jurong Kechil, and the surrounding streets find the commute fits comfortably into their schedules.
+            </p>
+            <p class="text-base-600">
+              House visits are also available throughout the King Albert Park area. If you'd prefer your child to learn at home, Patricia can bring the lesson to you — with the same level of preparation and personalised attention she provides at the studio.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 18 minutes via Bukit Timah Road heading west</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line from King Albert Park (DT6), transfer to Jurong Region Line towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services along Bukit Timah Road and Jalan Jurong Kechil</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available in King Albert Park, Blackmore Drive, and surrounding areas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each lesson is a private session lasting between 45 and 60 minutes. For children who are new to music, Patricia starts with shorter sessions and gradually builds up as they develop comfort and concentration. Older or more advanced students typically use the full hour.
+          </p>
+          <p>
+            Sessions are structured around instrument work — piano or violin — interspersed with music theory, ear training, rhythm exercises, and sight-reading. Patricia doesn't separate these into isolated drills. Instead, she integrates them into the flow of the lesson so that a theory concept reinforces something the child has just played, or a rhythm exercise connects naturally to the piece they're learning.
+          </p>
+          <p>
+            King Albert Park families can choose between lessons at the Tengah studio or house visits in their own home. Whichever option you select, the approach is the same: attentive, responsive teaching that treats your child as an individual learner.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Music Teacher for Children near King Albert Park"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has dedicated more than ten years to teaching music to children, developing an approach that is both rigorous and deeply considerate of each child's individuality. Her Tengah studio regularly welcomes families from the King Albert Park and Bukit Timah corridor.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education informs every aspect of her teaching. She doesn't simply apply a standard curriculum — she reads each child carefully, understanding their temperament, learning preferences, and readiness for new challenges, then adapts accordingly. It's an approach grounded in professional training rather than instinct alone.
+            </p>
+            <p class="text-base-600 mb-6">
+              Piano and violin are both part of Patricia's teaching, and she welcomes families whose children want to explore music broadly. She provides ABRSM examination preparation when families want it and is just as committed to students who prefer a less structured path. The common thread is her genuine investment in each child's musical growth.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/music-lessons-beauty-world/" class="text-primary-600 hover:underline">Beauty World</a>,
+          <a href="/music-lessons-sixth-avenue/" class="text-primary-600 hover:underline">Sixth Avenue</a>, and
+          <a href="/music-lessons-tan-kah-kee/" class="text-primary-600 hover:underline">Tan Kah Kee</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Musical Journey
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20lessons%20for%20my%20child%20in%20King%20Albert%20Park."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

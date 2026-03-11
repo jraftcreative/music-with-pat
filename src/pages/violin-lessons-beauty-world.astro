@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "At what age should my child start violin?",
+    answer: "Most children are ready for violin lessons between ages 4 and 5. Patricia uses fractional-size violins — starting with 1/4 size for the youngest students — so the instrument is proportioned to your child's body. During the initial consultation, she'll assess your child's coordination, attention span, and interest to ensure they're ready for structured lessons."
+  },
+  {
+    question: "How long does it take to get to Tengah from Beauty World?",
+    answer: "The drive from Beauty World to Patricia's studio in Tengah takes around 15 minutes, typically via Jalan Jurong Kechil or the PIE. By MRT, Beauty World station is on the Downtown Line — you can ride towards Bukit Panjang and transfer to the Jurong Region Line towards Tengah. It's a route many families manage comfortably each week."
+  },
+  {
+    question: "How much practice does my child need at home?",
+    answer: "For young beginners, Patricia recommends short, focused practice sessions — 10 to 15 minutes daily is far more effective than occasional longer sessions. She provides clear practice notes after each lesson so parents know exactly what to focus on. As children develop stamina and skill, practice time naturally increases. The key is consistency rather than duration."
+  },
+  {
+    question: "Are house visits available in the Beauty World area?",
+    answer: "Yes, Patricia offers house visits throughout the Beauty World and Upper Bukit Timah area. This is a convenient choice for families who prefer not to travel, especially those with younger children who settle more easily into learning in their own environment. Reach out to Patricia for house visit details and rates."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Lessons for Children in Beauty World | Music with Pat"
+  description="Violin lessons for children near Beauty World, Singapore. Child-centred teaching with ABRSM preparation, fractional-size violins, and a dedicated studio in nearby Tengah. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Beauty World",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Beauty World, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Patient, child-centred violin lessons for children near Beauty World, Singapore. ABRSM preparation and a calm studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Beauty World' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Beauty World & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Lessons for Children in Beauty World
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Beauty World sits at the gateway to the Bukit Timah Nature Reserve, a neighbourhood where families appreciate both nature and education. Patricia's studio in Tengah is about 15 minutes away by car, offering violin lessons that are carefully crafted for children — grounded in an understanding of how young learners develop, and delivered with the patience and warmth that makes music an enjoyable part of growing up.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Families from Beauty World Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Beauty World Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient Teaching Style</h3>
+                <p class="text-base-600 text-sm">The violin asks a lot of young children — holding the instrument under the chin, managing the bow with the right hand, and pressing strings with the left, all while maintaining good posture. Patricia recognises that these skills take time and never makes a child feel inadequate during the learning process. She creates a safe space where mistakes are part of progress, not something to be ashamed of.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Training</h3>
+                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with Music Education means she understands child development beyond the music room. She knows how young brains process new information, when physical fatigue sets in, and how to structure a lesson so that a child finishes feeling accomplished rather than drained. This training informs every decision she makes during a violin lesson.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured Progression</h3>
+                <p class="text-base-600 text-sm">From first-year fundamentals through to intermediate repertoire, Patricia maps out a learning journey for every student. She draws on Suzuki principles for younger beginners and integrates ABRSM grading for those who benefit from exam milestones. Parents receive regular updates on their child's progress and what's coming next, so you always know where your child stands.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Personal Studio Environment</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a quiet, dedicated space where children can focus entirely on their playing. For violin students, this kind of environment makes a real difference — the instrument requires careful listening to tone and pitch, and a calm setting helps students develop the attentive ear that underpins good violin playing from the very beginning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Beauty World -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Beauty World
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Beauty World, the drive to Patricia's Tengah studio takes roughly 15 minutes. Families typically take Jalan Jurong Kechil towards the PIE or cut through via Upper Bukit Timah Road and Dairy Farm Road. The route avoids major congestion points and is easy to navigate even during after-school hours.
+            </p>
+            <p class="text-base-600 mb-4">
+              Beauty World MRT is on the Downtown Line. From there, you can ride towards Bukit Panjang and connect to the Jurong Region Line for Tengah. Families with children at schools in the Bukit Timah area — Methodist Girls, Pei Hwa Presbyterian, or the local primary schools — find the journey works well for late-afternoon or early-evening lessons.
+            </p>
+            <p class="text-base-600">
+              House visits are available across the Beauty World and Upper Bukit Timah neighbourhood. For families who prefer their child to learn at home, Patricia travels to you with everything needed for a productive lesson.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 15 minutes via Jalan Jurong Kechil or Upper Bukit Timah Road</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line from Beauty World MRT towards Bukit Panjang, then Jurong Region Line to Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services along Jalan Anak Bukit and Upper Bukit Timah Road connect towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Beauty World and the Upper Bukit Timah area</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Violin lessons with Patricia are private, one-to-one sessions. Younger beginners typically start with 30-minute sessions, which extend to 45 or 60 minutes as their focus and physical stamina grow. Each lesson is shaped by where your child currently stands and what they're ready to work on next.
+          </p>
+          <p>
+            A typical session moves through posture and bow hold checks, open string exercises, scales, and the current repertoire piece. Patricia integrates sight-reading naturally — a few bars at a time — so students build this skill progressively rather than finding it overwhelming. Aural training and listening exercises run through the lesson, developing the pitch sensitivity that's essential for violin. Children on fractional instruments — 1/4, 1/2, or 3/4 violins — receive particular attention to physical setup, ensuring that their posture and technique develop correctly as they grow.
+          </p>
+          <p>
+            Students aiming for ABRSM exams work methodically through all components: scales, set pieces, sight-reading, and aural tests. Those learning without exam goals follow a carefully curated programme of repertoire, technique, and musicianship that builds skills in a logical sequence and prepares them for ensemble playing when they choose to take that step.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Violin Teacher for Children near Beauty World"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching music to children for over a decade, and violin holds a special place in her teaching practice. Based in Tengah — around 15 minutes from Beauty World — she regularly works with families from the Bukit Timah corridor who want a teacher who truly understands young learners.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a strong foundation in both the art and science of teaching children. She knows when a child's frustration signals they need a break versus when they're close to a breakthrough. For violin, where the learning curve can feel steep in the first few months, this kind of awareness makes a meaningful difference in keeping children engaged and progressing.
+            </p>
+            <p class="text-base-600 mb-6">
+              Patricia's approach combines careful technical instruction with genuine enthusiasm for the music her students play. She focuses on building solid foundational skills — posture, bow control, intonation, and tone — while making sure every lesson includes moments of real musical enjoyment. Whether your child dreams of performing or simply wants to play for pleasure, Patricia meets them where they are.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-hume/" class="text-primary-600 hover:underline">Hume</a>,
+          <a href="/violin-lessons-king-albert-park/" class="text-primary-600 hover:underline">King Albert Park</a>, and
+          <a href="/violin-lessons-hillview/" class="text-primary-600 hover:underline">Hillview</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what violin lessons could look like. No commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Beauty%20World."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

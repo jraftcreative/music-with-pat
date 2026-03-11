@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How do I get from Stevens to Patricia's violin studio in Tengah?",
+    answer: "Patricia's studio in Tengah is approximately a 25-minute drive from the Stevens area. The most common route follows Stevens Road to the PIE, heading west towards Tengah. Families using public transport can take the Downtown Line (DT10) or Thomson-East Coast Line (TE11) from Stevens MRT and transfer towards Tengah."
+  },
+  {
+    question: "At what age can my child begin violin lessons?",
+    answer: "Patricia teaches violin to children from age 4 onwards. Very young beginners use fractional-size violins — a 1/4 size is typical for four- and five-year-olds — so the instrument fits their body properly. At the initial consultation, Patricia will assess your child's coordination, focus, and enthusiasm to confirm whether they are ready to begin or would benefit from waiting a few more months."
+  },
+  {
+    question: "How does ABRSM violin preparation work?",
+    answer: "Patricia integrates ABRSM exam components — scales, arpeggios, set pieces, sight-reading, and aural tests — into the regular weekly lesson plan. This means exam skills develop gradually as part of your child's normal learning, rather than being rushed in the weeks before an exam. She only registers students when she is confident they will perform well."
+  },
+  {
+    question: "Does Patricia offer group violin classes?",
+    answer: "All of Patricia's violin lessons are one-to-one. Private tuition allows her to focus entirely on your child's specific needs — correcting posture, refining bow technique, and addressing individual challenges — which is especially important in the early stages of learning violin where each child develops at their own pace."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Lessons for Children in Stevens | Music with Pat"
+  description="Violin lessons for children near Stevens, Singapore. Qualified early childhood music teacher with 10+ years experience. ABRSM violin preparation, fractional-size instruments for young beginners, and a nurturing approach. Studio ~25 min from Stevens via PIE."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Stevens",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Stevens, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Nurturing violin lessons for children from the Stevens area. Child-centred teaching, ABRSM preparation, and a structured curriculum tailored to each young violinist."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Stevens' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Stevens</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Lessons for Children in Stevens
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The Stevens area occupies a central, well-connected position in Singapore, served by both the Downtown Line and Thomson-East Coast Line. Families here enjoy convenient access to much of the island, including Patricia's Tengah studio — roughly 25 minutes by car via the PIE. She offers structured, one-to-one violin lessons designed specifically for children, with the patience and expertise that parents in this neighbourhood look for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Families Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Stevens Parents Trust Us</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Stevens Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient Teaching Style</h3>
+                <p class="text-base-600 text-sm">Violin places significant physical demands on young children — from balancing the instrument under the chin to controlling the bow with a relaxed arm. Patricia understands that these skills take time to develop and never rushes a child through them. Her patient, reassuring manner helps students build solid foundations without losing their enthusiasm for the instrument.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Training</h3>
+                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with a specialisation in Music Education gives her a formal understanding of how children develop physically and cognitively. She applies this knowledge when teaching violin — sequencing challenges appropriately so that young learners are stretched without being frustrated.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured Progression</h3>
+                <p class="text-base-600 text-sm">Each student follows a clear curriculum that moves from basic bow technique and open strings through to scales, shifting positions, and graded repertoire. Patricia balances technical exercises, sight-reading, ear training, and pieces in every lesson — ensuring progress is steady and well-rounded across all areas of musicianship.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Personal Studio Environment</h3>
+                <p class="text-base-600 text-sm">Patricia teaches from her own dedicated studio in Tengah — a calm, private space where children can concentrate fully on their violin playing. The absence of competing noise and the consistent setting help young students develop the focused listening skills that are critical for accurate intonation and tone production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Stevens -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Location</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Stevens
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Patricia's studio is in Tengah, Singapore's newest residential estate in the western region. From the Stevens area, the drive takes approximately 25 minutes. The most direct route follows Stevens Road south to join the PIE heading west, then exits towards Tengah. The route is straightforward even during moderate traffic.
+            </p>
+            <p class="text-base-600 mb-4">
+              By public transport, Stevens MRT is well served by two lines — the Downtown Line (DT10) and the Thomson-East Coast Line (TE11). Families can head west on the Downtown Line and transfer towards Tengah. Some parents from this area prefer taking a private hire car for simplicity, especially with a young child and a violin case in tow.
+            </p>
+            <p class="text-base-600">
+              The weekly drive becomes part of the routine for many families. Parents often note that the journey helps their child switch gears from the busyness of school and activities to a calmer, more focused state for their music lesson.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <div>
+                  <p class="font-medium text-base-900 text-sm">By Car</p>
+                  <p class="text-base-600 text-sm">Approximately 25 minutes via PIE westbound from Stevens Road. On-site parking is available at the studio.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <div>
+                  <p class="font-medium text-base-900 text-sm">By MRT</p>
+                  <p class="text-base-600 text-sm">Downtown Line (DT10) or Thomson-East Coast Line (TE11) from Stevens MRT, transferring towards Tengah.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <div>
+                  <p class="font-medium text-base-900 text-sm">By Private Hire</p>
+                  <p class="text-base-600 text-sm">A Grab ride from Stevens to Tengah is direct and comfortable, typically taking around 25 minutes outside of peak hours.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Experience</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <p class="text-base-600 mb-4">
+            Patricia's violin lessons are fully private and shaped around each child's individual needs, temperament, and pace of learning. New students begin with the physical fundamentals — how to stand naturally with the violin, how to hold the bow without tension, and how to produce a smooth tone across open strings. These early weeks lay the groundwork for everything that follows, and Patricia gives them the attention they deserve.
+          </p>
+          <p class="text-base-600 mb-4">
+            Once the basics are established, lessons expand to include finger patterns on the strings, scales, simple tunes, and early sight-reading skills. Children aged 4 to 6 learn on fractional-size violins — 1/4, 1/2, or 3/4 depending on their arm length — so they can develop technique comfortably without straining against an oversized instrument.
+          </p>
+          <p class="text-base-600 mb-6">
+            For students working towards ABRSM violin examinations, all required components are woven into the regular lesson plan: scales and arpeggios, performance pieces, sight-reading, and aural tests. The goal is steady, confident preparation rather than last-minute pressure.
+          </p>
+          <div class="text-center">
+            <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+              See Full Lesson Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Violin Teacher for Children near Stevens"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching music to children for over a decade, working with students as young as four years old. Her Bachelor's degree in Early Childhood Education with a Music Education specialisation informs every aspect of her violin teaching. She recognises the unique physical and cognitive demands that violin places on young learners and structures her instruction to meet children where they are developmentally.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her home studio in Tengah offers something that most commercial music schools cannot: a quiet, personal environment where each child receives undivided attention. For violin in particular — an instrument that rewards focused listening and precise physical control — this calm setting makes a meaningful difference. Parents from Stevens, Novena, and the surrounding central areas choose Patricia because they see consistent, genuine progress in their children's playing.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-botanic-gardens/" class="text-primary-600 hover:underline">Botanic Gardens</a>,
+          <a href="/violin-lessons-newton/" class="text-primary-600 hover:underline">Newton</a>, and
+          <a href="/violin-lessons-tan-kah-kee/" class="text-primary-600 hover:underline">Tan Kah Kee</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's musical goals and see if violin lessons are the right fit.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Stevens."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
