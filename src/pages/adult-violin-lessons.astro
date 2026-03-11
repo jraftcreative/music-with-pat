@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is violin harder to learn than piano as an adult?",
+    answer: "Violin has a steeper initial learning curve because there are no frets or keys — you need to develop intonation (playing in tune) from the start. However, adults who commit to regular practice typically produce a pleasant tone within a few weeks and can play simple melodies within a couple of months. The challenge is part of what makes violin so rewarding. Patricia guides you through the early stages with patience and clear technique instruction."
+  },
+  {
+    question: "I'm starting violin at 40 — is that realistic?",
+    answer: "Completely realistic. Many of the world's most dedicated amateur musicians started as adults. At 40, you have the focus, patience, and self-awareness to learn efficiently. Your body is more than capable of developing the necessary coordination. Patricia has worked with adult beginners across a range of ages and consistently sees meaningful progress within the first few months."
+  },
+  {
+    question: "How long before I sound decent on the violin?",
+    answer: "With consistent practice of 20–30 minutes daily, most adult beginners can play simple pieces with a pleasant tone within 3–4 months. Within a year, you'll be able to play through beginner-level classical pieces and popular melodies with confidence. 'Sounding decent' is subjective, but you'll pass that threshold sooner than you expect — and the improvement curve steepens over time."
+  },
+  {
+    question: "Do I need to buy a violin before my first lesson?",
+    answer: "Not necessarily. Patricia can advise you on renting or purchasing a suitable instrument during your initial consultation. Renting is a practical option for beginners — it lets you start with a quality instrument without a large upfront cost. She'll help you choose the right size and quality level so you're not held back by a poor instrument."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Adult Violin Lessons in Singapore | Music with Pat"
+  description="Violin lessons for adults in Singapore — beginners and returners welcome. Patient instruction, proper technique, and repertoire from classical to contemporary. Taught by Patricia in Tengah."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Adult Violin Lessons",
+      "name": "Adult Violin Lessons in Singapore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 18
+      },
+      "description": "Violin lessons for adult beginners and returners. Patient technique instruction, flexible scheduling, and a supportive environment for learners of any age."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: "Adult Violin Lessons" }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">A New Musical Chapter</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Adult Violin Lessons in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The violin you've always wanted to play is waiting. Whether you're starting from scratch or dusting off a childhood instrument, adult violin lessons with Patricia are built around patience, proper technique, and the music you love.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Adults Pick Up Violin -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Finding Your Reason</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Adults Pick Up the Violin
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            The violin has a pull that's hard to explain. Maybe you heard a piece in a concert hall or a film soundtrack and thought, "I want to do that." Maybe you played briefly as a child and the memory stayed. Or maybe you simply want a challenge — something that demands your full attention and rewards you with beauty in return.
+          </p>
+          <p>
+            For many adults in Singapore, picking up the violin is an act of reclaiming something personal. After years of building a career, managing a household, or raising children, learning an instrument is a way of investing in yourself again. It's a pursuit that belongs entirely to you — not tied to work, not measured by productivity, and not for anyone else's benefit.
+          </p>
+          <p>
+            The orchestral dream is a real motivator too. Community orchestras across Singapore welcome adult beginners, and many of Patricia's students eventually join ensemble groups. There's something profoundly satisfying about playing in harmony with others — it's a social and musical experience that solo practice can't replicate.
+          </p>
+          <p>
+            And then there's the stress relief. The physical engagement of violin playing — the careful bowing, the precise finger placement, the controlled breathing — creates a form of active meditation. You can't multitask while playing violin. For adults dealing with the pressures of Singapore's fast-paced working life, that forced focus is its own kind of therapy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Your Learning Journey</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What to Expect from Adult Violin Lessons
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Technique First</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Posture and Foundations</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Violin technique matters from day one. How you hold the instrument, how you draw the bow, and how you position your left hand all affect your sound and your comfort. Patricia spends careful time on posture and setup because getting this right early prevents pain and bad habits later.
+            </p>
+            <p class="text-base-600 text-sm">
+              For adult beginners, this foundational work is especially important. Your body needs to learn new movement patterns, and Patricia knows how to teach these efficiently without overwhelming you.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Patient Pacing</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">No Rush, No Judgement</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Adults often feel self-conscious about being beginners. Patricia creates a learning space where it's completely fine to struggle, ask questions, and take things slowly. There's no race to reach any particular level.
+            </p>
+            <p class="text-base-600 text-sm">
+              Lessons move at the pace that suits your ability and your schedule. If you can practise daily, you'll progress faster. If life gets busy, Patricia adjusts expectations without frustration.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Diverse Repertoire</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Classical to Contemporary</h3>
+            <p class="text-base-600 text-sm mb-3">
+              While classical pieces form the backbone of violin technique, your lessons aren't limited to Bach and Mozart. Patricia incorporates contemporary arrangements, film music, folk melodies, and popular tunes to keep learning varied and enjoyable.
+            </p>
+            <p class="text-base-600 text-sm">
+              If there's a specific piece that inspired you to start violin, Patricia will work it into your lesson plan — even if it means creating a simplified arrangement to match your current level.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Concerns -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Let's Address These</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Concerns Every Adult Violin Beginner Has
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              <strong class="text-base-900">"Is violin harder than piano?"</strong> — They're different challenges. Piano lets you produce a pleasing sound immediately by pressing a key, while violin requires you to create the sound yourself through bowing and intonation. The early weeks of violin demand more patience, but many adults find the physical engagement of violin deeply satisfying. The instrument becomes an extension of your body in a way that piano doesn't.
+            </p>
+            <p class="text-base-600 mb-4">
+              <strong class="text-base-900">"I'm starting at 40 — can my fingers even do this?"</strong> — Yes. Adult hands are actually well-suited to violin. You have the finger strength and hand span that children lack. While flexibility may take some developing, the fine motor control you've built over decades of daily life transfers more than you'd expect. Patricia works with your body, not against it.
+            </p>
+            <p class="text-base-600">
+              <strong class="text-base-900">"How long before I sound decent?"</strong> — Most adult beginners produce a clean, pleasant tone within the first month of focused practice. Within 3–6 months, you'll be playing recognisable melodies with growing confidence. By the end of the first year, you'll be tackling beginner repertoire that sounds genuinely musical. The trajectory is faster than most people expect.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">The Rewards of Adult Violin</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">A portable instrument you can take anywhere — play at home, in parks, at gatherings</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Access to community orchestras and ensemble groups across Singapore</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Improved posture, coordination, and body awareness</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Deep focus that acts as genuine stress relief after work</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">The pride of mastering an instrument many consider the most expressive</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/pat-piano-teacher-singapore.webp"
+              alt="Patricia, violin teacher for adults in Singapore"
+              class="rounded-2xl w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Your Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Learning Violin with Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia brings over 10 years of teaching experience and a B.Ed in Early Childhood and Music Education to every lesson. While her formal training focuses on education pedagogy, her violin instruction is grounded in careful technique, patient progression, and genuine encouragement.
+            </p>
+            <p class="text-base-600 mb-4">
+              With adult students, Patricia adopts a collaborative teaching style. She explains not just what to do, but why — helping you understand the mechanics behind good tone production, proper bowing, and accurate intonation. Adults appreciate knowing the reasoning, and Patricia delivers it clearly.
+            </p>
+            <p class="text-base-600">
+              She's also realistic about what adult life looks like. If you travel for work, have family commitments, or simply hit a week where practice wasn't possible, there's no guilt. Lessons pick up where you left off, with adjustments made to keep you moving forward at a sustainable pace.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map(faq => (
+            <details class="bg-white rounded-xl border border-primary-100 p-5 group">
+              <summary class="font-semibold text-base-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                {faq.question}
+                <svg class="w-5 h-5 text-primary-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p class="text-base-600 mt-3 text-sm">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Note -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Location</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Based in Tengah, Accessible Across West Singapore
+        </h2>
+        <p class="text-base-600">
+          Patricia's home studio is located in Tengah Garden Town — convenient for adults living or working in <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>, <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>, <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>, <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>, and surrounding neighbourhoods. House visits are available for those who prefer learning at home.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50 border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Pick Up the Violin You've Always Wanted to Play
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your goals, ask questions, and see if violin lessons are right for you.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20adult%20violin%20lessons."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

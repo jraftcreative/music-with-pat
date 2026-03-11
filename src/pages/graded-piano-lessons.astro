@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Do students need to pass Grade 5 Theory before taking higher practical exams?",
+    answer: "Yes. ABRSM requires Grade 5 Theory (or an equivalent such as Grade 5 Practical Musicianship or a diploma-level theory qualification) before entering for Grade 6, 7, or 8 practical exams. Patricia integrates theory preparation into regular lessons well in advance so students are ready to sit the theory exam comfortably before they need it."
+  },
+  {
+    question: "When are ABRSM exams held in Singapore?",
+    answer: "ABRSM practical exams in Singapore typically run across multiple sessions throughout the year, with major sessions around March–April and October–November. Theory exams are held in March, June, and November. Patricia keeps track of registration deadlines and advises on the best timing for each student."
+  },
+  {
+    question: "How long does it take to progress through each grade?",
+    answer: "As a general guide, students who practise regularly can expect to spend 6–12 months per grade at the lower levels (Initial to Grade 3), and 12–18 months per grade from Grade 4 onwards. Grades 6–8 often require longer preparation due to increased technical and musical demands. However, every student is different — Patricia plans timelines based on individual progress rather than a fixed schedule."
+  },
+  {
+    question: "Is it worth doing every grade, or can students skip grades?",
+    answer: "Students don't have to sit every grade — it's perfectly acceptable to skip grades if readiness allows. However, Patricia generally recommends not skipping more than one grade at a time, as each level builds important technical and musical foundations. Skipping too aggressively can leave gaps that become problems at higher levels. She'll advise on the best pathway for each student."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Graded Piano Lessons (ABRSM) in Singapore | Music with Pat"
+  description="Structured ABRSM graded piano preparation in Singapore — from Initial Grade through Grade 8. Exam technique, aural training, sight-reading, theory, and musical development. Taught by Patricia in Tengah."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Graded Piano Lessons (ABRSM)",
+      "name": "Graded Piano Lessons (ABRSM) in Singapore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "description": "Comprehensive ABRSM graded piano exam preparation covering performance pieces, aural, sight-reading, theory, and exam technique from Initial Grade through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: "Graded Piano Lessons (ABRSM)" }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Structured Musical Progress</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Graded Piano Lessons (ABRSM) in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The ABRSM graded system gives students clear milestones, internationally recognised qualifications, and a structured path from beginner to advanced. Here's how Patricia prepares students to succeed at every level.
+        </p>
+      </div>
+    </section>
+
+    <!-- Understanding ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Framework</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Understanding the ABRSM Graded System
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            The Associated Board of the Royal Schools of Music (ABRSM) is the world's most widely recognised music examination body. Their graded system runs from Initial Grade through Grade 8, with each level designed to progressively develop a student's technical ability, musical understanding, and performance skills.
+          </p>
+          <p>
+            In Singapore, ABRSM exams are extremely popular — they're the standard benchmark for piano proficiency and are valued by schools, universities, and employers alike. Each grade exam assesses three performance pieces, scales and arpeggios, sight-reading, and aural tests. From 2023, ABRSM also introduced changes to their practical exam format, giving students more choice in how they're assessed.
+          </p>
+          <p>
+            But the grades are more than just exams. At their best, they provide a roadmap for musical development. Each level introduces new technical challenges, broader musical vocabulary, and deeper interpretive skills. A student who works through the grades with a good teacher doesn't just collect certificates — they build genuine musicianship.
+          </p>
+          <p>
+            The challenge is preparing students who can pass exams and who actually grow as musicians. Too many students scrape through grades without truly understanding the music they play. Patricia's approach ensures that exam preparation and musical development happen together, not at the expense of each other.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Patricia Prepares Students -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Preparation</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            How Patricia Prepares Students for ABRSM Exams
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Exam preparation isn't just about learning three pieces and hoping for the best. Patricia takes a comprehensive approach that covers every element of the exam — performance pieces, scales and arpeggios, sight-reading, and aural skills — with equal attention throughout the preparation period.
+            </p>
+            <p class="text-base-600 mb-4">
+              For performance pieces, she helps students select from the exam syllabus options based on their strengths, preferences, and what showcases their abilities best. Each piece is developed from note-learning through to polished performance, with attention to dynamics, phrasing, pedalling, and musical character.
+            </p>
+            <p class="text-base-600 mb-4">
+              Scales and arpeggios are practised consistently rather than crammed before the exam. Patricia integrates technical work into every lesson, using exercises that relate directly to the repertoire being studied. This makes scales feel purposeful rather than tedious.
+            </p>
+            <p class="text-base-600">
+              Sight-reading and aural training receive dedicated time in every lesson. These are the areas most students find challenging, and they require regular practice to develop. Patricia uses progressive exercises and practical strategies that build genuine skill rather than guesswork.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Exam Preparation Covers</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Three performance pieces — chosen strategically from the syllabus options</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Scales, arpeggios, and broken chords — practised regularly throughout the year</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Sight-reading exercises — building pattern recognition and confidence</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Aural tests — pitch recognition, rhythm, musical awareness</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm">Music theory — integrated into practical lessons and standalone preparation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade-by-Grade Expectations -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Journey</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Grade-by-Grade Expectations
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Initial – Grade 2</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Building the Foundation</h3>
+            <p class="text-base-600 text-sm mb-3">
+              The early grades establish fundamental skills — correct hand position, basic notation reading, simple scales and arpeggios, and the ability to play short pieces with a steady pulse and basic dynamics.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Students learn to listen critically to their own playing, develop a sense of rhythm, and begin understanding musical structure. Sight-reading starts with very simple patterns, and aural tests involve clapping rhythms and identifying pitch changes.
+            </p>
+            <p class="text-base-600 text-sm">
+              These grades are about building habits that will serve students well at higher levels — consistent practice, attention to detail, and a willingness to work on weaknesses rather than just playing favourite pieces.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Grade 3 – Grade 5</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Developing Musicianship</h3>
+            <p class="text-base-600 text-sm mb-3">
+              The middle grades represent a significant step up in technical and musical demands. Pieces become longer and more complex, requiring greater finger independence, pedal use, and dynamic range. Students encounter a wider variety of musical styles and periods.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Theory becomes increasingly important here. Grade 5 Theory is a prerequisite for higher practical grades, so Patricia ensures students develop strong theoretical understanding alongside their practical skills. This isn't a separate chore — theory knowledge directly improves how students learn and interpret pieces.
+            </p>
+            <p class="text-base-600 text-sm">
+              Sight-reading and aural demands increase noticeably. Students who've practised these consistently from the early grades find the transition manageable; those who haven't often struggle. Patricia builds these skills from day one.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Grade 6 – Grade 8</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Advanced Proficiency</h3>
+            <p class="text-base-600 text-sm mb-3">
+              The upper grades demand serious commitment. Pieces at these levels require advanced technique — rapid passage work, complex coordination between hands, sophisticated pedalling, and nuanced musical interpretation. Students are expected to perform with artistic maturity.
+            </p>
+            <p class="text-base-600 text-sm mb-3">
+              Practice time increases significantly, and students need strong self-discipline alongside teacher guidance. Patricia helps develop independent learning skills so students can problem-solve during practice, not just during lessons.
+            </p>
+            <p class="text-base-600 text-sm">
+              These grades carry real weight — Grade 8 ABRSM is widely respected in Singapore and recognised by MOE for school applications, CCA portfolios, and tertiary admissions. Students who achieve Distinction at these levels have demonstrated genuine musical ability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond the Grade -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/pat-piano-teacher-singapore.webp"
+              alt="Patricia teaching graded piano exam preparation in Singapore"
+              class="rounded-2xl w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">The Bigger Picture</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Beyond the Grade — Musicality Matters
+            </h2>
+            <p class="text-base-600 mb-4">
+              A common trap in graded music education is treating exams as the destination rather than milestones on a longer journey. Students who focus only on passing exams often end up technically competent but musically hollow — they can play the notes but not the music.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia's philosophy is that exam preparation should develop genuine musicianship. Every piece studied is an opportunity to understand a composer's style, explore emotional expression, and develop artistic taste. The exam mark matters, but what matters more is that students walk away as better musicians, not just holders of a certificate.
+            </p>
+            <p class="text-base-600">
+              This approach actually produces better exam results too. ABRSM examiners reward musical performance — not just accuracy. Students who play with expression, character, and understanding consistently score higher than those who play technically correct but uninspired performances.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map(faq => (
+            <details class="bg-white rounded-xl border border-primary-100 p-5 group">
+              <summary class="font-semibold text-base-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                {faq.question}
+                <svg class="w-5 h-5 text-primary-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p class="text-base-600 mt-3 text-sm">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Note -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Location</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Based in Tengah, Serving Students Across West Singapore
+        </h2>
+        <p class="text-base-600">
+          Patricia's home studio is located in Tengah Garden Town — easily accessible from <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>, <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>, <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>, <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>, and surrounding areas. House visits are also available for students who prefer lessons at home.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50 border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your ABRSM Journey with the Right Teacher
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your current level, goals, and a realistic exam preparation timeline.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20graded%20ABRSM%20piano%20lessons."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
