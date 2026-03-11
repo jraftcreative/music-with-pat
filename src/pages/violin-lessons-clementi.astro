@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How do I get from Clementi to Patricia's studio in Tengah?",
-    answer: "The most direct route is via the AYE (Ayer Rajah Expressway), which takes roughly 15 minutes by car depending on traffic. You can also take the East-West Line from Clementi MRT towards Jurong East, then transfer to a bus heading towards the Tengah area. Many Clementi parents find the drive straightforward and use the time after school for a relaxed trip to the studio."
+    question: "What age should my child start violin?",
+    answer: "Most children are ready for violin from around age 4 to 5. At this age, they use fractional-size instruments — typically a 1/8 or 1/4 size violin — that are proportioned to their body. Patricia assesses each child's physical readiness and attention span during the initial consultation to determine the right starting point."
   },
   {
-    question: "Does Patricia offer house visits to Clementi?",
-    answer: "Patricia teaches from her dedicated home studio in Tengah, which provides a quiet, distraction-free setting with a quality instrument. House visits to Clementi may be possible depending on her schedule — please message her on WhatsApp to discuss your family's needs."
+    question: "How do I get from Clementi to the studio?",
+    answer: "Patricia's studio in Tengah is roughly an 18-minute drive from Clementi, typically via the AYE heading west. By public transport, you can take the East-West Line from Clementi MRT towards Jurong East, then connect to a bus heading towards the Tengah area. Many families near NUS and Clementi Central find the after-school drive straightforward."
   },
   {
-    question: "What age can my child start piano lessons?",
-    answer: "Patricia accepts students from age 4 onwards. Her Bachelor's degree in Early Childhood Education with Music gives her specialised training in working with very young learners, so she knows how to keep lessons engaging and developmentally appropriate for children who are just starting out."
+    question: "Does Patricia prepare students for ABRSM violin exams?",
+    answer: "Yes. Patricia prepares students for ABRSM violin examinations covering all required components — scales, arpeggios, set pieces, sight-reading, and aural tests. She only enters children for exams when they are genuinely confident and well-prepared, and she is equally happy to work with students who prefer to progress without the exam framework."
   },
   {
-    question: "Are ABRSM exams compulsory?",
-    answer: "No — ABRSM exams are completely optional. Some Clementi families like the structured milestones that graded exams provide, while others prefer their child to learn freely without exam pressure. Patricia is happy to support either approach, and she will only recommend entering an exam when your child is genuinely confident and prepared."
+    question: "How is violin different from piano for young beginners?",
+    answer: "Violin requires more physical coordination from the start — children need to manage bow hold, instrument posture, and left-hand finger placement simultaneously. It also demands a stronger ear for pitch, since violinists create their own intonation rather than pressing pre-tuned keys. Patricia's early childhood training helps her guide young beginners through these challenges with patience and age-appropriate expectations."
   }
 ]
 
@@ -40,16 +40,16 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Piano Lessons for Children in Clementi | Music with Pat"
-  description="Piano lessons for children near Clementi, Singapore. Patricia's Tengah studio is a short drive via the AYE from Clementi. ABRSM preparation, child-centred teaching for ages 4+."
+  title="Violin Lessons for Children in Clementi | Music with Pat"
+  description="Violin lessons for children in Clementi, Singapore. Careful bow technique coaching, fractional-size violins for young beginners, ABRSM violin preparation. Studio near NUS, ages 4+."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Piano Lessons",
-      "name": "Piano Lessons for Children in Clementi",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Clementi",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -63,25 +63,25 @@ const faqStructuredData = {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Nurturing piano lessons for children in Clementi, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+      "description": "Patient, child-centred violin lessons for children in Clementi, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in nearby Tengah."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Piano Lessons Clementi' }]} />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Clementi' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Clementi</p>
+        <p class="text-primary-600 font-medium mb-2">Clementi & Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Piano Lessons for Children in Clementi
+          Violin Lessons for Children in Clementi
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Clementi has long been one of Singapore's most education-focused neighbourhoods — a mature estate where families value learning and enrichment. Patricia's piano studio in Tengah is a short drive along the AYE, giving Clementi children access to thoughtful, one-to-one music education in a calm and welcoming space.
+          Clementi is a mature estate with a strong academic culture, situated close to NUS and several well-regarded primary schools. Families here tend to value enrichment that is substantive and well-taught. Patricia's violin studio in Tengah is around an 18-minute drive via the AYE, offering the kind of thoughtful, individual instruction where children learn proper posture, bow technique, and musical expression from the very beginning.
         </p>
       </div>
     </section>
@@ -101,8 +101,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Teaching That Matches Your Child</h3>
-                <p class="text-base-600 text-sm">Clementi families are used to high-quality education, and Patricia delivers exactly that — lessons carefully shaped around each child's temperament, learning style, and musical interests. She pays close attention to what motivates your child and adjusts her approach accordingly.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Technique Built on Solid Foundations</h3>
+                <p class="text-base-600 text-sm">Clementi families appreciate rigour, and Patricia delivers it without rigidity. From the first lesson, she focuses on building correct bow hold, left-hand posture, and instrument positioning. These foundational habits, established early, prevent the kinds of technical problems that are much harder to fix later on.</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood and Music Expertise</h3>
-                <p class="text-base-600 text-sm">With a Bachelor of Education in Early Childhood with Music, Patricia brings a rare combination of skills. She understands child development at a deeper level than most piano teachers — knowing when to challenge a child, when to slow down, and how to keep very young learners focused and happy.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Understanding of How Children Learn</h3>
+                <p class="text-base-600 text-sm">With a Bachelor's degree in Early Childhood Education and Music Education, Patricia brings a depth of understanding that goes beyond musical instruction. She knows how developing bodies adapt to the physical demands of violin and how young minds best absorb complex motor skills — knowledge that shapes every decision she makes in lessons.</p>
               </div>
             </div>
           </div>
@@ -119,8 +119,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured ABRSM Pathway</h3>
-                <p class="text-base-600 text-sm">Many Clementi parents appreciate having clear goals for their children's progress. Patricia prepares students thoroughly for ABRSM graded exams — practical pieces, scales, sight-reading, and aural — but she never enters a child before they are genuinely ready and confident.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Thorough ABRSM Violin Preparation</h3>
+                <p class="text-base-600 text-sm">For families pursuing graded exams, Patricia prepares students methodically for ABRSM violin — covering scales, arpeggios, set pieces, sight-reading, and aural tests. She integrates exam preparation into the broader curriculum rather than treating it as a last-minute add-on, so children feel prepared rather than pressured.</p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Quiet Studio, Not a Busy Centre</h3>
-                <p class="text-base-600 text-sm">Unlike music schools where children shuffle between group rooms, Patricia's Tengah home studio is a private, peaceful space built for one-to-one lessons. Your child gets her full attention for the entire session, with no background noise or waiting around.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Focused, Private Studio</h3>
+                <p class="text-base-600 text-sm">Patricia's Tengah home studio provides a quiet, dedicated space for violin teaching. For an instrument that demands careful listening and pitch sensitivity, this controlled acoustic environment makes a real difference compared to a busy music centre with multiple classes running simultaneously.</p>
               </div>
             </div>
           </div>
@@ -150,38 +150,33 @@ const faqStructuredData = {
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Patricia's studio in Tengah Garden Town is well connected from Clementi via the Ayer Rajah Expressway. Whether you live near Clementi Central, the blocks around Sunset Way, or the private estates off West Coast Road, the drive is typically around 15 minutes — a comfortable journey that many families fit in right after school at Clementi Primary, Nan Hua Primary, or Pei Tong Primary.
+              Patricia's studio in Tengah is connected to Clementi via the Ayer Rajah Expressway. Whether you live near Clementi Central, the blocks around Sunset Way, or close to NUS, the drive is typically around 18 minutes — shorter than heading into central Singapore for lessons.
             </p>
             <p class="text-base-600 mb-4">
-              For parents who prefer public transport, Clementi MRT on the East-West Line connects to Jurong East, where buses run towards the Tengah area. Bus services along Commonwealth Avenue West and Clementi Avenue also provide routes heading west.
+              By public transport, Clementi MRT on the East-West Line connects to Jurong East, from where buses run towards the Tengah area. The upcoming Jurong Region Line will make rail access even more direct in the future.
             </p>
             <p class="text-base-600">
-              The trip from Clementi is shorter than heading into the city for lessons, and your child arrives at a dedicated studio rather than a crowded music school — a worthwhile trade-off that many families in the area have come to appreciate.
+              Many Clementi parents find the dedicated trip worthwhile — their child arrives at a quiet, purpose-built studio and returns home with a clear sense of what to practise during the week ahead.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Car (AYE)</span>
-                  <p class="text-base-600 text-sm">Approximately 15 minutes via the Ayer Rajah Expressway heading west. Exit towards Jurong and follow signs to Tengah.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 18 minutes via the AYE heading west towards Jurong and Tengah</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Bus</span>
-                  <p class="text-base-600 text-sm">Several bus services from Clementi Avenue and Commonwealth Avenue West head towards Jurong West and the Tengah area.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Clementi MRT (East-West Line) to Jurong East, then bus towards Tengah</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By MRT</span>
-                  <p class="text-base-600 text-sm">Clementi MRT (East-West Line) to Jurong East, then a short bus ride or taxi to the Tengah studio. The upcoming Jurong Region Line will make this even easier.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services from Clementi Avenue and Commonwealth Avenue West heading towards Jurong West</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> May be available in Clementi — contact Patricia to discuss</span>
               </li>
             </ul>
           </div>
@@ -191,7 +186,7 @@ const faqStructuredData = {
 
     <!-- What Lessons Look Like -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
@@ -199,31 +194,19 @@ const faqStructuredData = {
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-6 mb-8">
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
-            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
-            <p class="text-base-600 text-sm">Finger exercises, scales, and posture work to get hands ready and settle the mind before diving into repertoire.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
-            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
-            <p class="text-base-600 text-sm">Focused time on current pieces — working through difficult passages, building musical expression, and polishing sections for performance.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
-            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
-            <p class="text-base-600 text-sm">Bite-sized music theory, sight-reading practice, and ear training activities woven naturally into the flow of the lesson.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
-            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
-            <p class="text-base-600 text-sm">A brief recap of the session with clear practice targets for the week, so your child knows exactly what to work on at home.</p>
-          </div>
+        <div class="space-y-4 text-base-600">
+          <p>
+            Every violin lesson is a private, one-to-one session tailored to your child's current level. Sessions run between 30 and 60 minutes, with younger beginners starting shorter and building up as their concentration and physical stamina develop.
+          </p>
+          <p>
+            Patricia works through the core pillars of violin playing in each session: instrument and bow hold, tone production, intonation, scales, and repertoire. For children on fractional-size violins — 1/4 or 1/2 size — she pays particular attention to posture and comfort, ensuring the instrument feels natural and not burdensome. Ear training and sight-reading are woven into every lesson, building the aural sensitivity that violinists need to play in tune.
+          </p>
+          <p>
+            Students working towards ABRSM violin exams receive thorough preparation across all components, while those on a non-exam track follow a structured programme of progressive pieces and technique work that keeps them moving forward with purpose and enjoyment.
+          </p>
         </div>
 
-        <div class="text-center">
-          <p class="text-base-600 mb-4">Younger children enjoy shorter, more varied activities with plenty of movement and play. Older students spend more time on structured repertoire and exam preparation. Every lesson is adapted to your child's age and stage.</p>
+        <div class="text-center mt-8">
           <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             View Full Lesson Details
           </a>
@@ -238,7 +221,7 @@ const faqStructuredData = {
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-              alt="Patricia - Piano Teacher for Children near Clementi"
+              alt="Patricia - Violin Teacher for Children near Clementi"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -249,13 +232,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has taught piano to young children in Singapore for over a decade, and her approach reflects something that Clementi parents tend to value — substance over flash. She holds a Bachelor of Education in Early Childhood with Music, which means her teaching draws on formal training in child development alongside her musical skills.
+              Patricia has over a decade of experience teaching music to children, with violin as a central part of her teaching practice. Her studio in Tengah draws students from Clementi, Jurong, and the wider western corridor — families who value substance and skill development over surface-level learning.
             </p>
             <p class="text-base-600 mb-4">
-              Her studio in Tengah is a short drive from Clementi, and she already works with several families from the western neighbourhoods. Lessons are unhurried and patient — Patricia takes the time to understand how each child learns, rather than applying a one-size-fits-all method. She communicates regularly with parents so you always know how your child is progressing.
+              Her Bachelor's degree in Early Childhood Education with Music Education informs every aspect of her violin teaching. She understands the physical challenges that violin presents to young bodies — the coordination needed for bow control, the finger strength required for clean intonation — and she adapts her pace and expectations to suit each child's developmental stage.
             </p>
             <p class="text-base-600 mb-6">
-              Whether your child is touching the keys for the first time or preparing for their next ABRSM grade, Patricia provides a space where they feel safe to try, make mistakes, and grow as a musician at their own pace.
+              Patricia communicates openly with parents about progress, practice expectations, and next steps. Her teaching is structured and purposeful, but always warm — she builds confidence alongside competence, so children genuinely enjoy the process of learning.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -299,7 +282,7 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also available in Clementi:
-          <a href="/violin-lessons-clementi/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/piano-lessons-clementi/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
           <a href="/music-lessons-clementi/" class="text-primary-600 hover:underline">Music Lessons</a>
         </p>
       </div>
@@ -310,9 +293,9 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/piano-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>,
-          <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>, and
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>.
+          <a href="/violin-lessons-dover/" class="text-primary-600 hover:underline">Dover</a>,
+          <a href="/violin-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>, and
+          <a href="/violin-lessons-buona-vista/" class="text-primary-600 hover:underline">Buona Vista</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -322,15 +305,15 @@ const faqStructuredData = {
     <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Piano Journey
+          Start Your Child's Violin Journey
         </h2>
-        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss your child's interests, goals, and whether her teaching approach is the right fit for your family.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what violin lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Consultation
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Clementi%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Clementi."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

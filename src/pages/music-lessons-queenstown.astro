@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How long does it take to get to the studio from Choa Chu Kang?",
-    answer: "The studio in Tengah is roughly a 10-minute drive from most parts of Choa Chu Kang. By public transport, you can take the North-South Line from Choa Chu Kang MRT towards Jurong East, then connect to the Jurong Region Line. Several bus services also run between CCK and Tengah. Many families find the short trip well worth it for consistent, quality lessons."
+    question: "How do I get to the Tengah studio from Queenstown?",
+    answer: "From Queenstown, the studio in Tengah is roughly a 25-minute drive. Head west along Queensway or Commonwealth Avenue West and join the AYE towards Tengah. By MRT, take the East-West Line from Queenstown to Jurong East, then transfer to the Jurong Region Line towards Tengah. The route is familiar to most western Singapore families and manageable as a weekly commitment."
   },
   {
-    question: "Does Patricia offer house visits in Choa Chu Kang?",
-    answer: "Yes, house visits are available for families in Choa Chu Kang. This is a popular option for parents with younger children or busy after-school schedules. Lesson fees for house visits differ slightly from studio rates — feel free to get in touch for details."
+    question: "What types of music lessons does Patricia offer?",
+    answer: "Patricia teaches piano, violin, and general musicianship. Piano and violin are offered as focused instrumental tracks, while musicianship sessions introduce children to fundamental musical skills — rhythm, pitch, listening, and an understanding of how music works. A free consultation helps determine which path suits your child."
   },
   {
-    question: "What age should my child start piano lessons?",
-    answer: "Most children are ready from age four. At this stage, they can follow simple instructions, sit for a short lesson, and begin developing finger coordination. The initial session is always a consultation where Patricia assesses your child's readiness — there's no obligation to commit."
+    question: "Are house visits available in Queenstown?",
+    answer: "Yes, Patricia offers house visits throughout Queenstown, including the HDB estates along Stirling Road and Margaret Drive, the condominiums near Queensway, and the residential streets around IKEA Alexandra. House visit rates differ slightly from studio sessions — contact Patricia for details."
   },
   {
-    question: "Are ABRSM exams compulsory?",
-    answer: "Not at all. ABRSM preparation is available for students who benefit from structured goals and milestones, but it's never forced. Some children progress beautifully without exams, focusing instead on building repertoire and enjoying their music. Patricia will advise on what suits your child best."
+    question: "Is my four-year-old ready for music lessons?",
+    answer: "Most four-year-olds are ready to begin. Patricia's Bachelor's degree in Early Childhood Education with Music Education trained her to work with very young children. She uses short, varied activities to introduce musical concepts through play, listening, and gentle exploration of instruments. A free consultation lets her meet your child and advise on readiness."
   }
 ]
 
@@ -40,16 +40,16 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Piano Lessons for Children in Choa Chu Kang | Music with Pat"
-  description="Piano lessons for children in Choa Chu Kang, Singapore. Child-centred teaching, ABRSM preparation, and a nurturing studio environment in nearby Tengah. Ages 4 and up."
+  title="Music Lessons for Children in Queenstown | Music with Pat"
+  description="Music lessons for children in Queenstown, Singapore. Piano, violin, and musicianship from an experienced educator. Studio in Tengah with house visits available. Ages 4 and up."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Piano Lessons",
-      "name": "Piano Lessons for Children in Choa Chu Kang",
+      "serviceType": "Music Lessons",
+      "name": "Music Lessons for Children in Queenstown",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,42 +57,42 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Choa Chu Kang, Singapore"
+        "name": "Queenstown, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Nurturing piano lessons for children in Choa Chu Kang, Singapore. Child-centred teaching, ABRSM preparation, and a calm studio environment in neighbouring Tengah."
+      "description": "Piano, violin, and musicianship lessons for children in Queenstown, Singapore. Child-centred teaching in a calm studio environment in nearby Tengah."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Piano Lessons Choa Chu Kang' }]} />
+  <Breadcrumbs items={[{ label: 'Music Lessons Queenstown' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Choa Chu Kang & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">Queenstown & Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Piano Lessons for Children in Choa Chu Kang
+          Music Lessons for Children in Queenstown
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Choa Chu Kang is home to a growing community of young families, and many parents here are looking for enrichment activities that genuinely benefit their children. Patricia's studio in neighbouring Tengah offers piano lessons built around how children actually learn — with patience, warmth, and a structured pathway from first notes to ABRSM examinations.
+          Queenstown holds the distinction of being Singapore's first satellite town, and its mature, community-minded character endures. From the IKEA Alexandra corridor to the established HDB estates along Stirling Road, families here have deep roots and practical expectations. Patricia's studio in Tengah is roughly 25 minutes west, offering piano, violin, and musicianship lessons shaped by genuine expertise in child development — not commercial gimmicks or factory-style teaching.
         </p>
       </div>
     </section>
 
-    <!-- Why Families from CCK Choose Patricia -->
+    <!-- Why Families from Queenstown Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Choa Chu Kang Choose Patricia
+            Why Families from Queenstown Choose Patricia
           </h2>
         </div>
 
@@ -101,8 +101,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Lessons Shaped Around Your Child</h3>
-                <p class="text-base-600 text-sm">No two children learn the same way. Patricia observes how each student responds — to encouragement, to challenges, to different types of music — and adjusts her approach accordingly. The result is lessons that feel personal rather than formulaic.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Piano, Violin, or Musicianship — Your Choice</h3>
+                <p class="text-base-600 text-sm">Patricia offers piano, violin, and general musicianship, giving Queenstown families real flexibility. If your child already knows which instrument they want, she can start them on a focused track. If they are not sure yet, her musicianship sessions build foundational skills — listening, rhythm, pitch — that transfer to any instrument they eventually choose.</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Trained in Music and Education</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor's degree in Early Childhood Education with Music Education. This dual background means she understands both piano pedagogy and child development — a combination that makes a real difference when teaching young learners.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Teacher Who Understands Children</h3>
+                <p class="text-base-600 text-sm">With a Bachelor's degree in Early Childhood Education with Music Education, Patricia brings proper training in how children learn and develop. She does not rely on a one-size-fits-all method — she reads each child's temperament and adapts her approach, knowing when to challenge and when to encourage.</p>
               </div>
             </div>
           </div>
@@ -119,8 +119,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Clear ABRSM Pathway</h3>
-                <p class="text-base-600 text-sm">For families who want structured milestones, Patricia prepares students for ABRSM graded examinations at a pace that feels right for each child. Exams are encouraged where they add value but never treated as the sole purpose of learning.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">No-Pressure Exam Philosophy</h3>
+                <p class="text-base-600 text-sm">ABRSM exam preparation is available but never compulsory. Patricia will candidly discuss whether structured grading would benefit your child or whether a broader, repertoire-focused approach would serve them better. Queenstown families appreciate this honest, practical guidance.</p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Calm, Welcoming Studio</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a quiet, comfortable space where children can focus without distractions. It's close enough to Choa Chu Kang to be convenient, yet feels like a proper learning environment away from the bustle of large music schools.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Focused, Private Setting</h3>
+                <p class="text-base-600 text-sm">Lessons take place in Patricia's home studio in Tengah — a calm, private space where children can concentrate without the chaos of a commercial music centre. The intimate environment allows Patricia to give her full attention to each student, which makes a real difference in the quality of learning.</p>
               </div>
             </div>
           </div>
@@ -137,26 +137,26 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from CCK -->
+    <!-- Getting Here from Queenstown -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Conveniently Close</p>
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Choa Chu Kang
+            Getting Here from Queenstown
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Tengah sits right next to Choa Chu Kang, making the journey to Patricia's studio quick and straightforward. Whether you drive, take the bus, or use the MRT, most families from CCK reach the studio in around 10 minutes.
+              From Queenstown, the drive to Patricia's Tengah studio takes approximately 25 minutes. The AYE is accessible via Queensway or Commonwealth Avenue West, and the westward journey to Tengah is direct. Traffic is typically manageable outside the evening peak.
             </p>
             <p class="text-base-600 mb-4">
-              If you live near South View Primary, De La Salle School, or Unity Primary, you're already within a short distance. Families from the newer Tengah developments will find the studio particularly accessible — it's within the same neighbourhood.
+              Some families from the Stirling Road and Margaret Drive estates schedule lessons on weekend mornings, making the drive a relaxed part of the week. Others heading to IKEA Alexandra or Queensway Shopping Centre find they can combine errands with the lesson trip.
             </p>
             <p class="text-base-600">
-              House visits are also available throughout Choa Chu Kang for families who prefer lessons at home. This is especially popular with parents of younger children who find it easier to learn in familiar surroundings.
+              For families who prefer not to travel, Patricia provides house visits throughout Queenstown. Whether you live near the MRT station, along Stirling Road, or in the estates towards Alexandra, she can bring lessons to your home.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
@@ -164,19 +164,19 @@ const faqStructuredData = {
             <ul class="space-y-3">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 10 minutes from Choa Chu Kang via Choa Chu Kang Way or Brickland Road</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via Queensway and the AYE</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Choa Chu Kang station is on the North-South Line — connect towards Jurong East for access to the Jurong Region Line</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> East-West Line from Queenstown to Jurong East, then Jurong Region Line towards Tengah</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Several bus services connect CCK to Tengah, including routes along Choa Chu Kang Avenue</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services along Queensway and Commonwealth Avenue connect towards the west</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Choa Chu Kang and surrounding estates</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Queenstown, including Stirling Road, Margaret Drive, and surrounding estates</span>
               </li>
             </ul>
           </div>
@@ -196,13 +196,13 @@ const faqStructuredData = {
 
         <div class="space-y-4 text-base-600">
           <p>
-            Each lesson is a one-to-one session lasting 45 to 60 minutes, depending on your child's age and attention span. Younger students typically start with shorter sessions that gradually lengthen as their focus develops.
+            Each lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger beginners start with shorter sessions that gradually lengthen as their concentration builds. Queenstown families value this patient approach — it reflects a teacher who is paying attention to the child rather than following a rigid script.
           </p>
           <p>
-            A typical session covers a mix of practical playing, sight-reading, aural skills, and music theory — all woven together in a way that keeps children engaged rather than overwhelmed. Patricia balances structured learning with creative activities so that every lesson feels purposeful and enjoyable.
+            Whether the focus is piano, violin, or general musicianship, sessions balance practical playing with listening, theory, and creative exercises. Patricia varies the activities to keep children engaged and to build a well-rounded musical foundation that serves them regardless of which direction they eventually take.
           </p>
           <p>
-            For families in Choa Chu Kang, lessons are held at Patricia's home studio in Tengah or at your home through the house visit option. Either way, the focus is on creating a calm, supportive space where your child can progress at their own pace.
+            The same lesson quality applies whether your child visits the Tengah studio or Patricia comes to your Queenstown home. Consistency and personal attention are constants, regardless of where lessons take place.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ const faqStructuredData = {
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-              alt="Patricia - Piano Teacher for Children near Choa Chu Kang"
+              alt="Patricia - Music Teacher for Children near Queenstown"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -232,13 +232,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching piano to children for over 10 years. She's based in Tengah — just next door to Choa Chu Kang — and many of her students come from CCK and the surrounding western neighbourhoods.
+              Patricia has been teaching music to children for over a decade. Based in Tengah, she serves families across Queenstown, Commonwealth, and the wider western corridor. Her practice has grown through word of mouth — parents who see genuine progress in their children and recommend her to others.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education gives her a unique perspective on teaching young learners. She understands not just how to play piano well, but how children develop, how they stay motivated, and what makes lessons stick long after the session ends.
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her teaching a depth that goes beyond playing technique. She understands how children develop, how they process new information, and how to create the conditions for learning that sticks rather than fades.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia's approach is gentle and encouraging. She builds real relationships with her students and takes the time to understand each child's personality. Whether your child is a complete beginner or preparing for their next ABRSM grade, she meets them where they are.
+              Patricia is down-to-earth and direct. She builds strong relationships with her students while keeping expectations clear. Whether your child is exploring music for the first time or preparing for graded exams, she provides the same attentive, thoughtful guidance.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -281,9 +281,9 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Choa Chu Kang:
-          <a href="/violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
-          <a href="/music-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Music Lessons</a>
+          Also available in Queenstown:
+          <a href="/piano-lessons-queenstown/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-queenstown/" class="text-primary-600 hover:underline">Violin Lessons</a>
         </p>
       </div>
     </section>
@@ -293,9 +293,9 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/piano-lessons-yew-tee/" class="text-primary-600 hover:underline">Yew Tee</a>,
-          <a href="/piano-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>.
+          <a href="/music-lessons-commonwealth/" class="text-primary-600 hover:underline">Commonwealth</a>,
+          <a href="/music-lessons-buona-vista/" class="text-primary-600 hover:underline">Buona Vista</a>, and
+          <a href="/music-lessons-dover/" class="text-primary-600 hover:underline">Dover</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -305,15 +305,15 @@ const faqStructuredData = {
     <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Piano Journey
+          Start Your Child's Musical Journey
         </h2>
-        <p class="text-base-600 mb-6">Book a free consultation with Patricia to talk about your child's interests and goals. No commitment required.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Consultation
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Choa%20Chu%20Kang."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20lessons%20for%20my%20child%20in%20Queenstown."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

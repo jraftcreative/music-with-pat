@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How long does it take to get to the studio from Choa Chu Kang?",
-    answer: "The studio in Tengah is roughly a 10-minute drive from most parts of Choa Chu Kang. By public transport, you can take the North-South Line from Choa Chu Kang MRT towards Jurong East, then connect to the Jurong Region Line. Several bus services also run between CCK and Tengah. Many families find the short trip well worth it for consistent, quality lessons."
+    question: "How do I get to the Tengah studio from one-north?",
+    answer: "From one-north, the studio is roughly a 20-minute drive via the AYE. By MRT, take the Circle Line to Buona Vista, transfer to the East-West Line towards Jurong East, then connect to the Jurong Region Line towards Tengah. The journey is direct and families find it manageable on a weekly basis."
   },
   {
-    question: "Does Patricia offer house visits in Choa Chu Kang?",
-    answer: "Yes, house visits are available for families in Choa Chu Kang. This is a popular option for parents with younger children or busy after-school schedules. Lesson fees for house visits differ slightly from studio rates — feel free to get in touch for details."
+    question: "What types of music lessons are available?",
+    answer: "Patricia teaches piano, violin, and general musicianship. Musicianship sessions are particularly suited to younger children who are not yet ready to commit to a specific instrument — they build listening, rhythm, and pitch skills that transfer to any instrument later."
   },
   {
-    question: "What age should my child start piano lessons?",
-    answer: "Most children are ready from age four. At this stage, they can follow simple instructions, sit for a short lesson, and begin developing finger coordination. The initial session is always a consultation where Patricia assesses your child's readiness — there's no obligation to commit."
+    question: "Can Patricia visit homes in the one-north area?",
+    answer: "Yes, house visits are available throughout one-north and Rochester Park. Whether you live in a condominium near Biopolis, along Rochester Park, or in the wider Buona Vista area, Patricia can bring lessons directly to your home. House visit rates differ slightly from studio rates."
   },
   {
-    question: "Are ABRSM exams compulsory?",
-    answer: "Not at all. ABRSM preparation is available for students who benefit from structured goals and milestones, but it's never forced. Some children progress beautifully without exams, focusing instead on building repertoire and enjoying their music. Patricia will advise on what suits your child best."
+    question: "How does Patricia decide whether my child should take ABRSM exams?",
+    answer: "Patricia observes your child over the first few lessons, gets to know their personality and learning style, and then discusses options with you. Some children thrive with the structure of exams; others develop more naturally through a broader approach. She gives honest, informed advice rather than defaulting to one path."
   }
 ]
 
@@ -40,16 +40,16 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Piano Lessons for Children in Choa Chu Kang | Music with Pat"
-  description="Piano lessons for children in Choa Chu Kang, Singapore. Child-centred teaching, ABRSM preparation, and a nurturing studio environment in nearby Tengah. Ages 4 and up."
+  title="Music Lessons for Children in one-north | Music with Pat"
+  description="Music lessons for children in one-north, Singapore. Piano, violin, and musicianship from an experienced educator. Studio in Tengah with house visits available. Ages 4 and up."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Piano Lessons",
-      "name": "Piano Lessons for Children in Choa Chu Kang",
+      "serviceType": "Music Lessons",
+      "name": "Music Lessons for Children in one-north",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,42 +57,42 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Choa Chu Kang, Singapore"
+        "name": "one-north, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Nurturing piano lessons for children in Choa Chu Kang, Singapore. Child-centred teaching, ABRSM preparation, and a calm studio environment in neighbouring Tengah."
+      "description": "Piano, violin, and musicianship lessons for children in one-north, Singapore. Thoughtful teaching in a calm studio environment in nearby Tengah."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Piano Lessons Choa Chu Kang' }]} />
+  <Breadcrumbs items={[{ label: 'Music Lessons one-north' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Choa Chu Kang & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">one-north & Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Piano Lessons for Children in Choa Chu Kang
+          Music Lessons for Children in one-north
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Choa Chu Kang is home to a growing community of young families, and many parents here are looking for enrichment activities that genuinely benefit their children. Patricia's studio in neighbouring Tengah offers piano lessons built around how children actually learn — with patience, warmth, and a structured pathway from first notes to ABRSM examinations.
+          one-north blends innovation with community — Biopolis and Fusionopolis sit alongside the charming heritage bungalows of Rochester Park. Families here are often research-minded professionals who bring the same rigour to their children's education that they apply to their own work. Patricia's studio in Tengah is just 20 minutes west along the AYE, offering piano, violin, and musicianship lessons built on formal training in child development and over a decade of teaching experience.
         </p>
       </div>
     </section>
 
-    <!-- Why Families from CCK Choose Patricia -->
+    <!-- Why Families from one-north Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Choa Chu Kang Choose Patricia
+            Why Families from one-north Choose Patricia
           </h2>
         </div>
 
@@ -101,8 +101,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Lessons Shaped Around Your Child</h3>
-                <p class="text-base-600 text-sm">No two children learn the same way. Patricia observes how each student responds — to encouragement, to challenges, to different types of music — and adjusts her approach accordingly. The result is lessons that feel personal rather than formulaic.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Three Musical Pathways</h3>
+                <p class="text-base-600 text-sm">Patricia offers piano, violin, and general musicianship, so one-north families can choose the path that fits their child. For children who are not yet sure which instrument to pursue, musicianship sessions develop transferable skills — listening, rhythm, pitch — that apply to any instrument later on.</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Trained in Music and Education</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor's degree in Early Childhood Education with Music Education. This dual background means she understands both piano pedagogy and child development — a combination that makes a real difference when teaching young learners.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Research-Backed Teaching Approach</h3>
+                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with Music Education means her teaching methods are grounded in developmental science. She sequences learning in a way that aligns with how children's brains process information — an approach that resonates with one-north families accustomed to evidence-based thinking.</p>
               </div>
             </div>
           </div>
@@ -119,8 +119,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Clear ABRSM Pathway</h3>
-                <p class="text-base-600 text-sm">For families who want structured milestones, Patricia prepares students for ABRSM graded examinations at a pace that feels right for each child. Exams are encouraged where they add value but never treated as the sole purpose of learning.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM on Your Terms</h3>
+                <p class="text-base-600 text-sm">ABRSM exam preparation is available but never assumed. Patricia will evaluate whether structured grading or a broader musical exploration would benefit your child more. Her recommendation is based on individual observation, not a default programme.</p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Calm, Welcoming Studio</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a quiet, comfortable space where children can focus without distractions. It's close enough to Choa Chu Kang to be convenient, yet feels like a proper learning environment away from the bustle of large music schools.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Quiet Studio, Full Attention</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah provides a private, calm space for learning. No crowded lobby, no background noise from adjacent rooms. Children can concentrate properly and Patricia can focus entirely on each student.</p>
               </div>
             </div>
           </div>
@@ -137,26 +137,26 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from CCK -->
+    <!-- Getting Here from one-north -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Conveniently Close</p>
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Choa Chu Kang
+            Getting Here from one-north
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Tengah sits right next to Choa Chu Kang, making the journey to Patricia's studio quick and straightforward. Whether you drive, take the bus, or use the MRT, most families from CCK reach the studio in around 10 minutes.
+              From one-north, the drive to Patricia's Tengah studio takes around 20 minutes via the AYE. The expressway entrance near Buona Vista is quick to reach, and the westward journey is typically smooth.
             </p>
             <p class="text-base-600 mb-4">
-              If you live near South View Primary, De La Salle School, or Unity Primary, you're already within a short distance. Families from the newer Tengah developments will find the studio particularly accessible — it's within the same neighbourhood.
+              Families working in Biopolis or Fusionopolis sometimes schedule lessons for after-school pickup, heading west from one-north directly to the studio. The timing works well for parents who finish their workday in the area.
             </p>
             <p class="text-base-600">
-              House visits are also available throughout Choa Chu Kang for families who prefer lessons at home. This is especially popular with parents of younger children who find it easier to learn in familiar surroundings.
+              Patricia also offers house visits across one-north and Rochester Park. Whether you live in one of the Rochester Park condominiums or the residential developments nearby, she can bring lessons to your home.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
@@ -164,19 +164,19 @@ const faqStructuredData = {
             <ul class="space-y-3">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 10 minutes from Choa Chu Kang via Choa Chu Kang Way or Brickland Road</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 20 minutes via the AYE</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Choa Chu Kang station is on the North-South Line — connect towards Jurong East for access to the Jurong Region Line</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Circle Line from one-north to Buona Vista, East-West Line to Jurong East, then Jurong Region Line towards Tengah</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Several bus services connect CCK to Tengah, including routes along Choa Chu Kang Avenue</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services from North Buona Vista Road head towards the western corridor</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Choa Chu Kang and surrounding estates</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across one-north, including Rochester Park and surrounding developments</span>
               </li>
             </ul>
           </div>
@@ -196,13 +196,13 @@ const faqStructuredData = {
 
         <div class="space-y-4 text-base-600">
           <p>
-            Each lesson is a one-to-one session lasting 45 to 60 minutes, depending on your child's age and attention span. Younger students typically start with shorter sessions that gradually lengthen as their focus develops.
+            Every lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger beginners start shorter, with sessions extending as concentration develops. One-north families appreciate this calibrated approach — it reflects the kind of thoughtful, individualised attention they value.
           </p>
           <p>
-            A typical session covers a mix of practical playing, sight-reading, aural skills, and music theory — all woven together in a way that keeps children engaged rather than overwhelmed. Patricia balances structured learning with creative activities so that every lesson feels purposeful and enjoyable.
+            Whether studying piano, violin, or general musicianship, sessions integrate practical playing with listening skills, theory, and creative exercises. Patricia keeps things varied and engaging, building a well-rounded musical foundation.
           </p>
           <p>
-            For families in Choa Chu Kang, lessons are held at Patricia's home studio in Tengah or at your home through the house visit option. Either way, the focus is on creating a calm, supportive space where your child can progress at their own pace.
+            The lesson experience is identical whether your child visits the Tengah studio or Patricia comes to your one-north home. Teaching is always personal, consistent, and centred on your child.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ const faqStructuredData = {
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-              alt="Patricia - Piano Teacher for Children near Choa Chu Kang"
+              alt="Patricia - Music Teacher for Children near one-north"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -232,13 +232,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching piano to children for over 10 years. She's based in Tengah — just next door to Choa Chu Kang — and many of her students come from CCK and the surrounding western neighbourhoods.
+              Patricia has been teaching music to children for over ten years. Based in Tengah, she is conveniently located for families in one-north, Buona Vista, and Kent Ridge. Her teaching covers piano, violin, and musicianship, with a track record of nurturing confident, capable young musicians.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education gives her a unique perspective on teaching young learners. She understands not just how to play piano well, but how children develop, how they stay motivated, and what makes lessons stick long after the session ends.
+              Her dual expertise in early childhood education and music means she approaches teaching holistically. She does not just drill technique — she understands how children think, how their confidence grows, and how to create the conditions for lasting musical development.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia's approach is gentle and encouraging. She builds real relationships with her students and takes the time to understand each child's personality. Whether your child is a complete beginner or preparing for their next ABRSM grade, she meets them where they are.
+              Patricia is observant and adaptable. She reads each child's energy and adjusts the lesson in real time, maintaining clear goals while keeping the atmosphere supportive and encouraging.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -281,9 +281,9 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Choa Chu Kang:
-          <a href="/violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
-          <a href="/music-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Music Lessons</a>
+          Also available in one-north:
+          <a href="/piano-lessons-one-north/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-one-north/" class="text-primary-600 hover:underline">Violin Lessons</a>
         </p>
       </div>
     </section>
@@ -293,9 +293,9 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/piano-lessons-yew-tee/" class="text-primary-600 hover:underline">Yew Tee</a>,
-          <a href="/piano-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>.
+          <a href="/music-lessons-buona-vista/" class="text-primary-600 hover:underline">Buona Vista</a>,
+          <a href="/music-lessons-kent-ridge/" class="text-primary-600 hover:underline">Kent Ridge</a>, and
+          <a href="/music-lessons-holland-village/" class="text-primary-600 hover:underline">Holland Village</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -305,15 +305,15 @@ const faqStructuredData = {
     <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Piano Journey
+          Start Your Child's Musical Journey
         </h2>
-        <p class="text-base-600 mb-6">Book a free consultation with Patricia to talk about your child's interests and goals. No commitment required.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Consultation
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Choa%20Chu%20Kang."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20lessons%20for%20my%20child%20in%20one-north."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How long does it take to get from Bukit Batok to Patricia's studio in Tengah?",
-    answer: "Most families from Bukit Batok reach Patricia's Tengah studio in around 10 minutes by car via the PIE. By public transport, you can take a bus from Bukit Batok MRT or drive along Bukit Batok West Avenue — the journey is straightforward and quick."
+    question: "How far is the Tengah studio from Lakeside?",
+    answer: "Patricia's studio in Tengah is about a 12-minute drive from the Lakeside area via Boon Lay Way or Yuan Ching Road. By MRT, you can take the East-West Line from Lakeside and transfer to the Jurong Region Line towards Tengah. Many families in the Lakeside neighbourhood find the weekly trip straightforward."
   },
   {
-    question: "Does Patricia offer house visits to Bukit Batok?",
-    answer: "Patricia primarily teaches from her home studio in Tengah, which is just a short trip from Bukit Batok. House visits may be arranged on a case-by-case basis depending on schedule availability. Please reach out via WhatsApp to discuss options."
+    question: "Can Patricia come to my home in Lakeside for lessons?",
+    answer: "Yes, house visits are available throughout the Lakeside area, including the condominiums near Jurong Lake Gardens and the HDB blocks along Yuan Ching Road. Home lessons work particularly well for families with younger children who are more comfortable learning in their own environment. Rates for house visits differ slightly — reach out for specifics."
   },
   {
-    question: "What ages does Patricia teach?",
-    answer: "Patricia teaches children from age 4 onwards. Her Bachelor's degree in Early Childhood Education with Music gives her specialised expertise with young learners, though she also works with older primary school children preparing for ABRSM grades."
+    question: "What is the youngest age Patricia teaches?",
+    answer: "Patricia starts with children from age four. Her formal training in early childhood education means she knows how to structure lessons for very young learners — using short, varied activities that build musical foundations while keeping things fun. She offers a free first consultation so she can meet your child and gauge their readiness."
   },
   {
-    question: "Does my child need to sit for ABRSM exams?",
-    answer: "Not at all — exams are entirely optional. Some children benefit from the structured goals that ABRSM provides, while others prefer to learn at their own pace without exam pressure. Patricia will help you decide what suits your child best."
+    question: "Does Patricia teach exam preparation only?",
+    answer: "Not at all. While ABRSM exam preparation is available, Patricia tailors her approach to each student. Some children do well with the structured goals that exams provide, while others flourish more with a repertoire-focused approach. She will talk through the options with you and recommend what suits your child best."
   }
 ]
 
@@ -40,8 +40,8 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Piano Lessons for Children in Bukit Batok | Music with Pat"
-  description="Piano lessons for children near Bukit Batok, Singapore. Patricia's Tengah studio is a short drive from Bukit Batok via the PIE. ABRSM preparation, child-centred teaching for ages 4+."
+  title="Piano Lessons for Children in Lakeside | Music with Pat"
+  description="Piano lessons for children in Lakeside, Singapore. Gentle, child-centred teaching from an experienced educator with ABRSM preparation available. Studio in nearby Tengah. Ages 4 and up."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -49,7 +49,7 @@ const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Piano Lessons",
-      "name": "Piano Lessons for Children in Bukit Batok",
+      "name": "Piano Lessons for Children in Lakeside",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,42 +57,42 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Bukit Batok, Singapore"
+        "name": "Lakeside, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Nurturing piano lessons for children in Bukit Batok, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+      "description": "Gentle, child-centred piano lessons for children in Lakeside, Singapore. ABRSM preparation and a calm studio environment in nearby Tengah."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Piano Lessons Bukit Batok' }]} />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Lakeside' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Bukit Batok</p>
+        <p class="text-primary-600 font-medium mb-2">Lakeside & Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Piano Lessons for Children in Bukit Batok
+          Piano Lessons for Children in Lakeside
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Bukit Batok is one of Singapore's most established residential neighbourhoods — a place where families put down roots and children grow up surrounded by nature and community. Patricia's piano studio in Tengah is just a short drive away, making quality music education easy to access for Bukit Batok families.
+          Lakeside enjoys a distinctive setting at the edge of Jurong Lake Gardens, where families take evening walks along the waterfront and children grow up surrounded by green space. It is a neighbourhood that values balance — and that same balance is at the heart of Patricia's teaching. Her studio in Tengah is just a short drive from Lakeside, offering piano lessons that respect each child's pace while steadily building real musical ability.
         </p>
       </div>
     </section>
 
-    <!-- Why Families from Bukit Batok Choose Patricia -->
+    <!-- Why Families from Lakeside Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Why Families Choose Patricia</p>
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Bukit Batok Choose Patricia
+            Why Families from Lakeside Choose Patricia
           </h2>
         </div>
 
@@ -101,8 +101,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Lessons Shaped Around Your Child</h3>
-                <p class="text-base-600 text-sm">Every child from Bukit Batok arrives with their own personality and pace. Patricia builds each lesson around your child's strengths and interests, adjusting her approach so they stay engaged and genuinely enjoy learning piano.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">An Approach That Puts Children First</h3>
+                <p class="text-base-600 text-sm">Patricia takes the time to understand each child — their temperament, what sparks their curiosity, and how they handle challenges. She adapts her teaching to the individual, choosing repertoire and pacing that keep lessons productive without overwhelming young learners.</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Qualified in Music and Early Childhood</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor of Education in Early Childhood with Music — a combination that means she understands both the instrument and the developmental stage of young learners. She knows how four-year-olds think, not just how pianos work.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Grounded in Child Development</h3>
+                <p class="text-base-600 text-sm">With a Bachelor's degree in Early Childhood Education with Music Education, Patricia brings academic knowledge of how children grow and learn into every session. She designs lessons that match your child's developmental stage, making progress feel natural rather than forced.</p>
               </div>
             </div>
           </div>
@@ -119,8 +119,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Thorough ABRSM Preparation</h3>
-                <p class="text-base-600 text-sm">For families who want a structured pathway, Patricia prepares students for ABRSM graded exams with care — covering practical pieces, scales, sight-reading, and aural training. She only enters children when they are genuinely confident and ready.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Flexible Exam Pathways</h3>
+                <p class="text-base-600 text-sm">ABRSM exam preparation is offered for students who benefit from structured milestones. But Patricia never insists on the exam track. She will advise you openly on whether graded assessments suit your child or whether they would grow more through a broader, repertoire-led approach.</p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Warm, Focused Studio Space</h3>
-                <p class="text-base-600 text-sm">Lessons take place in Patricia's home studio in Tengah — a quiet, comfortable setting designed for one-to-one teaching. There are no distractions from other classes or waiting rooms, just a calm space where your child can focus and feel at ease.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Quiet Space to Focus</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is private and free from the distractions of large music centres. For Lakeside families who appreciate the calm of their own neighbourhood, the studio offers a similarly peaceful environment where children can concentrate fully on their music.</p>
               </div>
             </div>
           </div>
@@ -137,51 +137,46 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from Bukit Batok -->
+    <!-- Getting Here from Lakeside -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Bukit Batok
+            Getting Here from Lakeside
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Patricia's studio in Tengah Garden Town sits just west of Bukit Batok, connected by the Pan Island Expressway and several local roads. For families living near Bukit Batok Central, West Mall, or the HDB estates along Bukit Batok West Avenue, the drive typically takes around 10 minutes — often quicker than getting to a music school in town.
+              Lakeside and Tengah are both part of Singapore's western corridor, connected by Boon Lay Way and Yuan Ching Road. The drive takes about 12 minutes, making a weekly lesson easy to manage alongside school and other commitments.
             </p>
             <p class="text-base-600 mb-4">
-              If you prefer public transport, several bus services run between Bukit Batok and Jurong West, with stops close to the Tengah area. The upcoming Tengah MRT station on the Jurong Region Line will make the journey even more convenient in the future.
+              Families living in the condominiums near Jurong Lake Gardens or the HDB estates further along Jurong West Street often stop by after school or on weekend mornings. The route is direct and avoids major expressway bottlenecks.
             </p>
             <p class="text-base-600">
-              Many Bukit Batok parents find the short commute worthwhile — it means their child gets the benefit of focused, one-to-one lessons in a dedicated studio without travelling into central Singapore.
+              Patricia also offers house visits for families who prefer lessons closer to home. Whether you live in the lakeside condos or the residential blocks further inland, she can bring lessons to your doorstep — a popular choice for families with very young beginners.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Car (PIE)</span>
-                  <p class="text-base-600 text-sm">Approximately 10 minutes via PIE from Bukit Batok. Exit at Jurong East/Toh Guan and follow signs toward Tengah.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 12 minutes via Boon Lay Way or Yuan Ching Road</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Bus</span>
-                  <p class="text-base-600 text-sm">Several services connect Bukit Batok to Jurong West and Tengah, including buses from Bukit Batok Interchange and along Bukit Batok West Avenue.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> East-West Line from Lakeside, connecting to the Jurong Region Line towards Tengah</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By MRT</span>
-                  <p class="text-base-600 text-sm">Bukit Batok MRT (North-South Line) or Beauty World MRT (Downtown Line) — from either station, a short bus or taxi ride reaches Tengah.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services along Yuan Ching Road connect towards the Tengah area</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Lakeside, including condominiums near Jurong Lake Gardens and surrounding HDB estates</span>
               </li>
             </ul>
           </div>
@@ -191,7 +186,7 @@ const faqStructuredData = {
 
     <!-- What Lessons Look Like -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
@@ -199,31 +194,19 @@ const faqStructuredData = {
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-6 mb-8">
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
-            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
-            <p class="text-base-600 text-sm">Scales, finger exercises, and posture checks to prepare hands and focus the mind for the session ahead.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
-            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
-            <p class="text-base-600 text-sm">Working through current pieces — refining sections, building expression, and tackling tricky passages with patience.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
-            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
-            <p class="text-base-600 text-sm">Short, engaging activities covering music theory, sight-reading, and ear training — all woven naturally into the lesson.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
-            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
-            <p class="text-base-600 text-sm">A quick recap of what was covered, clear practice goals for the week, and a chance for your child to ask questions.</p>
-          </div>
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger beginners often start with shorter sessions that gradually extend as they build focus and stamina at the keyboard. Families from Lakeside value this measured approach, particularly for children who are new to formal music lessons.
+          </p>
+          <p>
+            Sessions weave together practical playing, sight-reading, ear training, and theory in a way that keeps children engaged. Patricia varies the activities within each lesson so students stay interested and make progress across multiple areas simultaneously.
+          </p>
+          <p>
+            Whether you bring your child to the Tengah studio or arrange house visits in Lakeside, Patricia delivers the same thoughtful, structured lesson experience tailored to your child's learning style.
+          </p>
         </div>
 
-        <div class="text-center">
-          <p class="text-base-600 mb-4">Each lesson is tailored to your child's age and level. Younger children enjoy more variety and play-based activities, while older students spend more time on structured repertoire and exam preparation.</p>
+        <div class="text-center mt-8">
           <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             View Full Lesson Details
           </a>
@@ -238,7 +221,7 @@ const faqStructuredData = {
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-              alt="Patricia - Piano Teacher for Children near Bukit Batok"
+              alt="Patricia - Piano Teacher for Children near Lakeside"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -249,13 +232,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has spent over a decade teaching piano to young children in Singapore. What sets her apart is her dual background — she holds a Bachelor's degree in Early Childhood Education with Music Education, which means her teaching is grounded in how children actually develop and learn, not just in musical technique.
+              Patricia has spent over a decade teaching piano to children across Singapore's western districts. Based in Tengah, she is a short drive from Lakeside and the wider Jurong Lake area. A number of her current students come from families in this neighbourhood.
             </p>
             <p class="text-base-600 mb-4">
-              Her studio in Tengah is a short, easy drive from Bukit Batok, and many of her current students come from the surrounding west Singapore neighbourhoods. Lessons are warm, patient, and carefully paced — Patricia treats every child as an individual and never rushes through material just to tick a box.
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a rare combination of skills. She understands the stages of child development and knows how to apply that knowledge in practical ways — keeping lessons age-appropriate, building confidence step by step, and recognising when a child needs a change of approach.
             </p>
             <p class="text-base-600 mb-6">
-              Whether your child is sitting at the piano for the first time or working towards an ABRSM grade, Patricia creates a space where they feel confident, supported, and excited to play.
+              Patricia is patient and encouraging, but she also maintains clear structure. Children know what to expect each week, and that consistency helps them develop discipline alongside their musical skills. She teaches beginners through to ABRSM examination level.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -298,9 +281,9 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Bukit Batok:
-          <a href="/violin-lessons-bukit-batok/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
-          <a href="/music-lessons-bukit-batok/" class="text-primary-600 hover:underline">Music Lessons</a>
+          Also available in Lakeside:
+          <a href="/violin-lessons-lakeside/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-lakeside/" class="text-primary-600 hover:underline">Music Lessons</a>
         </p>
       </div>
     </section>
@@ -310,9 +293,9 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
-          <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>, and
-          <a href="/piano-lessons-clementi/" class="text-primary-600 hover:underline">Clementi</a>.
+          <a href="/piano-lessons-boon-lay/" class="text-primary-600 hover:underline">Boon Lay</a>,
+          <a href="/piano-lessons-chinese-garden/" class="text-primary-600 hover:underline">Chinese Garden</a>, and
+          <a href="/piano-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -324,13 +307,13 @@ const faqStructuredData = {
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
           Start Your Child's Piano Journey
         </h2>
-        <p class="text-base-600 mb-6">Book a free consultation with Patricia to talk about your child's interests, goals, and readiness for piano lessons.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Consultation
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Bukit%20Batok%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Lakeside."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

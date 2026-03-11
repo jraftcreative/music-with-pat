@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How long does it take to get from Bukit Batok to Patricia's studio in Tengah?",
-    answer: "Most families from Bukit Batok reach Patricia's Tengah studio in around 10 minutes by car via the PIE. By public transport, you can take a bus from Bukit Batok MRT or drive along Bukit Batok West Avenue — the journey is straightforward and quick."
+    question: "How do I get to the Tengah studio from Bukit Gombak?",
+    answer: "From Bukit Gombak, the studio in Tengah is roughly a 12-minute drive via Bukit Batok West Avenue or Jurong Town Hall Road. By MRT, you can take the North-South Line from Bukit Gombak to Choa Chu Kang and transfer to the Jurong Region Line towards Tengah. Many families from the Bukit Gombak area find the journey quick and easy."
   },
   {
-    question: "Does Patricia offer house visits to Bukit Batok?",
-    answer: "Patricia primarily teaches from her home studio in Tengah, which is just a short trip from Bukit Batok. House visits may be arranged on a case-by-case basis depending on schedule availability. Please reach out via WhatsApp to discuss options."
+    question: "Does Patricia offer house visits in Bukit Gombak?",
+    answer: "Yes, house visits are available across the Bukit Gombak area, including the HDB estates along Bukit Batok West Avenue and the residential blocks near Hillgrove Secondary. This option works especially well for families with younger children who are more settled in their home environment. House visit rates differ slightly from studio rates — contact Patricia for details."
   },
   {
-    question: "What ages does Patricia teach?",
-    answer: "Patricia teaches children from age 4 onwards. Her Bachelor's degree in Early Childhood Education with Music gives her specialised expertise with young learners, though she also works with older primary school children preparing for ABRSM grades."
+    question: "Is four too young for piano lessons?",
+    answer: "Not at all — four is often a good time to start. Patricia's training in early childhood education means she is experienced at engaging very young learners through short, varied activities that build listening skills, hand coordination, and musical awareness. She offers a free consultation to meet your child and assess whether they are ready to begin."
   },
   {
-    question: "Does my child need to sit for ABRSM exams?",
-    answer: "Not at all — exams are entirely optional. Some children benefit from the structured goals that ABRSM provides, while others prefer to learn at their own pace without exam pressure. Patricia will help you decide what suits your child best."
+    question: "Does Patricia prepare students for ABRSM exams?",
+    answer: "Yes, ABRSM preparation is available for students who benefit from structured goals and milestones. However, Patricia does not push exams on any child. She will assess your child's temperament and progress, then recommend honestly whether exams or a repertoire-focused approach would help them grow most as a musician."
   }
 ]
 
@@ -40,8 +40,8 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Piano Lessons for Children in Bukit Batok | Music with Pat"
-  description="Piano lessons for children near Bukit Batok, Singapore. Patricia's Tengah studio is a short drive from Bukit Batok via the PIE. ABRSM preparation, child-centred teaching for ages 4+."
+  title="Piano Lessons for Children in Bukit Gombak | Music with Pat"
+  description="Piano lessons for children in Bukit Gombak, Singapore. Patient, child-centred teaching from an experienced educator with ABRSM preparation available. Studio in nearby Tengah. Ages 4 and up."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -49,7 +49,7 @@ const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Piano Lessons",
-      "name": "Piano Lessons for Children in Bukit Batok",
+      "name": "Piano Lessons for Children in Bukit Gombak",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,42 +57,42 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Bukit Batok, Singapore"
+        "name": "Bukit Gombak, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Nurturing piano lessons for children in Bukit Batok, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+      "description": "Patient, child-centred piano lessons for children in Bukit Gombak, Singapore. ABRSM preparation and a calm studio environment in nearby Tengah."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Piano Lessons Bukit Batok' }]} />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Bukit Gombak' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Bukit Batok</p>
+        <p class="text-primary-600 font-medium mb-2">Bukit Gombak & Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Piano Lessons for Children in Bukit Batok
+          Piano Lessons for Children in Bukit Gombak
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Bukit Batok is one of Singapore's most established residential neighbourhoods — a place where families put down roots and children grow up surrounded by nature and community. Patricia's piano studio in Tengah is just a short drive away, making quality music education easy to access for Bukit Batok families.
+          Bukit Gombak sits between Bukit Batok and Choa Chu Kang, a residential neighbourhood where families enjoy the green spaces of Bukit Gombak Park and the close-knit atmosphere of its HDB estates. With Tengah taking shape right next door, the area is growing — and Patricia's studio is ideally positioned for families here. Her piano lessons are built on patience, a genuine understanding of young learners, and the belief that every child can develop a meaningful relationship with music.
         </p>
       </div>
     </section>
 
-    <!-- Why Families from Bukit Batok Choose Patricia -->
+    <!-- Why Families from Bukit Gombak Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Why Families Choose Patricia</p>
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Bukit Batok Choose Patricia
+            Why Families from Bukit Gombak Choose Patricia
           </h2>
         </div>
 
@@ -101,8 +101,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Lessons Shaped Around Your Child</h3>
-                <p class="text-base-600 text-sm">Every child from Bukit Batok arrives with their own personality and pace. Patricia builds each lesson around your child's strengths and interests, adjusting her approach so they stay engaged and genuinely enjoy learning piano.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Teaching That Adapts to Your Child</h3>
+                <p class="text-base-600 text-sm">Patricia does not take a one-size-fits-all approach. She spends time understanding each child's temperament and learning style, then shapes her teaching accordingly. Some children need more encouragement, others need more challenge — she reads these cues and responds, making every lesson feel personal and productive.</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Qualified in Music and Early Childhood</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor of Education in Early Childhood with Music — a combination that means she understands both the instrument and the developmental stage of young learners. She knows how four-year-olds think, not just how pianos work.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Expertise with Young Children</h3>
+                <p class="text-base-600 text-sm">Patricia holds a Bachelor's degree in Early Childhood Education with Music Education. This dual qualification means she understands not just music pedagogy, but how children develop — what engages a four-year-old versus a seven-year-old, and how to build skills in a natural, age-appropriate sequence.</p>
               </div>
             </div>
           </div>
@@ -119,8 +119,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Thorough ABRSM Preparation</h3>
-                <p class="text-base-600 text-sm">For families who want a structured pathway, Patricia prepares students for ABRSM graded exams with care — covering practical pieces, scales, sight-reading, and aural training. She only enters children when they are genuinely confident and ready.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Balanced View on Exams</h3>
+                <p class="text-base-600 text-sm">ABRSM exam preparation is available for students who do well with structured targets. Patricia also works with children who prefer to learn without the pressure of grading. She will recommend the approach that fits your child, based on honest assessment rather than a fixed curriculum.</p>
               </div>
             </div>
           </div>
@@ -128,8 +128,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Warm, Focused Studio Space</h3>
-                <p class="text-base-600 text-sm">Lessons take place in Patricia's home studio in Tengah — a quiet, comfortable setting designed for one-to-one teaching. There are no distractions from other classes or waiting rooms, just a calm space where your child can focus and feel at ease.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Right Next Door in Tengah</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is practically next door to Bukit Gombak. The short distance means less travel time and more flexibility when scheduling lessons. The studio itself is quiet and private, giving children the focused environment they need to learn effectively.</p>
               </div>
             </div>
           </div>
@@ -137,51 +137,46 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from Bukit Batok -->
+    <!-- Getting Here from Bukit Gombak -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Bukit Batok
+            Getting Here from Bukit Gombak
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Patricia's studio in Tengah Garden Town sits just west of Bukit Batok, connected by the Pan Island Expressway and several local roads. For families living near Bukit Batok Central, West Mall, or the HDB estates along Bukit Batok West Avenue, the drive typically takes around 10 minutes — often quicker than getting to a music school in town.
+              Bukit Gombak and Tengah are next-door neighbours. The drive takes around 12 minutes via Bukit Batok West Avenue or Jurong Town Hall Road — one of the shortest commutes to the studio from any area Patricia serves.
             </p>
             <p class="text-base-600 mb-4">
-              If you prefer public transport, several bus services run between Bukit Batok and Jurong West, with stops close to the Tengah area. The upcoming Tengah MRT station on the Jurong Region Line will make the journey even more convenient in the future.
+              Families with children at Bukit View Primary or Hillgrove Secondary often head to the studio straight after school. The close proximity means lessons are easy to fit into even the busiest after-school schedules.
             </p>
             <p class="text-base-600">
-              Many Bukit Batok parents find the short commute worthwhile — it means their child gets the benefit of focused, one-to-one lessons in a dedicated studio without travelling into central Singapore.
+              For families who prefer lessons at home, Patricia offers house visits throughout Bukit Gombak. Whether you live in the HDB blocks near the MRT station or further along Bukit Batok West Avenue, she can come to you. Given the short distance, scheduling house visits is particularly flexible.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Car (PIE)</span>
-                  <p class="text-base-600 text-sm">Approximately 10 minutes via PIE from Bukit Batok. Exit at Jurong East/Toh Guan and follow signs toward Tengah.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 12 minutes via Bukit Batok West Avenue or Jurong Town Hall Road</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By Bus</span>
-                  <p class="text-base-600 text-sm">Several services connect Bukit Batok to Jurong West and Tengah, including buses from Bukit Batok Interchange and along Bukit Batok West Avenue.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> North-South Line from Bukit Gombak to Choa Chu Kang, then transfer to the Jurong Region Line towards Tengah</span>
               </li>
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
-                <div>
-                  <span class="font-medium text-base-900 text-sm">By MRT</span>
-                  <p class="text-base-600 text-sm">Bukit Batok MRT (North-South Line) or Beauty World MRT (Downtown Line) — from either station, a short bus or taxi ride reaches Tengah.</p>
-                </div>
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services along Bukit Batok West Avenue connect towards the Tengah area</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Bukit Gombak, including HDB estates near the MRT and along Bukit Batok West Avenue</span>
               </li>
             </ul>
           </div>
@@ -191,7 +186,7 @@ const faqStructuredData = {
 
     <!-- What Lessons Look Like -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
@@ -199,31 +194,19 @@ const faqStructuredData = {
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-6 mb-8">
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
-            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
-            <p class="text-base-600 text-sm">Scales, finger exercises, and posture checks to prepare hands and focus the mind for the session ahead.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
-            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
-            <p class="text-base-600 text-sm">Working through current pieces — refining sections, building expression, and tackling tricky passages with patience.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
-            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
-            <p class="text-base-600 text-sm">Short, engaging activities covering music theory, sight-reading, and ear training — all woven naturally into the lesson.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
-            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
-            <p class="text-base-600 text-sm">A quick recap of what was covered, clear practice goals for the week, and a chance for your child to ask questions.</p>
-          </div>
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each lesson is a private, one-to-one session lasting 45 to 60 minutes. For younger beginners, Patricia starts with shorter sessions and builds up gradually as the child's concentration strengthens. Bukit Gombak families appreciate this patient approach, especially for children who are trying piano for the first time.
+          </p>
+          <p>
+            Sessions include a mix of practical playing, sight-reading, ear training, and music theory. Patricia structures each lesson to keep things engaging while making sure children progress across all areas of their musical development. The balance between challenge and enjoyment is always carefully maintained.
+          </p>
+          <p>
+            Whether your child comes to the nearby Tengah studio or Patricia visits your home in Bukit Gombak, lessons follow the same thoughtful, child-centred structure — consistent, supportive, and tailored to the individual.
+          </p>
         </div>
 
-        <div class="text-center">
-          <p class="text-base-600 mb-4">Each lesson is tailored to your child's age and level. Younger children enjoy more variety and play-based activities, while older students spend more time on structured repertoire and exam preparation.</p>
+        <div class="text-center mt-8">
           <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             View Full Lesson Details
           </a>
@@ -238,7 +221,7 @@ const faqStructuredData = {
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-              alt="Patricia - Piano Teacher for Children near Bukit Batok"
+              alt="Patricia - Piano Teacher for Children near Bukit Gombak"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -249,13 +232,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has spent over a decade teaching piano to young children in Singapore. What sets her apart is her dual background — she holds a Bachelor's degree in Early Childhood Education with Music Education, which means her teaching is grounded in how children actually develop and learn, not just in musical technique.
+              Patricia has been teaching piano to children for over a decade. Based in Tengah — right next to Bukit Gombak — she is one of the closest piano teachers available to families in this neighbourhood. Several of her students walk or drive just minutes to reach her studio.
             </p>
             <p class="text-base-600 mb-4">
-              Her studio in Tengah is a short, easy drive from Bukit Batok, and many of her current students come from the surrounding west Singapore neighbourhoods. Lessons are warm, patient, and carefully paced — Patricia treats every child as an individual and never rushes through material just to tick a box.
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a strong foundation in both musical instruction and child development. She understands the stages children go through and uses that knowledge to design lessons that feel right for each age and ability level.
             </p>
             <p class="text-base-600 mb-6">
-              Whether your child is sitting at the piano for the first time or working towards an ABRSM grade, Patricia creates a space where they feel confident, supported, and excited to play.
+              Patricia's teaching is warm, clear, and consistent. She builds genuine rapport with her students while maintaining the structure that helps them develop real musical skill over time. From first-time beginners to students preparing for ABRSM examinations, she provides the same attentive, individualised care.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -298,9 +281,9 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Bukit Batok:
-          <a href="/violin-lessons-bukit-batok/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
-          <a href="/music-lessons-bukit-batok/" class="text-primary-600 hover:underline">Music Lessons</a>
+          Also available in Bukit Gombak:
+          <a href="/violin-lessons-bukit-gombak/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-bukit-gombak/" class="text-primary-600 hover:underline">Music Lessons</a>
         </p>
       </div>
     </section>
@@ -310,9 +293,9 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
-          <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Bukit Timah</a>, and
-          <a href="/piano-lessons-clementi/" class="text-primary-600 hover:underline">Clementi</a>.
+          <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>,
+          <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>, and
+          <a href="/piano-lessons-yew-tee/" class="text-primary-600 hover:underline">Yew Tee</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -324,13 +307,13 @@ const faqStructuredData = {
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
           Start Your Child's Piano Journey
         </h2>
-        <p class="text-base-600 mb-6">Book a free consultation with Patricia to talk about your child's interests, goals, and readiness for piano lessons.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Consultation
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Bukit%20Batok%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Bukit%20Gombak."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
