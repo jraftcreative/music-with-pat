@@ -55,13 +55,13 @@ const ogImage = `${siteUrl}/og-image.jpg`
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="Music with Pat - Piano Lessons for Children in Singapore" />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRM5H8W923"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TRM5H8W923');
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-P5BN32T3');
     </script>
 
     <!-- Fonts -->
@@ -164,6 +164,9 @@ const ogImage = `${siteUrl}/og-image.jpg`
     <slot name="head" />
   </head>
   <body class="bg-warm-50 text-base-800 min-h-screen antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5BN32T3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <slot />
   </body>
 </html>
