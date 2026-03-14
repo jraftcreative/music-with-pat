@@ -100,6 +100,12 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
                 ></textarea>
               </div>
 
+              <!-- Honeypot field — hidden from real users, filled by bots -->
+              <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
               <button
                 type="submit"
                 class="w-full py-4 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition-colors"
@@ -261,6 +267,10 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
     consultationForm?.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Honeypot check — if filled, silently reject (bots only)
+      const honeypot = document.getElementById('website') as HTMLInputElement;
+      if (honeypot && honeypot.value) return;
 
       const name = (document.getElementById('name') as HTMLInputElement).value;
       const phone = (document.getElementById('phone') as HTMLInputElement).value;
