@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is music theory boring for children?",
+    answer: "It doesn't have to be. The way theory is taught makes all the difference. Patricia uses practical examples at the piano or violin — playing intervals, clapping rhythms, identifying chords by ear — rather than relying on worksheets alone. When children understand how theory connects to the music they're already playing, it stops feeling like homework and starts making sense."
+  },
+  {
+    question: "When should my child start learning music theory?",
+    answer: "Theory is introduced naturally from the very first lesson — recognising note names, understanding basic rhythms, and learning simple musical terms. Formal theory exam preparation (for ABRSM Theory Grade 1 onwards) typically begins once a child has reached around Grade 2–3 on their instrument, though this varies by student."
+  },
+  {
+    question: "Can my child take theory lessons without learning an instrument?",
+    answer: "Yes, though it's less common. Most students study theory alongside their practical instrument lessons, which makes the material more meaningful. However, Patricia does offer standalone theory preparation for students who need to pass their Grade 5 Theory before progressing to higher practical grades."
+  },
+  {
+    question: "How long does it take to prepare for a theory exam?",
+    answer: "For Grades 1–2, around 3–4 months of regular study is usually sufficient. Grades 3–4 typically need 4–6 months. Grade 5, which is more demanding and covers harmony, transposition, and composition, generally requires 6–9 months of preparation. Patricia adjusts the timeline based on each student's pace and existing knowledge."
+  },
+  {
+    question: "Is Grade 5 Theory still required for higher ABRSM practical exams?",
+    answer: "ABRSM has made changes to their prerequisites in recent years. Currently, Grade 5 Theory (or Grade 5 Practical Musicianship, or a diploma-level theory qualification) is required before entering for Grade 6, 7, or 8 practical exams. Patricia stays up to date with ABRSM's requirements and advises students on the best timing for their theory exam."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Theory Lessons in Singapore | ABRSM Theory Preparation | Music with Pat"
+  description="Music theory lessons for children and adults in Singapore. ABRSM Theory Grades 1–5 preparation, integrated with practical instrument lessons. Based in Tengah with house visits available."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Theory Lessons",
+      "name": "Music Theory Lessons in Singapore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "description": "Music theory lessons and ABRSM Theory exam preparation in Singapore. Grades 1–5 theory taught alongside practical instrument lessons for deeper musical understanding."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Theory Lessons' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Understanding Music, Not Just Playing It</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Theory Lessons in Singapore
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Music theory is what turns note-reading into real musical understanding. It's the difference between a child who can play what's on the page and a child who understands why the music works. Patricia teaches theory as a living, practical skill — not a dry academic exercise.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Theory Matters -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Foundation</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Music Theory Matters
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Most children learn piano or violin by following their teacher's instructions — play this note, count this rhythm, use this finger. And that works, up to a point. But without theory, students eventually hit a ceiling. They can reproduce what they've been shown, but they can't figure things out independently.
+          </p>
+          <p>
+            Theory gives students the tools to understand what they're playing. When a child knows what a key signature means, they stop seeing sharps and flats as random obstacles and start understanding the logic behind the music. When they understand intervals, they can hear why certain notes sound good together. When they grasp rhythm at a conceptual level, they stop counting mechanically and start feeling the pulse.
+          </p>
+          <p>
+            For students preparing for ABRSM exams, theory isn't optional — it's a formal requirement for higher grades. But even for students who aren't pursuing exams, a solid foundation in theory makes everything else easier. Sight-reading improves. Memorisation becomes more reliable. And learning new pieces takes less time because the student can recognise patterns instead of learning every note from scratch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Theory Lessons Cover -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Grade by Grade</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Lessons Cover
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Grades 1–2</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Building Blocks</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Note values and rests, time signatures (2/4, 3/4, 4/4), treble and bass clef reading, sharps, flats, and naturals. Students learn to identify keys up to two sharps or flats and understand basic musical terms and signs.
+            </p>
+            <p class="text-base-600 text-sm">
+              At this level, theory directly reinforces what students are learning in their practical lessons. Patricia connects every concept to actual pieces the student is playing, so nothing feels abstract.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Grades 3–4</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Deepening Understanding</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Compound time signatures, more complex key signatures (up to four sharps or flats), intervals, scales (major and minor), and the basics of chords. Students also begin learning about ornaments, more advanced musical terms, and simple transposition.
+            </p>
+            <p class="text-base-600 text-sm">
+              This is where theory starts to unlock real musical insight. Students begin to see how harmony works, why certain progressions sound satisfying, and how composers create tension and resolution.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">Grade 5</span>
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Comprehensive Musicianship</h3>
+            <p class="text-base-600 text-sm mb-3">
+              All key signatures, irregular time signatures, all intervals, chord identification (I, IV, V, and more), transposition, open score reading, and an understanding of musical form. Grade 5 also introduces composition — writing a melody to a given rhythm or continuing a musical phrase.
+            </p>
+            <p class="text-base-600 text-sm">
+              Grade 5 Theory is the gateway to higher practical grades (6, 7, and 8). Patricia prepares students thoroughly so they pass with confidence, not just scrape through.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Patricia Teaches Theory -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia teaching music theory in Singapore"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Patricia's Approach</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              Theory That Makes Sense
+            </h2>
+            <p class="text-base-600 mb-4">
+              The most common complaint about music theory is that it's boring. And honestly, it can be — if it's taught as an isolated, paper-based exercise disconnected from actual music. Patricia teaches it differently.
+            </p>
+            <p class="text-base-600 mb-4">
+              Every theory concept is grounded in something the student can hear and play. Learning about intervals? Play them on the piano and hear the difference. Studying key signatures? Look at the piece you're working on and see how the key signature shapes the music. Working on rhythm? Clap it, feel it, play it.
+            </p>
+            <p class="text-base-600 mb-6">
+              For students preparing for ABRSM Theory exams, Patricia combines this practical approach with structured exam preparation — past papers, timed practice, and targeted revision of weaker areas. The goal is understanding first, exam technique second.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Theory Grades 1–5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrated vs Standalone -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Flexible Options</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Integrated or Standalone Theory Lessons
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Integrated with Practical Lessons</h3>
+            <p class="text-base-600 text-sm mb-3">
+              For most students, theory is woven into their regular piano or violin lessons. Patricia dedicates a portion of each session to theory concepts that directly relate to the repertoire being studied. This is the most natural and effective way to learn theory — it never feels separate from making music.
+            </p>
+            <p class="text-base-600 text-sm">
+              This approach works well for students who are progressing steadily through practical grades and want to build theory knowledge gradually alongside their playing.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-3">Standalone Theory Preparation</h3>
+            <p class="text-base-600 text-sm mb-3">
+              Some students need dedicated theory sessions — typically those preparing for Grade 5 Theory before moving to higher practical grades, or students who want to catch up on theory after focusing primarily on practical work.
+            </p>
+            <p class="text-base-600 text-sm">
+              Standalone theory sessions are structured around exam preparation with clear timelines, regular past-paper practice, and focused revision. These can be done in-person at the Tengah studio or online via video call.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Beyond Exams</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Does for Your Child's Playing
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Better Sight-Reading</h3>
+            <p class="text-base-600 text-xs">Recognise patterns and predict what comes next</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Deeper Understanding</h3>
+            <p class="text-base-600 text-xs">Know why the music sounds the way it does</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Faster Learning</h3>
+            <p class="text-base-600 text-xs">Learn new pieces more quickly by recognising structure</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-primary-100 text-center">
+            <svg class="w-7 h-7 text-primary-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>
+            <h3 class="font-semibold text-base-900 text-sm mb-1">Musical Independence</h3>
+            <p class="text-base-600 text-xs">Figure things out without relying on the teacher for every detail</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Location</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Based in Tengah, Available Online
+        </h2>
+        <p class="text-base-600">
+          Theory lessons are available at Patricia's Tengah studio, as house visits across west Singapore, or online via video call. Online theory lessons work particularly well since the material is largely discussion and paper-based — no instrument needed during the session.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Build a Stronger Musical Foundation
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to discuss music theory lessons — whether integrated with practical instrument lessons or as standalone exam preparation.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20theory%20lessons."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
