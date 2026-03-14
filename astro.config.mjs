@@ -7,7 +7,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.musicwithpat.com',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) => !page.includes('/thank-you/'),
+  })],
   vite: {
     plugins: [tailwindcss()]
   }

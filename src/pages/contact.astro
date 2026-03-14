@@ -307,14 +307,7 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
           })
         });
 
-        consultationForm.innerHTML = `
-          <div class="text-center py-8">
-            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
-            <h3 class="text-xl font-semibold text-base-900 mb-2">Thank You!</h3>
-            <p class="text-base-600 mb-4">Your consultation request has been received. Pat will reach out to you soon!</p>
-            <p class="text-base-500 text-sm">You can also WhatsApp us at +65 8389 8853</p>
-          </div>
-        `;
+        window.location.href = '/thank-you/';
 
       } catch (error) {
         submitBtn.innerHTML = originalBtnText;
