@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How do I know if my child is ready to start violin?",
+    answer: "Most children are physically ready to begin violin from age four, when they can hold a fractional-size instrument with guidance and follow simple instructions. Patricia assesses readiness during a free initial consultation, looking at hand size, attention span, and general willingness to try. There is no pressure to commit — the consultation is simply a chance for your child to meet Patricia and explore the instrument."
+  },
+  {
+    question: "What is the journey from Redhill to Patricia's Tengah studio like?",
+    answer: "From Redhill, the drive to Tengah takes approximately 20 minutes via the AYE. You can join the expressway at the Alexandra Road entrance, which is close to Redhill MRT and the main HDB blocks. By public transport, Redhill MRT on the East-West Line connects to Jurong East, from where bus services run towards the Tengah area. The route is straightforward and consistent."
+  },
+  {
+    question: "What happens if we need to miss a lesson?",
+    answer: "Patricia understands that family schedules can be unpredictable. She asks for advance notice when possible and works with families to reschedule missed lessons where her timetable allows. She does not charge for lessons cancelled with reasonable notice, and she keeps communication straightforward — typically via WhatsApp."
+  },
+  {
+    question: "Will Patricia help my child prepare for school music auditions?",
+    answer: "Yes. Patricia has experience preparing students for DSA (Direct School Admission) auditions and school ensemble placements that require violin proficiency. She can help your child choose appropriate audition repertoire, refine their performance under simulated conditions, and build the stage confidence needed to perform well in front of assessors."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Lessons for Children in Redhill | Music with Pat"
+  description="Violin lessons for children in Redhill, Singapore. Structured, child-centred teaching with fractional-size violins, ABRSM preparation, and proper technique from lesson one. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Redhill",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Redhill, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Structured, child-centred violin lessons for children in Redhill, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Redhill' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Redhill & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Lessons for Children in Redhill
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Redhill is a centrally located HDB estate with deep roots in Singapore's urban history. Sitting along the East-West MRT Line, the neighbourhood has undergone steady renewal while retaining its established, community-oriented character. Families in the Redhill Close, Henderson Road, and Jalan Bukit Merah blocks are well-positioned to reach Patricia's violin studio in Tengah — approximately a 20-minute drive via the AYE — where children receive focused, private instruction that builds real violin skills from the first bow stroke.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-violin-lessons.webp"
+              alt="Patricia providing violin instruction to a child from Redhill"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has taught violin and piano to children for over ten years, developing a teaching style that is both structured and deeply personal. She takes the time to understand what each child needs — whether that is more patience with bow control, additional encouragement during a difficult passage, or a faster pace because the student is hungry for new material.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her an understanding of child development that most music teachers lack. She knows when a child's hand is physically ready for position shifts, how to explain vibrato in terms a six-year-old can grasp, and why some children respond better to demonstration than to verbal instruction. This knowledge is woven into every lesson she teaches.
+            </p>
+            <p class="text-base-600 mb-6">
+              Patricia's studio in Tengah is a short, direct drive from Redhill. Families who make the journey find a private, distraction-free space where their child can focus entirely on the violin — no background noise, no waiting for a turn, just concentrated one-to-one teaching.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Families from Redhill Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Choose Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Redhill Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient Progress, Not Pressure</h3>
+                <p class="text-base-600 text-sm">Violin requires sustained effort over months and years, and Patricia understands that progress looks different for every child. She sets realistic expectations with Redhill families from the outset, celebrating genuine milestones — a clean open string, a first scale played from memory — while keeping the bigger picture in view. This patient approach means children stay motivated long after the novelty has worn off.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Educational Background That Matters</h3>
+                <p class="text-base-600 text-sm">Patricia's formal training in early childhood education is not a footnote on her CV — it actively shapes how she teaches violin to young children. She understands motor development, cognitive load, and attention patterns at different ages, which means she can adjust her teaching method in real time based on what she observes during a lesson. For violin, where physical precision matters enormously, this expertise makes a measurable difference.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Graded Examination Readiness</h3>
+                <p class="text-base-600 text-sm">Patricia prepares students for ABRSM violin examinations with the thoroughness that consistent results require. She integrates exam components — scales, arpeggios, pieces, sight-reading, and aural work — into regular lessons so that preparation feels natural rather than last-minute. Students from Redhill who sit their exams with Patricia do so feeling genuinely ready.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Acoustically Suitable Studio</h3>
+                <p class="text-base-600 text-sm">Patricia's home studio in Tengah provides the controlled acoustic environment that violin students need. In a quiet, private room, your child can hear the full tonal range of their instrument, notice when their intonation drifts, and develop the self-correcting ear that distinguishes a well-trained string player. This is something a noisy practice room at a community centre simply cannot offer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Redhill -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Redhill
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Redhill, Patricia's studio in Tengah is approximately a 20-minute drive. The most direct route takes Alexandra Road or Jalan Bukit Merah to join the AYE westbound, continuing through to the Tengah exit. Families living near Redhill MRT, Redhill Close, or the IKEA Alexandra area will find the expressway entrance just minutes away.
+            </p>
+            <p class="text-base-600 mb-4">
+              Redhill MRT sits on the East-West Line, which connects directly to Jurong East MRT. From Jurong East, bus services run towards Tengah and the surrounding developments. The public transport journey takes longer than driving but is a viable option, particularly as the Jurong Region Line develops.
+            </p>
+            <p class="text-base-600">
+              House visits are available for Redhill families who prefer violin lessons at home. Patricia arrives fully prepared with all teaching materials, and the lesson structure mirrors what she delivers at her studio — private, focused, and tailored to your child.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 20 minutes via Alexandra Road to the AYE westbound towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Redhill MRT (East-West Line) connecting to Jurong East for bus services to Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services from Redhill MRT area towards Jurong West and Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Redhill and the surrounding Henderson and Bukit Merah areas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Every session with Patricia is a private, one-to-one violin lesson shaped by what your child needs at that point in their development. Lessons last 30 to 60 minutes — Patricia recommends shorter sessions for beginners and younger children, extending the duration as the student's stamina and concentration grow.
+          </p>
+          <p>
+            Each lesson begins with the fundamentals: Patricia checks posture, violin hold, and bow grip, correcting any habits that may have crept in during the week. The session then moves through scales and technical exercises chosen to address specific skills — smooth bow changes, clean string crossings, even tone production — before repertoire work begins. Patricia guides students through their current pieces phrase by phrase, working on intonation, rhythm, dynamics, and musical character.
+          </p>
+          <p>
+            Sight-reading and aural training are part of every lesson, developing the rounded musicianship that distinguishes a thoughtfully taught student. For those preparing for ABRSM examinations, Patricia allocates time across all exam components in each session, ensuring no area is neglected. Non-exam students follow an equally deliberate curriculum with clear weekly goals and tangible progress markers.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Redhill:
+          <a href="/piano-lessons-redhill/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-redhill/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-redhill/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-redhill/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-redhill/" class="text-primary-600 hover:underline">Music Theory</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>,
+          <a href="/violin-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Tiong Bahru</a>, and
+          <a href="/violin-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to talk about violin lessons for your child in Redhill. The first step is a free consultation — no obligation, just a friendly conversation.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Redhill."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How do I get from Telok Blangah to Patricia's Tengah studio?",
+    answer: "The drive from Telok Blangah to Tengah takes approximately 25 minutes. Head onto the AYE via Telok Blangah Road and drive west past Queenstown and Clementi. The route is expressway-based and avoids the central business district entirely, so traffic is usually manageable."
+  },
+  {
+    question: "Does Patricia travel to Telok Blangah for home lessons?",
+    answer: "Patricia teaches from her dedicated home studio in Tengah, which offers a calm, distraction-free setting with a quality instrument. House visits to Telok Blangah may be arranged depending on her schedule — contact her via WhatsApp to discuss what works best for your family."
+  },
+  {
+    question: "What is the minimum age for piano lessons?",
+    answer: "Patricia accepts students from age 4 onwards. Her formal training in early childhood education means she understands how young children develop physically and cognitively, and she designs lessons that are appropriate for their stage — keeping things engaging without overwhelming small hands or short attention spans."
+  },
+  {
+    question: "Can my child learn piano without doing ABRSM exams?",
+    answer: "Absolutely. Many Telok Blangah families choose to have their children learn piano for enjoyment and musical development without entering any exams. Patricia supports this fully and will design a learning path around your child's interests and goals, whether that includes exams or not."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Piano Lessons for Children in Telok Blangah | Music with Pat"
+  description="Piano lessons for children near Telok Blangah, Singapore. Patricia's Tengah studio is 25 minutes via AYE. ABRSM preparation, child-centred teaching for ages 4+."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Lessons",
+      "name": "Piano Lessons for Children in Telok Blangah",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Telok Blangah, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Nurturing piano lessons for children in Telok Blangah, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Telok Blangah' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Telok Blangah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Piano Lessons for Children in Telok Blangah
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Telok Blangah is a quiet residential neighbourhood nestled between Mount Faber and the southern coastline. With its mix of HDB blocks, condominiums, and the green canopy of the Southern Ridges overhead, it is a pocket of calm in a busy city. Families here tend to value quality over convenience — which is why Patricia's thoughtfully run piano studio in Tengah, just 25 minutes along the AYE, appeals to parents who want genuine musical education for their children.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Piano Teacher for Children near Telok Blangah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching piano to children in Singapore for over ten years. She holds a Bachelor of Education in Early Childhood with Music — a qualification that combines pedagogical expertise with genuine musical training. This dual foundation allows her to teach piano in a way that is both musically rigorous and developmentally sensitive.
+            </p>
+            <p class="text-base-600 mb-4">
+              Telok Blangah parents often discover Patricia through word-of-mouth from families in the neighbouring southern estates. Her studio in Tengah is a purpose-built teaching space: quiet, well-equipped, and free from the distractions that come with commercial music schools. Each lesson is private and unhurried, giving your child room to learn at their own pace.
+            </p>
+            <p class="text-base-600 mb-6">
+              Patricia places great importance on communication with parents. After each lesson she provides clear feedback on what was covered, what went well, and what your child should focus on during practice. There are no surprises and no guesswork — just steady, honest progress.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why Families from Telok Blangah Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Telok Blangah Parents Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Telok Blangah Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Genuine Care for Each Student</h3>
+                <p class="text-base-600 text-sm">Patricia invests in understanding your child as an individual — their temperament, their strengths, and the moments where they need encouragement. Telok Blangah parents appreciate that her teaching is personal rather than transactional, built on a relationship that develops over time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Formal Training in Child Development</h3>
+                <p class="text-base-600 text-sm">With her B.Ed in Early Childhood with Music, Patricia understands the cognitive and motor development stages that affect how children learn an instrument. This is not intuition — it is formal knowledge applied practically to every lesson she teaches.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exams When Ready, Not Before</h3>
+                <p class="text-base-600 text-sm">Patricia prepares students for ABRSM graded exams when they are truly ready and confident. She does not push children into assessments prematurely, and she is equally supportive of families who choose not to pursue exams at all. Her priority is your child's musical development, not her exam pass rate.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Studio Worth the Drive</h3>
+                <p class="text-base-600 text-sm">Patricia's Tengah home studio offers something that commercial music schools cannot: silence, privacy, and her complete focus for the entire lesson. No background noise from other rooms, no shared spaces, and no time pressure from back-to-back scheduling. Many Telok Blangah families say the short drive is well worth it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Telok Blangah -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Telok Blangah
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Telok Blangah, head onto the AYE via Telok Blangah Road. The expressway takes you westward through the southern corridor, past Queenstown and Clementi, before reaching the Tengah area. The total drive is around 25 minutes, and the route avoids the congested CBD roads entirely.
+            </p>
+            <p class="text-base-600 mb-4">
+              Families near Telok Blangah Heights or the Depot Road area will find the AYE on-ramp particularly convenient. Some parents from the HDB blocks along Telok Blangah Crescent schedule lessons in the early afternoon, taking advantage of lighter traffic before the evening rush.
+            </p>
+            <p class="text-base-600">
+              For those who prefer not to drive, Telok Blangah MRT (Circle Line) connects to Buona Vista, where you can transfer to the East-West Line heading towards Jurong East and onward to the Tengah area by bus.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Car (AYE)</span>
+                  <p class="text-base-600 text-sm">Approximately 25 minutes via Telok Blangah Road onto the AYE westbound, through Queenstown and Clementi to Tengah.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By MRT (CCL)</span>
+                  <p class="text-base-600 text-sm">Telok Blangah MRT (Circle Line) to Buona Vista, transfer to East-West Line towards Jurong East, then bus or taxi to Tengah.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Bus</span>
+                  <p class="text-base-600 text-sm">Bus services along Telok Blangah Road connect to the AYE corridor and westward towards Jurong and Tengah.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
+            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
+            <p class="text-base-600 text-sm">Focused finger exercises and scale patterns to build strength and dexterity, along with posture reminders that become second nature over time.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
+            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
+            <p class="text-base-600 text-sm">Deep work on current pieces — learning new sections, refining musical phrasing, and building the confidence to play through a complete work.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
+            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
+            <p class="text-base-600 text-sm">Music theory and ear training activities woven into the lesson naturally, so children learn to understand the music they play, not just reproduce notes.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
+            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
+            <p class="text-base-600 text-sm">A brief wrap-up with concrete practice targets for the coming week, making sure both child and parent leave with a clear plan.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-base-600 mb-4">Lessons for younger children feature shorter, more playful activities with plenty of variety. Older students work more intensively on repertoire and technique. Patricia calibrates every session to your child's age, ability, and energy level on the day.</p>
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Telok Blangah:
+          <a href="/violin-lessons-telok-blangah/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-telok-blangah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-telok-blangah/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-telok-blangah/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-telok-blangah/" class="text-primary-600 hover:underline">Music Theory</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/piano-lessons-harbourfront/" class="text-primary-600 hover:underline">HarbourFront</a>,
+          <a href="/piano-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>, and
+          <a href="/piano-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Sentosa Cove</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Piano Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to talk about your child's musical interests. Telok Blangah families are welcome to visit the studio or chat on WhatsApp before deciding.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Telok%20Blangah%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

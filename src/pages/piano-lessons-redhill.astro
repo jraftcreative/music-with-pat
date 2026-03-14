@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How long does it take to drive from Redhill to Patricia's studio?",
+    answer: "The drive from Redhill to Patricia's Tengah studio takes approximately 20 minutes via the AYE. It is a straightforward westbound route — hop onto the expressway near Queenstown, continue past Clementi, and exit towards Tengah. Traffic is typically smooth outside of peak commute hours."
+  },
+  {
+    question: "Are home visits available in Redhill?",
+    answer: "Patricia teaches primarily from her Tengah home studio, which provides a quiet and focused environment with a quality piano. Home visits to the Redhill area may be possible depending on her availability — get in touch via WhatsApp to discuss your preferences."
+  },
+  {
+    question: "How young can my child start piano?",
+    answer: "Patricia accepts students from age 4 onwards. Her Bachelor of Education in Early Childhood with Music means she is specifically trained to teach young learners effectively, using activities that build musical skills while respecting their attention spans and developmental stage."
+  },
+  {
+    question: "What if my child does not want to take exams?",
+    answer: "That is perfectly fine. ABRSM exams are an option Patricia offers, not a requirement. Many Redhill families prefer their children to learn piano for the love of music, and Patricia is happy to create a lesson pathway built around enjoyment, repertoire, and skill development without any exam pressure."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Piano Lessons for Children in Redhill | Music with Pat"
+  description="Piano lessons for children near Redhill, Singapore. Patricia's Tengah studio is a 20-minute drive via AYE. ABRSM preparation, child-centred teaching for ages 4+."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Piano Lessons",
+      "name": "Piano Lessons for Children in Redhill",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Redhill, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Nurturing piano lessons for children in Redhill, Singapore. Child-centred teaching, ABRSM preparation, and a calm home studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Redhill' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Redhill</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Piano Lessons for Children in Redhill
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Redhill is a central, well-connected HDB estate with a strong neighbourhood identity. Served by Redhill MRT on the East-West Line and bordered by the popular Redhill Food Centre and close-knit residential blocks, it is a neighbourhood where families put down roots and invest in their children's growth. Patricia's piano studio in Tengah is a comfortable 20-minute drive along the AYE — close enough for regular weekly lessons without the hassle of navigating city-centre traffic.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Piano Teacher for Children near Redhill"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching piano to children in Singapore for over a decade. Her Bachelor of Education in Early Childhood with Music is the foundation of her teaching philosophy — she does not simply teach children how to play notes, but understands how they learn, what captures their attention, and how to build musical skills progressively so that each step feels achievable.
+            </p>
+            <p class="text-base-600 mb-4">
+              Redhill families who have tried commercial music schools often find Patricia's approach refreshing. There is no hard sell, no pressure to sign up for performances, and no revolving door of teachers. Patricia is the only teacher your child will work with, and she builds a genuine relationship with each student over time.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her Tengah studio is purposefully set up for private teaching — a space where your child can focus without the noise and bustle of a shopping mall music centre. Patricia updates parents regularly, so you always know what your child is working on and how their skills are developing.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why Families from Redhill Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Redhill Parents Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Redhill Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Teacher Who Stays</h3>
+                <p class="text-base-600 text-sm">Unlike music centres where instructors rotate frequently, Patricia is the one and only teacher your child will work with. She builds lasting relationships with her students, remembering their preferences, tracking their growth, and providing the consistency that Redhill families value deeply.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Expertise Applied to Music</h3>
+                <p class="text-base-600 text-sm">Patricia's degree in Early Childhood Education means she approaches piano teaching from a child-development perspective first. She considers attention spans, motor readiness, and emotional states when planning lessons — an approach that produces better results and happier children.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Honest ABRSM Advice</h3>
+                <p class="text-base-600 text-sm">Patricia will tell you honestly whether your child is ready for an ABRSM exam. She does not rush students through grades to pad a results list. If exams are right for your child, she prepares them thoroughly. If they are not, she focuses on building a love of music instead.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Quiet, Private Learning Space</h3>
+                <p class="text-base-600 text-sm">Patricia's Tengah home studio is designed for concentration. There are no competing sounds from adjacent classrooms, no waiting areas filled with other students, and no commercial interruptions. It is a space that allows your child to focus completely on the music.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Redhill -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Redhill
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Redhill, the most direct route is via the AYE westbound. Join the expressway near Queenstown and continue west — you will pass Clementi and reach the Tengah area in approximately 20 minutes. Families living near Redhill Close or along Jalan Bukit Merah find the AYE on-ramp just a few minutes away.
+            </p>
+            <p class="text-base-600 mb-4">
+              By MRT, Redhill station on the East-West Line offers a direct westbound service to Jurong East, where you can connect to buses heading towards Tengah. The journey by public transport is also manageable, though most families with young children prefer the convenience of driving.
+            </p>
+            <p class="text-base-600">
+              Many Redhill parents schedule lessons on weekday afternoons after school — children from Zhangde Primary, Gan Eng Seng Primary, or other nearby schools find the timing works well for a relaxed drive to the studio before dinner.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25-3V6.75a3 3 0 0 0-3-3H3.375a1.125 1.125 0 0 0-1.125 1.125v11.25" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Car (AYE)</span>
+                  <p class="text-base-600 text-sm">Approximately 20 minutes via the AYE westbound from the Queenstown area. A direct, expressway-based route to Tengah.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By MRT (EWL)</span>
+                  <p class="text-base-600 text-sm">Redhill MRT (East-West Line) westbound to Jurong East, then bus or taxi to Tengah. A straightforward connection.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" /></svg>
+                <div>
+                  <span class="font-medium text-base-900 text-sm">By Bus</span>
+                  <p class="text-base-600 text-sm">Bus services from Redhill and Tiong Bahru connect to the western corridor via Queenstown and Commonwealth.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">1</span>
+            <h3 class="font-semibold text-base-900 mb-2">Warm-Up & Technique</h3>
+            <p class="text-base-600 text-sm">Carefully chosen exercises to warm up the fingers and reinforce good hand position, with scales and patterns appropriate to the student's level.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">2</span>
+            <h3 class="font-semibold text-base-900 mb-2">Repertoire Work</h3>
+            <p class="text-base-600 text-sm">Working through current pieces section by section — addressing tricky rhythms, developing dynamics, and gradually assembling complete, polished performances.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">3</span>
+            <h3 class="font-semibold text-base-900 mb-2">Theory & Aural</h3>
+            <p class="text-base-600 text-sm">Short, focused activities covering music theory, sight-reading, and listening skills, integrated into the lesson so children absorb concepts through practice rather than rote study.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">4</span>
+            <h3 class="font-semibold text-base-900 mb-2">Review & Goals</h3>
+            <p class="text-base-600 text-sm">A structured end to the lesson with clear practice goals for the week, so your child has direction and purpose during home practice sessions.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-base-600 mb-4">Younger beginners enjoy playful, movement-rich lessons that build musicality through games and exploration. Older students work more intensively on technique, repertoire, and exam preparation. Patricia tailors each session to the individual.</p>
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Redhill:
+          <a href="/violin-lessons-redhill/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-redhill/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-redhill/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-redhill/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-redhill/" class="text-primary-600 hover:underline">Music Theory</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/piano-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>,
+          <a href="/piano-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Tiong Bahru</a>, and
+          <a href="/piano-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Piano Journey
+        </h2>
+        <p class="text-base-600 mb-6">Book a free consultation with Patricia to discuss what piano lessons could look like for your child. Redhill parents are welcome to visit the Tengah studio or have a chat on WhatsApp first.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20a%20parent%20from%20Redhill%20and%20I'm%20interested%20in%20piano%20lessons%20for%20my%20child."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

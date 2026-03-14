@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is music theory boring for children?",
+    answer: "Not when it is taught well. Patricia deliberately avoids the dry, textbook-heavy approach that gives theory a bad name. Instead, she uses the piano to illustrate concepts in real time — playing intervals so children hear the difference, tapping out rhythmic patterns together, and having students identify chord types in pieces they are learning. Telok Blangah families consistently report that their children look forward to theory sessions."
+  },
+  {
+    question: "How long does it take to prepare for ABRSM Grade 5 Theory?",
+    answer: "A realistic timeline is 6 to 12 months of weekly lessons and regular home revision. Students who have absorbed strong theoretical foundations through their practical lessons may move faster, while younger students or those new to written musical analysis typically need the full preparation period. Patricia maps out a clear schedule at the start and adapts it based on each child's progress."
+  },
+  {
+    question: "Can my child take theory lessons online?",
+    answer: "Yes, and many Telok Blangah families choose this option for theory specifically. Because theory involves notation, written exercises, and discussion rather than physical instrument playing, it translates very naturally to a video-call format. Students share their written work on screen, and Patricia can annotate and explain concepts in real time. The quality of learning is equal to in-person sessions."
+  },
+  {
+    question: "When should my child start learning music theory?",
+    answer: "Theory is present from the very first lesson — reading notes, counting beats, and understanding simple dynamics are all fundamental theory. Focused ABRSM theory exam preparation typically begins when a student is around Grade 3 or 4 in their practical studies, providing generous lead time before Grade 5 Theory becomes necessary for higher practical grades."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Theory Lessons in Telok Blangah | Music with Pat"
+  description="ABRSM music theory lessons for children in Telok Blangah, Singapore. Grades 1–5 theory preparation with an experienced educator. Studio in Tengah with online options available. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Theory Lessons",
+      "name": "Music Theory Lessons in Telok Blangah",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Telok Blangah, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM music theory preparation for children in Telok Blangah, Singapore. Covering Grades 1 through 5 with engaging, interactive teaching methods at a dedicated studio in Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Theory Lessons Telok Blangah' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Telok Blangah & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Theory Lessons in Telok Blangah
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Telok Blangah is a quiet residential neighbourhood nestled between Mount Faber and the southern coast of Singapore — a peaceful setting where families value thoughtful, purposeful education. Music theory is the bridge between playing notes and truly understanding music. For children working through ABRSM grades on piano or violin, a strong command of theory deepens their musicianship, improves their sight-reading, and ensures they meet the requirements for advanced practical exams without any last-minute stress.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Music Theory Teacher for Children near Telok Blangah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has taught music to children for over ten years, and theory has always been central to her approach. She believes that children who understand the mechanics of music — how notes relate to each other, why certain chords feel tense or resolved, what a time signature actually tells the performer — become better musicians in every way.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a rare combination of deep musical knowledge and an understanding of how young minds absorb complex information. She paces each lesson carefully, introduces concepts in a logical sequence, and always connects theory to practical music-making.
+            </p>
+            <p class="text-base-600 mb-6">
+              For Telok Blangah families, Patricia offers the reliability and transparency that matter most. She provides regular progress updates, communicates openly about exam readiness, and never rushes a student through material they have not fully grasped.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Learn Music Theory -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Theory Matters</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families in Telok Blangah Invest in Music Theory
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM Requirement</h3>
+                <p class="text-base-600 text-sm">A Grade 5 Theory pass is compulsory before students may enter for ABRSM Grades 6, 7, or 8 practical exams. By starting theory preparation early, families in Telok Blangah ensure their child's practical progression is never delayed by a missing certificate. Patricia builds this into the long-term study plan from the outset.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Deeper Musical Understanding</h3>
+                <p class="text-base-600 text-sm">A child who understands chord structure, key relationships, and rhythmic organisation plays with greater awareness and sensitivity. Theory moves a student beyond mechanical note reproduction into genuine musical interpretation — they start to hear connections, anticipate phrases, and make informed expressive choices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Stronger Sight-Reading</h3>
+                <p class="text-base-600 text-sm">Sight-reading ability is directly linked to theoretical knowledge. When a child can immediately recognise a key signature, understand what a time signature implies for pulse and grouping, and predict intervallic patterns, they navigate unfamiliar scores with much greater confidence and accuracy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Foundation for Composition</h3>
+                <p class="text-base-600 text-sm">Learning about harmonic progressions, melodic construction, and phrase structure naturally leads some children towards composition. Theory provides the toolkit — once students understand how music is built, they can begin building their own. This creative dimension often becomes one of the most fulfilling aspects of their musical education.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Telok Blangah -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Telok Blangah
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Telok Blangah is a residential pocket tucked beneath Mount Faber, close to the Southern Ridges walking trails. The drive to Patricia's Tengah studio takes approximately 25 minutes, heading west towards the AYE and continuing towards Jurong. The route is direct and familiar to most families in the area.
+            </p>
+            <p class="text-base-600 mb-4">
+              Online theory sessions are a popular option for Telok Blangah families. The analytical, discussion-based nature of theory work is well-suited to video calls, and children can study in the comfort of their own home without adding commute time to their schedule. Patricia's online sessions are structured identically to in-person lessons.
+            </p>
+            <p class="text-base-600">
+              Whether your family lives along Telok Blangah Road, near the Telok Blangah Heights HDB estate, or closer to the VivoCity end of the neighbourhood, Patricia will work with you to find a lesson format that suits your schedule.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via AYE from Telok Blangah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Bus to HarbourFront MRT (CCL), then connect west towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons available via video call — well-suited for Telok Blangah families</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Theory Lessons Cover -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Grade-by-Grade Breakdown</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Lessons Cover
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 1</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Foundations</h3>
+            <p class="text-base-600 text-sm">
+              The starting point for all theory students: reading and writing notes accurately in treble and bass clefs, understanding how note values and rests fit within common time signatures, and recognising key signatures up to two sharps and flats. Students also learn to interpret basic dynamics, tempo markings, and performance directions. Patricia ensures these fundamentals are thoroughly internalised before progressing.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Intermediate</h3>
+            <p class="text-base-600 text-sm">
+              Students explore compound time signatures, work with all major and minor keys, and begin identifying and naming intervals. Basic harmony is introduced through primary triads (I, IV, V), and students learn to transpose between closely related keys. The Italian vocabulary of musical expression grows substantially. Patricia demonstrates every new concept at the keyboard, showing students how theory sounds in real music.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 5</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Advanced</h3>
+            <p class="text-base-600 text-sm">
+              The most comprehensive level covers irregular time signatures, alto and tenor clef reading, chord inversions and extended progressions, cadence identification and analysis, transposition involving concert pitch and transposing instruments, and the composition of a short melody to a given opening. Grade 5 requires sustained effort and regular revision — Patricia structures her preparation to build confidence systematically across all topics.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Theory FAQs
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Telok Blangah:
+          <a href="/piano-lessons-singapore/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-singapore/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-singapore/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-singapore/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/music-theory-lessons-harbourfront/" class="text-primary-600 hover:underline">HarbourFront</a>,
+          <a href="/music-theory-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>, and
+          <a href="/music-theory-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Help Your Child Understand the Language of Music
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to discuss music theory preparation for your child in Telok Blangah. Free consultation — no commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20theory%20lessons%20for%20my%20child%20in%20Telok%20Blangah."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

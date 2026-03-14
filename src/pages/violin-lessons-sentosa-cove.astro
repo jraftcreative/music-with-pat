@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What age can my child begin violin lessons with Patricia?",
+    answer: "Patricia accepts violin students from age four onwards. At this age, children can begin with a 1/8 or 1/10 size violin, learning the fundamentals of posture, bow hold, and basic note production through short, engaging sessions. Patricia's early childhood education background means she understands how to structure lessons that hold a young child's attention while building real musical skills."
+  },
+  {
+    question: "How do we get from Sentosa Cove to Patricia's Tengah studio?",
+    answer: "From Sentosa Cove, the most direct route is via the AYE westbound. Head out through Sentosa Gateway, join the AYE from the Telok Blangah area, and continue west towards Jurong. The drive typically takes around 25 minutes depending on traffic. Alternatively, Patricia offers house visits throughout the Sentosa Cove area if travelling to Tengah is not practical for your family."
+  },
+  {
+    question: "Does Patricia prepare students for ABRSM violin examinations?",
+    answer: "Yes. Patricia prepares students for all ABRSM violin grades, covering the full examination requirements including scales, arpeggios, set pieces, sight-reading, and aural tests. She enters students for examinations only when they are genuinely ready, ensuring they sit the exam with confidence rather than anxiety. Many of her students have achieved merit and distinction results."
+  },
+  {
+    question: "Can my child have violin lessons at our home in Sentosa Cove?",
+    answer: "Patricia does offer house visits for families who prefer learning at home. For Sentosa Cove residents, this can be a convenient option — particularly for younger children who are more settled in familiar surroundings. Patricia brings all necessary materials, and the lesson content and structure remain the same as studio-based sessions."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Lessons for Children in Sentosa Cove | Music with Pat"
+  description="Violin lessons for children in Sentosa Cove, Singapore. Patient instruction with fractional-size violins, ABRSM violin preparation, and careful bow technique development. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Sentosa Cove",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Sentosa Cove, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Patient, child-centred violin lessons for children in Sentosa Cove, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Sentosa Cove' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Sentosa Cove & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Lessons for Children in Sentosa Cove
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Sentosa Cove is one of Singapore's most exclusive residential enclaves, home to waterfront villas and luxury condominiums where many international families have settled. Patricia's violin studio in Tengah is around a 25-minute drive via the AYE, offering Sentosa Cove children a dedicated, distraction-free environment to develop genuine violin technique — from early bow control through to graded examination repertoire.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-violin-lessons.webp"
+              alt="Patricia teaching violin to a child near Sentosa Cove"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia brings over a decade of experience teaching violin and piano to children across Singapore. Many of her students come from internationally diverse families — the kind of households that are common in Sentosa Cove — and she is practised at adapting her teaching approach to suit children from different educational and cultural backgrounds.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education is central to her violin teaching. She understands the physical coordination that violin demands of a young child — the fine motor control for bow hold, the spatial awareness for left-hand positioning — and she introduces these skills at a pace that respects each child's developmental stage.
+            </p>
+            <p class="text-base-600 mb-6">
+              Whether your child is picking up a violin for the first time or transferring from another teacher, Patricia provides clear, structured instruction in a warm studio setting where children feel comfortable and motivated to practise.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Families from Sentosa Cove Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Choose Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Sentosa Cove Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Sensitive to Each Child's Pace</h3>
+                <p class="text-base-600 text-sm">Many Sentosa Cove families have children attending international schools with demanding schedules. Patricia respects these commitments, adjusting lesson intensity and practice expectations to suit each child's life. She focuses on building a genuine connection to the violin rather than piling on pressure, which keeps children engaged over the long term.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Qualified in Early Childhood Music</h3>
+                <p class="text-base-600 text-sm">Patricia's formal training in early childhood development means she understands how young muscles develop, how children process new physical information, and when to push forward versus when to consolidate. For violin — an instrument that requires precise physical coordination — this knowledge translates directly into better teaching outcomes from the very first lesson.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured ABRSM Progression</h3>
+                <p class="text-base-600 text-sm">For families seeking a clear pathway, Patricia guides students through the ABRSM violin syllabus — from Initial Grade through to the higher grades. She covers all examination components methodically, including scales, set pieces, sight-reading, and aural skills, entering students only when they are fully prepared and confident in their abilities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Quiet, Purpose-Built Studio</h3>
+                <p class="text-base-600 text-sm">Patricia's Tengah studio is a private, acoustically suitable space designed for focused one-to-one learning. For violin students, this matters greatly — a quiet room allows children to hear the quality of their own tone, notice intonation issues, and develop the refined listening skills that are essential for string playing at any level.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Sentosa Cove -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Sentosa Cove
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Sentosa Cove, the most straightforward route to Patricia's Tengah studio is via Sentosa Gateway to the Telok Blangah area, then onto the AYE heading west. The drive takes approximately 25 minutes under normal traffic conditions, making it manageable as a regular weekly commitment.
+            </p>
+            <p class="text-base-600 mb-4">
+              Families living in the Ocean Drive, Cove Drive, or Paradise Island areas will find the journey consistent and predictable, particularly outside peak hours. The AYE is a direct expressway corridor that avoids the congestion of inner-city routes.
+            </p>
+            <p class="text-base-600">
+              For families who prefer the convenience of learning at home, Patricia offers house visits throughout Sentosa Cove. She brings all required materials, and the lesson quality remains identical to studio sessions — the only difference is the setting.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 25 minutes via Sentosa Gateway and AYE westbound to Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> HarbourFront MRT (CCL/NEL) with connections westward towards Jurong and Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By taxi:</strong> A comfortable 25-minute ride, convenient for families without a car</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Sentosa Cove for families who prefer home-based lessons</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each lesson is a private, one-to-one session shaped around your child's current abilities and goals. Sessions typically run 30 to 60 minutes, with younger or newer students starting at the shorter duration and progressing as their concentration and stamina develop.
+          </p>
+          <p>
+            Patricia begins each session with posture and instrument checks — ensuring the violin is correctly positioned under the chin, the bow hold is relaxed yet controlled, and the left hand is properly shaped. From there, lessons move through scales and bowing exercises to build tone quality, followed by work on current repertoire. Sight-reading and ear training are integrated naturally rather than treated as separate drills, developing well-rounded musicianship alongside technical facility.
+          </p>
+          <p>
+            Students working towards ABRSM violin examinations follow a structured programme covering all required components — scales, arpeggios, set pieces, sight-reading, and aural tests. Those not pursuing examinations still receive a clear, progressive curriculum that keeps them advancing through carefully selected repertoire and technique-building exercises.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Sentosa Cove:
+          <a href="/piano-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-sentosa-cove/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-sentosa-cove/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Music Theory</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-harbourfront/" class="text-primary-600 hover:underline">HarbourFront</a>,
+          <a href="/violin-lessons-telok-blangah/" class="text-primary-600 hover:underline">Telok Blangah</a>, and
+          <a href="/violin-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to arrange a free consultation about violin lessons for your child. No commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Sentosa%20Cove."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

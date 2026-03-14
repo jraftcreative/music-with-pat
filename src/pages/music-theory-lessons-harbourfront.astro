@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is music theory boring for children?",
+    answer: "It does not have to be, and with Patricia it certainly is not. She teaches theory through active participation — tapping rhythms, singing intervals, identifying patterns in real pieces, and composing short musical phrases. HarbourFront families often find their children voluntarily reviewing theory concepts at home because the lessons make the subject feel like solving a puzzle rather than memorising rules."
+  },
+  {
+    question: "How long does it take to prepare for ABRSM Grade 5 Theory?",
+    answer: "Most students require 6 to 12 months of dedicated study, though the timeline varies based on prior theory exposure, age, and practice consistency. Children who have been absorbing theory naturally through their practical lessons often progress faster. Patricia creates an individual preparation plan and adjusts the pace based on how each student responds."
+  },
+  {
+    question: "Can my child take theory lessons online?",
+    answer: "Absolutely. Theory lends itself well to online delivery because the work centres on notation, written exercises, and analytical discussion rather than physical instrument technique. For families near HarbourFront who want to avoid the drive to Tengah, online theory sessions are a convenient and effective option that Patricia has refined over many years of teaching."
+  },
+  {
+    question: "When should my child start learning music theory?",
+    answer: "Theory is part of music from day one — every time your child reads a note or claps a rhythm, they are engaging with theory. Structured exam preparation typically begins around Grade 3 or 4 practical level, which gives students a comfortable runway to complete Grade 5 Theory well before they need the certificate for higher practical grades."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Theory Lessons in HarbourFront | Music with Pat"
+  description="ABRSM music theory lessons for children near HarbourFront, Singapore. Grades 1–5 theory preparation with an experienced educator. Studio in Tengah with online options available. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Theory Lessons",
+      "name": "Music Theory Lessons in HarbourFront",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "HarbourFront, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM music theory preparation for children near HarbourFront, Singapore. Covering Grades 1 through 5 with engaging, interactive teaching methods at a dedicated studio in Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Theory Lessons HarbourFront' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">HarbourFront & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Theory Lessons in HarbourFront
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The HarbourFront area sits at a crossroads of connectivity and convenience, and families here tend to value education that is thorough and well-structured. ABRSM music theory gives young musicians precisely that — a systematic understanding of notation, rhythm, harmony, and musical structure that strengthens everything they do at the piano or violin. Patricia teaches theory in a way that brings these concepts to life, connecting written rules to the music your child already knows and loves.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Music Theory Teacher for Children near HarbourFront"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia brings over a decade of hands-on teaching experience to every theory lesson. Having worked with hundreds of children across Singapore, she has seen firsthand how a solid grasp of theory accelerates a student's practical progress. Her lessons are never just about passing an exam — they are about building genuine musical literacy.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a distinctive advantage. She understands how children at different developmental stages absorb abstract concepts, and she adapts her explanations accordingly — using visual aids, hands-on keyboard demonstrations, and listening exercises to reinforce written work.
+            </p>
+            <p class="text-base-600 mb-6">
+              HarbourFront families value reliable, results-oriented teaching, and that is exactly what Patricia delivers. She keeps parents informed, sets achievable milestones, and ensures each student progresses steadily towards their theory goals.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Learn Music Theory -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Theory Matters</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families near HarbourFront Invest in Music Theory
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM Requirement</h3>
+                <p class="text-base-600 text-sm">Without a Grade 5 Theory pass, students cannot progress to Grade 6, 7, or 8 practical exams. Many families discover this requirement too late and find themselves scrambling. Patricia ensures her students are well ahead of this deadline, weaving theory preparation naturally into their broader musical journey from an early stage.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Deeper Musical Understanding</h3>
+                <p class="text-base-600 text-sm">Theory transforms how children interact with music. When a student understands why a piece modulates to a new key, or what makes a particular rhythm feel syncopated, their playing gains a level of intelligence and intentionality that goes far beyond reproducing notes from a score.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Stronger Sight-Reading</h3>
+                <p class="text-base-600 text-sm">Children with solid theory foundations can look at a new piece of music and quickly make sense of its structure — key, time signature, rhythmic patterns, and harmonic direction. This dramatically improves sight-reading ability, which in turn accelerates how quickly they learn new repertoire both in and out of exam preparation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Foundation for Composition</h3>
+                <p class="text-base-600 text-sm">Theory gives children the tools to create. Once they understand how melodies are constructed, how chords function, and how musical form works, many students begin experimenting with their own compositions. This creative dimension adds a deeply personal and rewarding aspect to their musical education.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from HarbourFront -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from HarbourFront
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              HarbourFront is one of Singapore's best-connected transport hubs, served by both the Circle Line and North-East Line at HarbourFront MRT. The drive to Patricia's Tengah studio takes approximately 25 minutes, heading west via the AYE — a route that moves against peak-hour traffic for afternoon lessons.
+            </p>
+            <p class="text-base-600 mb-4">
+              Many families in the condominiums near VivoCity and Keppel Bay find online theory sessions to be the most practical choice. The focused, discussion-based nature of theory work adapts well to video calls, and students near HarbourFront can fit a theory session into their schedule without adding travel time to an already busy week.
+            </p>
+            <p class="text-base-600">
+              Whether you live in the residential towers overlooking Keppel Harbour or in the HDB blocks towards Telok Blangah, Patricia can accommodate your family's preferred lesson format.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via AYE from HarbourFront</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Circle Line from HarbourFront towards Buona Vista, then connect towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons available via video call — popular with HarbourFront families</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Theory Lessons Cover -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Grade-by-Grade Breakdown</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Lessons Cover
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 1</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Foundations</h3>
+            <p class="text-base-600 text-sm">
+              Children learn to read and write music fluently — understanding note values, rests, and how they combine within time signatures like 2/4, 3/4, and 4/4. They work with treble and bass clefs, learn key signatures up to two sharps and flats, and begin recognising essential Italian musical terms. Patricia builds these fundamentals through a mix of written work and practical demonstration at the keyboard.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Intermediate</h3>
+            <p class="text-base-600 text-sm">
+              The syllabus expands into compound time signatures, the full range of major and minor keys, intervals up to an octave, and basic harmony including primary triads. Students learn to transpose between closely related keys, identify ornaments and their execution, and expand their vocabulary of performance directions. Patricia constantly connects these concepts to repertoire her students are playing, making the learning immediate and relevant.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 5</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Advanced</h3>
+            <p class="text-base-600 text-sm">
+              Grade 5 is comprehensive and demanding. Students study irregular time signatures, read from alto and tenor clefs, analyse chords including inversions and secondary triads, identify cadences in musical passages, transpose between concert pitch and transposing instruments, and compose short melodies following specific guidelines. This grade requires sustained, methodical preparation — Patricia guides students through it with structured weekly targets and regular progress checks.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Theory FAQs
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available near HarbourFront:
+          <a href="/piano-lessons-singapore/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-singapore/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-singapore/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-singapore/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/music-theory-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Sentosa Cove</a>,
+          <a href="/music-theory-lessons-telok-blangah/" class="text-primary-600 hover:underline">Telok Blangah</a>, and
+          <a href="/music-theory-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Unlock the Full Picture of Music
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to discuss music theory preparation for your child near HarbourFront. Free consultation — no commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20theory%20lessons%20for%20my%20child%20near%20HarbourFront."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How long does it typically take to prepare for each ABRSM piano grade?",
+    answer: "Most students spend between 12 and 18 months preparing for each grade, though this depends on the child's age, practice consistency, and the difficulty jump between levels. Patricia never rushes students through a syllabus — she enters them for exams only when they are genuinely ready, which is why her students consistently achieve strong results."
+  },
+  {
+    question: "Does my child need Grade 5 Theory before taking higher practical exams?",
+    answer: "Yes. ABRSM requires a pass in Grade 5 Theory (or an equivalent qualification) before candidates can enter for Grades 6, 7, or 8 practical exams. Patricia integrates theory concepts into weekly lessons from the early grades onwards, so students build this knowledge gradually rather than having to cram separately when Grade 5 approaches."
+  },
+  {
+    question: "When should my child start preparing for ABRSM exams?",
+    answer: "There is no fixed age requirement. Some children are ready for the Prep Test at five or six, while others are better suited to starting Grade 1 at seven or eight. Patricia assesses each student's readiness individually during an initial consultation and will give you an honest recommendation based on your child's development and musical maturity."
+  },
+  {
+    question: "When are ABRSM exam sessions held in Singapore?",
+    answer: "ABRSM holds practical exam sessions in Singapore two to three times a year, typically around March, June, and October/November, though exact dates vary. Theory exams are now available online throughout the year. Patricia keeps track of registration windows and advises families on the best session for their child's preparation timeline."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Piano Lessons in Sentosa Cove | Music with Pat"
+  description="ABRSM piano exam preparation for children in Sentosa Cove, Singapore. Structured grade progression from Prep Test to Grade 8 with an experienced educator. Studio in Tengah, 25-minute drive via AYE."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Piano Lessons",
+      "name": "ABRSM Piano Lessons for Children in Sentosa Cove",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Sentosa Cove, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM piano exam preparation for children in Sentosa Cove, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Piano Lessons Sentosa Cove' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Sentosa Cove to Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Piano Lessons for Children in Sentosa Cove
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Sentosa Cove is one of Singapore's most exclusive residential enclaves, home to waterfront villas and luxury condominiums where many internationally minded families settle. For parents here seeking structured, internationally recognised piano education, Patricia offers thorough ABRSM exam preparation at her Tengah studio — a focused 25-minute drive along the AYE that takes your child from the tranquillity of the cove to a dedicated learning environment.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - ABRSM Piano Teacher for Children near Sentosa Cove"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              With over a decade of experience preparing children for ABRSM piano exams in Singapore, Patricia brings a depth of understanding that goes beyond simply teaching the syllabus. Her students have earned Merits and Distinctions across multiple grades, a track record built on patience and meticulous preparation.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia holds a Bachelor's degree in Early Childhood Education with Music Education, giving her a rare combination of musical expertise and formal training in child development. She recognises that children from Sentosa Cove often arrive with exposure to music through international school programmes, and she builds on that foundation with precision and care.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her approach centres on understanding — she wants students to genuinely comprehend the music they play, not merely replicate it. That principle guides every aspect of her ABRSM preparation, from selecting pieces to developing aural awareness.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Sentosa Cove Families Choose Patricia for ABRSM
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured Preparation</h3>
+                <p class="text-base-600 text-sm">Patricia maps out a clear preparation plan for every grade, covering all exam components systematically. Pieces, scales, sight-reading, and aural work are woven into each lesson so nothing is left to last-minute cramming. Students arrive at examinations having practised every element thoroughly.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Theory Integration</h3>
+                <p class="text-base-600 text-sm">Music theory is not treated as a separate burden. Patricia weaves theoretical concepts into practical lessons from the outset, so when Grade 5 Theory becomes a prerequisite for higher practical exams, students already have a strong foundation. This integrated approach saves families time and reduces stress.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">Exam day should feel like a natural extension of weekly lessons, not an ordeal. Patricia runs mock exams and performance run-throughs so children are comfortable with the format, timing, and expectations. By the time they sit before an examiner, the experience feels familiar rather than intimidating.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Every child progresses at their own rate, and Patricia respects that completely. She will never enter a student for an exam before they are ready, nor hold back one who is thriving. This personalised pacing means each child moves through the grades at a speed that matches their development and practice commitment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Sentosa Cove -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Sentosa Cove
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Sentosa Cove is situated at the southern tip of Singapore, accessed via the Sentosa Gateway. The drive to Patricia's Tengah studio takes approximately 25 minutes, heading north through Telok Blangah before joining the AYE westbound.
+            </p>
+            <p class="text-base-600 mb-4">
+              Many Sentosa Cove families find that the drive becomes a pleasant routine — a short transition from the island atmosphere to a dedicated lesson environment. Weekend morning slots and early afternoon sessions on weekdays are popular choices.
+            </p>
+            <p class="text-base-600">
+              For families who prefer not to make the trip, Patricia also offers house visits to Sentosa Cove. She is familiar with the estate layout and has taught in several of the condominium developments along Ocean Drive and Cove Way.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via Telok Blangah Road and the AYE westbound</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Take the Sentosa Express to HarbourFront, then the Circle Line or North-East Line towards Jurong East to connect to the Jurong Region Line</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Sentosa Cove, including Ocean Drive, Cove Way, and Sandy Island</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            A typical ABRSM preparation lesson with Patricia runs 45 to 60 minutes and addresses every exam component in a balanced way. Sessions begin with technical work — scales, arpeggios, and broken chords relevant to the current grade — before moving into repertoire preparation for the three contrasting exam pieces.
+          </p>
+          <p>
+            Patricia selects pieces that play to each student's strengths while also developing areas that need attention. She teaches children to understand the musical character and historical context of each piece, which deepens their interpretation and is precisely what examiners reward with higher marks.
+          </p>
+          <p>
+            Sight-reading and aural training are addressed in every session, not just in the weeks before an exam. Short, focused exercises build these skills incrementally, so they feel natural by exam day. For students approaching Grade 5 or above, theory concepts are woven into practical work so that notation, key signatures, and harmonic understanding become second nature.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Piano FAQs — Sentosa Cove
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Sentosa Cove:
+          <a href="/piano-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-sentosa-cove/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-violin-lessons-sentosa-cove/" class="text-primary-600 hover:underline">ABRSM Violin</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-piano-lessons-harbourfront/" class="text-primary-600 hover:underline">HarbourFront</a>,
+          <a href="/abrsm-piano-lessons-telok-blangah/" class="text-primary-600 hover:underline">Telok Blangah</a>, and
+          <a href="/abrsm-piano-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>.
+          <a href="/abrsm-piano-lessons-singapore/" class="text-primary-600 hover:underline">View all ABRSM piano lessons</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start ABRSM Piano Preparation Today
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's current level and ABRSM exam goals.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20ABRSM%20piano%20lessons%20for%20my%20child%20in%20Sentosa%20Cove."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

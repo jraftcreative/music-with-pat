@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "How long does it take to prepare for each ABRSM violin grade?",
+    answer: "A thorough preparation typically takes 12 to 18 months per grade. Violin progress is inherently incremental — skills like secure intonation, consistent bow control, and musical phrasing develop through sustained, regular practice rather than intensive short bursts. Patricia takes a long-term view and only enters students for exams when they are confident and well-prepared across every component."
+  },
+  {
+    question: "Does my child need Grade 5 Theory to progress beyond Grade 5 on violin?",
+    answer: "Yes. ABRSM requires a Grade 5 Theory pass (or equivalent) before candidates can sit for Grades 6, 7, or 8 practical exams on any instrument. Patricia integrates theory into violin lessons from the beginning, teaching students to understand notation, key relationships, and musical patterns through their playing. This means the theory requirement is met through years of gradual preparation rather than a sudden sprint."
+  },
+  {
+    question: "At what age can my child start taking ABRSM violin exams?",
+    answer: "Readiness for violin exams depends heavily on physical development — the coordination required for bow hold, finger placement, and posture. Some children are ready for the Prep Test around age six, while others are better served by starting Grade 1 at seven or eight. Patricia assesses each child individually during a consultation and provides an honest recommendation."
+  },
+  {
+    question: "When does ABRSM hold violin exam sessions in Singapore?",
+    answer: "Practical exam sessions run two to three times a year in Singapore, usually around March, June, and October/November. Online theory exams are available year-round. Patricia stays current with registration deadlines and advises families on the most suitable session based on where their child is in their preparation."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Violin Lessons in Tiong Bahru | Music with Pat"
+  description="ABRSM violin exam preparation for children in Tiong Bahru, Singapore. Careful grade-by-grade preparation from Prep Test to Grade 8 at Patricia's Tengah studio, 25 minutes from Tiong Bahru MRT."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Violin Lessons",
+      "name": "ABRSM Violin Lessons for Children in Tiong Bahru",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Tiong Bahru, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM violin exam preparation for children in Tiong Bahru, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Violin Lessons Tiong Bahru' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Tiong Bahru to Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Violin Lessons for Children in Tiong Bahru
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Tiong Bahru's heritage character extends to the way its residents approach learning — with appreciation for craftsmanship, depth, and doing things properly. For families in this distinctive neighbourhood who want their children to learn violin through the ABRSM graded system, Patricia offers deliberate, comprehensive exam preparation at her Tengah studio, approximately 25 minutes along the AYE. Each lesson is built around the specific demands of violin examination at every level.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-violin-lessons.webp"
+              alt="Patricia - ABRSM Violin Teacher for Children near Tiong Bahru"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Over more than ten years of teaching violin to children in Singapore, Patricia has developed an approach that balances technical precision with genuine musical joy. Her ABRSM preparation is thorough — addressing every exam component with equal care — and her students' consistent Merits and Distinctions are the result of preparation that begins long before the exam date is set.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia's Bachelor's degree in Early Childhood Education with Music Education is particularly relevant to teaching young violinists. Violin makes significant physical demands on developing bodies, and Patricia's understanding of child development helps her introduce technical challenges — from bow hold and posture to shifting and vibrato — at the right moments in each student's growth.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her teaching resonates with Tiong Bahru families who value substance over shortcuts. Patricia takes the time to build real skill, communicates progress honestly, and treats each child's musical development as something worth investing in properly.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Tiong Bahru Families Choose Patricia for ABRSM Violin
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured Preparation</h3>
+                <p class="text-base-600 text-sm">Patricia treats ABRSM violin preparation as a craft — methodical, detailed, and unhurried. Every component of the exam receives sustained attention across the preparation period, from the precision demanded in scales to the expression expected in repertoire. Students arrive at their exam with confidence born of genuine completeness in their preparation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Theory Integration</h3>
+                <p class="text-base-600 text-sm">Patricia uses the violin repertoire itself as a vehicle for teaching theory. As students work through their pieces, she draws attention to key signatures, intervals, phrase structures, and harmonic patterns. This contextual approach means theory knowledge accumulates organically, preparing students for the Grade 5 Theory requirement without additional pressure.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">The violin exam involves particular practical challenges that Patricia rehearses thoroughly — tuning in front of the examiner, maintaining bow control under pressure, and staying composed during sight-reading. Mock exams and timed run-throughs give students the familiarity they need to perform at their best on the day.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Patricia allows each student's natural development to set the tempo. She monitors progress across all areas — tone production, intonation stability, bow technique, and musical maturity — and only recommends an exam when the student is genuinely ready. This respectful pacing produces stronger results and keeps children engaged with the instrument long-term.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Tiong Bahru -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Tiong Bahru
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Tiong Bahru, Patricia's Tengah studio is approximately 25 minutes by car via the AYE. The route is accessible from Tiong Bahru Road or Lower Delta Road, and the expressway portion makes the journey time consistent. Tiong Bahru MRT on the East-West Line also provides rail access towards Jurong East.
+            </p>
+            <p class="text-base-600 mb-4">
+              Weekend mornings are particularly popular with Tiong Bahru families, who often pair the lesson visit with a Saturday breakfast routine in the neighbourhood before heading to Tengah. Weekday after-school slots are also available.
+            </p>
+            <p class="text-base-600">
+              Patricia offers house visits throughout Tiong Bahru, including the Art Deco walk-up flats in the conservation area, the HDB blocks along Kim Tian Road, and the residential streets near Havelock Road. Home violin lessons follow the same structured format as studio sessions.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via Tiong Bahru Road and the AYE westbound</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> East-West Line from Tiong Bahru to Jurong East, then Jurong Region Line towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Tiong Bahru, including the conservation area, Kim Tian Road, and towards Havelock Road</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Violin Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each ABRSM violin preparation lesson with Patricia is a private session of 45 to 60 minutes. The lesson opens with scales and arpeggios — the foundation of violin technique at every grade — with careful attention to intonation, bow control, and the even tone that examiners listen for throughout the technical section.
+          </p>
+          <p>
+            The three contrasting repertoire pieces are prepared with musical depth. Patricia helps each student find the character of their music — the delicacy of a Baroque movement, the warmth of a folk-inspired melody, the energy of a modern showpiece. She teaches bowing techniques that serve the music's expression, from smooth legato lines to crisp detache passages, always with the examiner's marking criteria in mind.
+          </p>
+          <p>
+            Sight-reading and aural training close each session. Violin sight-reading demands simultaneous coordination of reading, bowing, and fingering, so Patricia builds these skills through regular, short exercises that develop confidence gradually. Aural activities train the listening awareness that is foundational to playing violin well — recognising pitch relationships, reproducing rhythms, and describing musical features. For students working through the intermediate grades, theory is explored through their repertoire, connecting formal knowledge to practical understanding.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Violin FAQs — Tiong Bahru
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Tiong Bahru:
+          <a href="/piano-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-piano-lessons-tiong-bahru/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-violin-lessons-redhill/" class="text-primary-600 hover:underline">Redhill</a>,
+          <a href="/abrsm-violin-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>, and
+          <a href="/abrsm-violin-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Set Your Child on the ABRSM Violin Path
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's violin experience and how ABRSM preparation would work for them.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20ABRSM%20violin%20lessons%20for%20my%20child%20in%20Tiong%20Bahru."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

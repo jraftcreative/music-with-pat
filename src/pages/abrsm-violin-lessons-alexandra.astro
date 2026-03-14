@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "What is a reasonable preparation timeline for each ABRSM violin grade?",
+    answer: "Most students require 12 to 18 months of focused preparation per grade, though this varies with age, daily practice, and the difficulty gap between levels. Violin skills like intonation and bow technique improve gradually, so Patricia takes a patient approach and enters students for exams only when she is confident they will perform well across every component."
+  },
+  {
+    question: "Is Grade 5 Theory compulsory before taking ABRSM violin exams at higher levels?",
+    answer: "Yes. ABRSM requires a Grade 5 Theory pass (or equivalent qualification) before candidates can sit for Grades 6, 7, or 8 practical exams. Patricia integrates theory teaching into violin lessons from the start, covering notation, key signatures, intervals, and form through the music students are already playing. This means the theory requirement is addressed progressively over years of study."
+  },
+  {
+    question: "How old does my child need to be to start ABRSM violin exams?",
+    answer: "There is no minimum age set by ABRSM, but violin demands significant physical coordination. Patricia typically sees children ready for the Prep Test around age six, with Grade 1 starting between six and eight depending on the individual. She conducts a free initial assessment to evaluate your child's readiness and provides a candid recommendation."
+  },
+  {
+    question: "What is the ABRSM exam schedule in Singapore?",
+    answer: "Practical exam sessions are held approximately two to three times a year, usually around March, June, and October/November. Theory exams are available online throughout the year. Patricia stays on top of registration windows and advises families on the ideal session based on their child's current level of preparation."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Violin Lessons in Alexandra | Music with Pat"
+  description="ABRSM violin exam preparation for children in Alexandra, Singapore. Structured grade-by-grade preparation from Prep Test to Grade 8 at Patricia's Tengah studio, 20 minutes from the Queensway and IKEA Alexandra area."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Violin Lessons",
+      "name": "ABRSM Violin Lessons for Children in Alexandra",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Alexandra, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM violin exam preparation for children in Alexandra, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Violin Lessons Alexandra' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Alexandra to Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Violin Lessons for Children in Alexandra
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          The Alexandra corridor links Singapore's central and western districts, with familiar landmarks like Queensway Shopping Centre, IKEA Alexandra, and Anchorpoint anchoring a neighbourhood that is practical, well-connected, and home to many young families. For parents here seeking structured ABRSM violin exam preparation, Patricia's Tengah studio is just 20 minutes along the AYE — close enough for a comfortable weekly routine, with every lesson designed to develop the skills that ABRSM examiners assess.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-violin-lessons.webp"
+              alt="Patricia - ABRSM Violin Teacher for Children near Alexandra"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              With more than a decade of experience teaching young violinists in Singapore, Patricia has built an approach to ABRSM preparation that is both rigorous and sensitive to each child's needs. Her students develop well-rounded musicianship — the kind of playing where technique, expression, and confidence reinforce each other — and their regular Merits and Distinctions are the natural outcome.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia's Bachelor's degree in Early Childhood Education with Music Education equips her to handle the particular challenges of teaching violin to young children. She understands how to develop fine motor control gradually, when to introduce new positions and bow techniques, and how to keep practice engaging even during the demanding early months of learning the instrument.
+            </p>
+            <p class="text-base-600 mb-6">
+              Families in the Alexandra area find Patricia's practical, evidence-based approach reassuring. She is transparent about progress, sets realistic targets, and always makes recommendations based on what she genuinely believes is best for the student.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Alexandra Families Choose Patricia for ABRSM Violin
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Structured Preparation</h3>
+                <p class="text-base-600 text-sm">Patricia brings order and clarity to ABRSM violin preparation. Each grade is mapped out with attention to every component — technical exercises, repertoire, sight-reading, and aural training are all given dedicated time. The particular demands of violin playing, from reliable intonation to expressive bow work, are woven through every lesson.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Theory Integration</h3>
+                <p class="text-base-600 text-sm">Theory is taught through the lens of the music students play, making it practical and memorable. Patricia discusses keys, scales, and musical structure as they arise in pieces and technical work, so theoretical knowledge grows naturally alongside playing ability. The Grade 5 Theory milestone is reached without the need for a separate, stressful preparation process.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">Patricia prepares students not just for the music but for the experience of performing under exam conditions. Mock exams cover everything from tuning and posture to the pacing of the programme. Children learn to manage their nerves and present their best playing when it matters most, resulting in stronger outcomes and a positive association with the exam process.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Patricia tailors the pace of instruction to each student's development. She closely observes how a child's physical technique is progressing — bow arm stability, left-hand agility, postural alignment — and makes exam entry decisions based on the whole picture. No child is rushed into an exam before they are genuinely ready to perform well.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Alexandra -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Alexandra
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Alexandra's direct access to the AYE via Alexandra Road makes the trip to Patricia's Tengah studio a quick 20-minute drive. Whether you are near Queensway, IKEA Alexandra, or Tanglin Halt, you can reach the expressway within minutes.
+            </p>
+            <p class="text-base-600 mb-4">
+              Many Alexandra families combine their weekly violin lesson with other errands in the western part of Singapore. Weekday after-school slots and Saturday morning sessions are both well-suited to the area's family routines.
+            </p>
+            <p class="text-base-600">
+              Patricia offers house visits to the Alexandra neighbourhood for families who prefer at-home violin lessons. She covers the HDB blocks and condominiums along Alexandra Road, Tanglin Halt Road, and the Queensway vicinity, maintaining the same structured ABRSM preparation format as her studio sessions.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 20 minutes via Alexandra Road and the AYE westbound</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Circle Line from Labrador Park, or bus to Queenstown MRT (EWL), then towards Jurong East and transfer to the Jurong Region Line</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across the Alexandra area, including Tanglin Halt, Queensway, and the Anchorpoint vicinity</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Violin Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each ABRSM violin lesson with Patricia runs 45 to 60 minutes, structured to cover every area that contributes to a strong exam performance. The session opens with technical exercises — scales and arpeggios at the appropriate grade level, with Patricia listening carefully for intonation accuracy, bow consistency, and tonal warmth across all four strings.
+          </p>
+          <p>
+            The three contrasting exam pieces are the focal point of each lesson. Patricia works with students to develop genuine musical understanding — how to differentiate the stylistic demands of a Baroque sonata movement from those of a lyrical Romantic piece, how to use bow speed and pressure to create dynamic range, and how to communicate the character of each work through thoughtful phrasing. Her piece selections consider each student's individual strengths and the technical areas where they need to grow.
+          </p>
+          <p>
+            Sight-reading exercises are included in every session, building the coordination of reading, bowing, and fingering that violin sight-reading demands. Aural training activities develop the pitch awareness and rhythmic sensitivity that are fundamental to playing violin well. For students approaching the intermediate and advanced grades, theory concepts are explored through their repertoire, creating a practical understanding that prepares them for the Grade 5 Theory examination.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Violin FAQs — Alexandra
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Alexandra:
+          <a href="/piano-lessons-alexandra/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-alexandra/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-alexandra/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-alexandra/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-piano-lessons-alexandra/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-violin-lessons-redhill/" class="text-primary-600 hover:underline">Redhill</a>,
+          <a href="/abrsm-violin-lessons-tiong-bahru/" class="text-primary-600 hover:underline">Tiong Bahru</a>, and
+          <a href="/abrsm-violin-lessons-telok-blangah/" class="text-primary-600 hover:underline">Telok Blangah</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Build Your Child's ABRSM Violin Skills
+        </h2>
+        <p class="text-base-600 mb-6">Contact Patricia for a free consultation to discuss your child's current violin ability, musical interests, and ABRSM aspirations.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20ABRSM%20violin%20lessons%20for%20my%20child%20in%20Alexandra."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

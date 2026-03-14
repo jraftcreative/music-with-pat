@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is music theory boring for children?",
+    answer: "Tiong Bahru parents are often pleasantly surprised by how much their children enjoy theory with Patricia. She avoids the traditional drill-and-worksheet model. Instead, she has children tapping out rhythmic dictations, listening for chord qualities at the piano, spotting patterns in their favourite pieces, and even creating their own short melodies. The approach makes theory feel like an extension of music-making rather than a separate academic exercise."
+  },
+  {
+    question: "How long does it take to prepare for ABRSM Grade 5 Theory?",
+    answer: "Plan for 6 to 12 months of consistent, weekly study. Some students who already have a strong theoretical foundation from their practical lessons may prepare faster, while younger students or those approaching theory for the first time typically need the longer end of that range. Patricia evaluates each child's starting point and sets a personalised preparation timeline."
+  },
+  {
+    question: "Can my child take theory lessons online?",
+    answer: "Yes, and many Tiong Bahru families prefer this option for theory. The subject involves notation analysis, written exercises, and guided discussion — activities that work seamlessly over video call. Students can share their work on screen, and Patricia annotates examples in real time. Online sessions follow the same structured curriculum as in-person lessons at the Tengah studio."
+  },
+  {
+    question: "When should my child start learning music theory?",
+    answer: "Children begin learning theory from their very first music lesson — note reading, rhythm counting, and dynamic awareness are all fundamental theory concepts. Dedicated ABRSM theory exam preparation is usually introduced when a student reaches Grade 3 or 4 in their practical instrument studies, ensuring they have ample time to prepare for and pass Grade 5 Theory before it becomes a gateway requirement."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Theory Lessons in Tiong Bahru | Music with Pat"
+  description="ABRSM music theory lessons for children in Tiong Bahru, Singapore. Grades 1–5 theory preparation with an experienced educator. Studio in Tengah with online options available. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Theory Lessons",
+      "name": "Music Theory Lessons in Tiong Bahru",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Tiong Bahru, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM music theory preparation for children in Tiong Bahru, Singapore. Covering Grades 1 through 5 with engaging, interactive teaching methods at a dedicated studio in Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Theory Lessons Tiong Bahru' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Tiong Bahru & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Theory Lessons in Tiong Bahru
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Tiong Bahru has long been a neighbourhood that appreciates culture and the arts. Its pre-war architecture, independent bookshops, and close-knit community reflect a place where creative pursuits are valued alongside academic achievement. Music theory fits naturally into that ethos — it is the intellectual side of music that gives young pianists and violinists a thorough understanding of how the music they play is constructed. Patricia offers ABRSM theory preparation from Grades 1 through 5, teaching each concept with clarity and connecting it to the sounds children already recognise.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+              alt="Patricia - Music Theory Teacher for Children near Tiong Bahru"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has taught music to children for more than ten years, and her theory teaching reflects a deeply practical philosophy. She does not believe in learning theory in isolation from instrument playing — every concept she introduces is demonstrated at the piano and linked back to repertoire her students know. This approach means that theory knowledge sticks because it is constantly reinforced.
+            </p>
+            <p class="text-base-600 mb-4">
+              With a Bachelor's degree in Early Childhood Education with Music Education, Patricia brings a trained understanding of child development to her teaching. She recognises that a six-year-old absorbs information differently from a ten-year-old, and she adapts her explanations, pacing, and activities accordingly.
+            </p>
+            <p class="text-base-600 mb-6">
+              Tiong Bahru families find Patricia's teaching style refreshingly honest and grounded. She prepares children thoroughly without overpromising, keeps parents informed about realistic timelines, and creates a learning environment where questions are welcome and mistakes are treated as part of the process.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Learn Music Theory -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Theory Matters</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families in Tiong Bahru Invest in Music Theory
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM Requirement</h3>
+                <p class="text-base-600 text-sm">ABRSM mandates a Grade 5 Theory pass before students may attempt Grade 6, 7, or 8 practical exams. Forward-thinking families in Tiong Bahru start theory preparation well in advance, treating it as a natural part of their child's musical journey rather than an obstacle to be cleared at the last moment.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Deeper Musical Understanding</h3>
+                <p class="text-base-600 text-sm">Tiong Bahru has always been a place that appreciates depth over surface appeal, and that same principle applies to music education. Theory gives children a rich understanding of how music functions — the relationship between keys, the logic of harmonic progressions, and why certain rhythmic patterns create specific feelings. It transforms mechanical playing into informed performance.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Stronger Sight-Reading</h3>
+                <p class="text-base-600 text-sm">When a student can quickly identify a key signature, understand what a compound time signature implies, and recognise familiar interval patterns, they can sight-read new music with genuine fluency. Theory provides the mental framework that makes notation less of a puzzle and more of a language the child can read naturally.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Foundation for Composition</h3>
+                <p class="text-base-600 text-sm">In a neighbourhood known for its creative spirit, it is fitting that theory opens the door to composition. Students who understand chord function, melodic contour, and phrase structure can begin creating their own music — turning the knowledge gained from theory study into original creative expression.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Tiong Bahru -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Tiong Bahru
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Tiong Bahru is well-served by Tiong Bahru MRT station on the East-West Line. The drive to Patricia's Tengah studio takes about 25 minutes heading west along the AYE, past Queenstown, Clementi, and Jurong East. For afternoon lessons, the route typically moves smoothly against peak traffic.
+            </p>
+            <p class="text-base-600 mb-4">
+              Many families in Tiong Bahru's distinctive walk-up flats and the surrounding HDB blocks prefer online theory sessions. The heritage neighbourhood's charm extends to its quiet, comfortable living spaces — ideal for focused online learning. Patricia's online lessons are identical in content and structure to studio sessions.
+            </p>
+            <p class="text-base-600">
+              Whether your family lives near the Tiong Bahru Market, along Kim Pong Road, or in the newer apartments closer to Havelock, Patricia offers flexible lesson arrangements to suit your schedule and preference.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 25 minutes via AYE from Tiong Bahru</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> East-West Line from Tiong Bahru MRT towards Jurong East, then Jurong Region Line towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons available via video call — a favourite choice among Tiong Bahru families</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Theory Lessons Cover -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Grade-by-Grade Breakdown</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Lessons Cover
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 1</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Foundations</h3>
+            <p class="text-base-600 text-sm">
+              The entry-level grades cover the essentials of musical literacy: note reading and writing in treble and bass clefs, note values and rests, simple time signatures, bar lines and grouping, key signatures with up to two sharps or flats, and basic Italian terms for dynamics and tempo. Patricia teaches these fundamentals through a combination of written exercises and keyboard demonstration, ensuring concepts are both understood and heard.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Intermediate</h3>
+            <p class="text-base-600 text-sm">
+              Students advance to compound time signatures, explore the full circle of major and minor keys, learn to name and write intervals, and begin working with primary triads and simple harmonisation. Transposition between closely related keys is introduced, and the range of musical terms and performance directions grows considerably. Patricia draws on pieces her students are currently learning to illustrate every concept.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 5</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Advanced</h3>
+            <p class="text-base-600 text-sm">
+              The most challenging theory grade requires fluency in irregular time signatures, reading from alto and tenor clefs, identifying chord inversions and secondary triads, recognising and labelling cadences, transposing between concert pitch and transposing instruments, and composing a melody to a given opening or rhythmic pattern. Patricia approaches Grade 5 preparation with systematic weekly goals and ample past-paper practice to build confidence.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Theory FAQs
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Tiong Bahru:
+          <a href="/piano-lessons-singapore/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-singapore/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-singapore/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-singapore/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/music-theory-lessons-redhill/" class="text-primary-600 hover:underline">Redhill</a>,
+          <a href="/music-theory-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>, and
+          <a href="/music-theory-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Give Your Child the Full Musical Picture
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to discuss music theory preparation for your child in Tiong Bahru. Free consultation — no commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20theory%20lessons%20for%20my%20child%20in%20Tiong%20Bahru."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

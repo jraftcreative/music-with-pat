@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "My child has never played an instrument before — is violin a good first choice?",
+    answer: "Violin is an excellent first instrument for children aged four and above. It develops fine motor control, listening skills, and musical understanding from the outset. Patricia specialises in working with complete beginners, starting with the basics of holding the instrument and drawing the bow before progressing to scales and simple melodies. Her early childhood training means she knows exactly how to make these first steps engaging rather than overwhelming."
+  },
+  {
+    question: "How do we get from Telok Blangah to Patricia's studio in Tengah?",
+    answer: "From Telok Blangah, the most convenient route is via Telok Blangah Road to the AYE westbound. The drive takes approximately 25 minutes to reach Tengah. Families near Telok Blangah Heights, Depot Road, or the Mount Faber area will find the AYE entrance at Alexandra Road easily accessible. Patricia also offers house visits throughout the Telok Blangah district."
+  },
+  {
+    question: "How often should my child practise violin between lessons?",
+    answer: "Patricia recommends daily practice, but the duration should match your child's age and experience level. A four-year-old might practise for just 10 minutes a day, while an eight-year-old working on Grade 2 material would benefit from 20 to 30 minutes. Patricia provides specific practice tasks after each lesson so that home practice is focused and productive rather than aimless repetition."
+  },
+  {
+    question: "Can my child learn both piano and violin with Patricia?",
+    answer: "Yes. Several of Patricia's students study both instruments, and the skills are genuinely complementary — music reading, rhythmic sense, and ear training develop across both. Patricia can advise on scheduling and how to balance practice time between the two instruments so that neither suffers. Many families find that dual study deepens their child's overall musical understanding."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Violin Lessons for Children in Telok Blangah | Music with Pat"
+  description="Violin lessons for children in Telok Blangah, Singapore. Careful, child-focused teaching with fractional-size violins, ABRSM preparation, and strong technique from the start. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Violin Lessons",
+      "name": "Violin Lessons for Children in Telok Blangah",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Telok Blangah, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "Careful, child-focused violin lessons for children in Telok Blangah, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in nearby Tengah."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Telok Blangah' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Telok Blangah & Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Violin Lessons for Children in Telok Blangah
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Telok Blangah is a leafy residential neighbourhood nestled between Mount Faber and the Southern Ridges, where families enjoy a quieter pace of life within easy reach of the city centre. The area's mix of HDB flats and condominiums along Telok Blangah Heights and Depot Road houses many young families seeking quality enrichment nearby. Patricia's violin studio in Tengah is approximately a 25-minute drive westward via the AYE, offering children from Telok Blangah a serene, dedicated space to build strong violin skills from the ground up.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-violin-lessons.webp"
+              alt="Patricia guiding a violin student near Telok Blangah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia has been teaching violin and piano to children for over a decade. Her approach is rooted in the belief that a child's earliest experiences with an instrument shape their relationship with music for years to come. She takes this responsibility seriously, ensuring that every lesson is structured, purposeful, and delivered at a pace that builds confidence rather than anxiety.
+            </p>
+            <p class="text-base-600 mb-4">
+              Holding a Bachelor's degree in Early Childhood Education with Music Education, Patricia has a deep understanding of how children learn complex physical tasks. Violin demands an unusual level of coordination — managing bow pressure, finger placement, and posture simultaneously — and her developmental knowledge allows her to introduce these skills in a sequence that feels manageable to a young learner.
+            </p>
+            <p class="text-base-600 mb-6">
+              Her Tengah studio is a short drive from Telok Blangah, and families from the area appreciate the calm, unhurried atmosphere she has created. Each child receives Patricia's full attention for the duration of their lesson, with no distractions and no competing students.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Families from Telok Blangah Choose Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Choose Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Families from Telok Blangah Choose Patricia
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Teacher Who Listens First</h3>
+                <p class="text-base-600 text-sm">Before Patricia teaches a single note, she listens — to what your child enjoys, what worries them, and what excites them about music. This attentive approach means Telok Blangah children begin their violin journey feeling heard and understood. Patricia shapes each lesson around the child sitting in front of her, not around a rigid curriculum that ignores individual personality.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Developmentally Informed Teaching</h3>
+                <p class="text-base-600 text-sm">Patricia's degree in Early Childhood Education equips her to teach violin in a way that aligns with how children actually develop. She knows that a five-year-old's fingers tire faster than an eight-year-old's, that younger children learn bowing patterns more readily through imitation than verbal instruction, and that every child needs a different balance of challenge and encouragement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Thorough ABRSM Groundwork</h3>
+                <p class="text-base-600 text-sm">For families wanting a formal pathway, Patricia prepares students for ABRSM violin examinations with careful attention to every component. She builds scales and arpeggios into regular practice from the early grades, works through set pieces with attention to both technical accuracy and musical expression, and ensures sight-reading and aural skills are strong well before the examination date.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Dedicated One-to-One Environment</h3>
+                <p class="text-base-600 text-sm">Patricia's private studio in Tengah is a setting where your child can focus entirely on their playing. The quiet atmosphere is ideal for violin, where even small changes in bow angle or finger pressure produce audible differences in sound. In this environment, children develop the deep listening skills that are the hallmark of a well-taught string player.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Telok Blangah -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Telok Blangah
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              From Telok Blangah, the drive to Patricia's Tengah studio takes approximately 25 minutes. The most straightforward route heads along Telok Blangah Road towards Alexandra Road, joining the AYE westbound and continuing through to Tengah. Families living near Telok Blangah Heights, Depot Road, or the HDB blocks around Telok Blangah Crescent will find the AYE entrance conveniently close.
+            </p>
+            <p class="text-base-600 mb-4">
+              While Telok Blangah does not have its own MRT station, the area is served by bus routes connecting to HarbourFront MRT (Circle and North East Lines) and Redhill MRT (East-West Line). From either station, transfers westward towards Jurong East offer bus connections to the Tengah area.
+            </p>
+            <p class="text-base-600">
+              For families who would rather avoid the commute, Patricia provides house visits throughout Telok Blangah. She brings everything needed for a full lesson, and the structure and quality remain the same as sessions at her studio.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 25 minutes via Telok Blangah Road to the AYE westbound towards Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Nearest stations are HarbourFront MRT (CCL/NEL) or Redhill MRT (EWL) with bus transfers</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services from Telok Blangah towards HarbourFront or Redhill for MRT connections</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout the Telok Blangah district, including Depot Road and Telok Blangah Heights</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Lessons Look Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Patricia teaches each violin student individually, shaping every session around that child's current level and learning trajectory. Lessons run between 30 and 60 minutes — shorter for younger beginners who are still building concentration, longer for more advanced students who can sustain focused practice.
+          </p>
+          <p>
+            A typical lesson begins with posture and instrument set-up, ensuring that the violin is positioned correctly and the bow hold is relaxed and functional. Patricia then guides the student through technical work — scales, string crossings, bowing exercises — before moving into repertoire. Each piece is studied in detail, with attention to phrasing, dynamics, intonation, and overall musical shape. Sight-reading exercises and aural training appear throughout the session, building literacy and listening skills alongside performance ability.
+          </p>
+          <p>
+            For students on the ABRSM pathway, Patricia works through every examination component systematically — scales, arpeggios, set pieces, sight-reading, and aural tests — building a practice framework that produces confident, well-prepared candidates. Students not taking examinations follow an equally structured programme with clear musical goals at every stage.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Telok Blangah:
+          <a href="/piano-lessons-telok-blangah/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-telok-blangah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-telok-blangah/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-telok-blangah/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-telok-blangah/" class="text-primary-600 hover:underline">Music Theory</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/violin-lessons-harbourfront/" class="text-primary-600 hover:underline">HarbourFront</a>,
+          <a href="/violin-lessons-bukit-merah/" class="text-primary-600 hover:underline">Bukit Merah</a>, and
+          <a href="/violin-lessons-alexandra/" class="text-primary-600 hover:underline">Alexandra</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Start Your Child's Violin Journey
+        </h2>
+        <p class="text-base-600 mb-6">Reach out to Patricia to discuss violin lessons for your child in Telok Blangah. A free consultation is the first step — no commitment required.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Consultation
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Telok%20Blangah."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
