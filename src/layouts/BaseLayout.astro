@@ -64,10 +64,12 @@ const ogImage = `${siteUrl}/og-image.jpg`
       })(window,document,'script','dataLayer','GTM-P5BN32T3');
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
@@ -164,6 +166,9 @@ const ogImage = `${siteUrl}/og-image.jpg`
     <slot name="head" />
   </head>
   <body class="bg-warm-50 text-base-800 min-h-screen antialiased">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[999] focus:bg-white focus:px-4 focus:py-2 focus:rounded focus:text-primary-600 focus:shadow-lg">Skip to main content</a>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5BN32T3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 

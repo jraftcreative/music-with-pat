@@ -27,9 +27,11 @@ const lessonsDropdown = [
   <div class="max-w-6xl mx-auto flex items-center justify-between">
     <a href="/" class="flex items-center gap-2">
       <img
-        src="/music-with-pat-logo.png"
+        src="/music-with-pat-logo.webp"
         alt="Music with Pat - Piano Lessons Singapore"
         class="h-10 md:h-12 w-auto"
+        width="400"
+        height="400"
       />
       <span class="text-base sm:text-lg md:text-xl font-semibold text-base-800">Music With Pat</span>
     </a>
@@ -48,6 +50,9 @@ const lessonsDropdown = [
         <button
           class={`flex items-center gap-1 transition-colors ${currentPage?.startsWith('/lessons') || lessonsDropdown.some(l => currentPage === l.href) ? 'text-primary-600 font-medium' : 'text-base-600 hover:text-primary-600'}`}
           id="lessons-btn"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="lessons-panel"
         >
           Lessons
           <svg class="w-4 h-4 transition-transform" id="lessons-chevron" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -113,13 +118,16 @@ const lessonsDropdown = [
         <button
           id="mobile-lessons-btn"
           class={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${lessonsDropdown.some(l => currentPage === l.href) ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="mobile-lessons-panel"
         >
           Lessons
           <svg class="w-4 h-4 transition-transform" id="mobile-lessons-chevron" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </button>
-        <div id="mobile-lessons-panel" class="hidden flex flex-col gap-1 pl-4 mt-1">
+        <div id="mobile-lessons-panel" class="flex flex-col gap-1 pl-4 mt-1" style="display:none">
           {lessonsDropdown.map(link => (
             <a
               href={link.href}
@@ -176,9 +184,11 @@ const lessonsDropdown = [
   });
 
   // Also toggle on click for touch devices
-  document.getElementById('lessons-btn')?.addEventListener('click', () => {
-    lessonsPanel?.classList.toggle('hidden');
+  const lessonsBtn = document.getElementById('lessons-btn');
+  lessonsBtn?.addEventListener('click', () => {
+    const isOpen = lessonsPanel?.classList.toggle('hidden');
     lessonsChevron?.classList.toggle('rotate-180');
+    lessonsBtn.setAttribute('aria-expanded', lessonsPanel?.classList.contains('hidden') ? 'false' : 'true');
   });
 
   // Mobile lessons accordion
@@ -187,7 +197,11 @@ const lessonsDropdown = [
   const mobileLessonsChevron = document.getElementById('mobile-lessons-chevron');
 
   mobileLessonsBtn?.addEventListener('click', () => {
-    mobileLessonsPanel?.classList.toggle('hidden');
+    if (mobileLessonsPanel) {
+      const isHidden = mobileLessonsPanel.style.display === 'none';
+      mobileLessonsPanel.style.display = isHidden ? 'flex' : 'none';
+      mobileLessonsBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    }
     mobileLessonsChevron?.classList.toggle('rotate-180');
   });
 
