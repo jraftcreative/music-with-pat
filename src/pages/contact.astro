@@ -293,35 +293,19 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
       submitBtn.innerHTML = 'Sending...';
       submitBtn.disabled = true;
 
-      try {
-        await fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            phone,
-            consultationDate: dateText,
-            message
-          })
-        });
-
+      // Send form data — redirect to thank-you regardless of response
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify({
+          name,
+          phone,
+          consultationDate: dateText,
+          message
+        })
+      }).finally(() => {
         window.location.href = '/thank-you/';
-
-      } catch (error) {
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
-
-        let waMessage = `Hi Pat!\n\nI'd like to book a consultation.\n\nName: ${name}\nPhone: ${phone}\nPreferred Date: ${dateText}`;
-        if (message) {
-          waMessage += `\n\nMessage: ${message}`;
-        }
-
-        const waUrl = `https://wa.me/6583898853?text=${encodeURIComponent(waMessage)}`;
-        window.open(waUrl, '_blank');
-      }
+      });
     });
   </script>
 </BaseLayout>
