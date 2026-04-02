@@ -1,0 +1,337 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "My child is a complete beginner — can they start ABRSM violin preparation right away?",
+    answer: "Patricia typically spends the first few months building foundational skills before formally beginning ABRSM preparation. This includes establishing a comfortable bow hold, basic left-hand position, reading notation, and producing a clean tone on open strings. Once these foundations are secure, ABRSM preparation begins naturally — often with the Prep Test as a gentle, non-assessed introduction to the exam experience. Starting in Tengah means zero commute, so even short beginner lessons are practical."
+  },
+  {
+    question: "How does living in Tengah benefit my child's violin lesson schedule?",
+    answer: "Being in the same town as Patricia's studio eliminates travel time entirely, which is a significant practical advantage. Lessons can be scheduled tightly after school without the stress of rushing through traffic. It also means that if a child forgets a piece of music or needs a quick extra session before an exam, the logistics are simple. Consistency is the single biggest factor in musical progress, and proximity removes a common barrier to maintaining it."
+  },
+  {
+    question: "What ABRSM violin grades require shifting and position work?",
+    answer: "Third position is typically introduced around Grade 3 to 4, and students will need to be comfortable shifting between first and third position by Grade 5. Higher positions — fifth and above — appear from Grade 6 onwards. Patricia prepares students for each new position well in advance of when the repertoire demands it, using exercises and etudes that make the transition feel gradual and manageable rather than sudden and overwhelming."
+  },
+  {
+    question: "Does Patricia teach vibrato as part of ABRSM violin preparation?",
+    answer: "Yes. While ABRSM does not formally require vibrato at any specific grade, examiners expect to hear it from around Grade 4 or 5, where the music benefits from a warmer, more expressive tone. Patricia introduces vibrato when a student's left-hand technique is stable enough to support the motion — typically during Grade 3 or 4 preparation. She teaches it as a relaxed, arm-initiated movement rather than a tense wrist shake, ensuring it enhances tone rather than disrupting intonation."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Violin Lessons in Tengah | Music with Pat"
+  description="ABRSM violin exam preparation for children in Tengah, Singapore. Patricia's studio is located right in Tengah — no commute needed. Comprehensive grade-by-grade preparation from Prep Test to Grade 8."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Violin Lessons",
+      "name": "ABRSM Violin Lessons for Children in Tengah",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Tengah, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM violin exam preparation for children in Tengah, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Violin Lessons Tengah' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Right Here in Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Violin Lessons for Children in Tengah
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Patricia's studio is located right in Tengah — Singapore's newest town, where BTO developments are bringing a wave of young families into the neighbourhood. For Tengah residents, there is no commute required: your child can walk to lessons, making it practical to maintain the consistent weekly schedule that ABRSM preparation demands. With the Jurong Region Line on its way and the town's amenities growing rapidly, Tengah families have a dedicated, experienced violin teacher right on their doorstep.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+                width="1024"
+                height="1280"
+              alt="Patricia - ABRSM Violin Teacher for Children in Tengah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              As a Tengah resident herself, Patricia is invested in building a strong music education community within the town. She has been preparing children for ABRSM violin exams for over ten years, earning a consistent record of Merits and Distinctions through meticulous, structured preparation that never cuts corners.
+            </p>
+            <p class="text-base-600 mb-4">
+              Her Bachelor's degree in Early Childhood Education with Music Education is particularly relevant for the young families moving into Tengah's new BTO developments. She understands the developmental stages of young children intimately — when their hands are ready for more complex fingering, how to explain abstract musical concepts concretely, and how to keep young violinists motivated through the demands of exam preparation.
+            </p>
+            <p class="text-base-600 mb-6">
+              Being your neighbour means Patricia is accessible in a way that teachers across town cannot be. Quick check-ins before an exam, flexible rescheduling when a child is unwell, and the ease of a lesson that requires no drive — these practical benefits make a real difference for families with young children.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Tengah Families Choose Patricia for ABRSM Violin
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Physical Technique</h3>
+                <p class="text-base-600 text-sm">Violin technique begins with the body — how the instrument is held, how the bow contacts the string, how the left hand shapes around the fingerboard. Patricia establishes these fundamentals with care and patience, correcting small issues before they become habits. For young beginners in Tengah's growing community, this means starting on the right foot with a teacher who prioritises long-term physical health alongside musical progress.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Intonation Development</h3>
+                <p class="text-base-600 text-sm">Without frets or keys, the violin demands that every note be placed precisely by ear and finger. Patricia trains intonation from the very first lesson through careful scale work, interval exercises, and constant reinforcement of listening habits. Living in Tengah means students can maintain daily practice consistency without travel fatigue — and consistent practice is the single most effective way to develop reliable intonation over time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">Walking into a violin exam feeling prepared makes all the difference. Patricia uses timed mock exams, performance practice, and clear discussions about exam-day expectations to remove uncertainty. Because Tengah students can easily attend extra pre-exam sessions without a long drive, they often arrive at the exam centre with an additional layer of confidence that comes from that final polish in the days before.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Patricia matches her teaching pace to each child's development — physical, cognitive, and emotional. She will never push a student into an exam prematurely, nor hold back one who is ready to advance. For Tengah families, the convenience of a local studio means that even children who need more frequent or slightly longer lessons can be accommodated without logistical strain, ensuring every student gets exactly what they need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here — Tengah -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">No Commute Needed</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Patricia's Studio Is Right Here in Tengah
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              As a Tengah resident, your child can reach Patricia's studio without any drive at all. This is the biggest practical advantage for families in the neighbourhood — no traffic, no parking, no rushing. Lessons can be slotted seamlessly into the after-school routine, and the saved travel time adds up to hours every month that your child can spend practising, playing, or simply resting.
+            </p>
+            <p class="text-base-600 mb-4">
+              Tengah is Singapore's newest town, with BTO developments continuing to welcome young families into the area. The upcoming Jurong Region Line will add rail connectivity, but for now the town's compact layout means everything is walkable for residents. Patricia's studio is ideally positioned to serve this growing community.
+            </p>
+            <p class="text-base-600">
+              For families in other parts of Tengah who prefer lessons at home, Patricia offers house visits within the estate. Whether at the studio or in your living room, the ABRSM preparation structure remains identical.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Convenience for Tengah Families</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Walking distance:</strong> Patricia's studio is located within Tengah — no car or MRT needed</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">JRL upcoming:</strong> The Jurong Region Line will add rail connectivity to Tengah for students coming from neighbouring towns</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Flexible scheduling:</strong> No travel buffer needed means more time slots are practical, including short after-school windows</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Also available within Tengah for families who prefer lessons at home</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Violin Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Each lesson runs 45 to 60 minutes and addresses every component of the ABRSM violin exam. Patricia begins with bow exercises and tone production work — establishing the warm, consistent sound that examiners listen for — before moving into the scales and arpeggios required at the current grade. Technical work is never rushed; it forms the foundation that supports everything else.
+          </p>
+          <p>
+            The three exam pieces receive detailed attention, with Patricia guiding students beyond note accuracy into genuine musical expression. She discusses phrasing, dynamics, vibrato, and bow choices in language children understand, helping them develop the kind of communicative playing that lifts marks from competent to compelling. Piece selection is tailored to each student's strengths and development needs.
+          </p>
+          <p>
+            Sight-reading and aural training are integral parts of every session. Patricia introduces new sight-reading challenges progressively, building the pattern recognition and confidence that make this component feel manageable rather than stressful. Aural work reinforces the pitch awareness that is fundamental to violin intonation. Theory concepts are connected to the repertoire being studied, building exam-ready knowledge naturally over time.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Violin FAQs — Tengah
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Tengah:
+          <a href="/violin-lessons-tengah/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/piano-lessons-tengah/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-tengah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-tengah/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-piano-lessons-tengah/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-violin-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/abrsm-violin-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>,
+          <a href="/abrsm-violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
+          <a href="/abrsm-violin-lessons-singapore/" class="text-primary-600 hover:underline">View all ABRSM violin lessons</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Build Your Child's ABRSM Violin Skills
+        </h2>
+        <p class="text-base-600 mb-6">Contact Patricia for a free consultation to discuss your child's current ability, ABRSM aspirations, and what structured violin preparation looks like.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Trial
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20ABRSM%20violin%20lessons%20for%20my%20child%20in%20Tengah."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

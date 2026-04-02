@@ -10,6 +10,7 @@ interface Props {
 
 const { items } = Astro.props
 const siteUrl = 'https://www.musicwithpat.com'
+const currentPath = Astro.url.pathname
 
 const breadcrumbList = [
   { label: 'Home', href: '/' },
@@ -19,12 +20,16 @@ const breadcrumbList = [
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbList.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.label,
-    ...(item.href ? { "item": siteUrl + item.href } : {})
-  }))
+  "itemListElement": breadcrumbList.map((item, index) => {
+    const isLast = index === breadcrumbList.length - 1
+    const url = item.href ? siteUrl + item.href : (isLast ? siteUrl + currentPath : undefined)
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      ...(url ? { "item": url } : {})
+    }
+  })
 }
 ---
 

@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How far is the studio from Jurong West?",
-    answer: "Patricia's Tengah studio is roughly 12 minutes from Jurong West by car. The route is local and direct, making it a convenient weekly trip without the need for expressways."
+    question: "Where exactly in Tengah is Patricia's studio?",
+    answer: "Patricia's home studio is located within Tengah's residential precinct. As a fellow Tengah resident, she's within walking or short cycling distance for most families in the Plantation District, Garden District, and surrounding BTO developments. No driving or MRT transfers needed — just head over on foot or by bicycle."
   },
   {
-    question: "What music lessons does Patricia offer?",
-    answer: "Patricia teaches piano, violin, and general musicianship. Musicianship lessons are ideal for children who want to explore music broadly before committing to an instrument. A free consultation helps determine the best path for your child."
+    question: "Is Tengah too new for established music teachers?",
+    answer: "Quite the opposite. Patricia moved to Tengah early and has been building her teaching practice here as the town grows. Being one of the first dedicated children's music teachers in Tengah means she understands the community — the young families settling in, the lack of nearby music schools, and the demand for quality local lessons. Your child gets an experienced teacher without leaving the neighbourhood."
   },
   {
-    question: "Does Patricia visit homes in Jurong West?",
-    answer: "Yes, house visits are available throughout Jurong West, including the Boon Lay and Pioneer areas and all surrounding HDB estates. House visit rates differ slightly from studio sessions — contact Patricia for details."
+    question: "My child is only 4 — is that too young for piano?",
+    answer: "Not at all. Age four is when many children are ready for structured piano lessons. Patricia's Bachelor's degree in Early Childhood Education means she's specifically trained to work with very young learners. She uses age-appropriate activities that build hand coordination, listening skills, and musical awareness. The initial consultation helps confirm your child's readiness before committing."
   },
   {
-    question: "Can my child switch instruments later if they change their mind?",
-    answer: "Yes. Patricia teaches both piano and violin, so transitioning between instruments is straightforward. If your child starts with one and later wants to explore the other, she can manage the switch smoothly. The musical skills they develop are largely transferable between instruments."
+    question: "Will there be more music options in Tengah as the town develops?",
+    answer: "Commercial music schools may eventually open as Tengah's town centre takes shape. But Patricia offers something different — private, one-to-one lessons in a calm home studio, tailored entirely to your child. No class sizes to worry about, no impersonal rotation of teachers. The personal attention and consistency she provides is something larger schools rarely match."
   }
 ]
 
@@ -40,16 +40,16 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Music Lessons for Children in Jurong West | Music with Pat"
-  description="Music lessons for children in Jurong West, Singapore. Piano, violin, and musicianship from an experienced educator. Studio in Tengah with house visits available. Ages 4 and up."
+  title="Piano Lessons for Children in Tengah | Music with Pat"
+  description="Piano lessons for children in Tengah, Singapore. Patricia's home studio is right here in Tengah — no travel needed. Patient, child-centred teaching with ABRSM preparation. Ages 4+."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Music Lessons",
-      "name": "Music Lessons for Children in Jurong West",
+      "serviceType": "Piano Lessons",
+      "name": "Piano Lessons for Children in Tengah",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,31 +57,31 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Jurong West, Singapore"
+        "name": "Tengah, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Piano, violin, and musicianship lessons for children in Jurong West, Singapore. Thoughtful teaching in a calm studio environment in nearby Tengah."
+      "description": "Patient, child-centred piano lessons for children in Tengah, Singapore. Patricia's home studio is located right in Tengah — your local piano teacher with ABRSM preparation."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Music Lessons Jurong West' }]} />
+  <Breadcrumbs items={[{ label: 'Piano Lessons Tengah' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Jurong West & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">Right Here in Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Music Lessons for Children in Jurong West
+          Piano Lessons for Children in Tengah
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Jurong West is one of Singapore's most populated residential towns, with a strong community spirit and countless families raising children in its well-established HDB estates. The neighbourhood's scale means parents have plenty of enrichment options nearby — but finding a truly personalised music teacher takes more effort. Patricia's studio in Tengah is just 12 minutes away, offering piano, violin, and musicianship lessons with the individual attention that large commercial music schools simply cannot match.
+          Tengah is Singapore's newest town — and it deserves a dedicated music teacher. Patricia's home studio is right here in Tengah, which means no commute, no traffic, and no rushing across town for your child's piano lesson. As young families settle into the Plantation District, Garden District, and surrounding BTO developments, Patricia is already here, offering patient, child-centred piano lessons just minutes from your doorstep.
         </p>
       </div>
     </section>
@@ -95,7 +95,7 @@ const faqStructuredData = {
               src="/patricia-piano-lessons.webp"
                 width="1024"
                 height="1280"
-              alt="Patricia - Music Teacher for Children near Jurong West"
+              alt="Patricia - Piano Teacher for Children in Tengah"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -106,13 +106,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching music to children for over ten years. Based in Tengah, she is particularly accessible for Jurong West families. She teaches piano, violin, and musicianship, bringing the same dedication and expertise to every student regardless of their starting point.
+              Patricia is a Tengah resident and your neighbourhood piano teacher. With over a decade of experience teaching children, she set up her home studio right here in Tengah so that local families can access quality piano education without leaving the estate.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education gives her a genuine understanding of how children learn and develop. She uses this knowledge to create lessons that are productive, enjoyable, and appropriately paced.
+              Her Bachelor's degree in Early Childhood Education with Music Education gives her a deep understanding of how young children learn. She combines proper piano pedagogy with genuine insight into child development — knowing when to introduce new challenges, when to consolidate, and how to keep a young learner engaged throughout each session.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia is dependable and caring. She keeps parents informed, celebrates genuine progress, and provides honest assessments. Whether your child is a complete beginner or an advancing student, she provides steady, thoughtful guidance.
+              Patricia's teaching style is warm, structured, and attentive. She builds strong fundamentals from the start — posture, hand position, reading notation — while making sure your child enjoys the process. Whether your child is a complete beginner or working towards an ABRSM grade, she tailors every lesson to who they are and where they're at.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -126,23 +126,23 @@ const faqStructuredData = {
     </section>
 
 
-    <!-- Why Families from Jurong West Choose Patricia -->
+    <!-- Why Tengah Families Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Jurong West Choose Patricia
+            Why Tengah Families Choose Patricia
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Personal Attention, Not a Production Line</h3>
-                <p class="text-base-600 text-sm">In a town as large as Jurong West, it is easy to end up at a music school that processes students in volume. Patricia's approach is the opposite — each child gets genuinely personalised instruction. She knows every student by name, by temperament, and by musical potential.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Your Neighbourhood Piano Teacher</h3>
+                <p class="text-base-600 text-sm">Patricia lives and teaches in Tengah. There's no cross-town commute, no fighting for parking at a shopping mall music school. Her studio is within walking or cycling distance for most Tengah residents — making weekly lessons easy to maintain, even on busy school days.</p>
               </div>
             </div>
           </div>
@@ -150,8 +150,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Formal Training in Child Development</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor's degree in Early Childhood Education with Music Education. This means she understands the developmental stages children pass through and adjusts her teaching accordingly. Jurong West families appreciate a teacher who knows children as well as she knows music.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Early Childhood Expertise</h3>
+                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with Music Education means she understands both the musical and developmental sides of teaching young children. She reads each student's temperament and adjusts her approach — a skill built on formal training, not trial and error.</p>
               </div>
             </div>
           </div>
@@ -159,17 +159,17 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Practical Approach to Exams</h3>
-                <p class="text-base-600 text-sm">ABRSM exams are available as one pathway among several. Patricia will advise whether structured grading or a broader repertoire-based approach would suit your child better. She is honest and practical — exactly what Jurong West families are looking for.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM When It Makes Sense</h3>
+                <p class="text-base-600 text-sm">Structured exam preparation is available for students who benefit from clear milestones and goals. But Patricia never forces the exam route. Some children thrive building repertoire and confidence at their own pace, and she's equally comfortable guiding that journey. She'll recommend what genuinely suits your child.</p>
               </div>
             </div>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Calm, Private Learning Space</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah offers a quiet alternative to busy music schools in malls. Children can concentrate in peace, and Patricia gives her undivided attention to each student. The result is lessons that are more focused and more effective.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Growing with Tengah</h3>
+                <p class="text-base-600 text-sm">As Tengah develops — with the Jurong Region Line on the way and new amenities opening up — Patricia is already established here, building a community of young musicians in the neighbourhood. Your child won't just be learning piano; they'll be part of Tengah's first generation of music students.</p>
               </div>
             </div>
           </div>
@@ -177,46 +177,46 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from Jurong West -->
+    <!-- Your Local Studio -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <p class="text-primary-600 font-medium mb-2">No Commute Needed</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Jurong West
+            Your Local Studio
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              The drive from Jurong West to Patricia's Tengah studio is approximately 12 minutes. The route is local and direct, making it a quick trip that fits easily into a weekly schedule.
+              Unlike families from other towns who need to drive or take the MRT to reach the studio, Tengah residents have Patricia right on their doorstep. Her home studio is within the Tengah residential area, making it a short walk or bicycle ride for most families in the Plantation District, Garden District, and Park District.
             </p>
             <p class="text-base-600 mb-4">
-              Many Jurong West families schedule lessons right after school, heading to Tengah for a lesson before returning home for dinner. The short distance means minimal disruption to daily routines.
+              This proximity makes a real difference to weekly routines. There's no need to factor in travel time, parking, or traffic — your child can head to their lesson and be back home quickly. It also means last-minute schedule adjustments are easier to manage.
             </p>
             <p class="text-base-600">
-              Patricia also offers house visits across Jurong West. Whether you live near Boon Lay, Pioneer, or any of the Jurong West residential streets, she can bring lessons directly to your home.
+              For Tengah families who still prefer lessons at home, house visits are available throughout the estate. Patricia is flexible and will work with whatever arrangement suits your family best.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <h3 class="text-lg font-semibold text-base-900 mb-4">The Local Advantage</h3>
             <ul class="space-y-3">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 12 minutes via local roads</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">On foot:</strong> Walking distance for most Tengah residents — no car needed</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> East-West Line towards Jurong East, then Jurong Region Line towards Tengah</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bicycle:</strong> Tengah's cycling paths connect directly to the studio area</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Local bus services connect Jurong West to the Tengah area</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Zero commute:</strong> No expressways, no MRT transfers, no traffic to navigate</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Jurong West, including Boon Lay, Pioneer, and surrounding estates</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Also available throughout Tengah if you prefer lessons at home</span>
               </li>
             </ul>
           </div>
@@ -236,13 +236,13 @@ const faqStructuredData = {
 
         <div class="space-y-4 text-base-600">
           <p>
-            Each lesson is a private, one-to-one session lasting 45 to 60 minutes. For younger children, Patricia starts shorter and extends gradually. Jurong West families value this flexibility — it shows a teacher who pays attention to each child rather than following a rigid template.
+            Lessons are private, one-to-one sessions lasting 45 to 60 minutes. For younger beginners, Patricia starts with shorter sessions and gradually extends them as the child's focus develops. Every lesson is shaped around your child's current level and learning style.
           </p>
           <p>
-            Whether the focus is piano, violin, or general musicianship, sessions blend practical playing with listening skills, rhythm exercises, and theory. Patricia keeps lessons engaging and varied, building a strong musical foundation while keeping children motivated.
+            Each session covers a blend of practical playing, sight-reading, aural training, and music theory. Patricia keeps things varied so children stay engaged — moving between scales, repertoire pieces, and ear training exercises in a way that builds well-rounded musicianship without feeling repetitive.
           </p>
           <p>
-            Lesson quality is identical whether your child visits the studio or Patricia comes to your Jurong West home. Personal attention and consistent teaching are guaranteed.
+            Being in Tengah means your child arrives fresh and ready to learn — no tired, restless car rides beforehand. That small difference in energy and focus adds up over weeks and months of lessons.
           </p>
         </div>
 
@@ -284,12 +284,11 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Jurong West:
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
-          <a href="/violin-lessons-jurong-west/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
-          <a href="/abrsm-piano-lessons-jurong-west/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
-          <a href="/abrsm-violin-lessons-jurong-west/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
-          <a href="/music-theory-lessons-jurong-west/" class="text-primary-600 hover:underline">Music Theory</a>
+          Also available in Tengah:
+          <a href="/violin-lessons-tengah/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-tengah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-tengah/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/music-theory-lessons-tengah/" class="text-primary-600 hover:underline">Music Theory</a>
         </p>
       </div>
     </section>
@@ -299,16 +298,17 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/music-lessons-boon-lay/" class="text-primary-600 hover:underline">Boon Lay</a>,
-          <a href="/music-lessons-lakeside/" class="text-primary-600 hover:underline">Lakeside</a>, and
-          <a href="/music-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>.
+          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/piano-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>,
+          <a href="/piano-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
+          <a href="/piano-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
     </section>
 
     <!-- Parent Testimonial -->
-    <section class="py-12 md:py-20 px-6 md:px-12 bg-primary-50">
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-primary-600 font-medium mb-2">From Parents</p>
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-6">
@@ -316,12 +316,12 @@ const faqStructuredData = {
         </h2>
         <div class="space-y-4">
           <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100">
-            <p class="text-base-700 italic mb-3">"She is patient, kind, and knows how to keep kids engaged and motivated during lessons. Most importantly, Patricia understands how to work with different learning speeds and personalities, making each lesson productive and enjoyable."</p>
-            <p class="text-base-500 text-sm">— Gene, Mother of Adam and Renee</p>
-          </div>
-          <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100">
             <p class="text-base-700 italic mb-3">"Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months."</p>
             <p class="text-base-500 text-sm">— Sarah L., Mother of Emily, Age 7</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100">
+            <p class="text-base-700 italic mb-3">"We tried other teachers before, but Pat's nurturing approach finally got my son excited about piano. He now practices without being asked!"</p>
+            <p class="text-base-500 text-sm">— Michelle T., Mother of Ryan, Age 9</p>
           </div>
         </div>
         <a href="/testimonials/" class="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1 mt-4">
@@ -332,10 +332,10 @@ const faqStructuredData = {
     </section>
 
     <!-- CTA -->
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50 border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Musical Journey
+          Start Your Child's Piano Journey
         </h2>
         <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
@@ -343,7 +343,7 @@ const faqStructuredData = {
             Book a Trial
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20lessons%20for%20my%20child%20in%20Jurong%20West."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20looking%20for%20piano%20lessons%20for%20my%20child%20in%20Tengah."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

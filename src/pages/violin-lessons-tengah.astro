@@ -8,20 +8,20 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How close is the studio to Jurong West?",
-    answer: "Patricia's studio in Tengah is the closest to Jurong West of any lesson location — most families arrive in around 12 minutes by car, or about 15 minutes by bus. Jurong West and Tengah are neighbouring towns, so the commute is short and direct."
+    question: "What size violin does my child need?",
+    answer: "Children use fractional-size violins that match their arm length and hand size. Most four- and five-year-olds start on a 1/4 size, progressing through 1/2 and 3/4 as they grow, before eventually reaching a full-size instrument. Patricia will measure your child during the initial consultation and recommend the right size. She can also advise on where to rent or buy a suitable instrument in Singapore."
   },
   {
-    question: "What size violin will my child need?",
-    answer: "The size depends on your child's arm length and age. Most children aged 4 to 5 use a 1/8 or 1/4 size violin, while those aged 6 to 8 typically move to a 1/2 size. Patricia will assess the correct size during the initial consultation and can recommend rental or purchase options in Singapore."
+    question: "Is the studio really within walking distance for Tengah residents?",
+    answer: "Yes. Patricia's home studio is within the Tengah residential area. For families in the Plantation District, Garden District, and Park District, it's a short walk or bicycle ride — no driving required. Tengah's network of pedestrian paths and cycling routes makes getting to the studio straightforward, even for parents with young children in tow."
   },
   {
-    question: "Does Patricia teach ABRSM violin?",
-    answer: "Yes. Patricia prepares students for ABRSM violin exams at all levels, covering scales, arpeggios, set pieces, sight-reading, and aural tests. She integrates exam preparation into regular lessons rather than treating it as a separate track, and she only enters students when they are genuinely confident and ready."
+    question: "How does Patricia handle the early stages of violin when it can sound quite rough?",
+    answer: "The early weeks of violin produce sounds that test everyone's patience — Patricia understands this well. She focuses on building correct bow hold and posture first, using open string exercises that develop a clean, even tone before introducing finger placement. She keeps early lessons varied with listening activities, rhythm games, and short playing bursts so children stay motivated through the challenging initial period."
   },
   {
-    question: "Can my child try violin before committing to regular lessons?",
-    answer: "Absolutely. Patricia offers a free initial consultation where she will assess your child's physical readiness, interest, and attention span. This gives both you and your child a chance to experience the setting and ask questions before deciding on regular lessons. There is no obligation to continue."
+    question: "Are there other violin teachers in Tengah?",
+    answer: "As a newly developing town, Tengah doesn't yet have commercial music schools or a large pool of private teachers. Patricia is one of the few dedicated children's violin teachers based in the area. Being a Tengah resident herself, she's committed to the community and has been building her local practice as the town grows around her."
   }
 ]
 
@@ -40,8 +40,8 @@ const faqStructuredData = {
 ---
 
 <BaseLayout
-  title="Violin Lessons for Children in Jurong West | Music with Pat"
-  description="Violin lessons for children in Jurong West, Singapore. Closest neighbourhood to Tengah studio. Fractional-size violins, ABRSM violin preparation, posture and bow technique coaching. Ages 4+."
+  title="Violin Lessons for Children in Tengah | Music with Pat"
+  description="Violin lessons for children in Tengah, Singapore. Patricia's home studio is right here in Tengah — no travel needed. Patient, child-centred teaching with ABRSM preparation and fractional-size violins. Ages 4+."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -49,7 +49,7 @@ const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Violin Lessons",
-      "name": "Violin Lessons for Children in Jurong West",
+      "name": "Violin Lessons for Children in Tengah",
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.musicwithpat.com/#business",
@@ -57,31 +57,31 @@ const faqStructuredData = {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Jurong West, Singapore"
+        "name": "Tengah, Singapore"
       },
       "audience": {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Patient, child-centred violin lessons for children in Jurong West, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in neighbouring Tengah."
+      "description": "Patient, child-centred violin lessons for children in Tengah, Singapore. Patricia's home studio is located right in Tengah — your local violin teacher with ABRSM preparation."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Violin Lessons Jurong West' }]} />
+  <Breadcrumbs items={[{ label: 'Violin Lessons Tengah' }]} />
 
   <main>
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Jurong West & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">Right Here in Tengah</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Violin Lessons for Children in Jurong West
+          Violin Lessons for Children in Tengah
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Jurong West is one of Singapore's largest HDB towns and the closest established neighbourhood to Patricia's studio in Tengah. Families here are just a short drive away from focused, one-to-one violin lessons where children learn to hold fractional-size instruments properly, develop clean bow technique, and build the listening skills that underpin everything a violinist does.
+          Finding a violin teacher shouldn't mean travelling across Singapore. Patricia's studio is right here in Tengah — your neighbourhood violin teacher in Singapore's newest town. As young families fill the Plantation District, Garden District, and surrounding BTO estates, Patricia offers patient, structured violin lessons for children just a short walk from home. No long commute, no traffic stress, just quality music education on your doorstep.
         </p>
       </div>
     </section>
@@ -95,7 +95,7 @@ const faqStructuredData = {
               src="/patricia-piano-lessons.webp"
                 width="1024"
                 height="1280"
-              alt="Patricia - Violin Teacher for Children near Jurong West"
+              alt="Patricia - Violin Teacher for Children in Tengah"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -106,13 +106,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching music to children for over 10 years, and many of her current violin students come from Jurong West and the surrounding western neighbourhoods. Her studio in Tengah — right next door — offers a welcoming space where young violinists feel comfortable from their first visit.
+              Patricia is a Tengah-based music teacher with over a decade of experience teaching violin to children. She established her home studio here so that families in the neighbourhood can access dedicated violin instruction without the hassle of travelling to commercial music schools in other towns.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor of Education in Early Childhood with Music Education gives her a unique perspective on violin teaching. She understands the physical challenges that young bodies face when learning to hold an instrument, manage a bow, and develop finger dexterity — and she adjusts her pace and expectations to match each child's developmental stage.
+              Her Bachelor's degree in Early Childhood Education with Music Education equips her with both strong violin pedagogy and a genuine understanding of child development. She knows that learning violin is physically demanding for young children — the posture, the bow hold, the fine motor coordination — and she introduces each element at a pace that respects how small bodies and developing minds actually work.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia is patient and methodical. She celebrates progress at every stage, from the first successful open-string bowing to a complete performance piece, and she keeps parents informed so you always know where your child stands and what comes next.
+              Patricia is encouraging without being passive. She holds her students to a standard while making sure the process is enjoyable. From first bow strokes on a fractional-size violin through to confident playing and ABRSM exam preparation, she shapes each lesson around the individual child in front of her.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -126,23 +126,32 @@ const faqStructuredData = {
     </section>
 
 
-    <!-- Why Families from Jurong West Choose Patricia -->
+    <!-- Why Tengah Families Choose Patricia -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Why Jurong West Parents Trust Patricia</p>
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Jurong West Choose Patricia
+            Why Tengah Families Choose Patricia
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 border border-primary-100">
             <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">A Violin Teacher in Your Neighbourhood</h3>
+                <p class="text-base-600 text-sm">Patricia lives and teaches in Tengah. Her studio is within walking or cycling distance for most residents — no need to drive across town or navigate MRT transfers with a small child carrying a violin case. Weekly lessons become a simple, stress-free part of your routine.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient, Step-by-Step Guidance</h3>
-                <p class="text-base-600 text-sm">Violin requires a child to coordinate multiple physical actions at once — and that takes real patience to teach well. Patricia breaks the learning process into manageable steps, introducing bow hold, posture, and finger placement gradually so that each new skill is solid before adding the next layer of complexity.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Patient with Young Beginners</h3>
+                <p class="text-base-600 text-sm">Violin is physically demanding for small children. Patricia understands the time it takes to develop proper bow hold, posture, and finger placement. She never rushes — building these foundations carefully so children develop good habits from day one, avoiding the corrections that become harder to fix later.</p>
               </div>
             </div>
           </div>
@@ -150,8 +159,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Child Development Expertise</h3>
-                <p class="text-base-600 text-sm">Patricia holds a Bachelor's degree in Early Childhood Education with Music Education. She understands how children's bodies and minds develop at different stages, which directly informs how she teaches violin — from choosing the right fractional-size instrument to setting realistic expectations for posture and coordination.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Trained in Child Development</h3>
+                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with Music Education means she brings formal knowledge of how children learn into every violin lesson. She reads each student's readiness and adjusts her teaching — a skill that makes a real difference when working with four- and five-year-olds picking up an instrument for the first time.</p>
               </div>
             </div>
           </div>
@@ -159,17 +168,8 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM Violin Preparation</h3>
-                <p class="text-base-600 text-sm">For families wanting structured milestones, Patricia prepares students for ABRSM violin examinations from the Prep Test upwards. She covers all required elements — scales, arpeggios, pieces, sight-reading, and aural — and only enters children when they are genuinely ready to do well.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Closest Studio to Jurong West</h3>
-                <p class="text-base-600 text-sm">Tengah is the nearest neighbourhood to Jurong West, meaning less time travelling and more energy for learning. Patricia's home studio is a calm, focused space where children can concentrate on their playing without the noise and bustle of a larger music centre.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Clear Progression Pathway</h3>
+                <p class="text-base-600 text-sm">Whether your child is working towards ABRSM grades or building repertoire at their own pace, Patricia provides a structured pathway through each stage. She maps out milestones — from open strings and simple melodies through to confident, expressive playing — so parents and students can see real progress over time.</p>
               </div>
             </div>
           </div>
@@ -177,46 +177,46 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from Jurong West -->
+    <!-- Your Local Studio -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Conveniently Close</p>
+          <p class="text-primary-600 font-medium mb-2">No Commute Needed</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Jurong West
+            Your Local Studio
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p class="text-base-600 mb-4">
-              Jurong West and Tengah are neighbouring towns, so the trip to Patricia's studio is one of the shortest commutes for violin lessons in Singapore's west. Most families arrive in around 12 minutes by car via Jurong West Avenue 2 or Boon Lay Way.
+              Patricia's home studio is right within Tengah's residential area. For families in the Plantation District, Garden District, and Park District, it's a short walk or bicycle ride — there's no need to drive, find parking, or wrestle with public transport while carrying a violin case.
             </p>
             <p class="text-base-600 mb-4">
-              Children attending Jurong Primary, Shuqun Primary, or Pioneer Primary will find it easy to fit a weekly lesson into their after-school routine. For families using public transport, bus services connect Jurong West directly to the Tengah area without transfers.
+              This matters more than you might think. Violin students need to arrive calm and focused — not frazzled from a 30-minute car journey through evening traffic. The proximity of the studio means your child starts each lesson relaxed and ready to concentrate, which directly benefits their progress.
             </p>
             <p class="text-base-600">
-              House visits are also available throughout Jurong West for families who prefer violin lessons at home. For younger children still getting comfortable with their instrument, the familiar home environment can ease the early learning process.
+              As the Jurong Region Line develops and Tengah's amenities expand, the neighbourhood will only become more connected. But for now, having a dedicated violin teacher already based here is a genuine advantage that Tengah families can make the most of.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <h3 class="text-lg font-semibold text-base-900 mb-4">The Local Advantage</h3>
             <ul class="space-y-3">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 12 minutes via Jurong West Avenue 2 or Boon Lay Way</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">On foot:</strong> Walking distance for most Tengah residents — even with a violin in hand</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Boon Lay or Pioneer MRT (East-West Line) with bus connections towards Tengah</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bicycle:</strong> Use Tengah's cycling network to reach the studio quickly and easily</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Direct bus services from Jurong West to the Tengah area without transfers</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Zero commute:</strong> No expressways, no MRT transfers, no navigating traffic with an instrument</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Jurong West and surrounding estates</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Also available throughout Tengah if you prefer lessons at home</span>
               </li>
             </ul>
           </div>
@@ -236,13 +236,13 @@ const faqStructuredData = {
 
         <div class="space-y-4 text-base-600">
           <p>
-            Every violin lesson is a private, one-to-one session designed around your child's current abilities and goals. Sessions run between 30 and 60 minutes — younger beginners start shorter and build up as their concentration and physical endurance develop.
+            Violin lessons are private, one-to-one sessions. Younger beginners typically start with 30-minute sessions that gradually extend to 45 or 60 minutes as their focus and physical stamina develop. Every lesson is tailored to where your child is in their learning journey.
           </p>
           <p>
-            Patricia covers the core skills of violin playing in each session: correct instrument hold and bow grip, tone production, intonation, scales, and working through repertoire. Children on fractional-size violins — 1/4 or 1/2 size — receive particular attention to posture, shoulder alignment, and bow arm mechanics, ensuring healthy habits are established from the outset.
+            Each session builds on the fundamentals: correct posture and bow hold, tone production, scales, and repertoire. Patricia weaves in sight-reading and aural training so students develop well-rounded musicianship alongside their technical skills. For children on fractional-size violins, extra care goes into establishing comfortable physical habits that will serve them as they grow into larger instruments.
           </p>
           <p>
-            Ear training and sight-reading are woven into every lesson, developing the aural awareness that violinists rely on to play in tune. For students on the ABRSM violin track, all exam components are covered systematically. Non-exam students follow an equally structured programme of progressive pieces, technique, and musicianship exercises.
+            Students preparing for ABRSM exams receive focused work across all components — scales, pieces, sight-reading, and aural tests. Those not on the exam track still follow a clear progression through carefully chosen repertoire that builds skill and maintains enthusiasm.
           </p>
         </div>
 
@@ -284,12 +284,11 @@ const faqStructuredData = {
     <section class="py-6 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
-          Also available in Jurong West:
-          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
-          <a href="/music-lessons-jurong-west/" class="text-primary-600 hover:underline">Music Lessons</a> ·
-          <a href="/abrsm-piano-lessons-jurong-west/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
-          <a href="/abrsm-violin-lessons-jurong-west/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
-          <a href="/music-theory-lessons-jurong-west/" class="text-primary-600 hover:underline">Music Theory</a>
+          Also available in Tengah:
+          <a href="/piano-lessons-tengah/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-tengah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-violin-lessons-tengah/" class="text-primary-600 hover:underline">ABRSM Violin</a> ·
+          <a href="/music-theory-lessons-tengah/" class="text-primary-600 hover:underline">Music Theory</a>
         </p>
       </div>
     </section>
@@ -299,9 +298,10 @@ const faqStructuredData = {
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-base-600 text-sm">
           Also serving families in
-          <a href="/violin-lessons-boon-lay/" class="text-primary-600 hover:underline">Boon Lay</a>,
-          <a href="/violin-lessons-lakeside/" class="text-primary-600 hover:underline">Lakeside</a>, and
-          <a href="/violin-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>.
+          <a href="/violin-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/violin-lessons-bukit-batok/" class="text-primary-600 hover:underline">Bukit Batok</a>,
+          <a href="/violin-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
+          <a href="/violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
           <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
         </p>
       </div>
@@ -320,8 +320,8 @@ const faqStructuredData = {
             <p class="text-base-500 text-sm">— Gene, Mother of Adam and Renee</p>
           </div>
           <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100">
-            <p class="text-base-700 italic mb-3">"We tried other teachers before, but Pat's nurturing approach finally got my son excited about music. He now practices without being asked!"</p>
-            <p class="text-base-500 text-sm">— Michelle T., Mother of Ryan, Age 9</p>
+            <p class="text-base-700 italic mb-3">"Pat prepared my daughter for her ABRSM Grade 3 exam and she passed with distinction! Highly recommend for anyone looking for quality music lessons."</p>
+            <p class="text-base-500 text-sm">— Jennifer C., Mother of Sophie, Age 11</p>
           </div>
         </div>
         <a href="/testimonials/" class="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1 mt-4">
@@ -343,7 +343,7 @@ const faqStructuredData = {
             Book a Trial
           </a>
           <a
-            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Jurong%20West."
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20violin%20lessons%20for%20my%20child%20in%20Tengah."
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"

@@ -21,6 +21,18 @@ const lessonsDropdown = [
   { href: '/dsa-piano-lessons/', label: 'DSA Piano Lessons' },
   { href: '/music-theory-lessons-singapore/', label: 'Music Theory Lessons' },
 ]
+
+const locationsDropdown = [
+  { href: '/music-lessons-tengah/', label: 'Tengah' },
+  { href: '/music-lessons-bukit-panjang/', label: 'Bukit Panjang' },
+  { href: '/music-lessons-choa-chu-kang/', label: 'Choa Chu Kang' },
+  { href: '/music-lessons-jurong-east/', label: 'Jurong East' },
+  { href: '/music-lessons-jurong-west/', label: 'Jurong West' },
+  { href: '/music-lessons-bukit-batok/', label: 'Bukit Batok' },
+  { href: '/music-lessons-bukit-timah/', label: 'Bukit Timah' },
+  { href: '/music-lessons-clementi/', label: 'Clementi' },
+  { href: '/music-lessons-singapore/', label: 'View All Locations', divider: true },
+]
 ---
 
 <header class="py-4 md:py-6 px-6 md:px-12 relative sticky top-0 bg-primary-50/95 backdrop-blur-sm z-50 border-b border-primary-100">
@@ -28,7 +40,7 @@ const lessonsDropdown = [
     <a href="/" class="flex items-center gap-2">
       <img
         src="/music-with-pat-logo.webp"
-        alt="Music with Pat - Piano Lessons Singapore"
+        alt="Music with Pat - Music Lessons Singapore"
         class="h-10 md:h-12 w-auto"
         width="400"
         height="400"
@@ -65,6 +77,34 @@ const lessonsDropdown = [
               <a
                 href={link.href}
                 class={`block px-4 py-2.5 text-sm transition-colors ${currentPage === link.href ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Locations Dropdown -->
+      <div class="relative" id="locations-dropdown">
+        <button
+          class={`flex items-center gap-1 transition-colors ${locationsDropdown.some(l => currentPage === l.href) ? 'text-primary-600 font-medium' : 'text-base-600 hover:text-primary-600'}`}
+          id="locations-btn"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="locations-panel"
+        >
+          Locations
+          <svg class="w-4 h-4 transition-transform" id="locations-chevron" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <div id="locations-panel" class="hidden absolute top-full left-1/2 -translate-x-1/2 pt-2 w-52">
+          <div class="bg-white rounded-xl shadow-lg border border-base-200 py-2">
+            {locationsDropdown.map(link => (
+              <a
+                href={link.href}
+                class={`block px-4 py-2.5 text-sm transition-colors ${link.divider ? 'border-t border-base-100 mt-1 pt-3 font-medium text-primary-600 hover:text-primary-700' : currentPage === link.href ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
               >
                 {link.label}
               </a>
@@ -139,6 +179,32 @@ const lessonsDropdown = [
         </div>
       </div>
 
+      <!-- Mobile Locations Accordion -->
+      <div>
+        <button
+          id="mobile-locations-btn"
+          class={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${locationsDropdown.some(l => currentPage === l.href) ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="mobile-locations-panel"
+        >
+          Locations
+          <svg class="w-4 h-4 transition-transform" id="mobile-locations-chevron" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <div id="mobile-locations-panel" class="flex flex-col gap-1 pl-4 mt-1" style="display:none">
+          {locationsDropdown.map(link => (
+            <a
+              href={link.href}
+              class={`mobile-nav-link px-4 py-2.5 rounded-xl text-sm transition-colors ${link.divider ? 'font-medium text-primary-600' : currentPage === link.href ? 'text-primary-600 bg-primary-50 font-medium' : 'text-base-600 hover:text-primary-600 hover:bg-primary-50'}`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
       {navLinks.filter(link => link.label !== 'About').map(link => (
         <a
           href={link.href}
@@ -205,6 +271,42 @@ const lessonsDropdown = [
     mobileLessonsChevron?.classList.toggle('rotate-180');
   });
 
+  // Desktop locations dropdown
+  const locationsDropdownEl = document.getElementById('locations-dropdown');
+  const locationsPanel = document.getElementById('locations-panel');
+  const locationsChevron = document.getElementById('locations-chevron');
+
+  locationsDropdownEl?.addEventListener('mouseenter', () => {
+    locationsPanel?.classList.remove('hidden');
+    locationsChevron?.classList.add('rotate-180');
+  });
+
+  locationsDropdownEl?.addEventListener('mouseleave', () => {
+    locationsPanel?.classList.add('hidden');
+    locationsChevron?.classList.remove('rotate-180');
+  });
+
+  const locationsBtn = document.getElementById('locations-btn');
+  locationsBtn?.addEventListener('click', () => {
+    locationsPanel?.classList.toggle('hidden');
+    locationsChevron?.classList.toggle('rotate-180');
+    locationsBtn.setAttribute('aria-expanded', locationsPanel?.classList.contains('hidden') ? 'false' : 'true');
+  });
+
+  // Mobile locations accordion
+  const mobileLocationsBtn = document.getElementById('mobile-locations-btn');
+  const mobileLocationsPanel = document.getElementById('mobile-locations-panel');
+  const mobileLocationsChevron = document.getElementById('mobile-locations-chevron');
+
+  mobileLocationsBtn?.addEventListener('click', () => {
+    if (mobileLocationsPanel) {
+      const isHidden = mobileLocationsPanel.style.display === 'none';
+      mobileLocationsPanel.style.display = isHidden ? 'flex' : 'none';
+      mobileLocationsBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    }
+    mobileLocationsChevron?.classList.toggle('rotate-180');
+  });
+
   // Close menus on outside click
   document.addEventListener('click', (e) => {
     if (!mobileMenuBtn?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
@@ -215,6 +317,10 @@ const lessonsDropdown = [
     if (!lessonsDropdown?.contains(e.target as Node)) {
       lessonsPanel?.classList.add('hidden');
       lessonsChevron?.classList.remove('rotate-180');
+    }
+    if (!locationsDropdownEl?.contains(e.target as Node)) {
+      locationsPanel?.classList.add('hidden');
+      locationsChevron?.classList.remove('rotate-180');
     }
   });
 </script>

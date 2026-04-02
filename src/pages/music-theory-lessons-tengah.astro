@@ -1,0 +1,357 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Is music theory boring for children?",
+    answer: "Patricia has designed her theory lessons specifically to avoid the dry, textbook-heavy approach that gives theory a bad reputation. Tengah students experience theory through ear training games where they identify intervals and chord types by listening, rhythmic exercises that make counting physical and enjoyable, analysis of the music they are already playing on their instrument, and creative tasks like composing short melodic phrases. The goal is for theory to feel like a rewarding part of music-making, not a chore attached to it."
+  },
+  {
+    question: "My child already takes piano or violin lessons with Patricia — do they need separate theory sessions?",
+    answer: "Not necessarily at the beginning. Patricia naturally integrates foundational theory into every practical lesson — note reading, rhythm awareness, key signature recognition, and dynamic understanding are all theory concepts taught in context. When your child approaches the stage where ABRSM Grade 5 Theory exam preparation becomes relevant (usually around practical Grade 3 or 4), dedicated theory sessions provide the focused, systematic coverage needed to work through the exam syllabus thoroughly."
+  },
+  {
+    question: "How long does it take to prepare for ABRSM Grade 5 Theory?",
+    answer: "Most students need between 6 and 12 months of consistent weekly study. Because Tengah families have no commute to factor in, scheduling regular sessions is particularly straightforward. Patricia assesses each student's existing theory knowledge at the outset and creates a tailored preparation plan with clear milestones along the way."
+  },
+  {
+    question: "Can my child take theory as a standalone subject without practical instrument lessons?",
+    answer: "Yes. While Patricia believes theory is most powerful when paired with an instrument, she welcomes students who need standalone theory preparation — for example, children who learn an instrument with another teacher and need specialist help with ABRSM theory exams. She will coordinate with your child's practical teacher if that would be helpful."
+  },
+  {
+    question: "What makes learning theory in Tengah convenient?",
+    answer: "Patricia's studio is right here in Tengah, so there is no commute for local families. This means less time spent in transit and more flexibility when scheduling lessons around school, homework, and other activities. As Tengah continues to develop and the Jurong Region Line opens, accessibility from neighbouring towns will improve further as well."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="Music Theory Lessons in Tengah | ABRSM Theory | Music with Pat"
+  description="ABRSM music theory lessons for children in Tengah, Singapore. Grades 1–5 theory preparation at a local studio — no commute needed. Integrated with piano and violin or standalone. Ages 4 and up."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Music Theory Lessons",
+      "name": "Music Theory Lessons in Tengah",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Tengah, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM music theory preparation for children in Tengah, Singapore. Covering Grades 1 through 5 with engaging, interactive teaching methods at a dedicated local studio."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'Music Theory Lessons Tengah' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Right Here in Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          Music Theory Lessons in Tengah
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Tengah is Singapore's newest town, and families moving into this growing community are building their children's routines from scratch — including music education. With Patricia's studio located right here in Tengah, there is no commute to worry about. Music theory is the foundation that helps young pianists and violinists understand the music they play at a structural level. Patricia teaches ABRSM theory Grades 1 through 5 with an approach that is hands-on, engaging, and always connected to the practical music your child is learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+                width="1024"
+                height="1280"
+              alt="Patricia - Music Theory Teacher in Tengah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia is a Tengah-based music educator with over a decade of experience teaching children. Her approach to theory is shaped by a core belief: understanding music should enhance, not complicate, the experience of playing it. She teaches every theory concept — from basic note values to Grade 5 cadence analysis — with demonstrations at the piano, so students always hear the connection between the written page and living sound.
+            </p>
+            <p class="text-base-600 mb-4">
+              Holding a Bachelor's degree in Early Childhood Education with Music Education, Patricia brings a rare combination of deep musical knowledge and an understanding of how children learn. She adapts her teaching to each child's age and learning style, using interactive methods for younger students and more rigorous, exam-oriented techniques for those preparing for ABRSM theory papers.
+            </p>
+            <p class="text-base-600 mb-6">
+              As a fellow Tengah resident, Patricia understands the rhythms of life in a new town. She offers flexible scheduling, maintains open communication with parents, and takes pride in being a trusted part of the growing Tengah community.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Learn Music Theory -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Theory Matters</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Tengah Families Invest in Music Theory
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">ABRSM Requirement</h3>
+                <p class="text-base-600 text-sm">Passing Grade 5 Theory is mandatory before any ABRSM Grade 6, 7, or 8 practical exam. With the studio right in Tengah, Patricia can start theory preparation early and build it into your child's regular lesson schedule seamlessly — ensuring this milestone is achieved well before it becomes urgent.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Faster Piece Learning</h3>
+                <p class="text-base-600 text-sm">A child who understands scales, chord patterns, and musical structure learns new pieces significantly faster. Instead of deciphering one note at a time, they recognise groupings and patterns — an efficiency that saves practice time and accelerates progress through the ABRSM practical grades.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Confident Sight-Reading</h3>
+                <p class="text-base-600 text-sm">Theory knowledge transforms sight-reading from a nerve-racking exercise into a manageable skill. Students who understand key and time signatures, recognise interval patterns, and anticipate chord shapes navigate new music with far greater speed and accuracy — a direct advantage in both exams and everyday practice.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Expressive Performance</h3>
+                <p class="text-base-600 text-sm">When a child understands the harmonic function of a chord, the rhythmic energy of a syncopation, or the emotional effect of a modulation, they perform with genuine musical intent. Theory gives young musicians the analytical foundation to make interpretive decisions, producing performances that are expressive and convincing rather than merely correct.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Your Neighbourhood Studio -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">No Commute Needed</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Your Neighbourhood Music Studio
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Patricia's studio is located right here in Tengah, making it the most convenient option for local families. There is no drive to plan, no parking to find, and no MRT trip to factor in — your child can walk to their theory lesson and be home again in minutes.
+            </p>
+            <p class="text-base-600 mb-4">
+              This convenience matters especially for theory, which benefits from consistent, regular sessions. Without the friction of a commute, it is easier to maintain a steady weekly schedule — and consistent attendance is one of the strongest predictors of theory exam success.
+            </p>
+            <p class="text-base-600">
+              As Tengah continues to grow and the Jurong Region Line opens, the studio will become increasingly accessible to families in neighbouring towns as well. But for Tengah residents, the advantage of having a dedicated, experienced music theory teacher within walking distance is already here.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Why Local Matters</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Zero commute:</strong> Studio is in Tengah — walk to your lesson</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Flexible scheduling:</strong> Easier to fit lessons around school when there is no travel time</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">JRL upcoming:</strong> Jurong Region Line will connect Tengah to neighbouring towns by MRT</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Theory Lessons Cover -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Grade-by-Grade Breakdown</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What Theory Lessons Cover
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 1</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Building Blocks</h3>
+            <p class="text-base-600 text-sm">
+              Every musical journey starts with literacy. These grades cover fluent reading and writing in treble and bass clefs, understanding note values and rests from semibreves to semiquavers, confidence with simple time signatures (2/4, 3/4, 4/4), and recognition of key signatures with up to two sharps or flats. Essential Italian terms for tempo, dynamics, and expression are introduced alongside. Patricia teaches these fundamentals by connecting them to the pieces her Tengah students are already learning on their piano or violin.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Deepening Understanding</h3>
+            <p class="text-base-600 text-sm">
+              The intermediate grades expand the student's musical vocabulary considerably. Compound time signatures (6/8, 9/8, 12/8) are introduced, key signature knowledge extends to all major and minor keys, and interval identification and writing become core skills. Students learn about primary triads, basic harmony, and transposition between related keys. The growing list of musical terms, ornaments, and performance directions is always taught in connection with real repertoire, so Tengah students see how theory explains the music they play every day.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Grade 5</span>
+            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Comprehensive Musicianship</h3>
+            <p class="text-base-600 text-sm">
+              The culminating grade synthesises all previous learning and introduces the most challenging material: irregular time signatures (5/4, 7/8), alto and tenor clef reading, chord inversions and secondary triads, cadence identification and analysis in musical context, transposition at concert pitch for transposing instruments, and composing a short melody. Patricia prepares her Tengah students with a structured revision programme, regular past paper practice, and focused attention on individual areas of difficulty to ensure exam-day confidence.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Theory FAQs
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Tengah:
+          <a href="/piano-lessons-tengah/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/violin-lessons-tengah/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/music-lessons-tengah/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/abrsm-piano-lessons-tengah/" class="text-primary-600 hover:underline">ABRSM Piano</a> ·
+          <a href="/abrsm-violin-lessons-tengah/" class="text-primary-600 hover:underline">ABRSM Violin</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/music-theory-lessons-jurong-west/" class="text-primary-600 hover:underline">Jurong West</a>,
+          <a href="/music-theory-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
+          <a href="/music-theory-lessons-singapore/" class="text-primary-600 hover:underline">across Singapore</a>.
+          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Theory Lessons on Your Doorstep
+        </h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia to discuss music theory preparation for your child in Tengah. Free consultation — no commitment needed.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Trial
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20music%20theory%20lessons%20for%20my%20child%20in%20Tengah."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

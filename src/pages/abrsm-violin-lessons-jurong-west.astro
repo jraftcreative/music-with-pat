@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+const faqs = [
+  {
+    question: "Can my child switch from another violin teacher to Patricia mid-grade?",
+    answer: "Yes, and Patricia handles transitions carefully. She will assess your child's current technical foundation, identify any gaps in their ABRSM preparation, and create a plan to address them without losing momentum. Switching teachers mid-grade is common and can actually be beneficial if the previous approach was not working. Patricia focuses on getting the student back on a solid track as efficiently as possible."
+  },
+  {
+    question: "How much daily practice does my child need for ABRSM violin exams?",
+    answer: "For younger students in Grades 1 to 3, Patricia recommends 20 to 30 minutes of focused daily practice. From Grade 4 onwards, 30 to 45 minutes becomes necessary, increasing further for Grades 6 to 8. Quality matters more than quantity — Patricia teaches students how to practise effectively, breaking material into sections and working on specific skills rather than simply playing pieces through from start to finish."
+  },
+  {
+    question: "What happens if my child's intonation is not accurate enough for their target grade?",
+    answer: "Patricia will address this directly and honestly. She may recommend spending additional time on foundational exercises before entering the exam, or she may suggest targeting an earlier exam session to allow more preparation time. Intonation improves with consistent, targeted work — scales, slow practice, drone exercises, and careful listening — and Patricia will create a specific plan to bring your child's pitch accuracy up to the required standard."
+  },
+  {
+    question: "Are there different ABRSM exam options for violin besides the traditional graded exams?",
+    answer: "Yes. ABRSM offers Performance Grades (which focus entirely on performing a programme of pieces without scales or sight-reading) and the Prep Test (a non-assessed introductory experience for younger beginners). Patricia can guide you on which pathway suits your child best. Many students benefit from starting with the Prep Test to build exam familiarity, while Performance Grades can suit students who excel at repertoire but find the traditional exam format stressful."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Violin Lessons in Jurong West | Music with Pat"
+  description="ABRSM violin exam preparation for children in Jurong West, Singapore. Comprehensive grade-by-grade preparation from Prep Test to Grade 8 at Patricia's Tengah studio, around 10 minutes from Jurong West via Jurong West Ave 1."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Violin Lessons",
+      "name": "ABRSM Violin Lessons for Children in Jurong West",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jurong West, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM violin exam preparation for children in Jurong West, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Violin Lessons Jurong West' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Jurong West to Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Violin Lessons for Children in Jurong West
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
+          Jurong West is one of Singapore's largest residential towns, with Jurong Point as its commercial anchor and the NSL MRT providing reliable rail access. Schools like Jurong West Primary and Pioneer Primary serve thousands of families in the area. For parents who want their children to pursue the ABRSM violin pathway with a teacher who is both technically rigorous and developmentally aware, Patricia's Tengah studio is just 10 minutes away via Jurong West Avenue 1 — close enough to make weekly lessons easy to sustain.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+                width="1024"
+                height="1280"
+              alt="Patricia - ABRSM Violin Teacher for Children near Jurong West"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Over more than a decade of ABRSM violin teaching, Patricia has guided students from their first tentative bow strokes through to confident Grade 8 performances. Her track record of Merits and Distinctions reflects a teaching philosophy rooted in thorough preparation and genuine musicianship — not exam tricks or last-minute cramming.
+            </p>
+            <p class="text-base-600 mb-4">
+              Patricia holds a Bachelor's degree in Early Childhood Education with Music Education, which equips her to teach the physically demanding violin in ways that are safe, developmentally appropriate, and engaging for young children. She understands that a five-year-old learning to balance a bow requires a fundamentally different approach than a teenager refining vibrato for Grade 7.
+            </p>
+            <p class="text-base-600 mb-6">
+              Families in Jurong West find Patricia's combination of warmth and professionalism reassuring. She sets high standards but communicates them with kindness, and she is always transparent about where a child stands and what they need to work on next.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Jurong West Families Choose Patricia for ABRSM Violin
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Physical Technique</h3>
+                <p class="text-base-600 text-sm">Playing the violin well starts with the body. Patricia teaches correct bow hold, chin and shoulder rest positioning, and a natural left-hand frame from the outset. She watches for signs of tension or strain — common in young violinists — and addresses them immediately before they become ingrained. This attention to physical fundamentals means students can progress through the grades without hitting technique barriers that require costly remediation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Intonation Development</h3>
+                <p class="text-base-600 text-sm">The violin offers no visual guide for note placement — pitch accuracy comes entirely from the ear and trained muscle memory. Patricia develops intonation through structured scale practice, open-string reference points, and exercises that train students to hear perfect intervals. Over time, this systematic approach produces the reliable, centred pitch that ABRSM examiners expect and that makes the difference between a Pass and a Distinction.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">A violin exam places the student front and centre with nowhere to hide — no sustain pedal, no accompanist for the early grades, just their playing and their poise. Patricia systematically builds the readiness that breeds confidence: thorough repertoire preparation, comfortable familiarity with scales, practised sight-reading strategy, and mock exams that replicate the real experience. Her students walk in prepared, and it shows in their results.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Children develop at different rates, and the violin magnifies these differences because progress depends on physical growth, fine motor coordination, and auditory development as much as practice time. Patricia monitors each student closely and adjusts the pace of instruction to suit their individual trajectory. She enters students for exams only when they are genuinely ready, which produces stronger results and preserves the child's love of playing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Jurong West -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Jurong West
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Jurong West is immediately adjacent to Tengah, and the drive via Jurong West Avenue 1 takes just 10 minutes. Whether you live near Jurong Point, Pioneer MRT, or the newer developments along Jurong West Street 93, the route to Patricia's studio is short and direct. This proximity makes it realistic to maintain a consistent weekly lesson schedule even with a busy family calendar.
+            </p>
+            <p class="text-base-600 mb-4">
+              The NSL MRT serves Jurong West, and the Jurong Region Line will add additional rail connectivity to the Tengah area as it opens. Many families appreciate the short drive and use lesson time productively — some parents wait in the area while others drop off and return.
+            </p>
+            <p class="text-base-600">
+              Patricia also offers house visits throughout Jurong West, including the estates around Pioneer, Boon Lay, and Jurong West Central. Home lessons follow the same comprehensive ABRSM preparation approach as studio sessions.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 10 minutes via Jurong West Avenue 1</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> NSL from Pioneer or Boon Lay MRT, with the upcoming Jurong Region Line providing direct Tengah access</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services from Jurong Point interchange connect towards the Tengah corridor</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Jurong West, including Pioneer, Boon Lay, and Jurong West Central</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Violin Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Patricia's ABRSM violin preparation lessons run 45 to 60 minutes and are designed to address every aspect of the exam. Each session opens with warm-up and bow technique exercises, followed by the grade-specific scales and arpeggios — practised not just for accuracy but for tonal quality, rhythmic steadiness, and confident bow distribution across all strings.
+          </p>
+          <p>
+            Repertoire work forms the heart of each lesson. Patricia selects pieces that develop the student's strengths while addressing technical gaps, and she teaches each piece with musical depth — discussing character, phrasing, dynamics, and the specific bow strokes and fingerings that bring the music to life. Students learn to perform with expression and intent, not just technical correctness.
+          </p>
+          <p>
+            Every lesson includes sight-reading practice and aural training. For violin students, strong aural skills are inseparable from good intonation — Patricia uses ear-training exercises that reinforce the pitch awareness students need both in exams and in everyday playing. Theory is taught in context, connecting written concepts to the music on the stand, so students build the knowledge base required for the Grade 5 Theory exam alongside their practical development.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Violin FAQs — Jurong West
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Jurong West:
+          <a href="/violin-lessons-jurong-west/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/piano-lessons-jurong-west/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-jurong-west/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-jurong-west/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-piano-lessons-jurong-west/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-violin-lessons-jurong-east/" class="text-primary-600 hover:underline">Jurong East</a>,
+          <a href="/abrsm-violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
+          <a href="/abrsm-violin-lessons-singapore/" class="text-primary-600 hover:underline">View all ABRSM violin lessons</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Build Your Child's ABRSM Violin Skills
+        </h2>
+        <p class="text-base-600 mb-6">Contact Patricia for a free consultation to discuss your child's current ability, ABRSM aspirations, and what structured violin preparation looks like.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Trial
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Pat!%20I'm%20interested%20in%20ABRSM%20violin%20lessons%20for%20my%20child%20in%20Jurong%20West."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
