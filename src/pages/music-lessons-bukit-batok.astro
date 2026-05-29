@@ -8,20 +8,28 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "How far is the Tengah studio from Bukit Batok?",
-    answer: "The studio is roughly a 10-minute drive from Bukit Batok — one of the shortest journeys of any area Patricia serves. The route uses local roads and avoids expressway traffic, making it quick and stress-free."
+    question: "Do you come to my home in Bukit Batok for music lessons?",
+    answer: "Yes. Patricia teaches music in the comfort of your own home right across Bukit Batok — near Bukit Batok Central, along Bukit Batok East and West Avenue, around the Bukit Batok Street estates, and in the newer flats at West Hill and West BrickVille. Your child learns at home with no travelling, no parking, and no waiting room."
+  },
+  {
+    question: "How far is Tengah from Bukit Batok?",
+    answer: "Tengah sits right next to Bukit Batok — roughly a 10-minute drive — so Patricia is genuinely local to the area. For families who choose home lessons, that closeness simply means she can reach your door reliably each week. You never make the trip yourself; she comes to you."
+  },
+  {
+    question: "Will my child have the same teacher every week?",
+    answer: "Always. Music with Pat is one dedicated teacher — Patricia — not a centre with a rotating roster. Your child sees the same familiar face at every lesson, which means nothing resets and progress simply keeps building. A multi-teacher mall school cannot promise that kind of consistency."
   },
   {
     question: "What music lessons does Patricia offer?",
-    answer: "Patricia teaches piano, violin, and general musicianship. Musicianship sessions are ideal for younger children or those still deciding on an instrument, as they build core skills like listening, rhythm, and pitch awareness. A free consultation helps determine the best path for your child."
-  },
-  {
-    question: "Does Patricia visit homes in Bukit Batok?",
-    answer: "Yes, house visits are available across Bukit Batok. Whether you live near the MRT station, along Bukit Batok East or West Avenue, or in any of the surrounding HDB blocks, Patricia can come to your home. House visit rates differ slightly from studio sessions."
+    answer: "Patricia teaches piano, violin, and general musicianship. Musicianship sessions are ideal for younger children or those still deciding on an instrument, as they build core skills like listening, rhythm, and pitch awareness. Because it is one teacher who knows your child, a free consultation easily settles the best starting point."
   },
   {
     question: "How young can a child start lessons?",
-    answer: "Patricia accepts students from age four. Her training in early childhood education equips her to work with very young children using age-appropriate activities — short, playful exercises that introduce musical concepts through exploration and listening rather than formal instruction."
+    answer: "Patricia accepts students from age four. Her training in early childhood education equips her to work with very young children using age-appropriate activities — short, playful exercises that introduce musical concepts through exploration and listening rather than formal instruction. Learning at home keeps young children calm and comfortable, which is exactly when they learn best."
+  },
+  {
+    question: "What if we're not sure which instrument to choose?",
+    answer: "That is completely normal, and it is one of the advantages of one dedicated teacher. Patricia can start your child with general musicianship, watch how they respond, and guide you towards piano or violin once their interests become clear — all without switching teachers or starting over. The decision is never rushed."
   }
 ]
 
@@ -41,7 +49,7 @@ const faqStructuredData = {
 
 <BaseLayout
   title="Music Lessons for Children in Bukit Batok | Music with Pat"
-  description="Music lessons for children in Bukit Batok, Singapore. Piano, violin, and musicianship from an experienced educator."
+  description="Home music lessons for children in Bukit Batok, Singapore. Piano, violin, and musicianship from one dedicated teacher, taught in the comfort of your own home. Ages 4+."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -63,7 +71,7 @@ const faqStructuredData = {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Piano, violin, and musicianship lessons for children in Bukit Batok, Singapore. Thoughtful teaching in a calm studio environment in nearby Tengah."
+      "description": "Home music lessons for children in Bukit Batok, Singapore. Piano, violin, and musicianship from one dedicated teacher, taught in the comfort of your own home with the same teacher every lesson."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
@@ -76,13 +84,36 @@ const faqStructuredData = {
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Bukit Batok & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">Bukit Batok</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
           Music Lessons for Children in Bukit Batok
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Bukit Batok is a well-established HDB town with a genuine neighbourhood feel. The nature park, familiar coffee shops, and community centres create an environment where families settle for the long term and invest thoughtfully in their children's development. Patricia's studio in Tengah is just 10 minutes away — one of the shortest drives from any area she serves — offering piano, violin, and musicianship lessons that combine professional expertise with personal, attentive teaching.
+          Music lessons for children in Bukit Batok — piano, violin, and musicianship — taught in the comfort of your own home by one dedicated teacher. Patricia comes to you, whether you live near Bukit Batok Central, along Bukit Batok East or West Avenue, or in the newer estates around West Hill and West BrickVille. The same teacher every week, no commute, no mall parking, and no rotating instructors. Just warm, personal teaching built around your family.
         </p>
+      </div>
+    </section>
+
+    <!-- The Music with Pat Difference (Wedge) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Music with Pat Difference</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            One Teacher, In Your Own Home, Every Single Week
+          </h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4 text-base-600 text-center md:text-left">
+          <p>
+            Most music schools in Bukit Batok operate out of a mall unit — somewhere like Le Quest or West Mall — where children are slotted into timetables and taught by whichever instructor is rostered that term. That model asks your family to do the travelling, the waiting, and the adjusting whenever the teaching staff change.
+          </p>
+          <p>
+            Music with Pat works the other way around. There is one teacher — Patricia — and she comes to your home in Bukit Batok. Your child learns in their own space, from the same familiar teacher, week after week. No carpark queue, no shuffling between classrooms, no starting over with a new face every few months. It is the kind of steady, personal teaching a large multi-teacher centre is structurally unable to offer.
+          </p>
+          <p>
+            That continuity is the whole point. Patricia remembers what your child explored last week, which activity made them grin, and what to build on next — across piano, violin, or musicianship. The relationship grows, the trust grows, and your child's musicianship grows with it, because nothing ever resets.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -95,7 +126,7 @@ const faqStructuredData = {
               src="/patricia-piano-lessons.webp"
                 width="1024"
                 height="1280"
-              alt="Patricia - Music Teacher for Children near Bukit Batok"
+              alt="Patricia - Music Teacher for Children in Bukit Batok"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -106,13 +137,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching music to children for over ten years. Based in Tengah — practically on Bukit Batok's doorstep — she teaches piano, violin, and musicianship to families across the surrounding towns. Her approach is grounded in patience, attentiveness, and genuine care for each child.
+              Patricia has been teaching music to children for over ten years. Based in Tengah — practically on Bukit Batok's doorstep — she teaches piano, violin, and musicianship, visiting families at home across the surrounding towns. Her approach is grounded in patience, attentiveness, and genuine care for each child.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education means she brings formal knowledge of child development into every lesson. She understands how to work with children at different stages and adapts her teaching accordingly.
+              Her Bachelor's degree in Early Childhood Education with Music Education means she brings formal knowledge of child development into every lesson. Because she is the only teacher in the practice, every child she takes on becomes someone she knows personally — their pace, what motivates them, and how they learn best.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia is approachable and reliable. She communicates openly with parents about progress and sets realistic expectations. Whether your child is brand new to music or building towards ABRSM grades, she provides the same steady, dedicated guidance.
+              Patricia is approachable and reliable. She communicates openly with parents about progress and sets realistic expectations. Whether your child is brand new to music or building towards ABRSM grades, she provides the same steady, dedicated guidance — in the one place your child feels most at ease: your home.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -141,8 +172,17 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Conveniently Close to Home</h3>
-                <p class="text-base-600 text-sm">At roughly 10 minutes by car, Tengah is practically next door for Bukit Batok families. The short commute means lessons fit easily into after-school routines without eating into homework time or family evenings. It is one of the most convenient locations for quality music education in the western corridor.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Lessons in the Comfort of Your Own Home</h3>
+                <p class="text-base-600 text-sm">Patricia comes to your Bukit Batok home, so your child learns in a space they already know. No after-school dash to a mall, no parking, no waiting room — just your child and one teacher who is fully focused on them. Lessons fit easily into a busy week instead of adding another trip to it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">The Same Teacher, Every Single Lesson</h3>
+                <p class="text-base-600 text-sm">Your child is taught by Patricia herself — not a rotating roster of part-timers. She remembers what your child worked on last week and exactly what comes next, across piano, violin, or musicianship. That continuity is the single biggest driver of steady progress, and a mall chain simply cannot match it.</p>
               </div>
             </div>
           </div>
@@ -160,16 +200,7 @@ const faqStructuredData = {
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
               <div>
                 <h3 class="text-lg font-semibold text-base-900 mb-2">Exams Without Pressure</h3>
-                <p class="text-base-600 text-sm">ABRSM preparation is available for students who benefit from clear milestones. But Patricia is equally comfortable guiding children through a repertoire-based journey that prioritises enjoyment and broad musical development. She recommends what she honestly believes will work best for each child.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Real Learning Space</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah provides a calm, private setting for lessons. Unlike busy music schools in shopping malls, the studio is free from distractions. Children can focus properly, and Patricia gives each student her complete attention throughout the session.</p>
+                <p class="text-base-600 text-sm">ABRSM preparation is available for students who benefit from clear milestones. But Patricia is equally comfortable guiding children through a repertoire-based journey that prioritises enjoyment and broad musical development. Because she knows your child personally, she recommends what she honestly believes will work best for them.</p>
               </div>
             </div>
           </div>
@@ -177,46 +208,53 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- Getting Here from Bukit Batok -->
+    <!-- How House Visits Work in Bukit Batok -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <p class="text-primary-600 font-medium mb-2">Home Lessons</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Bukit Batok
+            How Home Music Lessons Work in Bukit Batok
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <p class="text-base-600 mb-4">
-              The drive from Bukit Batok to Patricia's Tengah studio is approximately 10 minutes — one of the shortest of any neighbourhood she serves. The route is entirely local, avoiding expressways and major traffic.
+          <div class="space-y-4 text-base-600">
+            <p>
+              Patricia teaches throughout Bukit Batok — from the established blocks around Bukit Batok East Avenue and the Bukit Batok Street estates, to homes near Bukit Batok West Avenue, and the newer flats at West Hill and West BrickVille off Bukit Batok Road. Because she lives in neighbouring Tengah, she is genuinely local, and reaching your home each week is quick and dependable.
             </p>
-            <p class="text-base-600 mb-4">
-              Families often schedule lessons right after school, heading to the studio while the journey is short and the child is alert. The proximity to Tengah makes it easy to maintain a consistent weekly routine without major disruption.
+            <p>
+              You choose a regular weekly slot that suits your family, and Patricia arrives at your door at the same time each week. For piano students, your child plays on your own instrument; for violin and musicianship, Patricia brings what is needed. Either way, everything learned in the lesson carries straight over into daily practice at home.
             </p>
-            <p class="text-base-600">
-              Patricia also offers house visits throughout Bukit Batok. Whether you live near Bukit Batok MRT, along Bukit Batok East or West Avenue, or in the surrounding HDB estates, she can come to your home.
+            <p>
+              Learning at home removes a surprising amount of friction for young children. There is no winding down from a car ride, no rush from school, and no unfamiliar environment to settle into — so your child is calm, comfortable, and ready to focus from the first minute.
+            </p>
+            <p>
+              Parents like being able to stay close, see what their child is working on, and have a quick word with Patricia at the end of each lesson — the kind of easy, ongoing communication that is far harder to come by at a busy mall centre.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-3">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">What Home Lessons Give You</h3>
+            <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 10 minutes via local roads</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">No travel:</strong> Patricia comes to you — no after-school dash to Le Quest or West Mall and back</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> North-South Line from Bukit Batok towards Jurong East, then Jurong Region Line towards Tengah</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Piano, violin or musicianship:</strong> one teacher who can guide your child across instruments</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Local bus services connect Bukit Batok to the Tengah area</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Same teacher:</strong> Patricia every week — never a rotating pool of instructors</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Bukit Batok, including all HDB estates in the area</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Flexible timing:</strong> a regular weekly slot built around school, CCAs, and family life</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Areas served:</strong> Bukit Batok Central, East &amp; West Avenue estates, West Hill, West BrickVille and surrounding blocks</span>
               </li>
             </ul>
           </div>
@@ -224,25 +262,49 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- What Lessons Look Like -->
+    <!-- Music Lessons for Bukit Batok Families (Local) -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">A Bukit Batok Teacher</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Music Lessons That Fit Bukit Batok Family Life
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4 text-base-600">
+          <p>
+            Bukit Batok is one of Singapore's most settled neighbourhoods — a mature HDB town where families put down roots for the long term, framed by green spaces like Bukit Batok Nature Park and the granite cliffs of Little Guilin at Bukit Batok Town Park. It is a place built for raising children, and music sits naturally into that rhythm.
+          </p>
+          <p>
+            Many of Patricia's Bukit Batok students attend the neighbourhood's primary schools — Bukit View, Princess Elizabeth on Bukit Batok West Avenue, Keming on Bukit Batok East Avenue, Dazhong, Lianhua, and St. Anthony's — before moving on to secondary schools like Hillgrove, Swiss Cottage, Dunearn, and Bukit Batok Secondary. Patricia understands how full a Bukit Batok child's week already is, between school, tuition, and CCAs. That is exactly why bringing the lesson to your home matters: it gives your child the gift of music without piling another commute onto an already-busy schedule.
+          </p>
+          <p>
+            Coming to you each week also lets Patricia shape her timetable around your family. Lessons can sit after school, in the early evening, or at a weekend slot — whatever keeps your child fresh rather than tired and rushed. And because she is the same teacher every time, your child arrives already comfortable, ready to pick up exactly where they left off — whether that is piano, violin, or building broad musicianship.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Lessons Look Like
+            What a Home Lesson Looks Like
           </h2>
         </div>
 
         <div class="space-y-4 text-base-600">
           <p>
-            Every lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger beginners start with shorter sessions that extend gradually. Bukit Batok families appreciate this practical approach — no child is pushed beyond what they can handle.
+            Every lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger beginners start with shorter sessions that extend gradually. Bukit Batok families appreciate this practical, child-led pace — no child is pushed beyond what they can handle, and no one is held back by a class moving at a different speed.
           </p>
           <p>
-            Whether focused on piano, violin, or general musicianship, sessions blend practical playing with listening skills, rhythm exercises, and basic theory. Patricia keeps lessons engaging and varied, building solid musical foundations while keeping children genuinely interested.
+            Whether focused on piano, violin, or general musicianship, sessions blend practical playing with listening skills, rhythm exercises, and basic theory. Patricia keeps lessons engaging and varied, building solid musical foundations while keeping children genuinely interested. Because it is the same teacher every week, there is no time lost re-explaining where things stand — she simply continues the thread from the last lesson.
           </p>
           <p>
-            Lesson quality is identical whether your child visits the studio or Patricia comes to your Bukit Batok home. The teaching is always personal, consistent, and centred on your child.
+            For families still deciding between instruments, musicianship sessions are a gentle, low-pressure starting point. Patricia watches how your child responds, then guides you towards piano or violin once their interests become clear — all without switching teachers or starting over.
           </p>
         </div>
 
@@ -250,6 +312,29 @@ const faqStructuredData = {
           <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             View Full Lesson Details
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking a Trial -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Getting Started</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Starting With a Trial Lesson
+          </h2>
+        </div>
+        <div class="space-y-4 text-base-600">
+          <p>
+            The easiest way to begin is a relaxed trial lesson in your own Bukit Batok home. It gives your child the chance to meet Patricia and try things out — sitting at the piano, holding a violin, or simply exploring some musicianship activities — with no pressure and no long-term commitment.
+          </p>
+          <p>
+            It is also your chance, as a parent, to ask anything: which instrument might suit your child, whether ABRSM is worth pursuing, how Patricia paces young beginners, and how a weekly home slot could fit your family's schedule. By the end you will have a clear, honest sense of whether home music lessons are the right next step.
+          </p>
+          <p>
+            Just send Patricia a quick message to arrange a time. She will confirm your area in Bukit Batok and find a slot that works.
+          </p>
         </div>
       </div>
     </section>
@@ -310,7 +395,7 @@ const faqStructuredData = {
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
           Start Your Child's Musical Journey
         </h2>
-        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what home lessons in Bukit Batok could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Trial

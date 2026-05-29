@@ -8,20 +8,28 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 
 const faqs = [
   {
-    question: "What size violin does my child need to start with?",
-    answer: "Patricia will assess your child's arm length and hand size during the initial consultation. Most children aged 4 to 5 start on a 1/8 or 1/4 size violin, while those aged 6 to 8 typically use a 1/2 size. Patricia can advise on where to rent or purchase a suitable fractional-size instrument in Singapore, so you don't need to have one before the first session."
+    question: "Do you come to my home in Bukit Batok for violin lessons?",
+    answer: "Yes. Patricia teaches violin in the comfort of your own home across Bukit Batok — near Bukit Batok Central, along Bukit Batok East and West Avenue, around the Bukit Batok Street estates, and in the newer flats at West Hill and West BrickVille. She travels with everything needed for the lesson, so your child learns at home with no commute and no waiting room."
   },
   {
-    question: "How do I get from Bukit Batok to Patricia's studio in Tengah?",
-    answer: "Bukit Batok is one of the closest neighbourhoods to Tengah. By car, the drive takes around 10 minutes via the PIE or Bukit Batok West Avenue. By public transport, you can take a bus from Bukit Batok MRT or Interchange towards the Tengah area. The upcoming Jurong Region Line will make rail access even more direct in the future."
+    question: "How far is Tengah from Bukit Batok?",
+    answer: "Tengah sits right next to Bukit Batok — roughly a 10-minute drive — so Patricia is genuinely local to the area. For families who choose home lessons, that closeness simply means she can reach your door reliably each week. You never make the journey yourself; she comes to you."
+  },
+  {
+    question: "Will my child have the same teacher every week?",
+    answer: "Always. Music with Pat is one dedicated teacher — Patricia — not a centre with a rotating roster. For violin especially, that continuity matters: posture, bow hold, and tone are built habit by habit over months, and the same teacher tracking that progress week after week is exactly what a multi-teacher mall school cannot promise."
+  },
+  {
+    question: "What size violin does my child need to start with?",
+    answer: "Patricia will assess your child's arm length and hand size during the initial consultation at your home. Most children aged 4 to 5 start on a 1/8 or 1/4 size violin, while those aged 6 to 8 typically use a 1/2 size. She can advise on where to rent or buy a suitable fractional-size instrument in Singapore, so you don't need to have one before the first session."
   },
   {
     question: "Does Patricia follow a particular violin teaching method?",
-    answer: "Patricia draws from both the Suzuki method and the ABRSM violin syllabus, depending on what suits each student. Younger children often benefit from Suzuki's listening-based approach in the early stages, while older students may move towards ABRSM graded examinations for structured progression. She tailors the blend to your child's temperament and goals."
+    answer: "Patricia draws from both the Suzuki method and the ABRSM violin syllabus, depending on what suits each student. Younger children often benefit from Suzuki's listening-based approach in the early stages, while older students may move towards ABRSM graded examinations for structured progression. Because she teaches your child one-to-one, she tailors the blend precisely to their temperament and goals."
   },
   {
     question: "Can my child switch from piano to violin, or learn both?",
-    answer: "Absolutely. Some children who have been learning piano with Patricia decide to add violin, and vice versa. Having a foundation in one instrument often helps with the other — music reading skills and ear training carry across. Patricia can advise on scheduling if your child wants to pursue both."
+    answer: "Absolutely. Some children who have been learning piano with Patricia decide to add violin, and vice versa. Having a foundation in one instrument often helps with the other — music reading and ear training carry across. Because it is one teacher who knows your child, she can advise on scheduling and pacing if your child wants to pursue both."
   }
 ]
 
@@ -41,7 +49,7 @@ const faqStructuredData = {
 
 <BaseLayout
   title="Violin Lessons for Children in Bukit Batok | Music with Pat"
-  description="Violin lessons for children in Bukit Batok, Singapore. Patient teaching with fractional-size violins, ABRSM violin preparation."
+  description="Home violin lessons for children in Bukit Batok, Singapore. One dedicated teacher in the comfort of your own home — fractional-size violins, ABRSM preparation. Ages 4+."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -63,7 +71,7 @@ const faqStructuredData = {
         "@type": "PeopleAudience",
         "suggestedMinAge": 4
       },
-      "description": "Patient, child-centred violin lessons for children in Bukit Batok, Singapore. ABRSM violin preparation, fractional-size instruments, and a calm studio environment in nearby Tengah."
+      "description": "Patient, child-centred home violin lessons for children in Bukit Batok, Singapore. One dedicated teacher in the comfort of your own home, with fractional-size instruments and optional ABRSM violin preparation."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
@@ -76,13 +84,36 @@ const faqStructuredData = {
     <!-- Hero -->
     <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Bukit Batok & Tengah</p>
+        <p class="text-primary-600 font-medium mb-2">Bukit Batok</p>
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
           Violin Lessons for Children in Bukit Batok
         </h1>
         <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Bukit Batok is a well-established HDB town where families settle in for the long term. Patricia's violin studio in nearby Tengah is just a 10-minute drive away, offering a quiet, focused space where children from Bukit Batok can develop real violin skills — from learning to hold a fractional-size instrument correctly to building the bow control and posture habits that carry through to higher grades.
+          Violin lessons for children in Bukit Batok, taught in the comfort of your own home by one dedicated teacher. Patricia comes to you — whether you live near Bukit Batok Central, along Bukit Batok West Avenue, or in the newer estates around West Hill and West BrickVille. The same teacher every week, no commute and no mall parking, and the patient, one-to-one attention that holding a violin correctly truly needs.
         </p>
+      </div>
+    </section>
+
+    <!-- The Music with Pat Difference (Wedge) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">The Music with Pat Difference</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            One Teacher, In Your Own Home, Every Single Week
+          </h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4 text-base-600 text-center md:text-left">
+          <p>
+            Most music schools in Bukit Batok run out of a mall unit — somewhere like Le Quest or West Mall — where children are slotted into timetables and taught by whichever instructor is rostered that term. That model asks your family to do the travelling and the waiting, and to adjust whenever the teaching staff change.
+          </p>
+          <p>
+            Music with Pat works the other way around. There is one teacher — Patricia — and she comes to your home in Bukit Batok. Your child learns in their own space, from the same familiar teacher, week after week. No carpark queue, no shuffling between classrooms, no starting over with a new face every few months. It is the kind of steady, personal teaching a large multi-teacher centre is structurally unable to offer.
+          </p>
+          <p>
+            For violin, that continuity is not a luxury — it is essential. Good tone, a relaxed bow hold, and correct left-hand position are built habit by habit across many months. A teacher who remembers exactly how your child held the bow last week, and what to gently correct next, makes all the difference. Patricia is that one constant teacher, and nothing ever resets.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -95,7 +126,7 @@ const faqStructuredData = {
               src="/patricia-piano-lessons.webp"
                 width="1024"
                 height="1280"
-              alt="Patricia - Violin Teacher for Children near Bukit Batok"
+              alt="Patricia - Violin Teacher for Children in Bukit Batok"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
               loading="lazy"
             />
@@ -106,13 +137,13 @@ const faqStructuredData = {
               About Patricia
             </h2>
             <p class="text-base-600 mb-4">
-              Patricia has more than ten years of experience teaching music to children, with violin as a central part of her practice. Her studio in Tengah is a short drive from Bukit Batok, and she regularly works with families from the surrounding western neighbourhoods who want thoughtful, child-focused violin instruction.
+              Patricia has more than ten years of experience teaching music to children, with violin as a central part of her practice. She is based in neighbouring Tengah and visits Bukit Batok families at home each week, offering thoughtful, child-focused violin instruction to students across the area.
             </p>
             <p class="text-base-600 mb-4">
               Her Bachelor's degree in Early Childhood Education with Music Education means she approaches violin teaching with an understanding of how children develop physically and cognitively. This matters for violin especially, where the physical demands on a young body require a teacher who truly understands age-appropriate expectations for posture, bow technique, and finger placement.
             </p>
             <p class="text-base-600 mb-6">
-              Her teaching is attentive and encouraging, with a clear structure that gives students direction while leaving room for enjoyment. From the first open strings to more advanced bowing techniques, Patricia builds each student's skills with care and consistency.
+              Because she is the only teacher in the practice, every child she takes on becomes someone she knows personally. Her teaching is attentive and encouraging, with a clear structure that gives students direction while leaving room for enjoyment — from the first open strings to more advanced bowing techniques, built up with care and consistency.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
@@ -141,8 +172,17 @@ const faqStructuredData = {
             <div class="flex items-start gap-4">
               <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
               <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Patience with Every Beginner</h3>
-                <p class="text-base-600 text-sm">The violin demands coordination that takes time to develop — holding the bow, positioning the left hand, maintaining posture. Patricia never rushes this process. She gives each Bukit Batok child the space to build these foundational habits naturally, celebrating small victories along the way rather than pushing for speed.</p>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Violin Lessons in Your Own Home</h3>
+                <p class="text-base-600 text-sm">Patricia comes to your Bukit Batok home, so your child learns in a calm, familiar space. No after-school dash to a mall, no parking, no carrying a fragile fractional-size violin across town — just your child and one teacher fully focused on their bow arm and tone.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">The Same Teacher, Every Single Lesson</h3>
+                <p class="text-base-600 text-sm">Your child is taught by Patricia herself — not a rotating roster of part-timers. For violin, where good habits form slowly and bad ones are hard to undo, having one teacher who tracks posture and tone week after week is decisive. It is the consistency a mall chain cannot match.</p>
               </div>
             </div>
           </div>
@@ -164,59 +204,57 @@ const faqStructuredData = {
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Studio Built for Focused Learning</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a private, distraction-free space where your child can hear every nuance of their own tone. For violin students especially, this quiet environment makes a tangible difference — children develop better pitch awareness and a more refined ear than they would in a noisy group setting.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Getting Here from Bukit Batok -->
+    <!-- How House Visits Work in Bukit Batok -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Convenient Access</p>
+          <p class="text-primary-600 font-medium mb-2">Home Lessons</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Bukit Batok
+            How Home Violin Lessons Work in Bukit Batok
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <p class="text-base-600 mb-4">
-              Patricia's studio in Tengah sits just west of Bukit Batok, connected by the Pan Island Expressway and local roads through Bukit Batok West Avenue. For families living near Bukit Batok Central, West Mall, or the HDB blocks along Bukit Batok Street, the drive typically takes around 10 minutes.
+          <div class="space-y-4 text-base-600">
+            <p>
+              Patricia teaches throughout Bukit Batok — from the established blocks around Bukit Batok East Avenue and the Bukit Batok Street estates, to homes near Bukit Batok West Avenue, and the newer flats at West Hill and West BrickVille off Bukit Batok Road. Because she lives in neighbouring Tengah, she is genuinely local, and reaching your home each week is quick and dependable.
             </p>
-            <p class="text-base-600 mb-4">
-              By public transport, buses from Bukit Batok Interchange run towards the Tengah and Jurong West area. The upcoming Tengah MRT station on the Jurong Region Line will shorten the journey further once it opens.
+            <p>
+              You choose a regular weekly slot that suits your family, and Patricia arrives at your door at the same time each week, travelling with the materials needed for the lesson. For young children still getting comfortable with a fractional-size instrument, learning in a familiar home environment eases the early stages — there is no carrying a delicate violin across the estate and no settling into a strange room before they can begin.
             </p>
-            <p class="text-base-600">
-              House visits are also available for families who prefer violin lessons at home. Patricia travels with all the materials needed, and for younger children still getting comfortable with their fractional-size instrument, the familiar home environment can ease the early learning process.
+            <p>
+              Home lessons also remove a surprising amount of friction. There is no winding down from a car ride, no rush from school, and no waiting-room restlessness — so your child is calm, comfortable, and ready to concentrate on the careful, physical work that early violin demands.
+            </p>
+            <p>
+              Parents like being able to stay close, see exactly what their child is working on, and have a quick word with Patricia at the end of each lesson — the kind of easy, ongoing communication that is far harder to get at a busy mall centre.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-3">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">What Home Lessons Give You</h3>
+            <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> About 10 minutes via PIE or Bukit Batok West Avenue towards Tengah</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">No travel:</strong> Patricia comes to you — no after-school dash to Le Quest or West Mall and back</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Bukit Batok MRT (North-South Line) with bus connections towards the Tengah area</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">No carrying a fragile violin:</strong> your child learns at home, with their fractional-size instrument staying safely put</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services from Bukit Batok Interchange towards Jurong West and Tengah</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Same teacher:</strong> Patricia every week — never a rotating pool of instructors</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available throughout Bukit Batok and surrounding HDB estates</span>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Flexible timing:</strong> a regular weekly slot built around school, CCAs, and family life</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">Areas served:</strong> Bukit Batok Central, East &amp; West Avenue estates, West Hill, West BrickVille and surrounding blocks</span>
               </li>
             </ul>
           </div>
@@ -224,22 +262,46 @@ const faqStructuredData = {
       </div>
     </section>
 
-    <!-- What Lessons Look Like -->
+    <!-- Violin Lessons for Bukit Batok Families (Local) -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">A Bukit Batok Teacher</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Violin Lessons That Fit Bukit Batok Family Life
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4 text-base-600">
+          <p>
+            Bukit Batok is one of Singapore's most settled neighbourhoods — a mature HDB town where families put down roots for the long term, framed by green spaces like Bukit Batok Nature Park and the granite cliffs of Little Guilin at Bukit Batok Town Park. It is a place built for raising children, and the violin, with its patience and discipline, sits well within that rhythm.
+          </p>
+          <p>
+            Many of Patricia's Bukit Batok students attend the neighbourhood's primary schools — Bukit View, Princess Elizabeth on Bukit Batok West Avenue, Keming on Bukit Batok East Avenue, Dazhong, Lianhua, and St. Anthony's — before moving on to secondary schools like Hillgrove, Swiss Cottage, Dunearn, and Bukit Batok Secondary. Patricia understands how full a Bukit Batok child's week already is, between school, tuition, and CCAs. That is exactly why bringing the lesson to your home matters: it gives your child the discipline and joy of the violin without adding another commute to an already-packed schedule.
+          </p>
+          <p>
+            Coming to you each week also lets Patricia build her timetable around your family. Lessons can sit after school, in the early evening, or at a weekend slot — whatever keeps your child fresh and able to concentrate on the fine motor work the violin requires. And because she is the same teacher every time, your child arrives already comfortable, ready to pick up precisely where they left off.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Lessons Look Like -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
           <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Lessons Look Like
+            What a Home Lesson Looks Like
           </h2>
         </div>
 
         <div class="space-y-4 text-base-600">
           <p>
-            Every violin lesson is a private, one-to-one session tailored to your child. Sessions run between 30 and 60 minutes depending on age and experience, with younger beginners starting at the shorter end and building up as their concentration develops.
+            Every violin lesson is a private, one-to-one session tailored to your child. Sessions run between 30 and 60 minutes depending on age and experience, with younger beginners starting at the shorter end and building up as their concentration develops — and because the pace is set entirely by your child, no one is rushed or held back by a class moving differently.
           </p>
           <p>
-            Patricia structures each lesson around the core skills of violin playing: holding the instrument and bow correctly, producing a clean and steady tone, learning scales and shifting positions, and working through graded or chosen repertoire. Sight-reading and ear training are woven in throughout, building musicianship alongside technique. Children starting on 1/4 or 1/2 size violins receive particular attention to posture and bow arm alignment, so that good habits form from the outset.
+            Patricia structures each lesson around the core skills of violin playing: holding the instrument and bow correctly, producing a clean and steady tone, learning scales and shifting positions, and working through graded or chosen repertoire. Sight-reading and ear training are woven in throughout, building musicianship alongside technique. Children starting on 1/4 or 1/2 size violins receive particular attention to posture and bow arm alignment, so good habits form from the outset. Because it is the same teacher every week, those habits are reinforced consistently rather than re-taught by someone new.
           </p>
           <p>
             For students preparing for ABRSM violin examinations, Patricia covers all required components — scales, pieces, sight-reading, and aural tests — with targeted practice strategies. Students not on the exam track still follow a structured programme that keeps them progressing steadily through well-chosen pieces and technical exercises.
@@ -250,6 +312,29 @@ const faqStructuredData = {
           <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             View Full Lesson Details
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking a Trial -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Getting Started</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Starting With a Trial Lesson
+          </h2>
+        </div>
+        <div class="space-y-4 text-base-600">
+          <p>
+            The easiest way to begin is a relaxed trial lesson in your own Bukit Batok home. It gives your child a chance to meet Patricia, try holding a violin, and see how they get on — with no pressure and no long-term commitment. It is also when Patricia can check your child's arm length and hand size to recommend the right fractional violin.
+          </p>
+          <p>
+            It is your chance, as a parent, to ask anything: what size violin to rent or buy, whether to start with the Suzuki approach or work towards ABRSM, how Patricia paces young beginners, and how a weekly home slot might fit your family's schedule. By the end you will have a clear, honest sense of whether home violin lessons are the right next step.
+          </p>
+          <p>
+            Just send Patricia a quick message to arrange a time. She will confirm your area in Bukit Batok and find a slot that works.
+          </p>
         </div>
       </div>
     </section>
@@ -311,7 +396,7 @@ const faqStructuredData = {
         <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
           Start Your Child's Violin Journey
         </h2>
-        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what violin lessons could look like. No commitment needed.</p>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what home violin lessons in Bukit Batok could look like. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
           <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
             Book a Trial
