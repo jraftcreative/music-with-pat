@@ -1,6 +1,6 @@
 ---
 title: "5 Signs Your Child Is Ready for Piano Lessons"
-description: "Not sure if your child is ready for piano? Here are 5 clear signs that show your child is ready to start learning, from attention span to musical curiosity."
+description: "Not sure if your child is ready for piano? Here are 5 clear signs, from attention span to musical curiosity, that show it's time to start."
 pubDate: 2026-03-01
 keywords: ["child ready for piano", "signs child ready music lessons"]
 ---

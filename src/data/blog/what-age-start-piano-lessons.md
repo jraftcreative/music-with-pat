@@ -1,6 +1,6 @@
 ---
 title: "What Age Should My Child Start Piano Lessons?"
-description: "Wondering when to start piano lessons? Learn why ages 4-6 is ideal, what signs of readiness to look for, and how to prepare your child for their first lesson."
+description: "Wondering when to start piano lessons? Learn why ages 4-6 is ideal, what signs of readiness to look for, and how to prepare your child."
 pubDate: 2026-02-20
 keywords: ["when to start piano lessons", "best age piano lessons"]
 ---

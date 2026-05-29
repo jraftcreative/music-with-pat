@@ -1,6 +1,6 @@
 ---
 title: "The Piano 'Arms Race' in Singapore — Patricia's Take on DSA, Exams, and Why It Doesn't Have to Be This Way"
-description: "Patricia was featured in Stomp discussing the growing pressure on Singapore parents to push children through ABRSM piano grades for DSA applications. Here's her fuller perspective on keeping music meaningful."
+description: "Patricia was featured in Stomp on the pressure for Singapore parents to push children through ABRSM piano grades for DSA. Her fuller perspective."
 pubDate: 2026-03-14
 keywords: ["DSA piano singapore", "piano arms race singapore", "ABRSM DSA secondary school", "piano lessons singapore pressure"]
 ---

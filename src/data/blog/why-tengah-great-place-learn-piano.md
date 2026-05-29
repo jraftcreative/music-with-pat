@@ -1,6 +1,6 @@
 ---
 title: "Why Tengah Is a Great Place to Learn Piano"
-description: "Discover why Tengah, Singapore's newest HDB town, is an ideal location for children's piano lessons. Quiet environment, family-friendly community, and easy access."
+description: "Why Tengah, Singapore's newest HDB town, is an ideal place for children's piano lessons — quiet, family-friendly, and easy to reach."
 pubDate: 2026-03-05
 keywords: ["piano lessons tengah", "tengah singapore"]
 ---
