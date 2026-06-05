@@ -8,8 +8,8 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 ---
 
 <BaseLayout
-  title="About Patricia — Piano Teacher in Tengah | Music with Pat"
-  description="Meet Patricia, a piano teacher in Tengah, Singapore with over 10 years of experience. B.Ed in Early Childhood & Music Education."
+  title="About Patricia — Piano and Violin Teacher in Tengah | Music with Pat"
+  description="Meet Patricia, a private piano and violin teacher in Tengah, Singapore with over 10 years of experience. Bachelor's degree in Early Childhood Education with Music Education."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -17,12 +17,26 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Patricia",
-      "jobTitle": "Piano Teacher",
-      "description": "Piano teacher based in Tengah, Singapore with over 10 years of experience teaching young children. Serving Jurong West, Bukit Batok, Bukit Timah, and Choa Chu Kang.",
-      "knowsAbout": ["Piano", "Music Education", "ABRSM", "Early Childhood Education"],
+      "jobTitle": "Private Piano and Violin Teacher",
+      "description": "Private piano and violin teacher based in Tengah, Singapore. Specialises in lessons for children from age four, with ABRSM preparation across piano, violin, and music theory.",
+      "hasCredential": [{
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "educationalLevel": "Bachelor",
+        "name": "Bachelor's Degree in Early Childhood Education with Music Education"
+      }],
+      "knowsAbout": ["Piano Pedagogy", "Violin Pedagogy", "ABRSM Examinations", "Music Theory", "Early Childhood Music Education", "DSA Music Audition Preparation"],
+      "areaServed": [
+        {"@type": "Place", "name": "Tengah"},
+        {"@type": "Place", "name": "Bukit Batok"},
+        {"@type": "Place", "name": "Jurong East"},
+        {"@type": "Place", "name": "Choa Chu Kang"},
+        {"@type": "Place", "name": "Bukit Timah"}
+      ],
       "worksFor": {
-        "@type": "LocalBusiness",
-        "@id": "https://www.musicwithpat.com/#business"
+        "@type": "MusicSchool",
+        "name": "Music with Pat",
+        "url": "https://www.musicwithpat.com"
       },
       "url": "https://www.musicwithpat.com/about/"
     }
@@ -42,23 +56,23 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
               src="/patricia-piano-lessons.webp"
                 width="1024"
                 height="1280"
-              alt="Patricia - Piano Teacher for Children in Singapore"
+              alt="Patricia - Piano and Violin Teacher for Children in Singapore"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
             />
           </div>
           <div class="md:order-1">
             <p class="text-primary-600 font-medium mb-2">Meet Your Teacher</p>
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-              About Patricia — Piano Teacher in Tengah, Singapore
+              About Patricia — Piano and Violin Teacher in Tengah, Singapore
             </h1>
             <p class="text-base-600 text-lg md:text-xl mb-4">
-              Patricia is a piano teacher based in Tengah, Singapore with over 10 years of experience teaching young children from age four and up. She believes that every child learns differently and grows at their own pace, and her teaching approach is gentle, patient, and encouraging.
+              Patricia is a private piano and violin teacher based in Tengah, Singapore with over 10 years of experience teaching young children from age four and up. She believes that every child learns differently and grows at their own pace, and her teaching approach is gentle, patient, and encouraging.
             </p>
             <p class="text-base-600 mb-4">
               With a Bachelor's degree in Early Childhood Education with Music Education, Patricia thoughtfully designs lessons that feel safe, enjoyable, and meaningful for young learners. Through fun and creative activities, children are guided to build confidence, develop musical understanding, and gradually cultivate their musical potential.
             </p>
             <p class="text-base-600 mb-6">
-              She offers ABRSM syllabus preparation where appropriate, and lessons take place in a calm, home-based studio in Tengah, Singapore where children feel comfortable, supported, and free to grow.
+              She offers ABRSM syllabus preparation across piano, violin, and music theory where appropriate, and lessons take place in a calm, home-based studio in Tengah, Singapore where children feel comfortable, supported, and free to grow.
             </p>
           </div>
         </div>
@@ -87,7 +101,77 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
           <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
             <h3 class="text-lg font-semibold text-base-900 mb-2">Nurturing Environment</h3>
-            <p class="text-base-600 text-sm">Lessons take place in a warm, home-based studio in Tengah — convenient for families in Jurong West, Bukit Batok, Bukit Timah, and Choa Chu Kang.</p>
+            <p class="text-base-600 text-sm">Lessons take place in a warm, home-based studio in Tengah — convenient for families in Bukit Batok, Jurong East, Choa Chu Kang, and Bukit Timah.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials & Training -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-base-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+            Credentials & Training
+          </h2>
+          <p class="text-base-600 max-w-2xl mx-auto">Patricia's formal training underpins how she plans every lesson — child-first, structured, and exam-ready when families want it.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-base-200">
+            <div class="flex items-start gap-3 mb-2">
+              <svg class="w-7 h-7 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-1">Bachelor's Degree in Early Childhood Education with Music Education</h3>
+                <p class="text-base-600 text-sm">Formal training in how young children learn, paired with music pedagogy — so every lesson is age-appropriate and developmentally sound.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-base-200">
+            <div class="flex items-start gap-3 mb-2">
+              <svg class="w-7 h-7 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-1">10+ years teaching piano and violin</h3>
+                <p class="text-base-600 text-sm">A decade-plus of one-to-one teaching with young learners across both instruments, from absolute beginners to ABRSM candidates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Patricia Teaches -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+            What Patricia Teaches
+          </h2>
+          <p class="text-base-600 max-w-2xl mx-auto">A focused set of services for families who want their child to learn music in a calm, child-first home studio.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">Private piano lessons for children from age four</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">Private violin lessons for children from age four</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">ABRSM piano exam preparation (Grades 1–5)</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">ABRSM violin exam preparation (Grades 1–5)</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">ABRSM music theory preparation</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <p class="text-base-700">DSA music audition preparation</p>
           </div>
         </div>
       </div>
