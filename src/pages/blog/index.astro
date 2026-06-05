@@ -7,7 +7,7 @@ import BottomNav from '../../components/BottomNav.astro'
 import WhatsAppButton from '../../components/WhatsAppButton.astro'
 import { getCollection } from 'astro:content'
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 ---
