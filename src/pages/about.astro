@@ -47,15 +47,15 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
   <Breadcrumbs items={[{ label: 'About Patricia' }]} />
 
   <main>
-    <!-- Hero -->
+    <!-- Hero — UNCHANGED per Mei's spec -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-                width="1024"
-                height="1280"
+              width="1024"
+              height="1280"
               alt="Patricia - Piano and Violin Teacher for Children in Singapore"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
             />
@@ -79,128 +79,192 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
       </div>
     </section>
 
-    <!-- Teaching Values -->
-    <section class="py-16 md:py-28 px-6 md:px-12 bg-white">
+    <!-- ============================================================ -->
+    <!-- A — "What Sets Patricia Apart" → editorial pull-quote        -->
+    <!-- bg-warm-50, oversized Playfair italic, marginalia underneath -->
+    <!-- ============================================================ -->
+    <section class="py-20 md:py-28 px-6 md:px-12 bg-warm-50">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Sets Patricia Apart
-          </h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 md:items-start">
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Child-Centred Approach</h3>
-            <p class="text-base-600 text-sm">Every lesson is tailored to your child's learning style, pace, and personality. No cookie-cutter methods here.</p>
-          </div>
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100 md:mt-8">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Education Background</h3>
-            <p class="text-base-600 text-sm">With a B.Ed in Early Childhood & Music Education, Patricia understands how young minds develop and learn best.</p>
-          </div>
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Nurturing Environment</h3>
-            <p class="text-base-600 text-sm">Lessons take place in a warm, home-based studio in Tengah — convenient for families in Bukit Batok, Jurong East, Choa Chu Kang, and Bukit Timah.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <p class="text-xs md:text-sm font-medium uppercase tracking-[0.18em] text-warm-600 mb-10">
+          01 &mdash; How she teaches
+        </p>
 
-    <!-- Credentials & Training -->
-    <section class="py-12 md:py-20 px-6 md:px-12 bg-base-50">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-            Credentials & Training
-          </h2>
-          <p class="text-base-600 max-w-2xl mx-auto">Patricia's formal training underpins how she plans every lesson — child-first, structured, and exam-ready when families want it.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white rounded-xl p-6 border border-base-200">
-            <div class="flex items-start gap-3 mb-2">
-              <svg class="w-7 h-7 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-1">Bachelor's Degree in Early Childhood Education with Music Education</h3>
-                <p class="text-base-600 text-sm">Formal training in how young children learn, paired with music pedagogy — so every lesson is age-appropriate and developmentally sound.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-base-200">
-            <div class="flex items-start gap-3 mb-2">
-              <svg class="w-7 h-7 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-1">10+ years teaching piano and violin</h3>
-                <p class="text-base-600 text-sm">A decade-plus of one-to-one teaching with young learners across both instruments, from absolute beginners to ABRSM candidates.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <figure class="reveal max-w-3xl">
+          <blockquote class="font-serif italic text-4xl md:text-6xl text-base-900 leading-[1.1]">
+            &ldquo;Every child learns differently, and grows at their own pace.&rdquo;
+          </blockquote>
+          <figcaption class="mt-6 font-sans text-sm tracking-wide text-base-600">
+            &mdash; Patricia
+          </figcaption>
+        </figure>
 
-    <!-- What Patricia Teaches -->
-    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-            What Patricia Teaches
-          </h2>
-          <p class="text-base-600 max-w-2xl mx-auto">A focused set of services for families who want their child to learn music in a calm, child-first home studio.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto">
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">Private piano lessons for children from age four</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">Private violin lessons for children from age four</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">ABRSM piano exam preparation (Grades 1–5)</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">ABRSM violin exam preparation (Grades 1–5)</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">ABRSM music theory preparation</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary-600 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <p class="text-base-700">DSA music audition preparation</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <hr class="border-t border-warm-300 mt-16 mb-10" />
 
-    <!-- CTA -->
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-3 gap-x-10 gap-y-10">
           <div>
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-              Ready to Meet Patricia?
-            </h2>
-            <p class="text-base-600 mb-6">Book a free consultation to discuss your child's musical journey.</p>
-            <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-              Book a Trial
-            </a>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-600 mb-3">
+              Child-centred
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              Every lesson is shaped to your child's pace, not a syllabus's.
+            </p>
           </div>
-          <div class="hidden md:block">
+          <div>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-600 mb-3">
+              Early-childhood-trained
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              A B.Ed in Early Childhood &amp; Music means lessons are built around how 4&ndash;7-year-olds actually learn &mdash; not adult piano scaled down.
+            </p>
+          </div>
+          <div>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-600 mb-3">
+              Home studio in Tengah
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              A calm, home-based studio that 4-year-olds settle into fast.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visually hidden H2 for SEO + a11y — heading hierarchy preserved -->
+        <h2 class="sr-only">What sets Patricia apart</h2>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- B — Credentials & Training → single authority statement      -->
+    <!-- Asymmetric two-column: typographic left, tall portrait right -->
+    <!-- ============================================================ -->
+    <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-t border-b border-base-200">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-start">
+          <div class="reveal">
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-600 mb-6">
+              Credentials
+            </p>
+            <h2 class="font-serif text-3xl md:text-5xl text-base-900 leading-[1.05] tracking-tight">
+              Bachelor's Degree in Early Childhood Education with Music Education
+            </h2>
+
+            <hr class="w-24 border-t border-base-300 my-8" />
+
+            <p class="text-[13px] font-medium uppercase tracking-[0.1em] text-warm-600 mb-6">
+              10+ years &nbsp;/&nbsp; Piano + Violin
+            </p>
+
+            <p class="text-base text-base-600 max-w-md leading-relaxed">
+              Formal training in how young children learn, paired with music pedagogy &mdash; so every lesson is age-appropriate and developmentally sound.
+            </p>
+          </div>
+
+          <!-- Photo: desktop only -->
+          <div class="hidden md:block photo-zoom">
             <img
               src="/pat-piano-teacher-singapore.webp"
-                width="1200"
-                height="800"
-              alt="Patricia - Piano Teacher Singapore"
-              class="rounded-2xl w-full aspect-[4/3] object-cover"
+              width="900"
+              height="1200"
+              alt="Patricia teaching piano in her home studio in Tengah, Singapore"
+              class="aspect-[3/4] object-cover object-top w-full"
               loading="lazy"
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- C — "What Patricia Teaches" → editorial numbered list 01-06  -->
+    <!-- bg-primary-50, ordered list, hairlines between rows          -->
+    <!-- Sophie's 6 philosophy lines verbatim, staggered reveal       -->
+    <!-- ============================================================ -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-[11px] md:text-xs font-medium uppercase tracking-[0.18em] text-primary-700 mb-6">
+          The teaching
+        </p>
+        <h2 class="font-serif text-4xl md:text-6xl text-base-900 leading-[1.05] tracking-tight max-w-2xl mb-16 md:mb-20">
+          Six ways Patricia meets a child where they are.
+        </h2>
+
+        <ol class="border-t border-primary-200">
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8 border-b border-primary-100" style="transition-delay: 0ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">01</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              Private piano lessons for children from age 4
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              I start with the ear and the hands. Notation comes second, not first.
+            </p>
+          </li>
+
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8 border-b border-primary-100" style="transition-delay: 80ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">02</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              Private piano lessons for adults
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              You're not starting late. You're starting now, with a teacher who treats that seriously.
+            </p>
+          </li>
+
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8 border-b border-primary-100" style="transition-delay: 160ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">03</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              ABRSM piano exam preparation (Grades 1&ndash;5)
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              The grade is a checkpoint, not the point. I build the musician first.
+            </p>
+          </li>
+
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8 border-b border-primary-100" style="transition-delay: 240ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">04</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              ABRSM violin exam preparation (Grades 1&ndash;5)
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              Tone before tricks. If it doesn't sound musical, the grade doesn't matter.
+            </p>
+          </li>
+
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8 border-b border-primary-100" style="transition-delay: 320ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">05</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              ABRSM music theory preparation
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              Theory is how I explain what your ears already know. We work in that order.
+            </p>
+          </li>
+
+          <li class="reveal grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_1fr] gap-x-6 md:gap-x-12 py-6 md:py-8" style="transition-delay: 400ms;">
+            <span class="font-serif text-2xl text-primary-400 tabular-nums leading-none pt-1">06</span>
+            <h3 class="font-serif text-2xl md:text-4xl text-base-900 leading-tight">
+              DSA music audition preparation
+            </h3>
+            <p class="col-start-2 md:col-start-3 mt-3 md:mt-0 font-sans italic text-sm text-base-600 leading-relaxed max-w-xs">
+              DSA panels can tell when a child has been drilled. I prepare them to play, not perform.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D — Bottom CTA → editorial closing, text-link not button     -->
+    <!-- ============================================================ -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="sr-only">Book a free trial lesson</h2>
+        <p class="reveal font-serif italic text-3xl md:text-5xl text-base-900 leading-[1.1]">
+          If this sounds like the kind of teacher you want for your child &mdash;
+        </p>
+        <hr class="w-10 border-t border-primary-300 mx-auto my-10" />
+        <a href="/contact/" class="link-arrow font-sans text-lg text-primary-600">
+          <span>book a free trial lesson</span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
       </div>
     </section>
   </main>
@@ -208,4 +272,34 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
   <Footer />
   <BottomNav />
   <WhatsAppButton />
+
+  <!-- Scroll-reveal: lightweight IntersectionObserver. -->
+  <!-- All visible copy is already in the server-rendered HTML above. -->
+  <!-- This script only toggles a class for opacity/transform animation. -->
+  <!-- If JS is disabled or fails, content remains accessible via the   -->
+  <!-- prefers-reduced-motion fallback in global.css (opacity: 1).      -->
+  <script is:inline>
+    (function () {
+      var nodes = document.querySelectorAll('.reveal');
+      if (!nodes.length) return;
+
+      // No IntersectionObserver support OR reduced motion → just show everything.
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || reduce) {
+        nodes.forEach(function (n) { n.classList.add('is-visible'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+      nodes.forEach(function (n) { io.observe(n); });
+    })();
+  </script>
 </BaseLayout>

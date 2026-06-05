@@ -96,3 +96,79 @@ body {
   top: -0.5rem;
   left: 1rem;
 }
+
+/* ============================================================
+   Scroll-reveal — used on About page editorial sections.
+   GPU-accelerated (transform + opacity only). No layout shift.
+   All content is server-rendered; reveal only animates style.
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children (Section C rows). Delay is set per-row via inline style. */
+
+/* Editorial text-link with arrow translate (Section D). */
+.link-arrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 200ms ease-out, text-decoration-thickness 200ms ease-out;
+}
+
+.link-arrow .arrow {
+  display: inline-block;
+  transition: transform 220ms ease-out;
+}
+
+.link-arrow:hover {
+  color: var(--color-primary-700);
+  text-decoration-thickness: 2px;
+}
+
+.link-arrow:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Subtle photo zoom on hover (Section B). Desktop only — disabled on touch. */
+@media (hover: hover) and (pointer: fine) {
+  .photo-zoom {
+    overflow: hidden;
+  }
+  .photo-zoom img {
+    transition: transform 700ms ease-out;
+    will-change: transform;
+  }
+  .photo-zoom:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Respect prefers-reduced-motion — disable all reveal/zoom animation. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .photo-zoom img,
+  .link-arrow,
+  .link-arrow .arrow {
+    transition: none !important;
+  }
+  .photo-zoom:hover img {
+    transform: none !important;
+  }
+}
