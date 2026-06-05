@@ -8,8 +8,8 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 ---
 
 <BaseLayout
-  title="About Patricia — Piano Teacher in Tengah | Music with Pat"
-  description="Meet Patricia, a piano teacher in Tengah, Singapore with over 10 years of experience. B.Ed in Early Childhood & Music Education."
+  title="About Patricia — Piano and Violin Teacher in Tengah | Music with Pat"
+  description="Meet Patricia, a private piano and violin teacher in Tengah, Singapore with over 10 years of experience. Bachelor's degree in Early Childhood Education with Music Education."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -17,12 +17,26 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Patricia",
-      "jobTitle": "Piano Teacher",
-      "description": "Piano teacher based in Tengah, Singapore with over 10 years of experience teaching young children. Serving Jurong West, Bukit Batok, Bukit Timah, and Choa Chu Kang.",
-      "knowsAbout": ["Piano", "Music Education", "ABRSM", "Early Childhood Education"],
+      "jobTitle": "Private Piano and Violin Teacher",
+      "description": "Private piano and violin teacher based in Tengah, Singapore. Specialises in lessons for children from age four, with ABRSM preparation across piano, violin, and music theory.",
+      "hasCredential": [{
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "educationalLevel": "Bachelor",
+        "name": "Bachelor's Degree in Early Childhood Education with Music Education"
+      }],
+      "knowsAbout": ["Piano Pedagogy", "Violin Pedagogy", "ABRSM Examinations", "Music Theory", "Early Childhood Music Education", "DSA Music Audition Preparation"],
+      "areaServed": [
+        {"@type": "Place", "name": "Tengah"},
+        {"@type": "Place", "name": "Bukit Batok"},
+        {"@type": "Place", "name": "Jurong East"},
+        {"@type": "Place", "name": "Choa Chu Kang"},
+        {"@type": "Place", "name": "Bukit Timah"}
+      ],
       "worksFor": {
-        "@type": "LocalBusiness",
-        "@id": "https://www.musicwithpat.com/#business"
+        "@type": "MusicSchool",
+        "name": "Music with Pat",
+        "url": "https://www.musicwithpat.com"
       },
       "url": "https://www.musicwithpat.com/about/"
     }
@@ -33,89 +47,239 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
   <Breadcrumbs items={[{ label: 'About Patricia' }]} />
 
   <main>
-    <!-- Hero -->
-    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+    <!-- ============================================================ -->
+    <!-- Hero — bg-white. min-h-screen so it fills the first viewport. -->
+    <!-- Non-italic Playfair H1 (typography baseline for the page).    -->
+    <!-- ============================================================ -->
+    <section class="min-h-screen flex items-center py-12 md:py-16 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div class="md:order-2">
             <img
               src="/patricia-piano-lessons.webp"
-                width="1024"
-                height="1280"
-              alt="Patricia - Piano Teacher for Children in Singapore"
+              width="1024"
+              height="1280"
+              alt="Patricia - Piano and Violin Teacher for Children in Singapore"
               class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              fetchpriority="high"
             />
           </div>
           <div class="md:order-1">
             <p class="text-primary-600 font-medium mb-2">Meet Your Teacher</p>
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-              About Patricia — Piano Teacher in Tengah, Singapore
+              About Patricia — Piano and Violin Teacher in Tengah, Singapore
             </h1>
             <p class="text-base-600 text-lg md:text-xl mb-4">
-              Patricia is a piano teacher based in Tengah, Singapore with over 10 years of experience teaching young children from age four and up. She believes that every child learns differently and grows at their own pace, and her teaching approach is gentle, patient, and encouraging.
+              Patricia is a private piano and violin teacher based in Tengah, Singapore with over 10 years of experience teaching young children from age four and up. She believes that every child learns differently and grows at their own pace, and her teaching approach is gentle, patient, and encouraging.
             </p>
             <p class="text-base-600 mb-4">
               With a Bachelor's degree in Early Childhood Education with Music Education, Patricia thoughtfully designs lessons that feel safe, enjoyable, and meaningful for young learners. Through fun and creative activities, children are guided to build confidence, develop musical understanding, and gradually cultivate their musical potential.
             </p>
             <p class="text-base-600 mb-6">
-              She offers ABRSM syllabus preparation where appropriate, and lessons take place in a calm, home-based studio in Tengah, Singapore where children feel comfortable, supported, and free to grow.
+              She offers ABRSM syllabus preparation across piano, violin, and music theory where appropriate, and lessons take place in a calm, home-based studio in Tengah, Singapore where children feel comfortable, supported, and free to grow.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Teaching Values -->
-    <section class="py-16 md:py-28 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Sets Patricia Apart
-          </h2>
+    <!-- ============================================================ -->
+    <!-- A — Editorial pull-quote.                                    -->
+    <!-- Change 1: bg-primary-50 (was warm-50). Strict pink/white.    -->
+    <!-- Change 2: min-h-screen flex items-center — fits viewport.    -->
+    <!-- Change 4: blockquote is now non-italic Playfair (was italic) -->
+    <!-- ============================================================ -->
+    <section class="min-h-screen flex items-center py-16 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto w-full">
+        <p class="text-xs md:text-sm font-medium uppercase tracking-[0.18em] text-primary-700 mb-10">
+          01 &mdash; How she teaches
+        </p>
+
+        <figure class="reveal max-w-3xl">
+          <blockquote class="font-serif text-4xl md:text-6xl text-base-900 leading-[1.1]">
+            &ldquo;Every child learns differently, and grows at their own pace.&rdquo;
+          </blockquote>
+          <figcaption class="mt-6 font-sans text-sm tracking-wide text-base-600">
+            &mdash; Patricia
+          </figcaption>
+        </figure>
+
+        <hr class="border-t border-primary-200 mt-14 mb-10" />
+
+        <div class="grid md:grid-cols-3 gap-x-10 gap-y-8">
+          <div>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-700 mb-3">
+              Child-centred
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              Every lesson is shaped to your child's pace, not a syllabus's.
+            </p>
+          </div>
+          <div>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-700 mb-3">
+              Early-childhood-trained
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              A B.Ed in Early Childhood &amp; Music means lessons are built around how 4&ndash;7-year-olds actually learn &mdash; not adult piano scaled down.
+            </p>
+          </div>
+          <div>
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-700 mb-3">
+              Home studio in Tengah
+            </p>
+            <p class="text-sm text-base-700 leading-relaxed max-w-xs">
+              A calm, home-based studio that 4-year-olds settle into fast.
+            </p>
+          </div>
         </div>
-        <div class="grid md:grid-cols-3 gap-6 md:items-start">
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Child-Centred Approach</h3>
-            <p class="text-base-600 text-sm">Every lesson is tailored to your child's learning style, pace, and personality. No cookie-cutter methods here.</p>
+
+        <!-- Visually hidden H2 for SEO + a11y — heading hierarchy preserved -->
+        <h2 class="sr-only">What sets Patricia apart</h2>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- B — Credentials.                                             -->
+    <!-- Change 2: min-h-screen flex items-center — fits viewport.    -->
+    <!-- Photo retained (subtle, asymmetric). photo-zoom kept.        -->
+    <!-- ============================================================ -->
+    <section class="min-h-screen flex items-center py-16 md:py-20 px-6 md:px-12 bg-white border-t border-b border-base-200">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-center">
+          <div class="reveal">
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-primary-600 mb-6">
+              Credentials
+            </p>
+            <h2 class="font-serif text-3xl md:text-5xl text-base-900 leading-[1.05] tracking-tight">
+              Bachelor's Degree in Early Childhood Education with Music Education
+            </h2>
+
+            <hr class="w-24 border-t border-base-300 my-8" />
+
+            <p class="text-[13px] font-medium uppercase tracking-[0.1em] text-warm-600 mb-6">
+              10+ years &nbsp;/&nbsp; Piano + Violin
+            </p>
+
+            <p class="text-base text-base-600 max-w-md leading-relaxed">
+              Formal training in how young children learn, paired with music pedagogy &mdash; so every lesson is age-appropriate and developmentally sound.
+            </p>
           </div>
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100 md:mt-8">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Education Background</h3>
-            <p class="text-base-600 text-sm">With a B.Ed in Early Childhood & Music Education, Patricia understands how young minds develop and learn best.</p>
-          </div>
-          <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <svg class="w-7 h-7 text-primary-600 mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-            <h3 class="text-lg font-semibold text-base-900 mb-2">Nurturing Environment</h3>
-            <p class="text-base-600 text-sm">Lessons take place in a warm, home-based studio in Tengah — convenient for families in Jurong West, Bukit Batok, Bukit Timah, and Choa Chu Kang.</p>
+
+          <!-- Photo: desktop only -->
+          <div class="hidden md:block photo-zoom">
+            <img
+              src="/pat-piano-teacher-singapore.webp"
+              width="900"
+              height="1200"
+              alt="Patricia teaching piano in her home studio in Tengah, Singapore"
+              class="aspect-[3/4] object-cover object-top w-full"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+    <!-- ============================================================ -->
+    <!-- C — Six Ways.                                                -->
+    <!-- Change 1: bg-primary-50 (was already pink — kept).           -->
+    <!-- Change 2: min-h-screen flex items-center — fits viewport.    -->
+    <!-- Change 3: NO 01–06 numbers. NO hairlines. NO ol/li listing.  -->
+    <!--           2-column grid (3 rows x 2 cols desktop / stacked    -->
+    <!--           on mobile). Generous gap-y. Compact enough to fit.  -->
+    <!-- Change 4: Service name = Playfair NON-italic. Philosophy line -->
+    <!--           keeps italic (it's body, different role — works).   -->
+    <!-- ============================================================ -->
+    <section class="min-h-screen flex items-center py-16 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto w-full">
+        <p class="text-[11px] md:text-xs font-medium uppercase tracking-[0.18em] text-primary-700 mb-5">
+          The teaching
+        </p>
+        <h2 class="font-serif text-3xl md:text-5xl text-base-900 leading-[1.05] tracking-tight max-w-2xl mb-12 md:mb-14">
+          Six ways Patricia meets a child where they are.
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-x-12 md:gap-x-16 gap-y-10 md:gap-y-12">
           <div>
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-              Ready to Meet Patricia?
-            </h2>
-            <p class="text-base-600 mb-6">Book a free consultation to discuss your child's musical journey.</p>
-            <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-              Book a Trial
-            </a>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              Private piano lessons for children from age 4
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              I start with the ear and the hands. Notation comes second, not first.
+            </p>
           </div>
-          <div class="hidden md:block">
-            <img
-              src="/pat-piano-teacher-singapore.webp"
-                width="1200"
-                height="800"
-              alt="Patricia - Piano Teacher Singapore"
-              class="rounded-2xl w-full aspect-[4/3] object-cover"
-              loading="lazy"
-            />
+
+          <div>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              Private piano lessons for adults
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              You're not starting late. You're starting now, with a teacher who treats that seriously.
+            </p>
           </div>
+
+          <div>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              ABRSM piano exam preparation (Grades 1&ndash;5)
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              The grade is a checkpoint, not the point. I build the musician first.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              ABRSM violin exam preparation (Grades 1&ndash;5)
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              Tone before tricks. If it doesn't sound musical, the grade doesn't matter.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              ABRSM music theory preparation
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              Theory is how I explain what your ears already know. We work in that order.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl md:text-2xl text-base-900 leading-snug mb-2">
+              DSA music audition preparation
+            </h3>
+            <p class="font-sans italic text-sm md:text-[15px] text-base-700 leading-relaxed max-w-sm">
+              DSA panels can tell when a child has been drilled. I prepare them to play, not perform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D — CTA.                                                     -->
+    <!-- Change 1: bg-white (already correct).                        -->
+    <!-- Change 2: min-h-screen flex items-center — fits viewport.    -->
+    <!-- Change 4: Heading is non-italic Playfair (was italic).       -->
+    <!-- Change 5: Button "Book a trial" — NOT a text link. No "free" -->
+    <!--           anywhere on this section (or page).                -->
+    <!-- ============================================================ -->
+    <section class="min-h-screen flex items-center py-16 md:py-20 px-6 md:px-12 bg-white">
+      <div class="reveal max-w-3xl mx-auto text-center w-full">
+        <h2 class="font-serif text-3xl md:text-5xl text-base-900 leading-[1.1] tracking-tight">
+          Ready to meet Patricia?
+        </h2>
+        <p class="mt-6 text-base md:text-lg text-base-600 max-w-xl mx-auto leading-relaxed">
+          Book a trial lesson to see if Patricia is the right teacher for your child.
+        </p>
+        <div class="mt-10">
+          <a
+            href="/contact/"
+            class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors text-base"
+          >
+            Book a trial
+          </a>
         </div>
       </div>
     </section>
@@ -124,4 +288,32 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
   <Footer />
   <BottomNav />
   <WhatsAppButton />
+
+  <!-- Scroll-reveal: lightweight IntersectionObserver.               -->
+  <!-- All visible copy is server-rendered above; this only toggles a -->
+  <!-- class for opacity/transform animation. JS-disabled or          -->
+  <!-- prefers-reduced-motion users see fully visible content.        -->
+  <script is:inline>
+    (function () {
+      var nodes = document.querySelectorAll('.reveal');
+      if (!nodes.length) return;
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || reduce) {
+        nodes.forEach(function (n) { n.classList.add('is-visible'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+      nodes.forEach(function (n) { io.observe(n); });
+    })();
+  </script>
 </BaseLayout>
