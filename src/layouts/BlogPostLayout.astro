@@ -15,6 +15,7 @@ interface Props {
 
 const { title, description, pubDate, slug } = Astro.props
 const siteUrl = 'https://www.musicwithpat.com'
+const isPreview = slug.startsWith('preview-')
 
 const formattedDate = pubDate.toLocaleDateString('en-SG', {
   year: 'numeric',
@@ -79,10 +80,11 @@ const breadcrumbSchema = {
 <BaseLayout
   title={`${title} | Music with Pat`}
   description={description}
+  noindex={isPreview}
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {!isPreview && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+    {!isPreview && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   </Fragment>
 
   <Header currentPage="/blog/" />

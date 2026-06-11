@@ -8,7 +8,7 @@ export default defineConfig({
   site: 'https://www.musicwithpat.com',
   trailingSlash: 'always',
   integrations: [sitemap({
-    filter: (page) => !page.includes('/thank-you/'),
+    filter: (page) => !page.includes('/thank-you/') && !page.includes('/blog/preview-'),
   })],
   vite: {
     plugins: [tailwindcss()]
