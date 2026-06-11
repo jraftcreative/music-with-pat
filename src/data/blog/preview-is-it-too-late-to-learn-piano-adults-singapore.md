@@ -5,7 +5,7 @@ pubDate: 2026-06-14
 keywords: ["adult piano lessons Singapore", "learn piano as an adult Singapore", "is it too late to learn piano", "piano lessons for adults Singapore", "beginner piano lessons adult"]
 ---
 
-A working mum in her late thirties messaged me on WhatsApp last month. She'd been turning the idea over in her head for years. Her own daughter had just started piano with me, and watching from the side of the room had stirred something up. But she opened her message with the line I hear more than any other from grown-ups asking about lessons: *"Auntie, I think I might be too late."*
+A working mum in her late thirties messaged me on WhatsApp last month. She'd been turning the idea over in her head for years. Her own daughter had just started piano with me, and watching from the side of the room had stirred something up. But she opened her message with the line I hear more than any other from grown-ups asking about lessons: *"Ms Pat, I think I might be too late."*
 
 She wasn't. Almost nobody who writes that sentence to me is.
 
@@ -63,8 +63,6 @@ Fifteen to twenty focused minutes, four or five days a week, is a strong baselin
 What does *not* work is the once-a-week, two-hour weekend cram. Your fingers don't remember a Sunday session by Wednesday. They remember Monday-Tuesday-Wednesday-Thursday at twenty minutes each.
 
 The other piece worth flagging: missed days are fine. A skipped Tuesday won't undo a month of work. Adult life in Singapore is busy. The learners who get the furthest are the ones who don't make a fuss when life gets in the way — they just pick up the thread again on Thursday.
-
-A note on **SkillsFuture**: some music-related courses in Singapore are SkillsFuture-claimable, but private one-to-one piano lessons typically are not. If you're hoping to use credits, check directly with the school you're considering — it depends on the course structure and provider. *(I'll keep this section updated as the SkillsFuture rules evolve.)*
 
 ## The Quiet Worries Adults Bring to the First Lesson
 
