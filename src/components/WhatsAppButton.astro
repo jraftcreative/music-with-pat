@@ -1,8 +1,8 @@
 ---
 import { buildWhatsAppUrl } from '../lib/whatsapp'
 
-// Floating chat button — desktop only. On mobile the sticky bottom bar
-// (in BottomNav) is the always-on WhatsApp entry point instead.
+// Floating chat button — shown on all breakpoints. On mobile it floats above
+// the sticky WhatsApp bar + bottom nav (in BottomNav) so nothing overlaps.
 const href = buildWhatsAppUrl(Astro.url.pathname)
 ---
 
@@ -10,7 +10,7 @@ const href = buildWhatsAppUrl(Astro.url.pathname)
   href={href}
   target="_blank"
   rel="noopener noreferrer"
-  class="hidden md:flex fixed bottom-6 right-6 z-[100] bg-whatsapp hover:bg-whatsapp-dark text-white p-4 rounded-full shadow-lg items-center transition-colors"
+  class="flex fixed right-4 md:right-6 bottom-[calc(7rem+env(safe-area-inset-bottom,0px))] md:bottom-6 z-[100] bg-whatsapp hover:bg-whatsapp-dark text-white p-3 md:p-4 rounded-full shadow-lg items-center transition-colors"
   aria-label="Chat with Ms Pat on WhatsApp"
 >
   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
