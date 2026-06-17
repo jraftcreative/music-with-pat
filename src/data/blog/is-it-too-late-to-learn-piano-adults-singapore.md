@@ -1,7 +1,7 @@
 ---
 title: "Is It Ever Too Late to Learn Piano as an Adult in Singapore?"
 description: "A Singapore piano teacher's honest answer: no, it isn't too late. Here's what adult piano lessons in Singapore really look like — and how to start without pressure."
-pubDate: 2026-06-14
+pubDate: 2026-06-17
 keywords: ["adult piano lessons Singapore", "learn piano as an adult Singapore", "is it too late to learn piano", "piano lessons for adults Singapore", "beginner piano lessons adult"]
 ---
 
