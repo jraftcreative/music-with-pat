@@ -1,7 +1,7 @@
 ---
 title: "ABRSM vs Trinity: Which Exam Board for Your Child?"
 description: "A parent-friendly comparison of ABRSM and Trinity piano exam boards in Singapore — how they differ, which suits your child, and how to choose without the stress."
-pubDate: 2026-06-24
+pubDate: 2026-06-25
 keywords: ["ABRSM vs Trinity", "Trinity piano exam Singapore", "piano exam boards Singapore", "which music exam board"]
 ---
 
