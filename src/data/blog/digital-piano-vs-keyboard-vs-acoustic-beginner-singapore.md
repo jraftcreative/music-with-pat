@@ -1,7 +1,7 @@
 ---
 title: "Digital Piano, Keyboard or Acoustic? What to Buy for a Beginner in Singapore"
 description: "A Singapore piano teacher's honest guide to the best keyboard or digital piano for a beginner at home — what actually matters, and what you can skip."
-pubDate: 2026-07-01
+pubDate: 2026-07-05
 keywords: ["best keyboard for beginner piano singapore", "digital piano vs keyboard", "what piano to buy for a beginner", "digital piano for kids singapore"]
 ---
 
