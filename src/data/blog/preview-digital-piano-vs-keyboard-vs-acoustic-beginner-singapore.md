@@ -76,7 +76,7 @@ For the first few weeks, if money is tight, it won't ruin anything. But if you a
 Not on day one. But within the first year of proper lessons, yes. Buying fewer keys just means buying again sooner.
 
 **Digital piano or acoustic for a young child in Singapore?**
-For almost everyone in an HDB flat or condo, a digital piano. Space-friendly, silent practice with headphones, no tuning costs, and the technique transfers properly to a real piano.
+Ideally, an acoustic piano — but a digital piano is a great option for most families here: space-friendly, silent practice with headphones, no tuning costs, and the technique transfers properly to a real piano.
 
 **How much should I spend as a beginner?**
 A solid weighted 88-key digital piano in Singapore typically runs between $700 and $1,500. That's the range I'd point most beginner families toward — enough to learn properly, without overspending before you know it'll stick.
