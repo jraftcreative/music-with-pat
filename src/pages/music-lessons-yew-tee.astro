@@ -1,4 +1,5 @@
 ---
+// Music Lessons in Yew Tee — location landing page (full-bleed hero layout).
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -6,22 +7,57 @@ import Breadcrumbs from '../components/Breadcrumbs.astro'
 import BottomNav from '../components/BottomNav.astro'
 import WhatsAppButton from '../components/WhatsAppButton.astro'
 
+const waHref = "https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20music%20lessons%20in%20Yew%20Tee."
+
+// Real reviews — from Patricia's main testimonials page (/testimonials/).
+// NOTE: 4 real reviews on file. Add more (e.g. from Google) to enrich the conveyor.
+const reviews = [
+  {
+    stars: 5,
+    text: "We've had a great experience with teacher Patricia. She is patient, kind, and knows how to keep kids engaged and motivated during lessons. We've seen clear improvement in their playing skills and their discipline.",
+    name: "Gene",
+    relation: "Mother of Adam and Renee"
+  },
+  {
+    stars: 5,
+    text: "Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months.",
+    name: "Sarah L.",
+    relation: "Mother of Emily, Age 7"
+  },
+  {
+    stars: 5,
+    text: "We tried other teachers before, but Pat's nurturing approach finally got my son excited about piano. He now practices without being asked!",
+    name: "Michelle T.",
+    relation: "Mother of Ryan, Age 9"
+  },
+  {
+    stars: 5,
+    text: "Pat prepared my daughter for her ABRSM Grade 3 exam and she passed with distinction! Highly recommend for anyone looking for quality piano lessons.",
+    name: "Jennifer C.",
+    relation: "Mother of Sophie, Age 11"
+  }
+]
+
 const faqs = [
   {
-    question: "How do I get to the Tengah studio from Yew Tee?",
-    answer: "The studio is roughly a 15-minute drive south from Yew Tee. The route uses local roads and is direct. By MRT, take the North-South Line towards Jurong East and transfer to the Jurong Region Line towards Tengah."
+    question: "What instruments can I learn with Patricia near Yew Tee?",
+    answer: "Patricia teaches piano and violin, weaving in music theory, ear training, and rhythm at every lesson. Children and adults can start with one instrument or try both. All sessions are private and one-to-one, so the lesson is tailored entirely to the student."
   },
   {
-    question: "What music options are available for my child?",
-    answer: "Patricia offers piano, violin, and general musicianship. Musicianship sessions are perfect for younger children or those still exploring their musical interests. Piano and violin are available as focused instrumental tracks. A free consultation helps determine the best fit."
+    question: "How long does it take to reach Patricia's studio from Yew Tee?",
+    answer: "The drive from Yew Tee to Patricia's Tengah studio takes approximately 15 minutes, heading south via direct local roads. By MRT, take the North-South Line from Yew Tee towards Jurong East and transfer to the Jurong Region Line towards Tengah. Many families find the short, direct trip an easy addition to their weekly schedule."
   },
   {
-    question: "Does Patricia visit homes in Yew Tee?",
-    answer: "Yes, house visits are available throughout Yew Tee and the surrounding area. Whether you live near the MRT station or in the HDB blocks along Choa Chu Kang North, Patricia can come to your home. House visit rates differ slightly from studio sessions."
+    question: "Can Patricia come to our home in Yew Tee for lessons?",
+    answer: "Yes. Patricia offers house visits throughout Yew Tee and the surrounding area — whether you live near Yew Tee MRT, along Choa Chu Kang North, or in the surrounding HDB blocks. Home lessons follow the same structure and quality as studio sessions. Reach out to Patricia for house-visit pricing and time-slot availability."
   },
   {
-    question: "How does Patricia keep young children interested in lessons?",
-    answer: "Patricia uses short, varied activities designed for young attention spans. Her early childhood education training means she knows how to engage four- and five-year-olds through play, movement, and exploration rather than sitting them at an instrument for an hour. Sessions are structured to maintain curiosity and build confidence."
+    question: "Do you teach adult beginners near Yew Tee?",
+    answer: "Yes. Patricia welcomes adult learners across the Yew Tee area, whether you are a complete beginner or returning to an instrument after a break. Adults can learn piano or violin at their own pace, working towards ABRSM grades or simply playing for enjoyment, at the Tengah studio or via home visits."
+  },
+  {
+    question: "How do I know if my child is ready for music lessons?",
+    answer: "Patricia teaches children from age four. At this stage, most children can follow simple instructions, sit for a structured activity, and begin developing the hand coordination needed for an instrument. Patricia always begins with a no-obligation consultation to assess readiness and discuss expectations with parents."
   }
 ]
 
@@ -31,17 +67,14 @@ const faqStructuredData = {
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 }
 ---
 
 <BaseLayout
-  title="Music Lessons for Children in Yew Tee | Music with Pat"
-  description="Music lessons for children in Yew Tee, Singapore. Piano, violin, and musicianship from an experienced educator."
+  title="Music Lessons in Yew Tee | Piano & Violin | Music with Pat"
+  description="Piano & violin lessons in Yew Tee, Singapore for children and adults — studio in nearby Tengah or home visits. Book a trial with Patricia."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -49,280 +82,300 @@ const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Music Lessons",
-      "name": "Music Lessons for Children in Yew Tee",
-      "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://www.musicwithpat.com/#business",
-        "name": "Music with Pat"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Yew Tee, Singapore"
-      },
-      "audience": {
-        "@type": "PeopleAudience",
-        "suggestedMinAge": 4
-      },
-      "description": "Piano, violin, and musicianship lessons for children in Yew Tee, Singapore. Thoughtful teaching in a calm studio environment in nearby Tengah."
+      "name": "Music Lessons in Yew Tee",
+      "provider": { "@type": "LocalBusiness", "@id": "https://www.musicwithpat.com/#business", "name": "Music with Pat" },
+      "areaServed": { "@type": "Place", "name": "Yew Tee, Singapore" },
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4 },
+      "description": "Music lessons in Yew Tee, Singapore for children and adults. Piano, violin, and general musicianship with ABRSM exam preparation, at Patricia's Tengah studio or via home visits."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Music Lessons Yew Tee' }]} />
 
   <main>
-    <!-- Hero -->
-    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Yew Tee & Tengah</p>
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Music Lessons for Children in Yew Tee
-        </h1>
-        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Yew Tee is a compact, predominantly residential neighbourhood where families enjoy a quieter pace of life. Tucked between Choa Chu Kang and Kranji, it has a village-like feel despite being well-connected to the rest of Singapore. Families here value simplicity and substance. Patricia's studio in Tengah is just 15 minutes south, offering piano, violin, and musicianship lessons that are thoughtful, personal, and built on genuine expertise in working with children.
+    <!-- 1 · HERO (EXPERIMENT: full-bleed image + warm scrim, text overlaid) -->
+    <section class="relative overflow-hidden md:min-h-[calc(100vh-6rem)] flex items-center px-6 md:px-12 py-20 md:py-6">
+      <!-- full-bleed background photo (gentle zoom). background-size = zoom level; background-position X = where Patricia sits (smaller X pushes her further right). -->
+      <div class="hero-bg absolute inset-0" role="img" aria-label="Patricia teaching piano — music lessons in Yew Tee, Singapore"></div>
+      <!-- warm scrim for text legibility (on-brand, not harsh black) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#2d1a0e]/62 via-[#2d1a0e]/36 to-[#2d1a0e]/10"></div>
+
+      <!-- overlaid copy -->
+      <div class="hero-copy relative z-10 w-full max-w-6xl mx-auto">
+        <div class="max-w-2xl text-center md:text-left mx-auto md:mx-0">
+          <p class="text-primary-200 font-medium mb-3">Yew Tee, Singapore</p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white mb-5 leading-tight">
+            Music Lessons in Yew Tee
+          </h1>
+          <p class="text-white/90 text-lg md:text-xl mb-8 max-w-xl mx-auto md:mx-0">
+            Patient, one-to-one piano and violin lessons that build real skill — and a genuine love of music. For children and adults, taught at a pace that's right for you.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 mb-6">
+            <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+              Book a Trial
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer"
+              class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Pat
+            </a>
+          </div>
+
+          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-2 text-sm text-white/85">
+            <span class="inline-flex items-center gap-1"><span class="text-primary-300">★★★★★</span> Loved by Yew Tee families</span>
+            <span class="text-white/40">•</span>
+            <span>10+ years teaching</span>
+            <span class="text-white/40">•</span>
+            <span>ABRSM exam prep</span>
+            <span class="text-white/40">•</span>
+            <span>Home visits available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · THE PARENT'S QUESTION (new hook) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Why Music with Pat</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+          Finding the right music teacher shouldn't be stressful
+        </h2>
+        <p class="text-base-600 md:text-lg">
+          Most Yew Tee families aren't looking for a big commercial school with rotating teachers and crowded waiting rooms. They want one dependable teacher who genuinely knows their child — or who can make an adult beginner feel at ease. That's exactly how Patricia teaches: patiently, one-to-one, and at a pace that fits the student, not a timetable.
         </p>
       </div>
     </section>
 
-    <!-- About Patricia -->
+    <!-- 3 · MEET PATRICIA -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="md:order-2">
-            <img
-              src="/patricia-piano-lessons.webp"
-                width="1024"
-                height="1280"
-              alt="Patricia - Music Teacher for Children near Yew Tee"
-              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
-              loading="lazy"
-            />
+            <img src="/patricia-piano-lessons.webp" width="1024" height="1280"
+              alt="Patricia — piano and violin teacher serving Yew Tee"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full" loading="lazy" />
           </div>
           <div class="md:order-1">
             <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
-              About Patricia
-            </h2>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">About Patricia</h2>
             <p class="text-base-600 mb-4">
-              Patricia has been teaching music to children for over ten years. Based in Tengah, she serves families from Yew Tee, Choa Chu Kang, and the surrounding areas. She teaches piano, violin, and musicianship, with a consistent track record of patient, effective instruction.
+              Patricia has been teaching music for over ten years, and works regularly with families and adult learners across the Yew Tee area — from first-time beginners to students preparing for their ABRSM exams.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education means she brings formal knowledge of child development into her teaching. She adapts her approach to each child's temperament and stage, ensuring lessons are productive and age-appropriate.
+              Her background is unusual and valuable: a Bachelor's in Early Childhood Education with Music Education gives her both musical depth and a real understanding of how people learn. She reads where each student is and adjusts accordingly.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia is calm and reliable. She builds genuine rapport with her students while maintaining clear expectations. Whether your child is a new beginner or an advancing student, she provides the same dedicated, thoughtful attention.
+              She teaches piano and violin, with ABRSM exam preparation available for both — and is equally committed to students who simply want to play for the love of it.
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood &amp; Music</span>
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Piano &amp; Violin</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- Why Families from Yew Tee Choose Patricia -->
+    <!-- 4 · WHY CHOOSE (reshaped to 3 cards) -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Yew Tee Choose Patricia
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Three reasons Yew Tee families choose Patricia</h2>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Three Musical Options Under One Roof</h3>
-                <p class="text-base-600 text-sm">Patricia teaches piano, violin, and general musicianship. Yew Tee families can choose the right starting point for their child without coordinating multiple teachers. If your child is unsure which instrument to try, musicianship sessions build essential skills that apply to any instrument later.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Two instruments, one teacher</h3>
+            <p class="text-base-600 text-sm">Piano and violin, with ear training, rhythm, and theory built into every lesson — a complete musical foundation, not just notes on a page.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Trained to Teach Young Children</h3>
-                <p class="text-base-600 text-sm">With a Bachelor's degree in Early Childhood Education with Music Education, Patricia has the formal training to work confidently with children from age four. She understands attention spans, developmental stages, and the best ways to introduce musical concepts to young minds.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Trained in how people learn</h3>
+            <p class="text-base-600 text-sm">A B.Ed in Early Childhood &amp; Music Education means young children are never pushed too fast, and adult beginners are never made to feel behind.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Relaxed View of Exams</h3>
-                <p class="text-base-600 text-sm">ABRSM exams are available for students who benefit from structured progression. Patricia never pressures families into the exam pathway — she will discuss your child's personality and goals honestly and recommend the approach that fits best.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Peaceful Studio Environment</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is a quiet, private space designed for focused learning. Children can concentrate without the noise and distractions of a commercial music school, and Patricia provides her full attention to each student.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Exam or just for joy</h3>
+            <p class="text-base-600 text-sm">Full ABRSM exam preparation when you want it — or a relaxed, enjoyment-first path when you don't. Patricia adapts to the student's goals.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Getting Here from Yew Tee -->
+    <!-- 5 · REVIEWS (auto-scrolling conveyor belt) -->
+    <section class="py-12 md:py-24 bg-white overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <div class="text-center mb-10">
+          <p class="text-primary-600 font-medium mb-2">What Families Say</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Loved by parents like you</h2>
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="marquee__group">
+            {reviews.map(r => (
+              <li class="marquee__card bg-primary-50 rounded-2xl p-6 border border-primary-100 flex flex-col">
+                <div class="text-primary-500 mb-3" aria-label={`${r.stars} out of 5 stars`}>★★★★★</div>
+                <blockquote class="text-base-600 text-sm mb-4 flex-1">“{r.text}”</blockquote>
+                <figcaption class="text-sm font-semibold text-base-900">{r.name}<span class="font-normal text-base-600">, {r.relation}</span></figcaption>
+              </li>
+            ))}
+          </ul>
+          <ul class="marquee__group" aria-hidden="true">
+            {reviews.map(r => (
+              <li class="marquee__card bg-primary-50 rounded-2xl p-6 border border-primary-100 flex flex-col">
+                <div class="text-primary-500 mb-3">★★★★★</div>
+                <blockquote class="text-base-600 text-sm mb-4 flex-1">“{r.text}”</blockquote>
+                <figcaption class="text-sm font-semibold text-base-900">{r.name}<span class="font-normal text-base-600">, {r.relation}</span></figcaption>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · MID-PAGE CTA (new; sticky WhatsApp = floating component below) -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-600">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-white mb-3">Ready to try a lesson?</h2>
+        <p class="text-primary-50 mb-6">The easiest first step is a no-obligation trial lesson. Message Patricia and she'll find a time that suits you.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href={waHref} target="_blank" rel="noopener noreferrer"
+            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Pat
+          </a>
+          <a href="/contact/" class="inline-block px-8 py-4 bg-white text-primary-700 font-medium rounded-full hover:bg-primary-50 transition-colors">
+            Book a Trial
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · WHAT LESSONS LOOK LIKE -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">What lessons look like</h2>
+        </div>
+        <div class="space-y-4 text-base-600">
+          <p>Lessons are private and one-to-one, running 45 to 60 minutes depending on the student's age and stage. Younger beginners start with shorter, focused sessions that lengthen as stamina and confidence grow.</p>
+          <p>Each session balances instrument work on piano or violin with musicianship — theory, sight-reading, and ear training — sequenced so students stay engaged without losing the thread. Progress is steady and visible to both student and parent.</p>
+          <p>The experience is consistent whether you visit the Tengah studio or Patricia travels to your Yew Tee home. Either way, you get the same attentive, tailored instruction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · GETTING HERE + HOME VISITS -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Yew Tee
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Getting here from Yew Tee</h2>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <p class="text-base-600 mb-4">
-              From Yew Tee, the drive to Patricia's Tengah studio takes approximately 15 minutes. The route heads south through local roads into the Tengah area. It is a short, direct journey that fits easily into a weekly routine.
-            </p>
-            <p class="text-base-600 mb-4">
-              Families often schedule lessons on weekday afternoons after school or on Saturday mornings. The 15-minute drive is manageable for most families, even during the school term.
-            </p>
-            <p class="text-base-600">
-              Patricia also offers house visits throughout Yew Tee. Whether you live near Yew Tee MRT, along Choa Chu Kang North, or in the surrounding HDB blocks, she can come to your home for lessons.
-            </p>
+          <div class="space-y-4 text-base-600">
+            <p>Yew Tee is about 15 minutes from Patricia's Tengah studio by car — a short, direct route heading south via local roads that fits easily into a weekly routine, even during the school term.</p>
+            <p>By MRT, take the North-South Line from Yew Tee towards Jurong East and transfer to the Jurong Region Line towards Tengah. Local bus services also connect Yew Tee to the Tengah area.</p>
+            <p>Prefer lessons at home? Patricia offers house visits throughout Yew Tee — whether you live near Yew Tee MRT, along Choa Chu Kang North, or in the surrounding HDB blocks. A popular choice for younger children, who often focus best in their own space.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 15 minutes via local roads</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> North-South Line from Yew Tee towards Jurong East, then Jurong Region Line towards Tengah</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Local bus services connect Yew Tee to the Tengah area</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Yew Tee and surrounding residential areas</span>
-              </li>
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport options</h3>
+            <ul class="space-y-3 text-sm text-base-600">
+              <li><strong class="text-base-900">By car:</strong> ~15 minutes south via local roads</li>
+              <li><strong class="text-base-900">By MRT:</strong> North-South Line from Yew Tee towards Jurong East, then Jurong Region Line towards Tengah</li>
+              <li><strong class="text-base-900">By bus:</strong> Local bus services connect Yew Tee to the Tengah area</li>
+              <li><strong class="text-base-900">House visits:</strong> Available across Yew Tee and surrounding residential areas</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What Lessons Look Like -->
-    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+    <!-- 9 · ADULT LEARNERS -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Lessons Look Like
-          </h2>
+          <p class="text-primary-600 font-medium mb-2">Not Just for Children</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Adult beginners are welcome too</h2>
         </div>
-
         <div class="space-y-4 text-base-600">
-          <p>
-            Every lesson is a private, one-to-one session lasting 45 to 60 minutes. Younger children start with shorter sessions that gradually extend. Yew Tee families appreciate this measured approach — it puts the child's readiness first.
-          </p>
-          <p>
-            Whether the focus is piano, violin, or musicianship, sessions combine practical playing with listening exercises, rhythm activities, and theory. Patricia keeps lessons varied and engaging, ensuring children are learning and enjoying themselves in equal measure.
-          </p>
-          <p>
-            Lesson quality remains identical whether your child visits the studio or Patricia comes to your Yew Tee home. The teaching is always personal and consistent.
-          </p>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-            View Full Lesson Details
-          </a>
+          <p>Plenty of adults in the Yew Tee area pick up an instrument for the first time — or return to one they set aside years ago. Patricia teaches <a href="/adult-piano-lessons/" class="text-primary-600 hover:underline">adult piano</a> and <a href="/adult-violin-lessons/" class="text-primary-600 hover:underline">adult violin</a> learners with the same patience she brings to her younger students, at a pace that fits around work and family.</p>
+          <p>There's no such thing as being too old to start. Adults often progress quickly because they bring focus and clear goals — whether that's playing for relaxation, working towards an ABRSM grade, or finally learning a piece they've always loved.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+    <!-- 10 · FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Common Questions</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Frequently Asked Questions
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Frequently asked questions</h2>
         </div>
-
         <div class="space-y-3">
           {faqs.map(faq => (
-            <details class="group bg-primary-50 rounded-xl">
+            <details class="group bg-white rounded-xl">
               <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
                 <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
                 <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
               </summary>
-              <div class="px-4 pb-4 text-base-600 text-sm">
-                {faq.answer}
-              </div>
+              <div class="px-4 pb-4 text-base-600 text-sm">{faq.answer}</div>
             </details>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Also Available -->
-    <section class="py-6 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-base-600 text-sm">
-          Also available in Yew Tee:
-          <a href="/piano-lessons-yew-tee/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
-          <a href="/violin-lessons-yew-tee/" class="text-primary-600 hover:underline">Violin Lessons</a>
-        </p>
+    <!-- 11 · EXPLORE MORE (combined instrument + nearby-area links) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Explore More</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">More ways to learn with Patricia</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- other lessons in Yew Tee -->
+          <div class="bg-primary-50 rounded-2xl p-6 md:p-8 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-1">Focus on one instrument</h3>
+            <p class="text-base-600 text-sm mb-5">Prefer a single instrument in Yew Tee? Explore the dedicated pages.</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="/piano-lessons-yew-tee/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Piano Lessons <span aria-hidden="true">→</span></a>
+              <a href="/violin-lessons-yew-tee/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Violin Lessons <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <!-- nearby areas -->
+          <div class="bg-primary-50 rounded-2xl p-6 md:p-8 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-1">Nearby areas Patricia serves</h3>
+            <p class="text-base-600 text-sm mb-5">Not quite in Yew Tee? She also teaches families in:</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="/music-lessons-choa-chu-kang/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Choa Chu Kang <span aria-hidden="true">→</span></a>
+              <a href="/music-lessons-bukit-panjang/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Bukit Panjang <span aria-hidden="true">→</span></a>
+              <a href="/music-lessons-bukit-gombak/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Bukit Gombak <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Also Serving Nearby -->
-    <section class="py-8 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-base-600 text-sm">
-          Also serving families in
-          <a href="/music-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>,
-          <a href="/music-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>, and
-          <a href="/music-lessons-bukit-gombak/" class="text-primary-600 hover:underline">Bukit Gombak</a>.
-          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Musical Journey
-        </h2>
-        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">Start your musical journey</h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a no-obligation consultation — whether the lessons are for your child or for you. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
-          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-            Book a Trial
-          </a>
-          <a
-            href="https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20music%20lessons."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2"
-          >
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">Book a Trial</a>
+          <a href={waHref} target="_blank" rel="noopener noreferrer"
+            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp Us
+            WhatsApp Pat
           </a>
         </div>
       </div>
@@ -333,3 +386,42 @@ const faqStructuredData = {
   <BottomNav />
   <WhatsAppButton />
 </BaseLayout>
+
+<style>
+  @keyframes heroRise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
+  /* frame stays still; the photo gently zooms in and back out INSIDE it — subtle, no bounce */
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.03); }
+  }
+  .hero-copy  { animation: heroRise .7s ease-out both; }
+  .hero-frame { animation: heroFade .8s ease-out .15s both; }
+  .hero-bg {
+    background-image: url('/pat-piano-teacher-singapore.webp');
+    background-repeat: no-repeat;
+    background-size: cover;              /* mobile: fill */
+    background-position: center 30%;
+  }
+  @media (min-width: 768px) {
+    /* desktop: zoom level + horizontal placement of Patricia (~70% across) */
+    .hero-bg { background-size: 124%; background-position: 0% 5%; }
+  }
+
+  /* reviews conveyor belt */
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .marquee__track { display: flex; width: max-content; animation: marqueeScroll 46s linear infinite; will-change: transform; }
+  .marquee:hover .marquee__track { animation-play-state: paused; }
+  .marquee__group { display: flex; gap: 1.5rem; margin: 0; padding: 0 1.5rem 0 0; list-style: none; }
+  .marquee__card { flex: 0 0 320px; width: 320px; }
+  @keyframes marqueeScroll { to { transform: translateX(-50%); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-copy, .hero-frame, .hero-bg { animation: none; }
+    .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .marquee__track { animation: none; }
+  }
+</style>

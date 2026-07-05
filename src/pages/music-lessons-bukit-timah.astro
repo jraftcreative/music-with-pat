@@ -1,4 +1,5 @@
 ---
+// Music Lessons in Bukit Timah — location landing page (full-bleed hero layout).
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -6,22 +7,57 @@ import Breadcrumbs from '../components/Breadcrumbs.astro'
 import BottomNav from '../components/BottomNav.astro'
 import WhatsAppButton from '../components/WhatsAppButton.astro'
 
+const waHref = "https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20music%20lessons%20in%20Bukit%20Timah."
+
+// Real reviews — from Patricia's main testimonials page (/testimonials/).
+// NOTE: 4 real reviews on file. Add more (e.g. from Google) to enrich the conveyor.
+const reviews = [
+  {
+    stars: 5,
+    text: "We've had a great experience with teacher Patricia. She is patient, kind, and knows how to keep kids engaged and motivated during lessons. We've seen clear improvement in their playing skills and their discipline.",
+    name: "Gene",
+    relation: "Mother of Adam and Renee"
+  },
+  {
+    stars: 5,
+    text: "Pat has such a gentle way with children. My daughter looks forward to her lessons every week! She's made incredible progress in just 6 months.",
+    name: "Sarah L.",
+    relation: "Mother of Emily, Age 7"
+  },
+  {
+    stars: 5,
+    text: "We tried other teachers before, but Pat's nurturing approach finally got my son excited about piano. He now practices without being asked!",
+    name: "Michelle T.",
+    relation: "Mother of Ryan, Age 9"
+  },
+  {
+    stars: 5,
+    text: "Pat prepared my daughter for her ABRSM Grade 3 exam and she passed with distinction! Highly recommend for anyone looking for quality piano lessons.",
+    name: "Jennifer C.",
+    relation: "Mother of Sophie, Age 11"
+  }
+]
+
 const faqs = [
   {
-    question: "How do I get to the Tengah studio from Bukit Timah?",
-    answer: "The studio is roughly an 18-minute drive from Bukit Timah. Head west via Bukit Timah Road or the PIE towards Tengah. The journey is straightforward and manageable as part of a weekly routine."
+    question: "What instruments can I learn with Patricia near Bukit Timah?",
+    answer: "Patricia teaches piano and violin, weaving in music theory, ear training, and rhythm at every lesson. Children and adults can start with one instrument or try both. All sessions are private and one-to-one, so the lesson is tailored entirely to the student."
   },
   {
-    question: "What instruments can my child learn with Patricia?",
-    answer: "Patricia teaches piano, violin, and general musicianship. She can advise on the best starting point based on your child's age, interests, and personality. A free consultation is available to discuss options."
+    question: "How long does it take to reach Patricia's studio from Bukit Timah?",
+    answer: "The drive from Bukit Timah to Patricia's Tengah studio takes approximately 18 minutes, heading west via Bukit Timah Road or the PIE. On public transport, the Downtown Line from Beauty World or King Albert Park runs to Bukit Panjang, with a bus or short drive onward to Tengah, and bus services along Bukit Timah Road connect towards the western corridor. Many families find the trip an easy addition to their weekly schedule."
   },
   {
-    question: "Does Patricia visit homes in Bukit Timah?",
-    answer: "Yes, Patricia offers house visits throughout Bukit Timah, including along Dunearn Road, near the Nature Reserve, and across the established private estates. House visit rates differ slightly from studio sessions — contact Patricia for details."
+    question: "Can Patricia come to our home in Bukit Timah for lessons?",
+    answer: "Yes. Patricia offers house visits throughout Bukit Timah — whether you live along Dunearn Road, near the Nature Reserve, or in one of the established private estates. Home lessons follow the same structure and quality as studio sessions. Reach out to Patricia for house-visit pricing and time-slot availability."
   },
   {
-    question: "How long before my child shows progress?",
-    answer: "Most children show visible progress within the first month — improved coordination, growing confidence at the instrument, and an emerging sense of rhythm. Patricia sets realistic expectations and communicates progress regularly, so you always know how your child is developing."
+    question: "Do you teach adult beginners near Bukit Timah?",
+    answer: "Yes. Patricia welcomes adult learners across the Bukit Timah area, whether you are a complete beginner or returning to an instrument after a break. Adults can learn piano or violin at their own pace, working towards ABRSM grades or simply playing for enjoyment, at the Tengah studio or via home visits."
+  },
+  {
+    question: "How do I know if my child is ready for music lessons?",
+    answer: "Patricia teaches children from age four. At this stage, most children can follow simple instructions, sit for a structured activity, and begin developing the hand coordination needed for an instrument. Patricia always begins with a no-obligation consultation to assess readiness and discuss expectations with parents."
   }
 ]
 
@@ -31,17 +67,14 @@ const faqStructuredData = {
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 }
 ---
 
 <BaseLayout
-  title="Music Lessons for Children in Bukit Timah | Music with Pat"
-  description="Music lessons for children in Bukit Timah, Singapore. Piano, violin, and musicianship from an experienced educator."
+  title="Music Lessons in Bukit Timah | Piano & Violin | Music with Pat"
+  description="Piano & violin lessons in Bukit Timah, Singapore for children and adults — studio or home visits across Dunearn Road and the private estates. Book a trial with Patricia."
 >
   <Fragment slot="head">
     <script type="application/ld+json">
@@ -49,280 +82,300 @@ const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Music Lessons",
-      "name": "Music Lessons for Children in Bukit Timah",
-      "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://www.musicwithpat.com/#business",
-        "name": "Music with Pat"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Bukit Timah, Singapore"
-      },
-      "audience": {
-        "@type": "PeopleAudience",
-        "suggestedMinAge": 4
-      },
-      "description": "Piano, violin, and musicianship lessons for children in Bukit Timah, Singapore. Thoughtful teaching in a calm studio environment in nearby Tengah."
+      "name": "Music Lessons in Bukit Timah",
+      "provider": { "@type": "LocalBusiness", "@id": "https://www.musicwithpat.com/#business", "name": "Music with Pat" },
+      "areaServed": { "@type": "Place", "name": "Bukit Timah, Singapore" },
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4 },
+      "description": "Music lessons in Bukit Timah, Singapore for children and adults. Piano, violin, and general musicianship with ABRSM exam preparation, at Patricia's Tengah studio or via home visits."
     }
     </script>
     <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   </Fragment>
 
   <Header />
-  <Breadcrumbs items={[{ label: 'Music Lessons Bukit Timah' }]} />
 
   <main>
-    <!-- Hero -->
-    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-primary-600 font-medium mb-2">Bukit Timah & Tengah</p>
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
-          Music Lessons for Children in Bukit Timah
-        </h1>
-        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Bukit Timah is one of Singapore's most sought-after residential areas, where tree-lined roads, prestigious schools, and the Nature Reserve create an environment of quiet affluence. Families here invest carefully in their children's development, choosing quality over convenience. Patricia's studio in Tengah is about 18 minutes west, offering piano, violin, and musicianship lessons that combine serious expertise with the personal warmth that makes learning truly effective for children.
+    <!-- 1 · HERO (EXPERIMENT: full-bleed image + warm scrim, text overlaid) -->
+    <section class="relative overflow-hidden md:min-h-[calc(100vh-6rem)] flex items-center px-6 md:px-12 py-20 md:py-6">
+      <!-- full-bleed background photo (gentle zoom). background-size = zoom level; background-position X = where Patricia sits (smaller X pushes her further right). -->
+      <div class="hero-bg absolute inset-0" role="img" aria-label="Patricia teaching piano — music lessons in Bukit Timah, Singapore"></div>
+      <!-- warm scrim for text legibility (on-brand, not harsh black) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#2d1a0e]/62 via-[#2d1a0e]/36 to-[#2d1a0e]/10"></div>
+
+      <!-- overlaid copy -->
+      <div class="hero-copy relative z-10 w-full max-w-6xl mx-auto">
+        <div class="max-w-2xl text-center md:text-left mx-auto md:mx-0">
+          <p class="text-primary-200 font-medium mb-3">Bukit Timah, Singapore</p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white mb-5 leading-tight">
+            Music Lessons in Bukit Timah
+          </h1>
+          <p class="text-white/90 text-lg md:text-xl mb-8 max-w-xl mx-auto md:mx-0">
+            Patient, one-to-one piano and violin lessons that build real skill — and a genuine love of music. For children and adults, taught at a pace that's right for you.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 mb-6">
+            <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+              Book a Trial
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer"
+              class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Pat
+            </a>
+          </div>
+
+          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-2 text-sm text-white/85">
+            <span class="inline-flex items-center gap-1"><span class="text-primary-300">★★★★★</span> Loved by Bukit Timah families</span>
+            <span class="text-white/40">•</span>
+            <span>10+ years teaching</span>
+            <span class="text-white/40">•</span>
+            <span>ABRSM exam prep</span>
+            <span class="text-white/40">•</span>
+            <span>Home visits available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · THE PARENT'S QUESTION (new hook) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Why Music with Pat</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+          Finding the right music teacher shouldn't be stressful
+        </h2>
+        <p class="text-base-600 md:text-lg">
+          Most Bukit Timah families aren't looking for a big commercial school with rotating teachers and crowded waiting rooms. They want one dependable teacher who genuinely knows their child — or who can make an adult beginner feel at ease. That's exactly how Patricia teaches: patiently, one-to-one, and at a pace that fits the student, not a timetable.
         </p>
       </div>
     </section>
 
-    <!-- About Patricia -->
+    <!-- 3 · MEET PATRICIA -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="md:order-2">
-            <img
-              src="/patricia-piano-lessons.webp"
-                width="1024"
-                height="1280"
-              alt="Patricia - Music Teacher for Children near Bukit Timah"
-              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
-              loading="lazy"
-            />
+            <img src="/patricia-piano-lessons.webp" width="1024" height="1280"
+              alt="Patricia — piano and violin teacher serving Bukit Timah"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full" loading="lazy" />
           </div>
           <div class="md:order-1">
             <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
-              About Patricia
-            </h2>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">About Patricia</h2>
             <p class="text-base-600 mb-4">
-              Patricia has taught music to children for over a decade, building a practice that spans piano, violin, and musicianship. Based in Tengah, she serves families from Bukit Timah, Holland Village, and the broader western corridor. Her reputation has been built through genuine results and warm, lasting relationships with families.
+              Patricia has been teaching music for over ten years, and works regularly with families and adult learners across the Bukit Timah area — from first-time beginners to students preparing for their ABRSM exams.
             </p>
             <p class="text-base-600 mb-4">
-              Her Bachelor's degree in Early Childhood Education with Music Education means she brings academic depth to every lesson. She understands developmental psychology, age-appropriate pedagogy, and the intersection of musical and cognitive development.
+              Her background is unusual and valuable: a Bachelor's in Early Childhood Education with Music Education gives her both musical depth and a real understanding of how people learn. She reads where each student is and adjusts accordingly.
             </p>
             <p class="text-base-600 mb-6">
-              Patricia is thoughtful and principled. She builds trust with her students while maintaining the high standards that Bukit Timah families expect. Whether your child is taking their first steps in music or preparing for advanced exams, she provides the same careful, individualised attention.
+              She teaches piano and violin, with ABRSM exam preparation available for both — and is equally committed to students who simply want to play for the love of it.
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood &amp; Music</span>
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
               <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Preparation</span>
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Ages 4+</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Piano &amp; Violin</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- Why Families from Bukit Timah Choose Patricia -->
+    <!-- 4 · WHY CHOOSE (reshaped to 3 cards) -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Why Families from Bukit Timah Choose Patricia
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Three reasons Bukit Timah families choose Patricia</h2>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">A Complete Musical Offering</h3>
-                <p class="text-base-600 text-sm">Patricia teaches piano, violin, and general musicianship — all with the same depth of expertise. Bukit Timah families appreciate not having to search for separate teachers. Whether your child already has a clear preference or is still discovering their musical interests, Patricia can guide them with informed, personal attention.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Two instruments, one teacher</h3>
+            <p class="text-base-600 text-sm">Piano and violin, with ear training, rhythm, and theory built into every lesson — a complete musical foundation, not just notes on a page.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Child Development Expertise</h3>
-                <p class="text-base-600 text-sm">Patricia's Bachelor's degree in Early Childhood Education with Music Education gives her teaching a depth that Bukit Timah families expect. She does not just teach music — she understands how children think, how they learn, and how to bring out their best. Every lesson is informed by this dual expertise.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Trained in how people learn</h3>
+            <p class="text-base-600 text-sm">A B.Ed in Early Childhood &amp; Music Education means young children are never pushed too fast, and adult beginners are never made to feel behind.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Principled Approach to Exams</h3>
-                <p class="text-base-600 text-sm">ABRSM preparation is available, but Patricia will never recommend it unless she genuinely believes it will benefit your child. She is straightforward about whether exams or a broader repertoire-based approach would serve your child better — the kind of honesty that Bukit Timah families value.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <div class="flex items-start gap-4">
-              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-              <div>
-                <h3 class="text-lg font-semibold text-base-900 mb-2">Intimate Studio Setting</h3>
-                <p class="text-base-600 text-sm">Patricia's home studio in Tengah is private, quiet, and designed for focused learning. It is a contrast to the commercial music schools that dot Bukit Timah's shopping centres — here, children can concentrate fully, and Patricia gives each student her undivided attention.</p>
-              </div>
-            </div>
+            <h3 class="text-lg font-semibold text-base-900 mb-2">Exam or just for joy</h3>
+            <p class="text-base-600 text-sm">Full ABRSM exam preparation when you want it — or a relaxed, enjoyment-first path when you don't. Patricia adapts to the student's goals.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Getting Here from Bukit Timah -->
+    <!-- 5 · REVIEWS (auto-scrolling conveyor belt) -->
+    <section class="py-12 md:py-24 bg-white overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <div class="text-center mb-10">
+          <p class="text-primary-600 font-medium mb-2">What Families Say</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Loved by parents like you</h2>
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="marquee__group">
+            {reviews.map(r => (
+              <li class="marquee__card bg-primary-50 rounded-2xl p-6 border border-primary-100 flex flex-col">
+                <div class="text-primary-500 mb-3" aria-label={`${r.stars} out of 5 stars`}>★★★★★</div>
+                <blockquote class="text-base-600 text-sm mb-4 flex-1">“{r.text}”</blockquote>
+                <figcaption class="text-sm font-semibold text-base-900">{r.name}<span class="font-normal text-base-600">, {r.relation}</span></figcaption>
+              </li>
+            ))}
+          </ul>
+          <ul class="marquee__group" aria-hidden="true">
+            {reviews.map(r => (
+              <li class="marquee__card bg-primary-50 rounded-2xl p-6 border border-primary-100 flex flex-col">
+                <div class="text-primary-500 mb-3">★★★★★</div>
+                <blockquote class="text-base-600 text-sm mb-4 flex-1">“{r.text}”</blockquote>
+                <figcaption class="text-sm font-semibold text-base-900">{r.name}<span class="font-normal text-base-600">, {r.relation}</span></figcaption>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · MID-PAGE CTA (new; sticky WhatsApp = floating component below) -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-600">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-white mb-3">Ready to try a lesson?</h2>
+        <p class="text-primary-50 mb-6">The easiest first step is a no-obligation trial lesson. Message Patricia and she'll find a time that suits you.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href={waHref} target="_blank" rel="noopener noreferrer"
+            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Pat
+          </a>
+          <a href="/contact/" class="inline-block px-8 py-4 bg-white text-primary-700 font-medium rounded-full hover:bg-primary-50 transition-colors">
+            Book a Trial
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · WHAT LESSONS LOOK LIKE -->
     <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">What lessons look like</h2>
+        </div>
+        <div class="space-y-4 text-base-600">
+          <p>Lessons are private and one-to-one, running 45 to 60 minutes depending on the student's age and stage. Younger beginners start with shorter, focused sessions that lengthen as stamina and confidence grow.</p>
+          <p>Each session balances instrument work on piano or violin with musicianship — theory, sight-reading, and ear training — sequenced so students stay engaged without losing the thread. Progress is steady and visible to both student and parent.</p>
+          <p>The experience is consistent whether you visit the Tengah studio or Patricia travels to your Bukit Timah home. Either way, you get the same attentive, tailored instruction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · GETTING HERE + HOME VISITS -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Getting Here from Bukit Timah
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Getting here from Bukit Timah</h2>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <p class="text-base-600 mb-4">
-              From Bukit Timah, the drive to Patricia's Tengah studio takes approximately 18 minutes. The route heads west via Bukit Timah Road or the PIE, connecting to the Tengah area. Traffic is generally manageable outside peak hours.
-            </p>
-            <p class="text-base-600 mb-4">
-              Some families schedule lessons on weekend mornings, making the drive a relaxed part of the week. Others combine the trip with visits to Jurong East or the growing amenities in the Tengah neighbourhood.
-            </p>
-            <p class="text-base-600">
-              Patricia also provides house visits throughout Bukit Timah. Whether you live along Dunearn Road, near the Nature Reserve, or in one of the established private estates, she can bring lessons to your home.
-            </p>
+          <div class="space-y-4 text-base-600">
+            <p>Bukit Timah is about 18 minutes from Patricia's Tengah studio by car, heading west via Bukit Timah Road or the PIE — generally manageable outside peak hours. Some families schedule lessons on weekend mornings, making the drive a relaxed part of the week.</p>
+            <p>On public transport, the Downtown Line runs from Beauty World or King Albert Park towards Bukit Panjang, with a bus or short drive onward to Tengah. Bus services along Bukit Timah Road also connect towards the western corridor.</p>
+            <p>Prefer lessons at home? Patricia offers house visits throughout Bukit Timah — whether you live along Dunearn Road, near the Nature Reserve, or in one of the established private estates.</p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
-            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 18 minutes via Bukit Timah Road or the PIE</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line from Beauty World or King Albert Park to Bukit Panjang, then bus or drive to Tengah</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Bus services along Bukit Timah Road connect towards the western corridor</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Bukit Timah, including Dunearn Road, private estates, and surrounding areas</span>
-              </li>
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport options</h3>
+            <ul class="space-y-3 text-sm text-base-600">
+              <li><strong class="text-base-900">By car:</strong> Around 18 minutes via Bukit Timah Road or the PIE</li>
+              <li><strong class="text-base-900">By MRT:</strong> Downtown Line from Beauty World or King Albert Park to Bukit Panjang, then bus or drive to Tengah</li>
+              <li><strong class="text-base-900">By bus:</strong> Services along Bukit Timah Road connect towards the western corridor</li>
+              <li><strong class="text-base-900">House visits:</strong> Available across Bukit Timah, including Dunearn Road, private estates, and surrounding areas</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What Lessons Look Like -->
-    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+    <!-- 9 · ADULT LEARNERS -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
-          <p class="text-primary-600 font-medium mb-2">Lesson Structure</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            What Lessons Look Like
-          </h2>
+          <p class="text-primary-600 font-medium mb-2">Not Just for Children</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Adult beginners are welcome too</h2>
         </div>
-
         <div class="space-y-4 text-base-600">
-          <p>
-            Each lesson is a private, one-to-one session lasting 45 to 60 minutes. For younger children, Patricia starts with shorter sessions and extends them as concentration builds. Bukit Timah families appreciate this thoughtful calibration — it signals a teacher who prioritises the child's experience over a fixed schedule.
-          </p>
-          <p>
-            Whether studying piano, violin, or general musicianship, sessions integrate practical playing with ear training, theory, and creative exploration. Patricia keeps lessons varied and purposeful, building genuine musical competence alongside a real love for the art.
-          </p>
-          <p>
-            Lesson quality is identical whether your child visits the Tengah studio or Patricia comes to your Bukit Timah home. The teaching is always personal, focused, and adapted to your child's individual needs.
-          </p>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-            View Full Lesson Details
-          </a>
+          <p>Plenty of adults in the Bukit Timah area pick up an instrument for the first time — or return to one they set aside years ago. Patricia teaches <a href="/adult-piano-lessons/" class="text-primary-600 hover:underline">adult piano</a> and <a href="/adult-violin-lessons/" class="text-primary-600 hover:underline">adult violin</a> learners with the same patience she brings to her younger students, at a pace that fits around work and family.</p>
+          <p>There's no such thing as being too old to start. Adults often progress quickly because they bring focus and clear goals — whether that's playing for relaxation, working towards an ABRSM grade, or finally learning a piece they've always loved.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+    <!-- 10 · FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
           <p class="text-primary-600 font-medium mb-2">Common Questions</p>
-          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
-            Frequently Asked Questions
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">Frequently asked questions</h2>
         </div>
-
         <div class="space-y-3">
           {faqs.map(faq => (
-            <details class="group bg-primary-50 rounded-xl">
+            <details class="group bg-white rounded-xl">
               <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
                 <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
                 <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
               </summary>
-              <div class="px-4 pb-4 text-base-600 text-sm">
-                {faq.answer}
-              </div>
+              <div class="px-4 pb-4 text-base-600 text-sm">{faq.answer}</div>
             </details>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Also Available -->
-    <section class="py-6 px-6 md:px-12 bg-white">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-base-600 text-sm">
-          Also available in Bukit Timah:
-          <a href="/piano-lessons-bukit-timah/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
-          <a href="/violin-lessons-bukit-timah/" class="text-primary-600 hover:underline">Violin Lessons</a>
-        </p>
+    <!-- 11 · EXPLORE MORE (combined instrument + nearby-area links) -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Explore More</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">More ways to learn with Patricia</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- other lessons in Bukit Timah -->
+          <div class="bg-primary-50 rounded-2xl p-6 md:p-8 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-1">Focus on one instrument</h3>
+            <p class="text-base-600 text-sm mb-5">Prefer a single instrument in Bukit Timah? Explore the dedicated pages.</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="/piano-lessons-bukit-timah/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Piano Lessons <span aria-hidden="true">→</span></a>
+              <a href="/violin-lessons-bukit-timah/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Violin Lessons <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <!-- nearby areas -->
+          <div class="bg-primary-50 rounded-2xl p-6 md:p-8 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-1">Nearby areas Patricia serves</h3>
+            <p class="text-base-600 text-sm mb-5">Not quite in Bukit Timah? She also teaches families in:</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="/music-lessons-beauty-world/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Beauty World <span aria-hidden="true">→</span></a>
+              <a href="/music-lessons-king-albert-park/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">King Albert Park <span aria-hidden="true">→</span></a>
+              <a href="/music-lessons-holland-village/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-primary-100 text-primary-700 text-sm font-medium hover:border-primary-300 hover:text-primary-800 transition-colors">Holland Village <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Also Serving Nearby -->
-    <section class="py-8 px-6 md:px-12 bg-primary-50">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="text-base-600 text-sm">
-          Also serving families in
-          <a href="/music-lessons-beauty-world/" class="text-primary-600 hover:underline">Beauty World</a>,
-          <a href="/music-lessons-king-albert-park/" class="text-primary-600 hover:underline">King Albert Park</a>, and
-          <a href="/music-lessons-holland-village/" class="text-primary-600 hover:underline">Holland Village</a>.
-          <a href="/lessons/" class="text-primary-600 hover:underline">View all lesson details</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
-          Start Your Child's Musical Journey
-        </h2>
-        <p class="text-base-600 mb-6">Get in touch with Patricia for a free consultation to discuss your child's interests and what lessons could look like. No commitment needed.</p>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">Start your musical journey</h2>
+        <p class="text-base-600 mb-6">Get in touch with Patricia for a no-obligation consultation — whether the lessons are for your child or for you. No commitment needed.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-3">
-          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
-            Book a Trial
-          </a>
-          <a
-            href="https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20music%20lessons."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2"
-          >
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">Book a Trial</a>
+          <a href={waHref} target="_blank" rel="noopener noreferrer"
+            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp Us
+            WhatsApp Pat
           </a>
         </div>
       </div>
@@ -333,3 +386,42 @@ const faqStructuredData = {
   <BottomNav />
   <WhatsAppButton />
 </BaseLayout>
+
+<style>
+  @keyframes heroRise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
+  /* frame stays still; the photo gently zooms in and back out INSIDE it — subtle, no bounce */
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.03); }
+  }
+  .hero-copy  { animation: heroRise .7s ease-out both; }
+  .hero-frame { animation: heroFade .8s ease-out .15s both; }
+  .hero-bg {
+    background-image: url('/pat-piano-teacher-singapore.webp');
+    background-repeat: no-repeat;
+    background-size: cover;              /* mobile: fill */
+    background-position: center 30%;
+  }
+  @media (min-width: 768px) {
+    /* desktop: zoom level + horizontal placement of Patricia (~70% across) */
+    .hero-bg { background-size: 124%; background-position: 0% 5%; }
+  }
+
+  /* reviews conveyor belt */
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .marquee__track { display: flex; width: max-content; animation: marqueeScroll 46s linear infinite; will-change: transform; }
+  .marquee:hover .marquee__track { animation-play-state: paused; }
+  .marquee__group { display: flex; gap: 1.5rem; margin: 0; padding: 0 1.5rem 0 0; list-style: none; }
+  .marquee__card { flex: 0 0 320px; width: 320px; }
+  @keyframes marqueeScroll { to { transform: translateX(-50%); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-copy, .hero-frame, .hero-bg { animation: none; }
+    .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .marquee__track { animation: none; }
+  }
+</style>
