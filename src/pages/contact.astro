@@ -313,6 +313,10 @@ import WhatsAppCTA from '../components/WhatsAppCTA.astro'
           message
         })
       }).finally(() => {
+        // Conversion gate: mark that a genuine submit happened. thank-you.astro
+        // checks this flag before firing the Google Ads lead-form conversion,
+        // so direct/bookmarked/shared visits to /thank-you/ don't log phantoms.
+        try { sessionStorage.setItem('mwp_lead_ok', '1'); } catch (e) {}
         window.location.href = '/thank-you/';
       });
     });

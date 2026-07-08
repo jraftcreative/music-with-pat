@@ -12,6 +12,22 @@ import WhatsAppButton from '../components/WhatsAppButton.astro'
 >
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
+    <!-- Conversion gate: only fire the Google Ads lead-form conversion after a
+         genuine form submit (flag set in contact.astro). Prevents phantom
+         conversions from direct / bookmarked / shared visits to this page.
+         PAIRS WITH GTM: the conversion tag's trigger must be changed from the
+         /thank-you/ pageview to a Custom Event = "mwp_form_conversion". -->
+    <script is:inline>
+      (function () {
+        try {
+          if (sessionStorage.getItem('mwp_lead_ok') === '1') {
+            sessionStorage.removeItem('mwp_lead_ok');
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'mwp_form_conversion' });
+          }
+        } catch (e) {}
+      })();
+    </script>
   </Fragment>
 
   <Header />
