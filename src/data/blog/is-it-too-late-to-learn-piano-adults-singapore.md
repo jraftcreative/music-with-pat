@@ -82,7 +82,7 @@ These come up so often I want to answer them directly, because each one is keepi
 
 The hardest part of learning piano as an adult isn't the playing. It's giving yourself permission to start something new — to be a beginner at something again, in a city that often makes you feel like you should already be an expert at everything.
 
-That permission is allowed. And in my experience teaching in Singapore for over sixteen years, it's also one of the most quietly rewarding things an adult can choose to do for themselves. The hour at the piano, fully absorbed, phone out of reach — many of my adult students tell me, six months in, that it's become the hour they most look forward to all week.
+That permission is allowed. And in my experience teaching in Singapore for over 10 years, it's also one of the most quietly rewarding things an adult can choose to do for themselves. The hour at the piano, fully absorbed, phone out of reach — many of my adult students tell me, six months in, that it's become the hour they most look forward to all week.
 
 ## If You're Thinking About Starting
 
