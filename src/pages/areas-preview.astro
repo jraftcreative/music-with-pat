@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+
+// extra = area also has Music Theory + ABRSM pages
+const west = [
+  { slug: 'tengah', name: 'Tengah', extra: true },
+  { slug: 'jurong-west', name: 'Jurong West', extra: true },
+  { slug: 'jurong-east', name: 'Jurong East', extra: true },
+  { slug: 'bukit-batok', name: 'Bukit Batok' },
+  { slug: 'bukit-gombak', name: 'Bukit Gombak' },
+  { slug: 'choa-chu-kang', name: 'Choa Chu Kang', extra: true },
+  { slug: 'yew-tee', name: 'Yew Tee' },
+  { slug: 'bukit-panjang', name: 'Bukit Panjang', extra: true },
+  { slug: 'hillview', name: 'Hillview' },
+  { slug: 'cashew', name: 'Cashew' },
+  { slug: 'hume', name: 'Hume' },
+  { slug: 'lakeside', name: 'Lakeside' },
+  { slug: 'boon-lay', name: 'Boon Lay' },
+  { slug: 'chinese-garden', name: 'Chinese Garden' },
+  { slug: 'clementi', name: 'Clementi' },
+  { slug: 'bukit-timah', name: 'Bukit Timah' },
+  { slug: 'beauty-world', name: 'Beauty World' },
+  { slug: 'king-albert-park', name: 'King Albert Park' },
+  { slug: 'sixth-avenue', name: 'Sixth Avenue' },
+]
+
+const central = [
+  { slug: 'holland-village', name: 'Holland Village' },
+  { slug: 'buona-vista', name: 'Buona Vista' },
+  { slug: 'one-north', name: 'One-North' },
+  { slug: 'dover', name: 'Dover' },
+  { slug: 'kent-ridge', name: 'Kent Ridge' },
+  { slug: 'commonwealth', name: 'Commonwealth' },
+  { slug: 'queenstown', name: 'Queenstown' },
+  { slug: 'farrer-road', name: 'Farrer Road' },
+  { slug: 'botanic-gardens', name: 'Botanic Gardens' },
+  { slug: 'newton', name: 'Newton' },
+  { slug: 'stevens', name: 'Stevens' },
+  { slug: 'tan-kah-kee', name: 'Tan Kah Kee' },
+  { slug: 'redhill', name: 'Redhill', extra: true },
+  { slug: 'tiong-bahru', name: 'Tiong Bahru', extra: true },
+  { slug: 'alexandra', name: 'Alexandra', extra: true },
+  { slug: 'bukit-merah', name: 'Bukit Merah', extra: true },
+  { slug: 'telok-blangah', name: 'Telok Blangah', extra: true },
+  { slug: 'harbourfront', name: 'HarbourFront', extra: true },
+  { slug: 'sentosa-cove', name: 'Sentosa Cove', extra: true },
+]
+---
+
+<BaseLayout
+  title="Areas We Serve — Piano & Violin Lessons Across Singapore | Music with Pat"
+  description="Music with Pat teaches piano and violin across Singapore — home studio in Tengah plus home visits island-wide. Find lessons in your area."
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+
+  <Header currentPage="/areas/" />
+
+  <main>
+    <!-- INTRO -->
+    <section class="pt-10 md:pt-16 pb-8 md:pb-12 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto w-full">
+        <p class="text-[11px] md:text-xs font-medium uppercase tracking-[0.22em] text-primary-700 mb-4">Where we teach</p>
+        <h1 class="font-serif font-semibold text-3xl md:text-5xl text-base-900 leading-[1.1] tracking-tight max-w-3xl">
+          Piano &amp; Violin Lessons Across Singapore
+        </h1>
+        <p class="mt-5 text-base md:text-lg text-base-700 leading-relaxed max-w-2xl">
+          <strong class="font-semibold text-base-900">Music with Pat teaches piano and violin across Singapore</strong> — from a home studio in Tengah, with home visits island-wide. Below is where we teach. Tap your area to see lessons near you.
+        </p>
+      </div>
+    </section>
+
+    <!-- WEST -->
+    <section class="py-10 md:py-14 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-8">
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl text-base-900 tracking-tight">West Singapore</h2>
+          <p class="text-sm text-base-600">Our home ground &mdash; studio &amp; home visits</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
+          {west.map((a) => (
+            <div class="border-t border-primary-200 pt-4">
+              <h3 class="font-serif font-semibold text-lg text-base-900 leading-tight mb-2">
+                <a href={`/music-lessons-${a.slug}/`} class="hover:text-primary-700 transition-colors">{a.name}</a>
+              </h3>
+              <p class="text-sm text-base-600 leading-relaxed">
+                <a href={`/piano-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Piano</a>
+                <span class="text-primary-300"> &middot; </span>
+                <a href={`/violin-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Violin</a>
+                <span class="text-primary-300"> &middot; </span>
+                <a href={`/music-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Music</a>
+                {a.extra && (
+                  <>
+                    <span class="text-primary-300"> &middot; </span>
+                    <a href={`/music-theory-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Theory</a>
+                    <span class="text-primary-300"> &middot; </span>
+                    <a href={`/abrsm-piano-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">ABRSM</a>
+                  </>
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTRAL / ISLANDWIDE -->
+    <section class="py-10 md:py-14 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-8">
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl text-base-900 tracking-tight">Central &amp; South</h2>
+          <p class="text-sm text-base-600">Home visits available</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
+          {central.map((a) => (
+            <div class="border-t border-base-200 pt-4">
+              <h3 class="font-serif font-semibold text-lg text-base-900 leading-tight mb-2">
+                <a href={`/music-lessons-${a.slug}/`} class="hover:text-primary-700 transition-colors">{a.name}</a>
+              </h3>
+              <p class="text-sm text-base-600 leading-relaxed">
+                <a href={`/piano-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Piano</a>
+                <span class="text-base-300"> &middot; </span>
+                <a href={`/violin-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Violin</a>
+                <span class="text-base-300"> &middot; </span>
+                <a href={`/music-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Music</a>
+                {a.extra && (
+                  <>
+                    <span class="text-base-300"> &middot; </span>
+                    <a href={`/music-theory-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">Theory</a>
+                    <span class="text-base-300"> &middot; </span>
+                    <a href={`/abrsm-piano-lessons-${a.slug}/`} class="hover:text-primary-700 hover:underline">ABRSM</a>
+                  </>
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 md:py-20 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="max-w-[60ch]">
+          <h2 class="font-serif font-semibold text-2xl md:text-4xl text-base-900 leading-[1.15] tracking-tight">
+            Don't see your area?
+          </h2>
+          <p class="mt-4 text-base md:text-lg text-base-600 leading-relaxed max-w-xl">
+            Patricia travels for home visits across Singapore. If your neighbourhood isn't listed, message her &mdash; chances are she can still come to you.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="/contact/" class="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white font-medium text-base px-8 py-3 rounded-lg transition-colors">Book a trial</a>
+            <a href="https://wa.me/6583898853" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-base-200 hover:border-primary-400 text-base-700 hover:text-primary-600 font-medium text-base px-8 py-3 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Patricia
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>
