@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import RelatedReading from '../components/RelatedReading.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import BottomNav from '../components/BottomNav.astro'
 import WhatsAppButton from '../components/WhatsAppButton.astro'
@@ -203,7 +204,7 @@ const faqStructuredData = {
               Patricia's Tengah studio is approximately 15 minutes from Bukit Panjang by car, heading south via Bukit Panjang Road and Dairy Farm Road. The route avoids major expressways and is generally smooth, making it a convenient drive even during after-school hours when most lessons take place.
             </p>
             <p class="text-base-600 mb-4">
-              Families near Bukit Panjang MRT on the Downtown Line can also consider the MRT connection, with the Jurong Region Line providing access to Tengah as the new stations open. For theory-specific sessions, online lessons are a practical alternative — the written and analytical nature of theory translates well to video call format.
+              Families near Bukit Panjang MRT on the Downtown Line can also consider the MRT connection, with the Jurong Region Line providing access to Tengah as the new stations open.
             </p>
             <p class="text-base-600">
               Whether your family lives near Senja, Jelapang, or the Greenridge and Zhenghua housing estates, Patricia is happy to discuss the best arrangement for your child's theory preparation.
@@ -219,10 +220,6 @@ const faqStructuredData = {
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                 <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line from Bukit Panjang MRT, connecting towards Tengah via Jurong Region Line</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons available via video call — ideal for Bukit Panjang families with packed schedules</span>
               </li>
             </ul>
           </div>
@@ -357,6 +354,7 @@ const faqStructuredData = {
     </section>
   </main>
 
+  <RelatedReading type="theory" />
   <Footer />
   <BottomNav />
   <WhatsAppButton />

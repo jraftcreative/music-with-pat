@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import BottomNav from '../components/BottomNav.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+import RelatedReading from '../components/RelatedReading.astro'
+
+const faqs = [
+  {
+    question: "At what grade do ABRSM violin students need to learn vibrato?",
+    answer: "ABRSM does not mandate vibrato at a specific grade, but examiners begin to expect some use of vibrato from around Grade 4 or 5, where the repertoire benefits from a warmer, more expressive tone. Patricia introduces vibrato when a student's left-hand technique is stable enough to support it — typically during the Grade 3 to 4 preparation period — so it develops naturally rather than being forced before the hand is ready."
+  },
+  {
+    question: "How are scales different on violin compared to piano for ABRSM?",
+    answer: "Violin scales test intonation, bow control, and evenness of tone in a way that piano scales simply cannot. There are no keys to press — every note is placed by the student's ear and finger. ABRSM examiners listen for accurate pitch, consistent tone quality across all strings, smooth string crossings, and rhythmic evenness. Patricia uses daily scale practice as the backbone of technical development, building the muscle memory and aural awareness that underpins confident exam performance."
+  },
+  {
+    question: "Does my child need their own violin to start ABRSM lessons?",
+    answer: "Yes, having their own correctly sized instrument is essential for consistent practice between lessons. Patricia can recommend reputable music shops in Singapore where you can rent or purchase a suitable violin. She will advise on the right size based on your child's arm measurement and can also recommend appropriate accessories like shoulder rests, rosin, and music stands."
+  },
+  {
+    question: "How does Patricia handle the shift from first position to higher positions?",
+    answer: "Shifting is introduced gradually, usually as students approach Grade 3 or 4 where the repertoire requires third position. Patricia teaches shifting as a whole-arm movement guided by the ear, not just a finger stretch. She uses preparatory exercises, familiar melodies in the new position, and slow practice to build confidence before integrating shifts into exam pieces. By the time students reach higher grades, shifting feels like a natural extension of their playing."
+  }
+]
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+---
+
+<BaseLayout
+  title="ABRSM Violin Lessons in Hillview | Music with Pat"
+  description="ABRSM violin exam preparation for children in Hillview, Singapore, at Patricia's Tengah studio — roughly 10 minutes from the Hillview condominiums."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ABRSM Violin Lessons",
+      "name": "ABRSM Violin Lessons for Children in Hillview",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://www.musicwithpat.com/#business",
+        "name": "Music with Pat"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Hillview, Singapore"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4
+      },
+      "description": "ABRSM violin exam preparation for children in Hillview, Singapore. Covering practical pieces, scales, sight-reading, aural tests, and music theory from Prep Test through Grade 8."
+    }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  </Fragment>
+
+  <Header />
+  <Breadcrumbs items={[{ label: 'ABRSM Violin Lessons Hillview' }]} />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-10 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-primary-600 font-medium mb-2">Hillview to Tengah</p>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-base-900 mb-4">
+          ABRSM Violin Lessons for Children in Hillview
+        </h1>
+        <p class="text-base-600 text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          Hillview is a leafy, nature-bordered pocket of western Singapore, where condominium communities along Hillview Avenue and Hillview Rise sit beside the Rail Corridor and Dairy Farm Nature Park, and Hillview MRT on the Downtown Line keeps the area well connected. For parents seeking structured, internationally recognised violin training, Patricia offers thorough ABRSM exam preparation at her Tengah studio — roughly 10 minutes away via Upper Bukit Timah Road.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/contact/" class="px-6 py-3 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition-colors">Book a Trial</a>
+          <a href="https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20ABRSM%20violin%20lessons." target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-whatsapp text-white font-medium rounded-xl hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Patricia -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img
+              src="/patricia-piano-lessons.webp"
+                width="1024"
+                height="1280"
+              alt="Patricia - ABRSM Violin Teacher for Children near Hillview"
+              class="aspect-[4/5] object-cover object-top rounded-2xl w-full"
+              loading="lazy"
+            />
+          </div>
+          <div class="md:order-1">
+            <p class="text-primary-600 font-medium mb-2">Meet the Teacher</p>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-4">
+              About Patricia
+            </h2>
+            <p class="text-base-600 mb-4">
+              Patricia brings over a decade of focused ABRSM violin teaching experience to every lesson. Her students regularly achieve Merits and Distinctions not through shortcuts, but through the kind of thorough, patient preparation that builds genuine musical ability alongside exam-specific skills.
+            </p>
+            <p class="text-base-600 mb-4">
+              What distinguishes Patricia is her Bachelor's degree in Early Childhood Education with Music Education — a combination that informs how she teaches physical technique to young bodies, explains musical concepts in age-appropriate language, and structures lessons to maintain focus and motivation across the long preparation period each grade demands.
+            </p>
+            <p class="text-base-600 mb-6">
+              Hillview parents appreciate that Patricia treats violin education as a partnership. She provides detailed lesson notes, sets clear practice objectives, and communicates openly about each child's trajectory — whether things are going well or adjustments are needed.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">B.Ed Early Childhood & Music</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">10+ Years Experience</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">ABRSM Specialist</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">Tengah Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Patricia for ABRSM -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Why Families Trust Patricia</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Why Hillview Families Choose Patricia for ABRSM Violin
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V7.575a1.575 1.575 0 0 0-3.15 0" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Physical Technique</h3>
+                <p class="text-base-600 text-sm">Correct bow hold, balanced posture, and a relaxed left-hand frame are non-negotiable foundations for violin playing. Patricia establishes these from the first lesson and reinforces them constantly, because the physical demands of the violin only increase with each grade. Students who start with solid technique find that higher-level skills like vibrato, shifting, and advanced bow strokes develop more naturally and with less frustration.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Intonation Development</h3>
+                <p class="text-base-600 text-sm">Accurate intonation is the single most important skill for violin students to master, and it is assessed throughout the entire ABRSM exam. Patricia develops pitch accuracy through daily scale practice, ear-training exercises, and careful repertoire work that teaches students to hear and adjust in real time. Her systematic approach means intonation improves steadily rather than remaining an ongoing struggle.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Exam Confidence</h3>
+                <p class="text-base-600 text-sm">The violin exam format — standing alone before an examiner, performing from memory for scales, and sight-reading unfamiliar music — requires both musical skill and psychological readiness. Patricia builds exam confidence through structured mock sessions, performance practice with an audience, and clear explanations of what to expect. Students learn how to manage nerves, recover gracefully from slips, and project the musical assurance that examiners look for.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <div class="flex items-start gap-4">
+              <svg class="w-7 h-7 text-primary-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
+              <div>
+                <h3 class="text-lg font-semibold text-base-900 mb-2">Individual Pacing</h3>
+                <p class="text-base-600 text-sm">Violin progress depends on factors like hand size, physical coordination, and the maturity to handle sustained concentration during practice. Patricia tracks each child's development carefully and adjusts the pace of instruction to match. She will not rush a student into an exam to meet an arbitrary timeline, nor hold back a child who is ready to move forward. This honest, individualised approach keeps students challenged but never overwhelmed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Here from Hillview -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Easy to Reach</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            Getting Here from Hillview
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-base-600 mb-4">
+              Hillview connects to Tengah via Upper Bukit Timah Road and Dairy Farm Road, a drive of roughly 10 minutes. Families near the Rail Corridor, Dairy Farm Nature Park, or HillV2 mall will find the route short and straightforward, with minimal traffic outside of peak commuting hours. The journey works well for after-school and weekend lesson slots alike.
+            </p>
+            <p class="text-base-600 mb-4">
+              Hillview MRT (DT3) sits on the Downtown Line, with transfers available towards the Jurong Region Line for a direct rail connection to Tengah. Many families combine the lesson trip with a walk along the Rail Corridor or an errand at HillV2, making productive use of the time.
+            </p>
+            <p class="text-base-600">
+              Patricia also offers house visits to the Hillview area, covering the condominiums along Hillview Avenue and Hillview Rise and the private estates near Dairy Farm Nature Park. Home lessons maintain the same thorough ABRSM preparation structure as studio sessions. She reaches many neighbouring areas too — browse the full list of <a href="/areas/" class="text-primary-600 hover:underline">areas we serve</a>.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-primary-100">
+            <h3 class="text-lg font-semibold text-base-900 mb-4">Transport Options</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By car:</strong> Around 10 minutes via Upper Bukit Timah Road or Dairy Farm Road</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> Downtown Line from Hillview MRT (DT3), with transfer towards the Jurong Region Line (JRL) for direct access to Tengah</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">By bus:</strong> Services along Hillview Avenue and Upper Bukit Timah Road connect towards the Tengah and Bukit Panjang corridor</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                <span class="text-base-600 text-sm"><strong class="text-base-900">House visits:</strong> Available across Hillview, including Hillview Avenue, Hillview Rise, and the estates near Dairy Farm Nature Park</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABRSM Exam Preparation -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Lesson Focus</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            What ABRSM Violin Exam Preparation Looks Like
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-base-600">
+          <p>
+            Lessons run 45 to 60 minutes and address every element the ABRSM examiner will assess. Patricia opens each session with focused bow exercises and tone production work before moving to the scales and arpeggios required for the current grade. She pays particular attention to bow speed, contact point, and weight — the variables that determine tone quality on the violin.
+          </p>
+          <p>
+            Repertoire preparation is where musicianship develops. Patricia guides students through each piece with attention to phrasing, dynamics, vibrato where appropriate, and the stylistic character the composer intended. She helps students understand why a passage needs a particular bow stroke or dynamic shape, not just what to play. This deeper understanding translates directly into the expressive, communicative performances that ABRSM examiners reward with high marks.
+          </p>
+          <p>
+            Sight-reading is practised consistently, with Patricia selecting exercises that build pattern recognition and confidence progressively. Aural training — crucial for a string player's intonation and musical awareness — is woven into every lesson. Theory concepts are taught through the music itself, making the connection between written knowledge and practical playing feel natural and relevant.
+          </p>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/lessons/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            View Full Lesson Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-primary-600 font-medium mb-2">Common Questions</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900">
+            ABRSM Violin FAQs — Hillview
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group bg-primary-50 rounded-xl">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                <span class="font-medium text-base-900 text-sm md:text-base pr-4">{faq.question}</span>
+                <span class="text-primary-600 group-open:rotate-45 transition-transform text-xl flex-shrink-0">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-base-600 text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Also Available -->
+    <section class="py-6 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also available in Hillview:
+          <a href="/violin-lessons-hillview/" class="text-primary-600 hover:underline">Violin Lessons</a> ·
+          <a href="/piano-lessons-hillview/" class="text-primary-600 hover:underline">Piano Lessons</a> ·
+          <a href="/music-lessons-hillview/" class="text-primary-600 hover:underline">Music Lessons</a> ·
+          <a href="/music-theory-lessons-hillview/" class="text-primary-600 hover:underline">Music Theory</a> ·
+          <a href="/abrsm-piano-lessons-hillview/" class="text-primary-600 hover:underline">ABRSM Piano</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Also Serving Nearby -->
+    <section class="py-8 px-6 md:px-12 bg-primary-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-base-600 text-sm">
+          Also serving families in
+          <a href="/abrsm-violin-lessons-bukit-panjang/" class="text-primary-600 hover:underline">Bukit Panjang</a>,
+          <a href="/abrsm-violin-lessons-choa-chu-kang/" class="text-primary-600 hover:underline">Choa Chu Kang</a>.
+          <a href="/abrsm-violin-lessons-singapore/" class="text-primary-600 hover:underline">View all ABRSM violin lessons</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-t border-primary-100">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold text-base-900 mb-3">
+          Build Your Child's ABRSM Violin Skills
+        </h2>
+        <p class="text-base-600 mb-6">Contact Patricia for a free consultation to discuss your child's current ability, ABRSM aspirations, and what structured violin preparation looks like.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="/contact/" class="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors">
+            Book a Trial
+          </a>
+          <a
+            href="https://wa.me/6583898853?text=Hi%20Ms%20Pat%2C%20I'd%20like%20to%20enquire%20about%20ABRSM%20violin%20lessons."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 bg-whatsapp text-white font-medium rounded-full hover:bg-whatsapp-dark transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <RelatedReading type="abrsm-violin" />
+  <Footer />
+  <BottomNav />
+  <WhatsAppButton />
+</BaseLayout>

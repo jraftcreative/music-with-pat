@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import RelatedReading from '../components/RelatedReading.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import BottomNav from '../components/BottomNav.astro'
 import WhatsAppButton from '../components/WhatsAppButton.astro'
@@ -22,10 +23,6 @@ const faqs = [
   {
     question: "When is the right time to start theory exam preparation?",
     answer: "Patricia recommends beginning dedicated ABRSM theory preparation when a child reaches around Grade 3 or 4 on their instrument. This gives families in Choa Chu Kang a comfortable window — usually one to two years — to work through Grades 1 to 5 Theory before it becomes a prerequisite for higher practical exams. Starting earlier is also fine and can make the journey even more relaxed."
-  },
-  {
-    question: "Can my child take theory lessons online instead of travelling to Tengah?",
-    answer: "Yes. Theory is particularly well-suited to online delivery because the work centres on notation, written exercises, score analysis, and discussion rather than hands-on instrument technique. Many Choa Chu Kang families choose online theory sessions to save travel time, especially on busy school-day evenings. Patricia uses screen sharing and annotation tools to keep online lessons interactive and productive."
   }
 ]
 
@@ -203,7 +200,7 @@ const faqStructuredData = {
               Patricia's studio in Tengah is just around 10 minutes by car from Choa Chu Kang, making it one of the closest neighbourhoods to the studio. The drive is straightforward — south along Choa Chu Kang Avenue or through Bukit Batok, with minimal expressway driving required.
             </p>
             <p class="text-base-600 mb-4">
-              Families near Lot One shopping centre and Choa Chu Kang MRT on the North South Line are well-positioned for the short trip. As the Jurong Region Line develops, MRT connectivity to Tengah will become even more direct. Online theory sessions are also available for families who prefer to skip the drive altogether.
+              Families near Lot One shopping centre and Choa Chu Kang MRT on the North South Line are well-positioned for the short trip. As the Jurong Region Line develops, MRT connectivity to Tengah will become even more direct. Patricia also offers home visits across Singapore for families who prefer lessons in their own home.
             </p>
             <p class="text-base-600">
               Whether your family lives near South View Primary, Unity Primary, or the residential blocks along Choa Chu Kang Drive and Avenue, Patricia is happy to arrange lessons at a time that works around your child's school and activity schedule.
@@ -219,10 +216,6 @@ const faqStructuredData = {
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                 <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> North South Line from Choa Chu Kang MRT, with Jurong Region Line connectivity upcoming</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons available via video call — a convenient option for busy Choa Chu Kang families</span>
               </li>
             </ul>
           </div>
@@ -357,6 +350,7 @@ const faqStructuredData = {
     </section>
   </main>
 
+  <RelatedReading type="theory" />
   <Footer />
   <BottomNav />
   <WhatsAppButton />

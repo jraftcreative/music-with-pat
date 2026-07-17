@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import RelatedReading from '../components/RelatedReading.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import BottomNav from '../components/BottomNav.astro'
 import WhatsAppButton from '../components/WhatsAppButton.astro'
@@ -22,10 +23,6 @@ const faqs = [
   {
     question: "When should we start planning for the Grade 5 Theory requirement?",
     answer: "Patricia recommends beginning dedicated theory preparation when your child reaches around Grade 3 or 4 on their instrument. This gives Jurong West families a generous lead time — typically one to two years — to progress through the theory grades without feeling rushed. Early planning means Grade 5 Theory is completed comfortably before it becomes a gate to higher practical exams."
-  },
-  {
-    question: "Can theory lessons be done online?",
-    answer: "Yes, and theory is one of the most effective subjects for online delivery. Because the work involves notation, written exercises, score reading, and analytical discussion rather than physical technique, the video-call format works seamlessly. Patricia uses screen sharing and real-time annotation to keep online sessions interactive. For Jurong West families, this can be a time-efficient option on busy school evenings."
   }
 ]
 
@@ -203,10 +200,10 @@ const faqStructuredData = {
               Jurong West is one of Tengah's closest neighbours, and the drive to Patricia's studio takes just around 10 minutes. Families near Jurong Point can head north via Jurong West Avenue or Boon Lay Way — a short, familiar route with no expressway required.
             </p>
             <p class="text-base-600 mb-4">
-              Jurong West is served by stations on the North South Line, and as the Jurong Region Line develops, direct MRT access to Tengah will become even more convenient. For theory sessions, online lessons remain a popular choice — the notation and analysis focus of theory makes it highly effective via video call.
+              Jurong West is served by stations on the North South Line, and as the Jurong Region Line develops, direct MRT access to Tengah will become even more convenient.
             </p>
             <p class="text-base-600">
-              Whether your family lives in the HDB heartlands of Jurong West Street 91 and 92, near Pioneer or Boon Lay MRT, or closer to the Nanyang Technological University campus, Patricia can accommodate your preferred lesson time and format.
+              Whether your family lives in the HDB heartlands of Jurong West Street 91 and 92, near Pioneer or Boon Lay MRT, or closer to the Nanyang Technological University campus, Patricia can accommodate your preferred lesson time.
             </p>
           </div>
           <div class="bg-white rounded-xl p-6 border border-primary-100">
@@ -219,10 +216,6 @@ const faqStructuredData = {
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                 <span class="text-base-600 text-sm"><strong class="text-base-900">By MRT:</strong> North South Line stations nearby, with Jurong Region Line connectivity developing</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                <span class="text-base-600 text-sm"><strong class="text-base-900">Online:</strong> Theory lessons via video call — popular with Jurong West families for weekday convenience</span>
               </li>
             </ul>
           </div>
@@ -358,6 +351,7 @@ const faqStructuredData = {
     </section>
   </main>
 
+  <RelatedReading type="theory" />
   <Footer />
   <BottomNav />
   <WhatsAppButton />
