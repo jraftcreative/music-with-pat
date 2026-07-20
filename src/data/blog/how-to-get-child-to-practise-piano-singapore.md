@@ -1,7 +1,7 @@
 ---
 title: "How to Get Your Child to Practise Piano Without the Daily Battle"
 description: "A Singapore piano teacher's real advice on how to get your child to practise piano — without the nightly fight. Small routines that actually stick."
-pubDate: 2026-07-17
+pubDate: 2026-07-20
 keywords: ["how to get child to practice piano", "child won't practice piano", "piano practice routine for kids", "how much should a child practise piano"]
 ---
 
