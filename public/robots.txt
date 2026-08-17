@@ -1,5 +1,46 @@
-# Music with Pat - Piano Lessons Singapore
+# Music with Pat - Piano, Violin & Music Theory Lessons, Singapore
+
+# Default: everything crawlable
 User-agent: *
 Allow: /
 
+# Explicitly welcome AI answer-engine crawlers (GEO)
+# Music with Pat wants to be cited in AI answers, so these are allowed in full.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# AI-readable site summary: https://www.musicwithpat.com/llms.txt
 Sitemap: https://www.musicwithpat.com/sitemap-index.xml
