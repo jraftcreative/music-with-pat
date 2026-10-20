@@ -1,7 +1,7 @@
 ---
 title: "5 Signs Your Child Is Ready for ABRSM Grade 1 Piano"
 description: "A Singapore piano teacher's honest guide to the 5 signs your child is ready for ABRSM Grade 1 piano — mapped to what the exam actually asks, and why rushing it backfires."
-pubDate: 2026-10-19
+pubDate: 2026-10-20
 keywords: ["is my child ready for ABRSM Grade 1 piano", "when to take ABRSM Grade 1 piano", "ABRSM Grade 1 piano requirements for kids", "ABRSM piano for young children Singapore", "signs child ready for ABRSM Grade 1"]
 ---
 
