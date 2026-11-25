@@ -1,7 +1,7 @@
 ---
 title: "Can a 4-Year-Old Learn Violin? A Singapore Teacher's Honest Answer"
 description: "Yes, a 4-year-old can learn violin, but lessons look very different from what most parents picture. A Singapore violin teacher explains what to expect in the first year."
-pubDate: 2026-11-24
+pubDate: 2026-11-25
 keywords: ["can a 4 year old learn violin", "violin lessons for 4 year old", "violin lessons for toddlers Singapore", "violin classes for kids Singapore", "kids violin lessons"]
 ---
 
@@ -74,10 +74,6 @@ Some programmes start at three, mostly ones built around parents attending every
 ### How long before my child can play a song?
 
 Expect simple open-string tunes after the first few months, and recognisable little songs later in the first year. Every child moves at their own pace. Good posture and a clean sound early on matter more than speed.
-
-### Do I need to buy a violin straight away?
-
-No. Wait until your child has been measured. Many families rent the first small sizes, since children outgrow them quickly. I'm happy to point you to reputable violin shops in Singapore.
 
 ## Thinking about violin for your little one?
 
